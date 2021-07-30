@@ -1,1 +1,1 @@
-export * from '#utils'
+export * as PrismaTemplates from './index_'
