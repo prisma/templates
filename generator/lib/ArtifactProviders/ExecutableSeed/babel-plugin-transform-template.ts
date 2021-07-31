@@ -34,11 +34,13 @@ export type BabelPluginTransformTemplateOptions = {
   schema: {
     content: string
     path: string
-    datasourceEnvVarName: string
+    datasourceUrlEnvironmentVariableName: string
   }
 }
 
-export function babelPluginTransformTemplate(options: BabelPluginTransformTemplateOptions) {
+export function babelPluginTransformTemplate(
+  options: BabelPluginTransformTemplateOptions
+): (BabelPluginTransformTemplateOptions | (() => Babel.PluginItem))[] {
   return [
     (): Babel.PluginItem => {
       return {
@@ -57,14 +59,12 @@ export function babelPluginTransformTemplate(options: BabelPluginTransformTempla
             }
           },
 
-          ExportNamedDeclaration(
-            path,
-            {
+          ExportNamedDeclaration(path, params: { opts: BabelPluginTransformTemplateOptions }) {
+            const {
               opts: {
                 schema: { content: schemaContent, path: schemaPath },
               },
-            }: { opts: BabelPluginTransformTemplateOptions }
-          ) {
+            } = params
             // Find named export called `seed`. This can be either
             // 1. `export async function seed() {}`
             // 2. `async function seed() {}; export { seed }`
@@ -114,7 +114,7 @@ export function babelPluginTransformTemplate(options: BabelPluginTransformTempla
             path,
             {
               opts: {
-                schema: { datasourceEnvVarName },
+                schema: { datasourceUrlEnvironmentVariableName },
               },
             }: { opts: BabelPluginTransformTemplateOptions }
           ) {
@@ -145,8 +145,8 @@ export function babelPluginTransformTemplate(options: BabelPluginTransformTempla
                         Babel.types.identifier('schemaPath'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
                         Babel.types.objectExpression([
                           Babel.types.objectProperty(
-                            Babel.types.identifier(datasourceEnvVarName),
-                            Babel.types.identifier(`process.env.${datasourceEnvVarName}`)
+                            Babel.types.identifier(datasourceUrlEnvironmentVariableName),
+                            Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
                           ),
                         ]),
                         Babel.types.objectExpression([

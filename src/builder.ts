@@ -1,4 +1,4 @@
-import { BaseTemplateParametersResolved, BuiltTemplate, File, Template } from './types'
+import { BaseTemplateParametersResolved, BuildTemplate, File, Template } from './types'
 import { Index, mapValues } from './utils'
 
 /**
@@ -7,7 +7,7 @@ import { Index, mapValues } from './utils'
 export const build = <T extends Template>(
   template: T,
   parameters: GlobalPrismaTemplateParameters[T['metadata']['name']]
-): BuiltTemplate<T> => {
+): BuildTemplate<T> => {
   const parameters_ = {
     ...parameters,
     ...template.Parameters.defaults,

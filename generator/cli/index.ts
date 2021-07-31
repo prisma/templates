@@ -8,18 +8,21 @@ const args = arg({
   '--generate-type-script': Boolean,
 })
 
-main()
+main().catch((error) => {
+  console.log(error)
+  process.exit(1)
+})
 
 async function main() {
   const dirName = 'templates-repo'
-  const templatesRepoDir = Path.join(__dirname, '..', dirName)
+  const templatesRepoDir = Path.join(__dirname, '../..', dirName)
 
   if (args['--download-templates-repo']) {
     await downloadTemplatesRepo({ dir: templatesRepoDir })
   }
 
   if (args['--generate-type-script']) {
-    const outputDir = Path.join(__dirname, `../src/generated`)
-    await generateTypeScript({ templatesRepoDir, outputDir })
+    const outputDir = Path.join(__dirname, `../../src/generated`)
+    generateTypeScript({ templatesRepoDir, outputDir })
   }
 }

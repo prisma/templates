@@ -21,7 +21,7 @@ export type Template<
   }
 }
 
-export type BuiltTemplate<T extends Template> = {
+export type BuildTemplate<T extends Template> = {
   metadata: {
     name: T['metadata']['name']
     displayName: string
@@ -29,6 +29,21 @@ export type BuiltTemplate<T extends Template> = {
   }
   files: T['files']
   artifacts: T['artifacts']
+}
+
+export type BuiltTemplate<
+  // eslint-disable-next-line
+  Name extends TemplateNames = any,
+  FilesIndex extends Index<File> = Index<File>,
+  ArtifactsIndex extends Index<File> = Index<File>
+> = {
+  metadata: {
+    name: Name
+    displayName: string
+    githubUrl: null | string
+  }
+  files: FilesIndex
+  artifacts: ArtifactsIndex
 }
 
 export type TemplateNames =
