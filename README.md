@@ -4,4 +4,4 @@
 
 Prisma [templates](https://github.com/prisma/prisma-schema-examples) packaged up for programatic consumption.
 
-[Documentation](https://paka.dev/npm/@prisma/templates)
+[Documentation](https://paka.dev/npm/@prisma-labs/templates)
