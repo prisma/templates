@@ -58,14 +58,11 @@ const runFileTransformers = (
   parameters: TransformerParams['parameters']
 ) => {
   return mapValues(files, (file) => {
-    return {
-      ...file,
-      content: transformers.reduce((file, transformer): File => {
-        return transformer({
-          file,
-          parameters,
-        })
-      }, file),
-    }
+    return transformers.reduce((file, transformer) => {
+      return transformer({
+        file,
+        parameters,
+      })
+    }, file)
   })
 }
