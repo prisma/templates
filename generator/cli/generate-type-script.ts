@@ -40,7 +40,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
   fileOutputs.push({
     path: Path.join(outputDir, `index_.ts`),
     content: endent`
-      export * as Templates from './Templates'
+      export * as Templates from './templates'
       export * as Types from './types'
     `,
   })
