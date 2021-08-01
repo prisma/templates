@@ -2,56 +2,22 @@ import { Data } from './Data'
 import { Generated } from './generated'
 import { Index } from './utils'
 
-export type Template<
-  // eslint-disable-next-line
-  Name extends TemplateNames = any,
-  FilesIndex extends Index<File> = Index<File>,
-  ArtifactsIndex extends Index<File> = Index<File>,
-  Parameters extends BaseTemplateParameters = BaseTemplateParameters
-> = {
-  metadata: {
-    name: Name
-    displayName: string
-    githubUrl: null | string
-  }
-  files: FilesIndex
-  artifacts: ArtifactsIndex
-  Parameters: {
-    defaults: Parameters
-  }
-}
+export * from './generated/types'
 
-export type BuildTemplate<T extends Template> = {
-  metadata: {
-    name: T['metadata']['name']
-    displayName: string
-    githubUrl: null | string
-  }
-  files: T['files']
-  artifacts: T['artifacts']
-}
-
-export type BuiltTemplate<
+export abstract class AbstractTemplate<
   // eslint-disable-next-line
-  Name extends TemplateNames = any,
+  Name extends Generated.Types.TemplateNames = any,
   FilesIndex extends Index<File> = Index<File>,
   ArtifactsIndex extends Index<File> = Index<File>
-> = {
-  metadata: {
+> {
+  public abstract metadata: {
     name: Name
     displayName: string
     githubUrl: null | string
   }
-  files: FilesIndex
-  artifacts: ArtifactsIndex
+  public abstract files: FilesIndex
+  public abstract artifacts: ArtifactsIndex
 }
-
-export type TemplateNames =
-  | Generated.empty.Metadata.Name
-  | Generated.musicStreamingService.Metadata.Name
-  | Generated.rentalsPlatform.Metadata.Name
-  | Generated.saas.Metadata.Name
-  | Generated.urlShortener.Metadata.Name
 
 export type File = {
   content: string

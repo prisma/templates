@@ -1,8 +1,7 @@
-// import * as Babel from '@babel/core'
 import endent from 'endent'
 import glob from 'fast-glob'
 import * as FS from 'fs-jetpack'
-import { camelCase, startCase } from 'lodash'
+import { camelCase, startCase, upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
@@ -10,6 +9,10 @@ import { TemplateInfo } from '../lib/types'
 import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/utils'
 
 const log = console.log
+
+const templateName = (x: string) => camelCase(x)
+
+const templateClassName = (x: string) => upperFirst(camelCase(x))
 
 /**
  * Generate TypeScript code for templates in given dir.
@@ -29,17 +32,77 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 
   fileOutputs.push({
     path: Path.join(outputDir, `index.ts`),
-    content: createSourceCodeIndex(),
+    content: endent`
+      export * as Generated from './index_'
+    `,
   })
 
   fileOutputs.push({
     path: Path.join(outputDir, `index_.ts`),
-    content: createSourceCodeBarrel(templateInfos),
+    content: endent`
+      export * as Templates from './Templates'
+      export * as Types from './types'
+    `,
+  })
+
+  fileOutputs.push({
+    path: Path.join(outputDir, `types.ts`),
+    content: endent`
+      import * as Templates from './templates'
+
+      export type TemplateByName = {
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              ${templateName(_.name)}: Templates.${templateClassName(_.name)}
+            `
+          })
+          .join('\n')}
+      }
+        
+      export type TemplateClass =
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              | typeof Templates.${templateClassName(_.name)}
+            `
+          })
+          .join('\n')}
+
+      export type Template =
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              | Templates.${templateClassName(_.name)}
+            `
+          })
+          .join('\n')}
+
+      export type TemplateNames =
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              | Templates.${templateClassName(_.name)}.Name
+            `
+          })
+          .join('\n')}
+    `,
+  })
+
+  fileOutputs.push({
+    path: Path.join(outputDir, `templates/index.ts`),
+    content: endent`
+      ${templateInfos
+        .map((template) => {
+          return `export { ${templateClassName(template.name)} } from './${template.name}'`
+        })
+        .join('\n')}
+    `,
   })
 
   fileOutputs.push(
     ...templateInfos.map((templateInfo) => {
-      const sourceCodePath = Path.join(outputDir, `${templateInfo.name}.ts`)
+      const sourceCodePath = Path.join(outputDir, `templates/${templateInfo.name}.ts`)
 
       return {
         path: sourceCodePath,
@@ -59,32 +122,10 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
  */
 const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
-    name: camelCase(Path.basename(path)),
+    name: templateName(Path.basename(path)),
     displayName: startCase(Path.basename(path)),
     path,
   }))
-}
-
-/**
- * TODO
- */
-const createSourceCodeIndex = (): string => {
-  return endent`
-    export * as Generated from './index_'
-  `
-}
-
-/**
- * TODO
- */
-const createSourceCodeBarrel = (templateInfos: TemplateInfo[]): string => {
-  return endent`
-      ${templateInfos
-        .map((template) => {
-          return `export * as ${template.name} from './${template.name}'`
-        })
-        .join('\n')}
-    `
 }
 
 /**
@@ -151,15 +192,13 @@ ${indentBlock(4, escapeBackticks(f.content))}
        */
 
       import endent from 'endent'
-      import { Data } from '../Data'
-      import { BaseTemplateParameters } from '../types'
+      import { Builder } from '../../builder'
+      import { Data } from '../../Data'
+      import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
       ${sourceCodeSectionHeader('Metadata')}
 
-      /**
-       * Template metadata like name, etc.
-       */
-      export const metadata = {
+      const metadata = {
         /**
          * The template's name.
          */
@@ -176,54 +215,118 @@ ${indentBlock(4, escapeBackticks(f.content))}
         githubUrl: '${githubRepoUrl}/tree/main/${templateInfo.name}',
       }
 
-      /**
-       * Template metadata like name, etc.
-       */
-      export namespace Metadata {
-        /**
-         * The template's name.
-         */
-        export type Name = typeof metadata.name
-      }  
-
       ${sourceCodeSectionHeader('Files')}
       
-      /**
-       * Template files indexed by thier path on disk.
-       */
-      export const files = {
+      const files = {
         ${filesByPath}
       }
-      
-      /**
-       * Template files indexed by thier path on disk.
-       */
-      export type Files = typeof files
 
       ${sourceCodeSectionHeader('Artifacts')}
 
-      export const artifacts = {
+      const artifacts = {
         ${artifactsByPath}
       }
 
-      export type Artifacts = typeof artifacts
-
       ${sourceCodeSectionHeader('Parameters')}
 
-      declare global {
-        interface GlobalPrismaTemplateParameters {
-          ${templateInfo.name}: Parameters
-        }
-      }
+      type Parameters = BaseTemplateParameters
 
-
-      export type Parameters = BaseTemplateParameters & {}
-
-      export const Parameters: { defaults: Required<Parameters> } = {
+      const Parameters: { defaults: Required<Parameters> } = {
         defaults: {
           datasourceProvider: Data.PrismaDatasourceProviderName.postgresql
         }
       }
+
+      ${sourceCodeSectionHeader('Class')}
+
+      /**
+       * A "${templateInfo.name}" Prisma template.
+       */
+      class ${templateClassName(
+        templateInfo.name
+      )} implements AbstractTemplate<typeof metadata.name, typeof files, typeof artifacts> {
+        /**
+         * Template metadata like name, etc.
+         */
+        static metadata = metadata
+        /**
+         * Template files indexed by thier path on disk. Note that the files on a template class instance can
+         * have different contents than the files on template class constructor.
+         */
+        static files = files
+        /**
+         * Derived assets from the template files.
+         */
+        static artifacts = artifacts
+        /**
+         * Parameters accepted by this template.
+         */
+        static parameters = Parameters
+
+        //
+        // Instance properties
+        //
+
+        /**
+         * Template metadata like name, etc.
+         */
+        public metadata = metadata
+        /**
+         * Template files indexed by thier path on disk. Note that the files on a template class instance can
+         * have different contents than the files on template class constructor.
+         */
+        public files = files
+        /**
+         * Derived assets from the template files.
+         */
+        public artifacts = artifacts
+
+        //
+        // Constructor
+        //
+
+        constructor(parameters: Parameters) {
+          const parameters_ = {
+            ...parameters,
+            ...Parameters.defaults,
+          }
+
+          this.files = Builder.runFileTransformers(Builder.transformers, files, parameters_)
+        }
+      }
+
+      ${sourceCodeSectionHeader('Namespace')}
+
+      /**
+       * Types belonging to the "${templateInfo.name}" Prisma template.
+       */
+      namespace ${templateClassName(templateInfo.name)} {
+        /**
+         * The template's name.
+         */
+        export type Name = typeof metadata.name
+        /**
+         * Template files indexed by thier path on disk.
+         */
+        export type Files = typeof files
+        /**
+         * Derived assets from the template files.
+         */
+        export type Artifacts = typeof artifacts
+        /**
+         * Parameters accepted by this template.
+         */
+        export type Parameters = typeof Parameters
+      }
+
+      ${sourceCodeSectionHeader('Exports')}
+
+      export {
+        ${templateClassName(templateInfo.name)}
+      }
+
+
+
     `
 
   return sourceCode

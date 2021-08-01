@@ -2,7 +2,7 @@ import execa from 'execa'
 import * as FS from 'fs-jetpack'
 const log = console.log
 
-export default async function (params: { dir: string }) {
+export default function (params: { dir: string }): void {
   const { dir } = params
 
   log(`downloading templates repo source to ${dir}`)

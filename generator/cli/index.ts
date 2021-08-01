@@ -13,16 +13,19 @@ main().catch((error) => {
   process.exit(1)
 })
 
-async function main() {
+//eslint-disable-next-line
+async function main(): Promise<void> {
   const dirName = 'templates-repo'
   const templatesRepoDir = Path.join(__dirname, '../..', dirName)
 
   if (args['--download-templates-repo']) {
+    //eslint-disable-next-line
     await downloadTemplatesRepo({ dir: templatesRepoDir })
   }
 
   if (args['--generate-type-script']) {
     const outputDir = Path.join(__dirname, `../../src/generated`)
-    generateTypeScript({ templatesRepoDir, outputDir })
+    //eslint-disable-next-line
+    await generateTypeScript({ templatesRepoDir, outputDir })
   }
 }
