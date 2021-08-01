@@ -1,14 +1,15 @@
 import { Generated } from '../generated'
 import { BaseTemplateParametersResolved, File } from '../types'
-import { Index, mapValues } from '../utils'
+import { capitalize, Index, mapValues } from '../utils'
 
 /**
  * Build the given template with given parameters.
  */
-export const create = <T extends Generated.Types.TemplateClass>(
-  Template: T,
-  parameters: ConstructorParameters<T>[0]
-): Generated.Types.TemplateByName[T['metadata']['name']] => {
+export const create = <TemplateName extends Generated.Types.TemplateNames>(
+  templateName: TemplateName,
+  parameters: Generated.Types.TemplateParmetersByName[TemplateName]
+): Generated.Types.TemplateByName[TemplateName] => {
+  const Template = Generated.Templates[capitalize(templateName)]
   //eslint-disable-next-line
   return new Template(parameters) as any
 }

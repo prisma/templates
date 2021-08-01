@@ -59,6 +59,26 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
           })
           .join('\n')}
       }
+
+      export type TemplateParmetersByName = {
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              ${templateName(_.name)}: Templates.${templateClassName(_.name)}.Parameters
+            `
+          })
+          .join('\n')}
+      }
+
+      export type TemplateClassByName = {
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              ${templateName(_.name)}: typeof Templates.${templateClassName(_.name)}
+            `
+          })
+          .join('\n')}
+      }
         
       export type TemplateClass =
         ${templateInfos
@@ -229,12 +249,10 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
       ${sourceCodeSectionHeader('Parameters')}
 
-      type Parameters = BaseTemplateParameters
+      type TemplateParameters = BaseTemplateParameters
 
-      const Parameters: { defaults: Required<Parameters> } = {
-        defaults: {
-          datasourceProvider: Data.PrismaDatasourceProviderName.postgresql
-        }
+      const templateParameterDefaults: Required<TemplateParameters> = {
+        datasourceProvider: Data.PrismaDatasourceProviderName.postgresql
       }
 
       ${sourceCodeSectionHeader('Class')}
@@ -259,9 +277,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         static artifacts = artifacts
         /**
-         * Parameters accepted by this template.
+         * Metadata about the parameters accepted by this template.
          */
-        static parameters = Parameters
+        static parameters = {
+          defaults: templateParameterDefaults
+        }
 
         //
         // Instance properties
@@ -285,10 +305,10 @@ ${indentBlock(4, escapeBackticks(f.content))}
         // Constructor
         //
 
-        constructor(parameters: Parameters) {
+        constructor(parameters: TemplateParameters) {
           const parameters_ = {
             ...parameters,
-            ...Parameters.defaults,
+            ...templateParameterDefaults,
           }
 
           this.files = Builder.runFileTransformers(Builder.transformers, files, parameters_)
@@ -316,7 +336,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         /**
          * Parameters accepted by this template.
          */
-        export type Parameters = typeof Parameters
+        export type Parameters = TemplateParameters
       }
 
       ${sourceCodeSectionHeader('Exports')}
