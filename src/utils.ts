@@ -14,12 +14,3 @@ export const mapValues = <T, U>(obj: Record<string, T>, f: (value: T) => U): Rec
 }
 
 export type Index<T> = Record<string, T>
-
-export const capitalize = <T extends string>(value: T): Capitalize<T> => {
-  // eslint-disable-next-line
-  return upperFirst(value) as any
-}
-
-export const upperFirst = (x: string): string => {
-  return `${x[0]?.toUpperCase() ?? ''}${x.slice(1)}`
-}

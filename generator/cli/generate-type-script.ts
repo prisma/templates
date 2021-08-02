@@ -212,8 +212,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
        */
 
       import endent from 'endent'
-      import { Builder } from '../../builder'
-      import { Data } from '../../Data'
+      import { FileTransformer } from '../../fileTransformer'
+      import { FileTransformers } from '../../fileTransformers'
+      import { Data } from '../../data2'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
       ${sourceCodeSectionHeader('Metadata')}
@@ -311,7 +312,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
             ...templateParameterDefaults,
           }
 
-          this.files = Builder.runFileTransformers(Builder.transformers, files, parameters_)
+          this.files = FileTransformer.runStack(Object.values(FileTransformers), files, parameters_)
         }
       }
 
