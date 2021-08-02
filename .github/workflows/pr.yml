@@ -35,6 +35,7 @@ jobs:
           node-version: 16.x
       - name: Install Dependencies
         run: yarn --frozen-lockfile
+      - run: yarn -s build:gen
       - run: yarn -s lint:check
 
   test:

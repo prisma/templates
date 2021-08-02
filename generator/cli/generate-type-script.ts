@@ -308,8 +308,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
         constructor(parameters: TemplateParameters) {
           const parameters_ = {
-            ...parameters,
             ...templateParameterDefaults,
+            ...parameters,
           }
 
           this.files = FileTransformer.runStack(Object.values(FileTransformers), files, parameters_)
