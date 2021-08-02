@@ -15,6 +15,7 @@ export const prismaSchemaProvider: FileTransformer = (params) => {
   previewFeatures = ["microsoftSqlServer"]`
       )
     }
+    console.log({ content })
   }
 
   return content

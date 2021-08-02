@@ -14,17 +14,19 @@ export const runStack = <T extends Index<File>>(
   parameters: Params['parameters']
 ): T => {
   return mapValues(files, (file) => {
+    const contentTransformed = transformers.reduce((content, transformer) => {
+      return transformer({
+        file: {
+          ...file,
+          content,
+        },
+        parameters,
+      })
+    }, file.content)
+
     return {
       ...file,
-      content: transformers.reduce((content, transformer) => {
-        return transformer({
-          file: {
-            ...file,
-            content,
-          },
-          parameters,
-        })
-      }, file.content),
+      content: contentTransformed,
     }
   }) as T
 }
