@@ -1,4 +1,4 @@
-import { Data } from './data2'
+import { Data } from './data'
 import { Generated } from './generated'
 import { Index } from './utils'
 

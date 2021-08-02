@@ -214,7 +214,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
-      import { Data } from '../../data2'
+      import { Data } from '../../data'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
       ${sourceCodeSectionHeader('Metadata')}
