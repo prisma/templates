@@ -1,9 +1,38 @@
 import { PrismaTemplates } from '~/src'
 
-it('template can have datasourceProivder customized', () => {
-  const template = new PrismaTemplates.Templates.Saas({
-    datasourceProvider: 'mysql',
+describe('Template classes have static data', () => {
+  describe('files', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        expect(Template.files).toMatchSnapshot()
+      })
+    })
   })
+  describe('artifcats', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        expect(Template.artifacts).toMatchSnapshot()
+      })
+    })
+  })
+  describe('metadata', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        expect(Template.metadata).toMatchSnapshot()
+      })
+    })
+  })
+})
 
-  expect(template).toMatchSnapshot()
+describe('templates can be instantiated', () => {
+  describe('with custom datasourceProvider', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+        })
+        expect(template).toMatchSnapshot()
+      })
+    })
+  })
 })
