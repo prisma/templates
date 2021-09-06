@@ -7,14 +7,6 @@ export const prismaSchemaProvider: FileTransformer = (params) => {
 
   if (file.path === 'prisma/schema.prisma') {
     content = content.replace(`provider = "postgresql"`, `provider = "${parameters.datasourceProvider}"`)
-
-    if (parameters.datasourceProvider === 'sqlserver') {
-      content = content.replace(
-        `provider = "prisma-client-js"`,
-        `provider = "prisma-client-js"
-  previewFeatures = ["microsoftSqlServer"]`
-      )
-    }
   }
 
   return content
