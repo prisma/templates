@@ -65,7 +65,7 @@ export function babelPluginTransformTemplate(
       return {
         visitor: {
           Program(path) {
-            // Add a `import {} from "@prisma/studio-pcw"` at the top of the file
+            // Add a `import { PCW } from "@prisma/studio-pcw"` at the top of the file
             path.node.body.unshift(
               Babel.types.importDeclaration(
                 [Babel.types.importSpecifier(Babel.types.identifier('PCW'), Babel.types.identifier('PCW'))],
