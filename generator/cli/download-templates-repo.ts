@@ -9,7 +9,7 @@ export default function (params: { dir: string }): void {
 
   FS.remove(dir)
 
-  execa.commandSync(`git clone https://github.com/prisma/templates.git ${dir} --depth 1 --branch cloud`)
+  execa.commandSync(`git clone https://github.com/prisma/templates.git ${dir} --depth 1`)
 
   FS.remove(`${dir}/.git`)
 
