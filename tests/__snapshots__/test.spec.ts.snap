@@ -12,14 +12,12 @@ exports.seed = seed;
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
-const schema = \`PRISMA TEMPLATE: empty\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: empty\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -27,9 +25,7 @@ async function seed() {
   const {
     prisma: prisma
   } = await pcw.getPrismaClient();
-}
-
-(async () => await seed())()",
+}",
     "path": "prisma/seed.js",
   },
 }
@@ -59,14 +55,13 @@ const NUMBER_OF_USERS = 10;
 const userIds = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => faker.datatype.uuid());
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -173,13 +168,13 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
     "path": "prisma/seed.js",
   },
 }
 `;
+
+exports[`Template classes have static data artifcats nextjs 1`] = `Object {}`;
 
 exports[`Template classes have static data artifcats rentalsPlatform 1`] = `
 Object {
@@ -286,14 +281,13 @@ const users = Array.from({
     };
   })
 }));
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -337,9 +331,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
     "path": "prisma/seed.js",
   },
 }
@@ -385,14 +377,13 @@ const data = Array.from({
     dateSent: faker.date.future()
   }))
 }));
-const schema = \`PRISMA TEMPLATE: saas\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: saas\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -426,9 +417,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
     "path": "prisma/seed.js",
   },
 }
@@ -469,14 +458,13 @@ const data = Array.from({
     shortUrl: faker.internet.domainWord()
   }))
 }));
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: urlShortener\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -503,9 +491,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
     "path": "prisma/seed.js",
   },
 }
@@ -1209,7 +1195,7 @@ model Playlist {
     "path": "prisma/schema.prisma",
   },
   "prisma/seed.ts": Object {
-    "content": "import { PrismaClient } from '@prisma/client'
+    "content": "import { PrismaClient, Prisma } from '@prisma/client'
 import * as faker from 'faker'
 
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5
@@ -1754,6 +1740,713 @@ main()
     \\"lib\\": [\\"esnext\\", \\"dom\\"],
     \\"esModuleInterop\\": true
   }
+}",
+    "path": "tsconfig.json",
+  },
+}
+`;
+
+exports[`Template classes have static data files nextjs 1`] = `
+Object {
+  "README.md": Object {
+    "content": "# Vercel deployment example
+
+[Deployment guide](https://www.prisma.io/docs/guides/deployment/deploying-to-vercel)",
+    "path": "README.md",
+  },
+  "lib/prisma.ts": Object {
+    "content": "import { PrismaClient } from '@prisma/client'
+
+declare global {
+  var prisma: PrismaClient
+}
+
+// Avoid instantiating too many instances of Prisma in development
+// https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
+if (process.env.NODE_ENV === 'production') {
+  prisma = new PrismaClient()
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient()
+  }
+  prisma = global.prisma
+}
+
+export default prisma",
+    "path": "lib/prisma.ts",
+  },
+  "next-env.d.ts": Object {
+    "content": "/// <reference types=\\"next\\" />
+/// <reference types=\\"next/types/global\\" />
+/// <reference types=\\"next/image-types/global\\" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.",
+    "path": "next-env.d.ts",
+  },
+  "next.config.js": Object {
+    "content": "/** @type {import('next').NextConfig} */
+module.exports = {
+  reactStrictMode: true,
+}",
+    "path": "next.config.js",
+  },
+  "package.json": Object {
+    "content": "{
+  \\"name\\": \\"nextjs\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"scripts\\": {
+    \\"dev\\": \\"next dev\\",
+    \\"build\\": \\"next build\\",
+    \\"start\\": \\"next start\\",
+    \\"lint\\": \\"next lint\\",
+    \\"prisma:generate\\": \\"prisma generate\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"next\\": \\"11.1.2\\",
+    \\"react\\": \\"17.0.2\\",
+    \\"react-dom\\": \\"17.0.2\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/react\\": \\"17.0.24\\",
+    \\"eslint\\": \\"7.32.0\\",
+    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  }
+}",
+    "path": "package.json",
+  },
+  "pages/_app.tsx": Object {
+    "content": "import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+export default MyApp",
+    "path": "pages/_app.tsx",
+  },
+  "pages/api/index.ts": Object {
+    "content": "import { NextApiHandler } from 'next'
+
+const handler: NextApiHandler = (req, res) => {
+  res.status(200).json({ up: true })
+}
+
+export default handler",
+    "path": "pages/api/index.ts",
+  },
+  "pages/api/posts.ts": Object {
+    "content": "import { NextApiHandler } from 'next'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const users = await prisma.post.findMany({
+        include: { author: true },
+      })
+      res.status(200).json(users)
+    } catch (error) {
+      console.error(error)
+      res.status(500).json(error)
+    }
+  } else if (req.method === 'POST') {
+    const { title, content, authorEmail } = req.body
+    try {
+      const createdPost = await prisma.post.create({
+        data: {
+          title,
+          content,
+          author: {
+            connect: {
+              email: authorEmail,
+            },
+          },
+        },
+      })
+
+      res.status(200).json(createdPost)
+      return
+    } catch (e) {
+      console.error(e)
+
+      res.status(500)
+      return
+    }
+  } else {
+    res.status(404)
+  }
+}
+
+export default handler",
+    "path": "pages/api/posts.ts",
+  },
+  "pages/api/seed.ts": Object {
+    "content": "import { NextApiHandler } from 'next'
+import { Prisma } from '@prisma/client'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  try {
+    await prisma.$transaction([
+      prisma.profile.deleteMany({}),
+      prisma.post.deleteMany({}),
+      prisma.user.deleteMany({}),
+    ])
+
+    const createdUsers = await prisma.$transaction([
+      prisma.user.create({
+        data: seedUsers[0],
+      }),
+      prisma.user.create({
+        data: seedUsers[1],
+      }),
+    ])
+
+    res.status(201).json(createdUsers)
+  } catch (error) {
+    console.error(error)
+    return res.status(500).end()
+  }
+}
+
+const seedUsers: Prisma.UserCreateInput[] = [
+  {
+    email: 'jane@prisma.io',
+    name: 'Jane',
+    profiles: {
+      create: [
+        {
+          bio: 'Technical Writer',
+        },
+        {
+          bio: 'Health Enthusiast',
+        },
+        {
+          bio: 'Self Quantifier',
+        },
+      ],
+    },
+    posts: {
+      create: [
+        {
+          title:
+            'Comparing Database Types: How Database Types Evolved to Meet Different Needs',
+          content:
+            'https://www.prisma.io/blog/comparison-of-database-models-1iz9u29nwn37/',
+        },
+        {
+          title: 'Analysing Sleep Patterns: The Quantified Self',
+          content: 'https://quantifiedself.com/get-started/',
+        },
+      ],
+    },
+  },
+  {
+    email: 'toru@prisma.io',
+    name: 'Toru Takemitsu',
+    profiles: {
+      create: [
+        {
+          bio: 'Composer',
+        },
+        {
+          bio: 'Musician',
+        },
+        {
+          bio: 'Writer',
+        },
+      ],
+    },
+    posts: {
+      create: [
+        {
+          title: 'Requiem for String Orchestra',
+          content: '',
+        },
+        {
+          title: 'Music of Tree',
+          content: '',
+        },
+        {
+          title: 'Waves for clarinet, horn, two trombones and bass drum ',
+          content: '',
+        },
+      ],
+    },
+  },
+]
+
+export default handler",
+    "path": "pages/api/seed.ts",
+  },
+  "pages/api/users.ts": Object {
+    "content": "import { NextApiHandler } from 'next'
+import { Prisma } from '@prisma/client'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const users = await prisma.user.findMany({
+        include: { profiles: true },
+      })
+
+      res.status(200).json(users)
+    } catch (error) {
+      console.error(error)
+
+      res.status(500).json(error)
+      return
+    }
+  } else if (req.method === 'POST') {
+    try {
+      const createdUser = await prisma.user.create({
+        data: req.body,
+      })
+
+      res.status(200).json(createdUser)
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError) {
+        if (e.code === 'P2002') {
+          res
+            .status(409)
+            .json({ error: 'A user with this email already exists' })
+          return
+        }
+      }
+
+      console.error(e)
+      res.status(500)
+      return
+    }
+  } else {
+    res.status(404)
+    return
+  }
+}
+
+export default handler",
+    "path": "pages/api/users.ts",
+  },
+  "pages/index.tsx": Object {
+    "content": "import type { NextPage } from 'next'
+import Head from 'next/head'
+import { useState } from 'react'
+import styles from '../styles/Home.module.css'
+
+async function fetchApi(endpoint: string) {
+  const response = await fetch(\`/api/\${endpoint}\`)
+  if (!response.ok) {
+    throw new Error('Network response was not ok')
+  }
+
+  return response.json()
+}
+
+const Home: NextPage = () => {
+  const [isLoadingPost, setLoadingPost] = useState(false)
+  const [apiResponse, setApiResponse] = useState(null)
+  const [apiError, setApiError] = useState(null)
+
+  const getApiCallback = (endpoint: string) => async () => {
+    setLoadingPost(true)
+    setApiError(null)
+
+    try {
+      const response = await fetchApi(endpoint)
+      setApiResponse(response)
+    } catch (e: any) {
+      console.error(e)
+      setApiError(e)
+    }
+
+    setLoadingPost(false)
+  }
+
+  const onGetStatus = getApiCallback('')
+  const onSeed = getApiCallback('seed')
+  const onGetUsers = getApiCallback('users')
+  const onGetPosts = getApiCallback('posts')
+
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Prisma example with Vercel</title>
+        <link rel=\\"icon\\" href=\\"/favicon.png\\" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>Prisma Vercel Deployment Example</h1>
+
+        <div className={styles.grid}>
+          <button onClick={onGetStatus} className={styles.apiButton}>
+            Check API status
+          </button>
+          <button onClick={onSeed} className={styles.apiButton}>
+            Seed data
+          </button>
+          <button onClick={onGetUsers} className={styles.apiButton}>
+            Load users with profiles
+          </button>
+          <button onClick={onGetPosts} className={styles.apiButton}>
+            Load posts
+          </button>
+          <div
+            className={\`\${styles.loader} \${isLoadingPost ? '' : styles.hidden}\`}
+          ></div>
+        </div>
+        <pre
+          className={\`responseContainer \${styles.code} \${
+            apiResponse ? '' : styles.hidden
+          }\`}
+        >
+          {apiResponse && JSON.stringify(apiResponse, null, 2)}
+        </pre>
+      </main>
+
+      <footer className={styles.footer}>
+        Powered by{' '}
+        <img src=\\"/vercel.svg\\" alt=\\"Vercel Logo\\" className={styles.logo} />
+        &
+        <img src=\\"/prisma.svg\\" alt=\\"Prisma Logo\\" className={styles.logo} />
+      </footer>
+    </div>
+  )
+}
+
+export default Home",
+    "path": "pages/index.tsx",
+  },
+  "prisma/migrations/20210924145720_initial/migration.sql": Object {
+    "content": "-- CreateTable
+CREATE TABLE \\"Post\\" (
+    \\"post_id\\" SERIAL NOT NULL,
+    \\"content\\" TEXT,
+    \\"title\\" TEXT NOT NULL,
+    \\"author_id\\" INTEGER,
+
+    CONSTRAINT \\"Post_pkey\\" PRIMARY KEY (\\"post_id\\")
+);
+
+-- CreateTable
+CREATE TABLE \\"Profile\\" (
+    \\"bio\\" TEXT,
+    \\"profile_id\\" SERIAL NOT NULL,
+    \\"user_id\\" INTEGER NOT NULL,
+
+    CONSTRAINT \\"Profile_pkey\\" PRIMARY KEY (\\"profile_id\\")
+);
+
+-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"email\\" TEXT NOT NULL,
+    \\"name\\" TEXT,
+    \\"user_id\\" SERIAL NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"user_id\\")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
+
+-- AddForeignKey
+ALTER TABLE \\"Post\\" ADD CONSTRAINT \\"Post_author_id_fkey\\" FOREIGN KEY (\\"author_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Profile\\" ADD CONSTRAINT \\"Profile_user_id_fkey\\" FOREIGN KEY (\\"user_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE RESTRICT ON UPDATE CASCADE;",
+    "path": "prisma/migrations/20210924145720_initial/migration.sql",
+  },
+  "prisma/migrations/migration_lock.toml": Object {
+    "content": "# Please do not edit this file manually
+# It should be added in your version-control system (i.e. Git)
+provider = \\"postgresql\\"",
+    "path": "prisma/migrations/migration_lock.toml",
+  },
+  "prisma/schema.prisma": Object {
+    "content": "generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+datasource db {
+  provider = \\"postgresql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+model Post {
+  post_id   Int     @id @default(autoincrement())
+  content   String?
+  title     String
+  author_id Int?
+  author    User?   @relation(fields: [author_id], references: [user_id])
+}
+
+model Profile {
+  bio        String?
+  profile_id Int     @id @default(autoincrement())
+  user_id    Int
+  user       User    @relation(fields: [user_id], references: [user_id])
+}
+
+model User {
+  email    String    @unique
+  name     String?
+  user_id  Int       @id @default(autoincrement())
+  posts    Post[]
+  profiles Profile[]
+}",
+    "path": "prisma/schema.prisma",
+  },
+  "public/prisma.svg": Object {
+    "content": "<svg width=\\"106\\" height=\\"128\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+<path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\" fill=\\"black\\"/>
+</svg>",
+    "path": "public/prisma.svg",
+  },
+  "public/vercel.svg": Object {
+    "content": "<svg width=\\"283\\" height=\\"64\\" viewBox=\\"0 0 283 64\\" fill=\\"none\\" 
+    xmlns=\\"http://www.w3.org/2000/svg\\">
+    <path d=\\"M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z\\" fill=\\"#000\\"/>
+</svg>",
+    "path": "public/vercel.svg",
+  },
+  "styles/Home.module.css": Object {
+    "content": ".container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer img {
+  margin-left: 0.5rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin-top: 3rem;
+}
+
+.card {
+  margin: 0.5rem;
+  flex-basis: 45%;
+  padding: 1rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+
+.apiButton {
+  margin: 0.5rem;
+  flex-basis: 45%;
+  padding: 1rem;
+  color: white;
+  background-color: #0152ae;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.apiButton:hover,
+.apiButton:focus,
+.apiButton:active {
+  outline: none;
+}
+
+.apiButton:hover {
+  background-color: #0071f2;  
+}
+
+.logo {
+  height: 1em;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  top: 30px;
+  right: 30px;
+  font-size: 3px;
+  position: fixed;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgb(59, 177, 255);
+  border-right: 1.1em solid rgb(59, 177, 255);
+  border-bottom: 1.1em solid rgb(59, 177, 255);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none
+}
+
+.code {
+  background-color: black;
+  color: white;
+  max-height: 400px;
+  overflow: scroll;
+  font-size: 1rem;
+}",
+    "path": "styles/Home.module.css",
+  },
+  "styles/globals.css": Object {
+    "content": "html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}",
+    "path": "styles/globals.css",
+  },
+  "tsconfig.json": Object {
+    "content": "{
+  \\"compilerOptions\\": {
+    \\"target\\": \\"es5\\",
+    \\"lib\\": [
+      \\"dom\\",
+      \\"dom.iterable\\",
+      \\"esnext\\"
+    ],
+    \\"skipLibCheck\\": true,
+    \\"strict\\": true,
+    \\"forceConsistentCasingInFileNames\\": true,
+    \\"noEmit\\": true,
+    \\"esModuleInterop\\": true,
+    \\"module\\": \\"esnext\\",
+    \\"moduleResolution\\": \\"node\\",
+    \\"resolveJsonModule\\": true,
+    \\"isolatedModules\\": true,
+    \\"jsx\\": \\"preserve\\",
+    \\"allowJs\\": true
+  },
+  \\"include\\": [
+    \\"next-env.d.ts\\",
+    \\"**/*.ts\\",
+    \\"**/*.tsx\\"
+  ],
+  \\"exclude\\": [
+    \\"node_modules\\"
+  ]
 }",
     "path": "tsconfig.json",
   },
@@ -4056,6 +4749,14 @@ Object {
 }
 `;
 
+exports[`Template classes have static data metadata nextjs 1`] = `
+Object {
+  "displayName": "Nextjs",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+  "name": "nextjs",
+}
+`;
+
 exports[`Template classes have static data metadata rentalsPlatform 1`] = `
 Object {
   "displayName": "Rentals Platform",
@@ -4093,14 +4794,12 @@ exports.seed = seed;
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
-const schema = \`PRISMA TEMPLATE: empty\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: empty\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -4108,9 +4807,7 @@ async function seed() {
   const {
     prisma: prisma
   } = await pcw.getPrismaClient();
-}
-
-(async () => await seed())()",
+}",
       "path": "prisma/seed.js",
     },
   },
@@ -4311,14 +5008,13 @@ const NUMBER_OF_USERS = 10;
 const userIds = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => faker.datatype.uuid());
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -4425,9 +5121,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
       "path": "prisma/seed.js",
     },
   },
@@ -4961,7 +5655,7 @@ model Playlist {
       "path": "prisma/schema.prisma",
     },
     "prisma/seed.ts": Object {
-      "content": "import { PrismaClient } from '@prisma/client'
+      "content": "import { PrismaClient, Prisma } from '@prisma/client'
 import * as faker from 'faker'
 
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5
@@ -5518,6 +6212,721 @@ main()
 }
 `;
 
+exports[`templates can be instantiated with custom datasourceProvider nextjs 1`] = `
+Nextjs {
+  "artifacts": Object {},
+  "files": Object {
+    "README.md": Object {
+      "content": "# Vercel deployment example
+
+[Deployment guide](https://www.prisma.io/docs/guides/deployment/deploying-to-vercel)",
+      "path": "README.md",
+    },
+    "lib/prisma.ts": Object {
+      "content": "import { PrismaClient } from '@prisma/client'
+
+declare global {
+  var prisma: PrismaClient
+}
+
+// Avoid instantiating too many instances of Prisma in development
+// https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
+if (process.env.NODE_ENV === 'production') {
+  prisma = new PrismaClient()
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient()
+  }
+  prisma = global.prisma
+}
+
+export default prisma",
+      "path": "lib/prisma.ts",
+    },
+    "next-env.d.ts": Object {
+      "content": "/// <reference types=\\"next\\" />
+/// <reference types=\\"next/types/global\\" />
+/// <reference types=\\"next/image-types/global\\" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.",
+      "path": "next-env.d.ts",
+    },
+    "next.config.js": Object {
+      "content": "/** @type {import('next').NextConfig} */
+module.exports = {
+  reactStrictMode: true,
+}",
+      "path": "next.config.js",
+    },
+    "package.json": Object {
+      "content": "{
+  \\"name\\": \\"nextjs\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"scripts\\": {
+    \\"dev\\": \\"next dev\\",
+    \\"build\\": \\"next build\\",
+    \\"start\\": \\"next start\\",
+    \\"lint\\": \\"next lint\\",
+    \\"prisma:generate\\": \\"prisma generate\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"next\\": \\"11.1.2\\",
+    \\"react\\": \\"17.0.2\\",
+    \\"react-dom\\": \\"17.0.2\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/react\\": \\"17.0.24\\",
+    \\"eslint\\": \\"7.32.0\\",
+    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  }
+}",
+      "path": "package.json",
+    },
+    "pages/_app.tsx": Object {
+      "content": "import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+export default MyApp",
+      "path": "pages/_app.tsx",
+    },
+    "pages/api/index.ts": Object {
+      "content": "import { NextApiHandler } from 'next'
+
+const handler: NextApiHandler = (req, res) => {
+  res.status(200).json({ up: true })
+}
+
+export default handler",
+      "path": "pages/api/index.ts",
+    },
+    "pages/api/posts.ts": Object {
+      "content": "import { NextApiHandler } from 'next'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const users = await prisma.post.findMany({
+        include: { author: true },
+      })
+      res.status(200).json(users)
+    } catch (error) {
+      console.error(error)
+      res.status(500).json(error)
+    }
+  } else if (req.method === 'POST') {
+    const { title, content, authorEmail } = req.body
+    try {
+      const createdPost = await prisma.post.create({
+        data: {
+          title,
+          content,
+          author: {
+            connect: {
+              email: authorEmail,
+            },
+          },
+        },
+      })
+
+      res.status(200).json(createdPost)
+      return
+    } catch (e) {
+      console.error(e)
+
+      res.status(500)
+      return
+    }
+  } else {
+    res.status(404)
+  }
+}
+
+export default handler",
+      "path": "pages/api/posts.ts",
+    },
+    "pages/api/seed.ts": Object {
+      "content": "import { NextApiHandler } from 'next'
+import { Prisma } from '@prisma/client'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  try {
+    await prisma.$transaction([
+      prisma.profile.deleteMany({}),
+      prisma.post.deleteMany({}),
+      prisma.user.deleteMany({}),
+    ])
+
+    const createdUsers = await prisma.$transaction([
+      prisma.user.create({
+        data: seedUsers[0],
+      }),
+      prisma.user.create({
+        data: seedUsers[1],
+      }),
+    ])
+
+    res.status(201).json(createdUsers)
+  } catch (error) {
+    console.error(error)
+    return res.status(500).end()
+  }
+}
+
+const seedUsers: Prisma.UserCreateInput[] = [
+  {
+    email: 'jane@prisma.io',
+    name: 'Jane',
+    profiles: {
+      create: [
+        {
+          bio: 'Technical Writer',
+        },
+        {
+          bio: 'Health Enthusiast',
+        },
+        {
+          bio: 'Self Quantifier',
+        },
+      ],
+    },
+    posts: {
+      create: [
+        {
+          title:
+            'Comparing Database Types: How Database Types Evolved to Meet Different Needs',
+          content:
+            'https://www.prisma.io/blog/comparison-of-database-models-1iz9u29nwn37/',
+        },
+        {
+          title: 'Analysing Sleep Patterns: The Quantified Self',
+          content: 'https://quantifiedself.com/get-started/',
+        },
+      ],
+    },
+  },
+  {
+    email: 'toru@prisma.io',
+    name: 'Toru Takemitsu',
+    profiles: {
+      create: [
+        {
+          bio: 'Composer',
+        },
+        {
+          bio: 'Musician',
+        },
+        {
+          bio: 'Writer',
+        },
+      ],
+    },
+    posts: {
+      create: [
+        {
+          title: 'Requiem for String Orchestra',
+          content: '',
+        },
+        {
+          title: 'Music of Tree',
+          content: '',
+        },
+        {
+          title: 'Waves for clarinet, horn, two trombones and bass drum ',
+          content: '',
+        },
+      ],
+    },
+  },
+]
+
+export default handler",
+      "path": "pages/api/seed.ts",
+    },
+    "pages/api/users.ts": Object {
+      "content": "import { NextApiHandler } from 'next'
+import { Prisma } from '@prisma/client'
+import prisma from '../../lib/prisma'
+
+const handler: NextApiHandler = async (req, res) => {
+  if (req.method === 'GET') {
+    try {
+      const users = await prisma.user.findMany({
+        include: { profiles: true },
+      })
+
+      res.status(200).json(users)
+    } catch (error) {
+      console.error(error)
+
+      res.status(500).json(error)
+      return
+    }
+  } else if (req.method === 'POST') {
+    try {
+      const createdUser = await prisma.user.create({
+        data: req.body,
+      })
+
+      res.status(200).json(createdUser)
+    } catch (e) {
+      if (e instanceof Prisma.PrismaClientKnownRequestError) {
+        if (e.code === 'P2002') {
+          res
+            .status(409)
+            .json({ error: 'A user with this email already exists' })
+          return
+        }
+      }
+
+      console.error(e)
+      res.status(500)
+      return
+    }
+  } else {
+    res.status(404)
+    return
+  }
+}
+
+export default handler",
+      "path": "pages/api/users.ts",
+    },
+    "pages/index.tsx": Object {
+      "content": "import type { NextPage } from 'next'
+import Head from 'next/head'
+import { useState } from 'react'
+import styles from '../styles/Home.module.css'
+
+async function fetchApi(endpoint: string) {
+  const response = await fetch(\`/api/\${endpoint}\`)
+  if (!response.ok) {
+    throw new Error('Network response was not ok')
+  }
+
+  return response.json()
+}
+
+const Home: NextPage = () => {
+  const [isLoadingPost, setLoadingPost] = useState(false)
+  const [apiResponse, setApiResponse] = useState(null)
+  const [apiError, setApiError] = useState(null)
+
+  const getApiCallback = (endpoint: string) => async () => {
+    setLoadingPost(true)
+    setApiError(null)
+
+    try {
+      const response = await fetchApi(endpoint)
+      setApiResponse(response)
+    } catch (e: any) {
+      console.error(e)
+      setApiError(e)
+    }
+
+    setLoadingPost(false)
+  }
+
+  const onGetStatus = getApiCallback('')
+  const onSeed = getApiCallback('seed')
+  const onGetUsers = getApiCallback('users')
+  const onGetPosts = getApiCallback('posts')
+
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Prisma example with Vercel</title>
+        <link rel=\\"icon\\" href=\\"/favicon.png\\" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>Prisma Vercel Deployment Example</h1>
+
+        <div className={styles.grid}>
+          <button onClick={onGetStatus} className={styles.apiButton}>
+            Check API status
+          </button>
+          <button onClick={onSeed} className={styles.apiButton}>
+            Seed data
+          </button>
+          <button onClick={onGetUsers} className={styles.apiButton}>
+            Load users with profiles
+          </button>
+          <button onClick={onGetPosts} className={styles.apiButton}>
+            Load posts
+          </button>
+          <div
+            className={\`\${styles.loader} \${isLoadingPost ? '' : styles.hidden}\`}
+          ></div>
+        </div>
+        <pre
+          className={\`responseContainer \${styles.code} \${
+            apiResponse ? '' : styles.hidden
+          }\`}
+        >
+          {apiResponse && JSON.stringify(apiResponse, null, 2)}
+        </pre>
+      </main>
+
+      <footer className={styles.footer}>
+        Powered by{' '}
+        <img src=\\"/vercel.svg\\" alt=\\"Vercel Logo\\" className={styles.logo} />
+        &
+        <img src=\\"/prisma.svg\\" alt=\\"Prisma Logo\\" className={styles.logo} />
+      </footer>
+    </div>
+  )
+}
+
+export default Home",
+      "path": "pages/index.tsx",
+    },
+    "prisma/migrations/20210924145720_initial/migration.sql": Object {
+      "content": "-- CreateTable
+CREATE TABLE \\"Post\\" (
+    \\"post_id\\" SERIAL NOT NULL,
+    \\"content\\" TEXT,
+    \\"title\\" TEXT NOT NULL,
+    \\"author_id\\" INTEGER,
+
+    CONSTRAINT \\"Post_pkey\\" PRIMARY KEY (\\"post_id\\")
+);
+
+-- CreateTable
+CREATE TABLE \\"Profile\\" (
+    \\"bio\\" TEXT,
+    \\"profile_id\\" SERIAL NOT NULL,
+    \\"user_id\\" INTEGER NOT NULL,
+
+    CONSTRAINT \\"Profile_pkey\\" PRIMARY KEY (\\"profile_id\\")
+);
+
+-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"email\\" TEXT NOT NULL,
+    \\"name\\" TEXT,
+    \\"user_id\\" SERIAL NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"user_id\\")
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
+
+-- AddForeignKey
+ALTER TABLE \\"Post\\" ADD CONSTRAINT \\"Post_author_id_fkey\\" FOREIGN KEY (\\"author_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Profile\\" ADD CONSTRAINT \\"Profile_user_id_fkey\\" FOREIGN KEY (\\"user_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE RESTRICT ON UPDATE CASCADE;",
+      "path": "prisma/migrations/20210924145720_initial/migration.sql",
+    },
+    "prisma/migrations/migration_lock.toml": Object {
+      "content": "# Please do not edit this file manually
+# It should be added in your version-control system (i.e. Git)
+provider = \\"postgresql\\"",
+      "path": "prisma/migrations/migration_lock.toml",
+    },
+    "prisma/schema.prisma": Object {
+      "content": "generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+model Post {
+  post_id   Int     @id @default(autoincrement())
+  content   String?
+  title     String
+  author_id Int?
+  author    User?   @relation(fields: [author_id], references: [user_id])
+}
+
+model Profile {
+  bio        String?
+  profile_id Int     @id @default(autoincrement())
+  user_id    Int
+  user       User    @relation(fields: [user_id], references: [user_id])
+}
+
+model User {
+  email    String    @unique
+  name     String?
+  user_id  Int       @id @default(autoincrement())
+  posts    Post[]
+  profiles Profile[]
+}",
+      "path": "prisma/schema.prisma",
+    },
+    "public/prisma.svg": Object {
+      "content": "<svg width=\\"106\\" height=\\"128\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+<path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\" fill=\\"black\\"/>
+</svg>",
+      "path": "public/prisma.svg",
+    },
+    "public/vercel.svg": Object {
+      "content": "<svg width=\\"283\\" height=\\"64\\" viewBox=\\"0 0 283 64\\" fill=\\"none\\" 
+    xmlns=\\"http://www.w3.org/2000/svg\\">
+    <path d=\\"M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z\\" fill=\\"#000\\"/>
+</svg>",
+      "path": "public/vercel.svg",
+    },
+    "styles/Home.module.css": Object {
+      "content": ".container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer img {
+  margin-left: 0.5rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin-top: 3rem;
+}
+
+.card {
+  margin: 0.5rem;
+  flex-basis: 45%;
+  padding: 1rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+
+.apiButton {
+  margin: 0.5rem;
+  flex-basis: 45%;
+  padding: 1rem;
+  color: white;
+  background-color: #0152ae;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.apiButton:hover,
+.apiButton:focus,
+.apiButton:active {
+  outline: none;
+}
+
+.apiButton:hover {
+  background-color: #0071f2;  
+}
+
+.logo {
+  height: 1em;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  top: 30px;
+  right: 30px;
+  font-size: 3px;
+  position: fixed;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgb(59, 177, 255);
+  border-right: 1.1em solid rgb(59, 177, 255);
+  border-bottom: 1.1em solid rgb(59, 177, 255);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none
+}
+
+.code {
+  background-color: black;
+  color: white;
+  max-height: 400px;
+  overflow: scroll;
+  font-size: 1rem;
+}",
+      "path": "styles/Home.module.css",
+    },
+    "styles/globals.css": Object {
+      "content": "html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}",
+      "path": "styles/globals.css",
+    },
+    "tsconfig.json": Object {
+      "content": "{
+  \\"compilerOptions\\": {
+    \\"target\\": \\"es5\\",
+    \\"lib\\": [
+      \\"dom\\",
+      \\"dom.iterable\\",
+      \\"esnext\\"
+    ],
+    \\"skipLibCheck\\": true,
+    \\"strict\\": true,
+    \\"forceConsistentCasingInFileNames\\": true,
+    \\"noEmit\\": true,
+    \\"esModuleInterop\\": true,
+    \\"module\\": \\"esnext\\",
+    \\"moduleResolution\\": \\"node\\",
+    \\"resolveJsonModule\\": true,
+    \\"isolatedModules\\": true,
+    \\"jsx\\": \\"preserve\\",
+    \\"allowJs\\": true
+  },
+  \\"include\\": [
+    \\"next-env.d.ts\\",
+    \\"**/*.ts\\",
+    \\"**/*.tsx\\"
+  ],
+  \\"exclude\\": [
+    \\"node_modules\\"
+  ]
+}",
+      "path": "tsconfig.json",
+    },
+  },
+  "metadata": Object {
+    "displayName": "Nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
+  },
+}
+`;
+
 exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform 1`] = `
 RentalsPlatform {
   "artifacts": Object {
@@ -5624,14 +7033,13 @@ const users = Array.from({
     };
   })
 }));
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -5675,9 +7083,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
       "path": "prisma/seed.js",
     },
   },
@@ -6724,14 +8130,13 @@ const data = Array.from({
     dateSent: faker.date.future()
   }))
 }));
-const schema = \`PRISMA TEMPLATE: saas\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: saas\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -6765,9 +8170,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
       "path": "prisma/seed.js",
     },
   },
@@ -7512,14 +8915,13 @@ const data = Array.from({
     shortUrl: faker.internet.domainWord()
   }))
 }));
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
 
 async function seed() {
+  const schema = \`PRISMA TEMPLATE: urlShortener\`;
+  const schemaPath = \\"/tmp/schema.prisma\\";
   const pcw = new _studioPcw.PCW(schema, schemaPath, {
     PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
   }, {
-    forcePrismaLibrary: true,
     resolve: {
       \\".prisma/client\\": require.resolve(\\".prisma/client\\")
     }
@@ -7546,9 +8948,7 @@ async function seed() {
   } finally {
     await prisma.$disconnect();
   }
-}
-
-(async () => await seed())()",
+}",
       "path": "prisma/seed.js",
     },
   },
