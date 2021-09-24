@@ -39,7 +39,8 @@
     "release:pr": "dripip pr",
     "release:canary": "dripip preview",
     "release:stable": "dripip stable",
-    "prepublishOnly": "yarn -s build"
+    "prepublishOnly": "yarn -s build",
+    "prepare": "ts-patch install -s"
   },
   "dependencies": {
     "tslib": "^2.3.0"
