@@ -17,7 +17,6 @@
   "main": "./dist-cjs/index.js",
   "module": "./dist-esm/index.js",
   "scripts": {
-    "ts-node": "ts-node --project tsconfig.ts-node.json",
     "format": "yarn format:prettier && yarn format:imports",
     "format:prettier": "prettier --write .",
     "format:imports": "format-imports src && format-imports tests",
@@ -26,12 +25,12 @@
     "format:check:prettier": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx --fix",
     "lint:check": "eslint . --ext .ts,.tsx --max-warnings 0",
-    "dev": "yarn -s clean && ttsc --build --watch",
+    "dev": "yarn -s clean && tsc --build --watch",
     "dev:gen": "nodemon  --watch generator --ext ts --exec 'yarn -s build:gen:generate-type-script'",
     "build": "yarn -s clean && yarn build:gen && yarn build:ts",
     "build:ts": "yarn build:ts:cjs && yarn build:ts:esm",
-    "build:ts:cjs": "ttsc --project tsconfig.cjs.json",
-    "build:ts:esm": "ttsc --project tsconfig.esm.json",
+    "build:ts:cjs": "tsc --project tsconfig.cjs.json",
+    "build:ts:esm": "tsc --project tsconfig.esm.json",
     "build:gen": "yarn -s build:gen:download-templates-repo && yarn -s build:gen:generate-type-script",
     "build:gen:download-templates-repo": "yarn -s ts-node generator/cli --download-templates-repo",
     "build:gen:generate-type-script": "yarn -s ts-node generator/cli --generate-type-script",
@@ -77,10 +76,10 @@
     "ts-jest": "27.0.4",
     "ts-nameof": "5.0.0",
     "ts-node": "10.1.0",
-    "ttypescript": "1.5.12",
+    "ts-patch": "^1.4.4",
     "typescript": "4.3.5",
     "typescript-snapshots-plugin": "1.7.0",
-    "typescript-transform-paths": "3.1.0"
+    "typescript-transform-paths": "3.3.1"
   },
   "importSorter": {
     "emptyLinesBetweenGroups": 0,
