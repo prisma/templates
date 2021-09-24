@@ -4593,7 +4593,7 @@ ts-node@10.1.0:
     source-map-support "^0.5.17"
     yn "3.1.1"
 
-ts-patch@^1.4.4:
+ts-patch@1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/ts-patch/-/ts-patch-1.4.4.tgz#c4814af4ab36183ddcf04c178f0153ce6ef48245"
   integrity sha512-b0CxxrkrCGsD22gl5BtSFlXzyTFP2mbOVffxMOWRrwdSh37sM01wzxSY4wlbBiHHHAJICmaaDgESzJ8lKkVoZA==
