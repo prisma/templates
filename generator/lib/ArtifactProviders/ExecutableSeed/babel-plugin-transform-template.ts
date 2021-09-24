@@ -78,6 +78,18 @@ export function babelPluginTransformTemplate(
             if (path.node.imported.type === 'Identifier' && path.node.imported.name === 'PrismaClient') {
               path.remove()
             }
+
+            // Since we removed an import from `@prisma/client`, check to see if that emptied out the import (AKA something like `import "@prisma/client")
+            // If so, delete the import entirely.
+
+            const importDeclaration = path.parent as Babel.types.ImportDeclaration
+
+            if (
+              importDeclaration.source.value === '@prisma/client' &&
+              importDeclaration.specifiers.length === 0
+            ) {
+              path.parentPath.remove()
+            }
           },
 
           VariableDeclaration(
