@@ -1,45 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Template classes have static data artifcats empty 1`] = `
-Object {
-  "prisma/seed.js": Object {
-    "content": "\\"use strict\\";
-
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: empty\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-}",
-    "path": "prisma/seed.js",
-  },
-}
-`;
+exports[`Template classes have static data artifcats empty 1`] = `Object {}`;
 
 exports[`Template classes have static data artifcats musicStreamingService 1`] = `
 Object {
   "prisma/seed.js": Object {
     "content": "\\"use strict\\";
-
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
@@ -49,6 +15,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
 const NUMBER_OF_ARTISTS = 5;
 const NUMBER_OF_USERS = 10;
@@ -56,119 +34,105 @@ const userIds = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => faker.datatype.uuid());
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
+async function main() {
+  // Create artists
+  await prisma.artist.createMany({
+    data: Array.from({
+      length: NUMBER_OF_ARTISTS
+    }).map(() => ({
+      name: faker.name.firstName()
+    }))
   });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
+  const artists = await prisma.artist.findMany(); // Create songs for each artist
 
-  try {
-    // Create artists
-    await prisma.artist.createMany({
-      data: Array.from({
-        length: NUMBER_OF_ARTISTS
-      }).map(() => ({
-        name: faker.name.firstName()
-      }))
+  for (const artist of artists) {
+    await prisma.album.create({
+      data: {
+        cover: faker.image.imageUrl(),
+        name: faker.random.words(2),
+        artists: {
+          connect: {
+            id: artist.id
+          }
+        },
+        songs: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 2,
+              max: MAX_NUMBER_OF_SONGS_PER_ARTIST
+            })
+          }).map(() => ({
+            artistId: artist.id,
+            fileUrl: faker.internet.url(),
+            length: faker.datatype.float(),
+            name: faker.name.firstName()
+          }))
+        }
+      }
     });
-    const artists = await prisma.artist.findMany(); // Create songs for each artist
-
-    for (const artist of artists) {
-      await prisma.album.create({
-        data: {
-          cover: faker.image.imageUrl(),
-          name: faker.random.words(2),
-          artists: {
-            connect: {
-              id: artist.id
-            }
-          },
-          songs: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 2,
-                max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-              })
-            }).map(() => ({
-              artistId: artist.id,
-              fileUrl: faker.internet.url(),
-              length: faker.datatype.float(),
-              name: faker.name.firstName()
-            }))
-          }
-        }
-      });
-    } // Create songs
+  } // Create songs
 
 
-    const songs = await prisma.song.findMany();
+  const songs = await prisma.song.findMany();
 
-    for (const userId of userIds) {
-      // Create users
-      await prisma.user.create({
-        data: {
-          id: userId,
-          email: faker.internet.email(),
-          name: faker.name.firstName(),
-          interactions: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 3,
-                max: songs.length
-              })
-            }).map(() => ({
-              playCount: faker.datatype.number({
-                min: 1,
-                max: 1000
-              }),
-              songId: songs[faker.datatype.number({
-                min: 0,
-                max: songs.length - 1
-              })].id,
-              // random boolean
-              isLiked: Math.random() < 0.5
-            }))
-          }
-        }
-      }); // Create Playlists
-
-      await prisma.playlist.create({
-        data: {
-          name: faker.random.words(2),
-          user: {
-            connect: {
-              id: userId
-            }
-          },
-          // each playlist will have a random list of songs
-          songs: {
-            connect: songs.slice(0, faker.datatype.number({
+  for (const userId of userIds) {
+    // Create users
+    await prisma.user.create({
+      data: {
+        id: userId,
+        email: faker.internet.email(),
+        name: faker.name.firstName(),
+        interactions: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 3,
+              max: songs.length
+            })
+          }).map(() => ({
+            playCount: faker.datatype.number({
               min: 1,
+              max: 1000
+            }),
+            songId: songs[faker.datatype.number({
+              min: 0,
               max: songs.length - 1
-            })).map(({
-              id
-            }) => ({
-              id
-            }))
-          }
+            })].id,
+            // random boolean
+            isLiked: Math.random() < 0.5
+          }))
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    }); // Create Playlists
+
+    await prisma.playlist.create({
+      data: {
+        name: faker.random.words(2),
+        user: {
+          connect: {
+            id: userId
+          }
+        },
+        // each playlist will have a random list of songs
+        songs: {
+          connect: songs.slice(0, faker.datatype.number({
+            min: 1,
+            max: songs.length - 1
+          })).map(({
+            id
+          }) => ({
+            id
+          }))
+        }
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
     "path": "prisma/seed.js",
   },
 }
@@ -181,11 +145,6 @@ Object {
   "prisma/seed.js": Object {
     "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -194,6 +153,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 10;
 const NUMBER_OF_ROOMS = 20;
 const roomIds = Array.from({
@@ -234,7 +205,7 @@ const rooms = Array.from({
     fileName: faker.image.imageUrl()
   }))
 }));
-const users = Array.from({
+const data = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => ({
   email: faker.internet.email(),
@@ -282,56 +253,40 @@ const users = Array.from({
   })
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+async function main() {
+  rooms.forEach(async room => await prisma.room.create({
+    data: {
+      id: room.id,
+      address: room.address,
+      price: room.price,
+      summary: room.summary,
+      media: {
+        create: room.media
+      }
     }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
+  }));
 
-  try {
-    for (let room of rooms) {
-      await prisma.room.create({
-        data: {
-          id: room.id,
-          address: room.address,
-          price: room.price,
-          summary: room.summary,
-          media: {
-            create: room.media
-          }
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        email: entry.email,
+        name: entry.name,
+        reservations: {
+          create: entry.reservations
+        },
+        reviews: {
+          create: entry.reviews
         }
-      });
-    }
-
-    for (let user of users) {
-      await prisma.user.create({
-        data: {
-          email: user.email,
-          name: user.name,
-          reservations: {
-            create: user.reservations
-          },
-          reviews: {
-            create: user.reviews
-          }
-        }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
     "path": "prisma/seed.js",
   },
 }
@@ -342,11 +297,6 @@ Object {
   "prisma/seed.js": Object {
     "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -355,6 +305,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: saas\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const NUMBER_OF_INVITES = 4;
 const data = Array.from({
@@ -378,46 +340,32 @@ const data = Array.from({
   }))
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: saas\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          account: {
-            create: {
-              stripeCustomerId: entry.account.stripeCustomerId,
-              stripeSubscriptionId: entry.account.stripeSubscriptionId,
-              isActive: true,
-              invites: {
-                create: entry.invites
-              }
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        account: {
+          create: {
+            stripeCustomerId: entry.account.stripeCustomerId,
+            stripeSubscriptionId: entry.account.stripeSubscriptionId,
+            isActive: true,
+            invites: {
+              create: entry.invites
             }
           }
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
     "path": "prisma/seed.js",
   },
 }
@@ -428,11 +376,6 @@ Object {
   "prisma/seed.js": Object {
     "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -441,6 +384,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const MAX_NUMBER_OF_LINKS = 5;
 const data = Array.from({
@@ -459,39 +414,25 @@ const data = Array.from({
   }))
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: urlShortener\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          links: {
-            create: entry.links
-          }
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        links: {
+          create: entry.links
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
     "path": "prisma/seed.js",
   },
 }
@@ -509,14 +450,20 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "content": "{
   \\"name\\": \\"empty\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"devDependencies\\": {
-    \\"prisma\\": \\"2.30.3\\"
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
+    \\"@prisma/client\\": \\"3.1.1\\"
   },
-  \\"engines\\": {
-    \\"node\\": \\">=10.0.0\\"
+  \\"devDependencies\\": {
+    \\"@types/node\\": \\"16.7.10\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.2\\"
+  },
+  \\"scripts\\": {
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
   }
 }",
     "path": "package.json",
@@ -533,14 +480,6 @@ generator client {
   provider = \\"prisma-client-js\\"
 }",
     "path": "prisma/schema.prisma",
-  },
-  "prisma/seed.ts": Object {
-    "content": "import { PrismaClient } from \\"@prisma/client\\";
-
-export async function seed() {
-  const prisma = new PrismaClient();
-}",
-    "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
     "content": "<html>
@@ -660,6 +599,14 @@ export async function seed() {
 <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M0.28825 24.9389C-0.101619 25.5764 -0.0955847 26.3808 0.303803 27.0124L7.5326 38.4434C8.00176 39.1853 8.90609 39.5236 9.74539 39.2712L30.606 32.9977C31.7444 32.6554 32.3172 31.3823 31.8196 30.3003L18.4094 1.13932C17.7554 -0.282788 15.7839 -0.399522 14.9675 0.935524L0.28825 24.9389ZM18.1058 7.79741C17.8205 7.13653 16.854 7.23832 16.7124 7.94418L11.5428 33.7038C11.4338 34.247 11.9419 34.7108 12.4724 34.5524L26.9042 30.2411C27.3254 30.1153 27.5424 29.6497 27.368 29.2458L18.1058 7.79741Z\\" fill=\\"white\\"/>
 </svg>",
     "path": "public/prisma.svg",
+  },
+  "sandbox.ts": Object {
+    "content": "import { PrismaClient } from \\"@prisma/client\\";
+
+export async function seed() {
+  const prisma = new PrismaClient();
+}",
+    "path": "sandbox.ts",
   },
 }
 `;
@@ -1087,12 +1034,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "{
   \\"name\\": \\"music-streaming-service\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -1102,12 +1055,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
     "path": "package.json",
@@ -1195,8 +1142,10 @@ model Playlist {
     "path": "prisma/schema.prisma",
   },
   "prisma/seed.ts": Object {
-    "content": "import { PrismaClient, Prisma } from '@prisma/client'
+    "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
+
+const prisma = new PrismaClient()
 
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5
 const NUMBER_OF_ARTISTS = 5
@@ -1206,103 +1155,102 @@ const userIds = Array.from({
   length: NUMBER_OF_USERS,
 }).map(() => faker.datatype.uuid())
 
-export async function seed() {
-  const prisma = new PrismaClient()
+async function main() {
+  // Create artists
+  await prisma.artist.createMany({
+    data: Array.from({ length: NUMBER_OF_ARTISTS }).map(() => ({
+      name: faker.name.firstName(),
+    })),
+  })
 
-  try {
-    // Create artists
-    await prisma.artist.createMany({
-      data: Array.from({ length: NUMBER_OF_ARTISTS }).map(() => ({
+  const artists = await prisma.artist.findMany()
+
+  // Create songs for each artist
+  for (const artist of artists) {
+    await prisma.album.create({
+      data: {
+        cover: faker.image.imageUrl(),
+        name: faker.random.words(2),
+        artists: {
+          connect: {
+            id: artist.id,
+          },
+        },
+        songs: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 2,
+              max: MAX_NUMBER_OF_SONGS_PER_ARTIST,
+            }),
+          }).map(() => ({
+            artistId: artist.id,
+            fileUrl: faker.internet.url(),
+            length: faker.datatype.float(),
+            name: faker.name.firstName(),
+          })),
+        },
+      },
+    })
+  }
+
+  // Create songs
+  const songs = await prisma.song.findMany()
+
+  for (const userId of userIds) {
+    // Create users
+    await prisma.user.create({
+      data: {
+        id: userId,
+        email: faker.internet.email(),
         name: faker.name.firstName(),
-      })),
+        interactions: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 3,
+              max: songs.length,
+            }),
+          }).map(() => ({
+            playCount: faker.datatype.number({ min: 1, max: 1000 }),
+            songId:
+              songs[faker.datatype.number({ min: 0, max: songs.length - 1 })]
+                .id,
+            // random boolean
+            isLiked: Math.random() < 0.5,
+          })),
+        },
+      },
     })
 
-    const artists = await prisma.artist.findMany()
-
-    // Create songs for each artist
-    for (const artist of artists) {
-      await prisma.album.create({
-        data: {
-          cover: faker.image.imageUrl(),
-          name: faker.random.words(2),
-          artists: {
-            connect: {
-              id: artist.id,
-            },
-          },
-          songs: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 2,
-                max: MAX_NUMBER_OF_SONGS_PER_ARTIST,
-              }),
-            }).map(() => ({
-              artistId: artist.id,
-              fileUrl: faker.internet.url(),
-              length: faker.datatype.float(),
-              name: faker.name.firstName(),
-            })),
+    // Create Playlists
+    await prisma.playlist.create({
+      data: {
+        name: faker.random.words(2),
+        user: {
+          connect: {
+            id: userId,
           },
         },
-      })
-    }
-
-    // Create songs
-    const songs = await prisma.song.findMany()
-
-    for (const userId of userIds) {
-      // Create users
-      await prisma.user.create({
-        data: {
-          id: userId,
-          email: faker.internet.email(),
-          name: faker.name.firstName(),
-          interactions: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 3,
-                max: songs.length,
-              }),
-            }).map(() => ({
-              playCount: faker.datatype.number({ min: 1, max: 1000 }),
-              songId:
-                songs[faker.datatype.number({ min: 0, max: songs.length - 1 })]
-                  .id,
-              // random boolean
-              isLiked: Math.random() < 0.5,
-            })),
-          },
+        // each playlist will have a random list of songs
+        songs: {
+          connect: songs
+            .slice(
+              0,
+              faker.datatype.number({ min: 1, max: songs.length - 1 }),
+            )
+            .map(({ id }) => ({ id })),
         },
-      })
-
-      // Create Playlists
-      await prisma.playlist.create({
-        data: {
-          name: faker.random.words(2),
-          user: {
-            connect: {
-              id: userId,
-            },
-          },
-          // each playlist will have a random list of songs
-          songs: {
-            connect: songs
-              .slice(
-                0,
-                faker.datatype.number({ min: 1, max: songs.length - 1 }),
-              )
-              .map(({ id }) => ({ id })),
-          },
-        },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -2810,12 +2758,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "{
   \\"name\\": \\"rentals-platform\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -2825,12 +2779,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
     "path": "package.json",
@@ -2913,8 +2861,9 @@ model Media {
   },
   "prisma/seed.ts": Object {
     "content": "import { PrismaClient } from '@prisma/client'
-
 import * as faker from 'faker'
+
+const prisma = new PrismaClient()
 
 const NUMBER_OF_USERS = 10
 const NUMBER_OF_ROOMS = 20
@@ -2947,7 +2896,7 @@ const rooms = Array.from({
   })),
 }))
 
-const users = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
+const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   email: faker.internet.email(),
   name: faker.name.firstName(),
   reviews: Array.from({
@@ -2996,11 +2945,10 @@ const users = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   }),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
+async function main() {
 
-  try {
-    for (let room of rooms) {
+  rooms.forEach(
+    async (room) =>
       await prisma.room.create({
         data: {
           id: room.id,
@@ -3011,30 +2959,33 @@ export async function seed() {
             create: room.media,
           },
         },
-      })
-    }
+      }),
+  )
 
-    for (let user of users) {
-      await prisma.user.create({
-        data: {
-          email: user.email,
-          name: user.name,
-          reservations: {
-            create: user.reservations,
-          },
-          reviews: {
-            create: user.reviews,
-          },
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        email: entry.email,
+        name: entry.name,
+        reservations: {
+          create: entry.reservations,
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+        reviews: {
+          create: entry.reviews,
+        },
+      },
+    })
   }
-}",
+
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -3677,12 +3628,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "{
   \\"name\\": \\"saas\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -3692,12 +3649,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
     "path": "package.json",
@@ -3751,6 +3702,8 @@ model Invite {
     "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
 
+const prisma = new PrismaClient()
+
 const NUMBER_OF_USERS = 4
 const NUMBER_OF_INVITES = 4
 
@@ -3770,35 +3723,34 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   })),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          account: {
-            create: {
-              stripeCustomerId: entry.account.stripeCustomerId,
-              stripeSubscriptionId: entry.account.stripeSubscriptionId,
-              isActive: true,
-              invites: {
-                create: entry.invites,
-              },
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        account: {
+          create: {
+            stripeCustomerId: entry.account.stripeCustomerId,
+            stripeSubscriptionId: entry.account.stripeSubscriptionId,
+            isActive: true,
+            invites: {
+              create: entry.invites,
             },
           },
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -4309,12 +4261,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "{
   \\"name\\": \\"url-shortener\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -4324,12 +4282,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
     "path": "package.json",
@@ -4371,6 +4323,8 @@ model User {
     "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
 
+const prisma = new PrismaClient()
+
 const NUMBER_OF_USERS = 4
 const MAX_NUMBER_OF_LINKS = 5
 
@@ -4388,28 +4342,27 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   })),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          links: {
-            create: entry.links,
-          },
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        links: {
+          create: entry.links,
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -4783,34 +4736,7 @@ Object {
 
 exports[`templates can be instantiated with custom datasourceProvider empty 1`] = `
 Empty {
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: empty\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-}",
-      "path": "prisma/seed.js",
-    },
-  },
+  "artifacts": Object {},
   "files": Object {
     "README.md": Object {
       "content": "# Empty Prisma Project
@@ -4822,14 +4748,20 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "{
   \\"name\\": \\"empty\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"devDependencies\\": {
-    \\"prisma\\": \\"2.30.3\\"
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
+    \\"@prisma/client\\": \\"3.1.1\\"
   },
-  \\"engines\\": {
-    \\"node\\": \\">=10.0.0\\"
+  \\"devDependencies\\": {
+    \\"@types/node\\": \\"16.7.10\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.2\\"
+  },
+  \\"scripts\\": {
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
   }
 }",
       "path": "package.json",
@@ -4846,14 +4778,6 @@ generator client {
   provider = \\"prisma-client-js\\"
 }",
       "path": "prisma/schema.prisma",
-    },
-    "prisma/seed.ts": Object {
-      "content": "import { PrismaClient } from \\"@prisma/client\\";
-
-export async function seed() {
-  const prisma = new PrismaClient();
-}",
-      "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
       "content": "<html>
@@ -4974,6 +4898,14 @@ export async function seed() {
 </svg>",
       "path": "public/prisma.svg",
     },
+    "sandbox.ts": Object {
+      "content": "import { PrismaClient } from \\"@prisma/client\\";
+
+export async function seed() {
+  const prisma = new PrismaClient();
+}",
+      "path": "sandbox.ts",
+    },
   },
   "metadata": Object {
     "displayName": "Empty",
@@ -4989,11 +4921,6 @@ MusicStreamingService {
     "prisma/seed.js": Object {
       "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -5002,6 +4929,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
 const NUMBER_OF_ARTISTS = 5;
 const NUMBER_OF_USERS = 10;
@@ -5009,119 +4948,105 @@ const userIds = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => faker.datatype.uuid());
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
+async function main() {
+  // Create artists
+  await prisma.artist.createMany({
+    data: Array.from({
+      length: NUMBER_OF_ARTISTS
+    }).map(() => ({
+      name: faker.name.firstName()
+    }))
   });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
+  const artists = await prisma.artist.findMany(); // Create songs for each artist
 
-  try {
-    // Create artists
-    await prisma.artist.createMany({
-      data: Array.from({
-        length: NUMBER_OF_ARTISTS
-      }).map(() => ({
-        name: faker.name.firstName()
-      }))
+  for (const artist of artists) {
+    await prisma.album.create({
+      data: {
+        cover: faker.image.imageUrl(),
+        name: faker.random.words(2),
+        artists: {
+          connect: {
+            id: artist.id
+          }
+        },
+        songs: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 2,
+              max: MAX_NUMBER_OF_SONGS_PER_ARTIST
+            })
+          }).map(() => ({
+            artistId: artist.id,
+            fileUrl: faker.internet.url(),
+            length: faker.datatype.float(),
+            name: faker.name.firstName()
+          }))
+        }
+      }
     });
-    const artists = await prisma.artist.findMany(); // Create songs for each artist
-
-    for (const artist of artists) {
-      await prisma.album.create({
-        data: {
-          cover: faker.image.imageUrl(),
-          name: faker.random.words(2),
-          artists: {
-            connect: {
-              id: artist.id
-            }
-          },
-          songs: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 2,
-                max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-              })
-            }).map(() => ({
-              artistId: artist.id,
-              fileUrl: faker.internet.url(),
-              length: faker.datatype.float(),
-              name: faker.name.firstName()
-            }))
-          }
-        }
-      });
-    } // Create songs
+  } // Create songs
 
 
-    const songs = await prisma.song.findMany();
+  const songs = await prisma.song.findMany();
 
-    for (const userId of userIds) {
-      // Create users
-      await prisma.user.create({
-        data: {
-          id: userId,
-          email: faker.internet.email(),
-          name: faker.name.firstName(),
-          interactions: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 3,
-                max: songs.length
-              })
-            }).map(() => ({
-              playCount: faker.datatype.number({
-                min: 1,
-                max: 1000
-              }),
-              songId: songs[faker.datatype.number({
-                min: 0,
-                max: songs.length - 1
-              })].id,
-              // random boolean
-              isLiked: Math.random() < 0.5
-            }))
-          }
-        }
-      }); // Create Playlists
-
-      await prisma.playlist.create({
-        data: {
-          name: faker.random.words(2),
-          user: {
-            connect: {
-              id: userId
-            }
-          },
-          // each playlist will have a random list of songs
-          songs: {
-            connect: songs.slice(0, faker.datatype.number({
+  for (const userId of userIds) {
+    // Create users
+    await prisma.user.create({
+      data: {
+        id: userId,
+        email: faker.internet.email(),
+        name: faker.name.firstName(),
+        interactions: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 3,
+              max: songs.length
+            })
+          }).map(() => ({
+            playCount: faker.datatype.number({
               min: 1,
+              max: 1000
+            }),
+            songId: songs[faker.datatype.number({
+              min: 0,
               max: songs.length - 1
-            })).map(({
-              id
-            }) => ({
-              id
-            }))
-          }
+            })].id,
+            // random boolean
+            isLiked: Math.random() < 0.5
+          }))
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    }); // Create Playlists
+
+    await prisma.playlist.create({
+      data: {
+        name: faker.random.words(2),
+        user: {
+          connect: {
+            id: userId
+          }
+        },
+        // each playlist will have a random list of songs
+        songs: {
+          connect: songs.slice(0, faker.datatype.number({
+            min: 1,
+            max: songs.length - 1
+          })).map(({
+            id
+          }) => ({
+            id
+          }))
+        }
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
       "path": "prisma/seed.js",
     },
   },
@@ -5547,12 +5472,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -5562,12 +5493,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
       "path": "package.json",
@@ -5655,8 +5580,10 @@ model Playlist {
       "path": "prisma/schema.prisma",
     },
     "prisma/seed.ts": Object {
-      "content": "import { PrismaClient, Prisma } from '@prisma/client'
+      "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
+
+const prisma = new PrismaClient()
 
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5
 const NUMBER_OF_ARTISTS = 5
@@ -5666,103 +5593,102 @@ const userIds = Array.from({
   length: NUMBER_OF_USERS,
 }).map(() => faker.datatype.uuid())
 
-export async function seed() {
-  const prisma = new PrismaClient()
+async function main() {
+  // Create artists
+  await prisma.artist.createMany({
+    data: Array.from({ length: NUMBER_OF_ARTISTS }).map(() => ({
+      name: faker.name.firstName(),
+    })),
+  })
 
-  try {
-    // Create artists
-    await prisma.artist.createMany({
-      data: Array.from({ length: NUMBER_OF_ARTISTS }).map(() => ({
+  const artists = await prisma.artist.findMany()
+
+  // Create songs for each artist
+  for (const artist of artists) {
+    await prisma.album.create({
+      data: {
+        cover: faker.image.imageUrl(),
+        name: faker.random.words(2),
+        artists: {
+          connect: {
+            id: artist.id,
+          },
+        },
+        songs: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 2,
+              max: MAX_NUMBER_OF_SONGS_PER_ARTIST,
+            }),
+          }).map(() => ({
+            artistId: artist.id,
+            fileUrl: faker.internet.url(),
+            length: faker.datatype.float(),
+            name: faker.name.firstName(),
+          })),
+        },
+      },
+    })
+  }
+
+  // Create songs
+  const songs = await prisma.song.findMany()
+
+  for (const userId of userIds) {
+    // Create users
+    await prisma.user.create({
+      data: {
+        id: userId,
+        email: faker.internet.email(),
         name: faker.name.firstName(),
-      })),
+        interactions: {
+          create: Array.from({
+            length: faker.datatype.number({
+              min: 3,
+              max: songs.length,
+            }),
+          }).map(() => ({
+            playCount: faker.datatype.number({ min: 1, max: 1000 }),
+            songId:
+              songs[faker.datatype.number({ min: 0, max: songs.length - 1 })]
+                .id,
+            // random boolean
+            isLiked: Math.random() < 0.5,
+          })),
+        },
+      },
     })
 
-    const artists = await prisma.artist.findMany()
-
-    // Create songs for each artist
-    for (const artist of artists) {
-      await prisma.album.create({
-        data: {
-          cover: faker.image.imageUrl(),
-          name: faker.random.words(2),
-          artists: {
-            connect: {
-              id: artist.id,
-            },
-          },
-          songs: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 2,
-                max: MAX_NUMBER_OF_SONGS_PER_ARTIST,
-              }),
-            }).map(() => ({
-              artistId: artist.id,
-              fileUrl: faker.internet.url(),
-              length: faker.datatype.float(),
-              name: faker.name.firstName(),
-            })),
+    // Create Playlists
+    await prisma.playlist.create({
+      data: {
+        name: faker.random.words(2),
+        user: {
+          connect: {
+            id: userId,
           },
         },
-      })
-    }
-
-    // Create songs
-    const songs = await prisma.song.findMany()
-
-    for (const userId of userIds) {
-      // Create users
-      await prisma.user.create({
-        data: {
-          id: userId,
-          email: faker.internet.email(),
-          name: faker.name.firstName(),
-          interactions: {
-            create: Array.from({
-              length: faker.datatype.number({
-                min: 3,
-                max: songs.length,
-              }),
-            }).map(() => ({
-              playCount: faker.datatype.number({ min: 1, max: 1000 }),
-              songId:
-                songs[faker.datatype.number({ min: 0, max: songs.length - 1 })]
-                  .id,
-              // random boolean
-              isLiked: Math.random() < 0.5,
-            })),
-          },
+        // each playlist will have a random list of songs
+        songs: {
+          connect: songs
+            .slice(
+              0,
+              faker.datatype.number({ min: 1, max: songs.length - 1 }),
+            )
+            .map(({ id }) => ({ id })),
         },
-      })
-
-      // Create Playlists
-      await prisma.playlist.create({
-        data: {
-          name: faker.random.words(2),
-          user: {
-            connect: {
-              id: userId,
-            },
-          },
-          // each playlist will have a random list of songs
-          songs: {
-            connect: songs
-              .slice(
-                0,
-                faker.datatype.number({ min: 1, max: songs.length - 1 }),
-              )
-              .map(({ id }) => ({ id })),
-          },
-        },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -6933,11 +6859,6 @@ RentalsPlatform {
     "prisma/seed.js": Object {
       "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -6946,6 +6867,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 10;
 const NUMBER_OF_ROOMS = 20;
 const roomIds = Array.from({
@@ -6986,7 +6919,7 @@ const rooms = Array.from({
     fileName: faker.image.imageUrl()
   }))
 }));
-const users = Array.from({
+const data = Array.from({
   length: NUMBER_OF_USERS
 }).map(() => ({
   email: faker.internet.email(),
@@ -7034,56 +6967,40 @@ const users = Array.from({
   })
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+async function main() {
+  rooms.forEach(async room => await prisma.room.create({
+    data: {
+      id: room.id,
+      address: room.address,
+      price: room.price,
+      summary: room.summary,
+      media: {
+        create: room.media
+      }
     }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
+  }));
 
-  try {
-    for (let room of rooms) {
-      await prisma.room.create({
-        data: {
-          id: room.id,
-          address: room.address,
-          price: room.price,
-          summary: room.summary,
-          media: {
-            create: room.media
-          }
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        email: entry.email,
+        name: entry.name,
+        reservations: {
+          create: entry.reservations
+        },
+        reviews: {
+          create: entry.reviews
         }
-      });
-    }
-
-    for (let user of users) {
-      await prisma.user.create({
-        data: {
-          email: user.email,
-          name: user.name,
-          reservations: {
-            create: user.reservations
-          },
-          reviews: {
-            create: user.reviews
-          }
-        }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
       "path": "prisma/seed.js",
     },
   },
@@ -7443,12 +7360,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -7458,12 +7381,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
       "path": "package.json",
@@ -7546,8 +7463,9 @@ model Media {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-
 import * as faker from 'faker'
+
+const prisma = new PrismaClient()
 
 const NUMBER_OF_USERS = 10
 const NUMBER_OF_ROOMS = 20
@@ -7580,7 +7498,7 @@ const rooms = Array.from({
   })),
 }))
 
-const users = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
+const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   email: faker.internet.email(),
   name: faker.name.firstName(),
   reviews: Array.from({
@@ -7629,11 +7547,10 @@ const users = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   }),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
+async function main() {
 
-  try {
-    for (let room of rooms) {
+  rooms.forEach(
+    async (room) =>
       await prisma.room.create({
         data: {
           id: room.id,
@@ -7644,30 +7561,33 @@ export async function seed() {
             create: room.media,
           },
         },
-      })
-    }
+      }),
+  )
 
-    for (let user of users) {
-      await prisma.user.create({
-        data: {
-          email: user.email,
-          name: user.name,
-          reservations: {
-            create: user.reservations,
-          },
-          reviews: {
-            create: user.reviews,
-          },
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        email: entry.email,
+        name: entry.name,
+        reservations: {
+          create: entry.reservations,
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+        reviews: {
+          create: entry.reviews,
+        },
+      },
+    })
   }
-}",
+
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -8095,11 +8015,6 @@ Saas {
     "prisma/seed.js": Object {
       "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -8108,6 +8023,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: saas\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const NUMBER_OF_INVITES = 4;
 const data = Array.from({
@@ -8131,46 +8058,32 @@ const data = Array.from({
   }))
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: saas\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          account: {
-            create: {
-              stripeCustomerId: entry.account.stripeCustomerId,
-              stripeSubscriptionId: entry.account.stripeSubscriptionId,
-              isActive: true,
-              invites: {
-                create: entry.invites
-              }
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        account: {
+          create: {
+            stripeCustomerId: entry.account.stripeCustomerId,
+            stripeSubscriptionId: entry.account.stripeSubscriptionId,
+            isActive: true,
+            invites: {
+              create: entry.invites
             }
           }
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
       "path": "prisma/seed.js",
     },
   },
@@ -8400,12 +8313,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "{
   \\"name\\": \\"saas\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -8415,12 +8334,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
       "path": "package.json",
@@ -8474,6 +8387,8 @@ model Invite {
       "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
 
+const prisma = new PrismaClient()
+
 const NUMBER_OF_USERS = 4
 const NUMBER_OF_INVITES = 4
 
@@ -8493,35 +8408,34 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   })),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          account: {
-            create: {
-              stripeCustomerId: entry.account.stripeCustomerId,
-              stripeSubscriptionId: entry.account.stripeSubscriptionId,
-              isActive: true,
-              invites: {
-                create: entry.invites,
-              },
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        account: {
+          create: {
+            stripeCustomerId: entry.account.stripeCustomerId,
+            stripeSubscriptionId: entry.account.stripeSubscriptionId,
+            isActive: true,
+            invites: {
+              create: entry.invites,
             },
           },
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -8885,11 +8799,6 @@ UrlShortener {
     "prisma/seed.js": Object {
       "content": "\\"use strict\\";
 
-Object.defineProperty(exports, \\"__esModule\\", {
-  value: true
-});
-exports.seed = seed;
-
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
 
 var faker = _interopRequireWildcard(require(\\"faker\\"));
@@ -8898,6 +8807,18 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"funct
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schemaPath = \\"/tmp/schema.prisma\\";
+const pcw = new _studioPcw.PCW(schema, schemaPath, {
+  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
+  }
+});
+const {
+  prisma: prisma
+} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const MAX_NUMBER_OF_LINKS = 5;
 const data = Array.from({
@@ -8916,39 +8837,25 @@ const data = Array.from({
   }))
 }));
 
-async function seed() {
-  const schema = \`PRISMA TEMPLATE: urlShortener\`;
-  const schemaPath = \\"/tmp/schema.prisma\\";
-  const pcw = new _studioPcw.PCW(schema, schemaPath, {
-    PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-  }, {
-    resolve: {
-      \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-    }
-  });
-  const {
-    prisma: prisma
-  } = await pcw.getPrismaClient();
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          links: {
-            create: entry.links
-          }
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        links: {
+          create: entry.links
         }
-      });
-    }
-  } catch (e) {
-    await prisma.$disconnect();
-    throw e;
-  } finally {
-    await prisma.$disconnect();
+      }
+    });
   }
-}",
+}
+
+main().catch(e => {
+  console.error(e);
+}).finally(async () => {
+  await prisma.$disconnect();
+});",
       "path": "prisma/seed.js",
     },
   },
@@ -9110,12 +9017,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "{
   \\"name\\": \\"url-shortener\\",
   \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
     \\"@types/node\\": \\"16.9.6\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.0.1\\",
+    \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
     \\"typescript\\": \\"4.4.3\\"
   },
@@ -9125,12 +9038,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
-  },
-  \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.0.1\\"
-  },
-  \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
   }
 }",
       "path": "package.json",
@@ -9172,6 +9079,8 @@ model User {
       "content": "import { PrismaClient } from '@prisma/client'
 import * as faker from 'faker'
 
+const prisma = new PrismaClient()
+
 const NUMBER_OF_USERS = 4
 const MAX_NUMBER_OF_LINKS = 5
 
@@ -9189,28 +9098,27 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
   })),
 }))
 
-export async function seed() {
-  const prisma = new PrismaClient()
-
-  try {
-    for (let entry of data) {
-      await prisma.user.create({
-        data: {
-          name: entry.name,
-          email: entry.email,
-          links: {
-            create: entry.links,
-          },
+async function main() {
+  for (let entry of data) {
+    await prisma.user.create({
+      data: {
+        name: entry.name,
+        email: entry.email,
+        links: {
+          create: entry.links,
         },
-      })
-    }
-  } catch (e) {
-    await prisma.$disconnect()
-    throw e
-  } finally {
-    await prisma.$disconnect()
+      },
+    })
   }
-}",
+}
+
+main()
+  .catch((e) => {
+    console.error(e)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
