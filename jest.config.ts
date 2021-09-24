@@ -1,6 +1,7 @@
 import type { InitialOptionsTsJest } from 'ts-jest/dist/types'
 
 const config: InitialOptionsTsJest = {
+  rootDir: './tests',
   preset: 'ts-jest',
   watchPlugins: [
     'jest-watch-typeahead/filename',
