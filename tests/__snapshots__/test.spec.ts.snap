@@ -5,12 +5,17 @@ exports[`Template classes have static data artifcats empty 1`] = `Object {}`;
 exports[`Template classes have static data artifcats musicStreamingService 1`] = `
 Object {
   "prisma/seed.mjs": Object {
-    "content": "import PCW from \\"@prisma/studio-pcw\\";
+    "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -131,12 +136,17 @@ exports[`Template classes have static data artifcats nextjs 1`] = `Object {}`;
 exports[`Template classes have static data artifcats rentalsPlatform 1`] = `
 Object {
   "prisma/seed.mjs": Object {
-    "content": "import PCW from \\"@prisma/studio-pcw\\";
+    "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -271,12 +281,17 @@ main().catch(e => {
 exports[`Template classes have static data artifcats saas 1`] = `
 Object {
   "prisma/seed.mjs": Object {
-    "content": "import PCW from \\"@prisma/studio-pcw\\";
+    "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: saas\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -338,12 +353,17 @@ main().catch(e => {
 exports[`Template classes have static data artifcats urlShortener 1`] = `
 Object {
   "prisma/seed.mjs": Object {
-    "content": "import PCW from \\"@prisma/studio-pcw\\";
+    "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: urlShortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -4866,12 +4886,17 @@ exports[`templates can be instantiated with custom datasourceProvider musicStrea
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
-      "content": "import PCW from \\"@prisma/studio-pcw\\";
+      "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -6789,12 +6814,17 @@ exports[`templates can be instantiated with custom datasourceProvider rentalsPla
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
-      "content": "import PCW from \\"@prisma/studio-pcw\\";
+      "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -7931,12 +7961,17 @@ exports[`templates can be instantiated with custom datasourceProvider saas 1`] =
 Saas {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
-      "content": "import PCW from \\"@prisma/studio-pcw\\";
+      "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: saas\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
@@ -8703,12 +8738,17 @@ exports[`templates can be instantiated with custom datasourceProvider urlShorten
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
-      "content": "import PCW from \\"@prisma/studio-pcw\\";
+      "content": "import path from \\"path\\";
+import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: urlShortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
+}, {
+  resolve: {
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+  }
 });
 const {
   prisma: prisma
