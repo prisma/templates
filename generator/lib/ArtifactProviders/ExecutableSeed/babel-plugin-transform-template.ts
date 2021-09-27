@@ -15,7 +15,9 @@ import * as Babel from '@babel/core'
  *
  * 2. Adds a `import PCW from "@prisma/studio-pcw"` statement at the top of the file. (PCW is CommonJS)
  *
- * 3. Replaces all instances of `const variable = new PrismaClient()` with:
+ * 3. Adds a `import path from "path"` statement at the top of the file.
+ *
+ * 4. Replaces all instances of `const variable = new PrismaClient()` with:
  * ```
  * const schema = '...';
  * const schemaPath = '...';
@@ -41,7 +43,12 @@ import * as Babel from '@babel/core'
  * import PCW from '@prisma/studio-pcw'
  * import { Prisma } from '@prisma/client'
  *
- * const pcw = new PCW.PCW("schema-string", schemaPath);
+ * const pcw = new PCW.PCW(
+ *  "schema-string",
+ *  schemaPath,
+ *  { dbEnvVar: "" },
+ *  { resolve: { ".prisma/client": path.join(process.env(), "node_modules/.prisma/client") }
+ * });
  * const prisma = await pcw.getPrismaClient()
  *
  * await prisma.user.findMany()
@@ -70,6 +77,14 @@ export function babelPluginTransformTemplate(
               Babel.types.importDeclaration(
                 [Babel.types.importDefaultSpecifier(Babel.types.identifier('PCW'))],
                 Babel.types.stringLiteral('@prisma/studio-pcw')
+              )
+            )
+
+            // Add a `import path from "path"` at the top of the file
+            path.node.body.unshift(
+              Babel.types.importDeclaration(
+                [Babel.types.importDefaultSpecifier(Babel.types.identifier('path'))],
+                Babel.types.stringLiteral('path')
               )
             )
           },
@@ -146,7 +161,18 @@ export function babelPluginTransformTemplate(
                 ])
               )
 
-              // Replace with `const pcw = new PCW.PCW(schema, schemaPath, { envVarName: "..." })
+              //
+              /**
+               * Replace with:
+               * ```
+               * const pcw = new PCW.PCW(
+               *   schema,
+               *   schemaPath,
+               *   { envVarName: "..." },
+               *   { resolve: { ".prisma/client": path.join(process.cwd(), "node_modules/.prisma/client") } }
+               * )
+               * ```
+               */
               path.replaceWith(
                 Babel.types.variableDeclaration('const', [
                   Babel.types.variableDeclarator(
@@ -163,6 +189,32 @@ export function babelPluginTransformTemplate(
                           Babel.types.objectProperty(
                             Babel.types.identifier(datasourceUrlEnvironmentVariableName),
                             Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
+                          ),
+                        ]),
+                        Babel.types.objectExpression([
+                          Babel.types.objectProperty(
+                            Babel.types.identifier('resolve'),
+                            Babel.types.objectExpression([
+                              Babel.types.objectProperty(
+                                Babel.types.stringLiteral('.prisma/client'),
+                                Babel.types.callExpression(
+                                  Babel.types.memberExpression(
+                                    Babel.types.identifier('path'),
+                                    Babel.types.identifier('join')
+                                  ),
+                                  [
+                                    Babel.types.callExpression(
+                                      Babel.types.memberExpression(
+                                        Babel.types.identifier('process'),
+                                        Babel.types.identifier('cwd')
+                                      ),
+                                      []
+                                    ),
+                                    Babel.types.stringLiteral('node_modules/.prisma/client'),
+                                  ]
+                                )
+                              ),
+                            ])
                           ),
                         ]),
                       ]
