@@ -13,6 +13,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -144,6 +145,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -289,6 +291,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -361,6 +364,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -4894,6 +4898,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -6822,6 +6827,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -7969,6 +7975,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
@@ -8746,6 +8753,7 @@ const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
 }, {
+  forcePrismaLibrary: true,
   resolve: {
     \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
   }
