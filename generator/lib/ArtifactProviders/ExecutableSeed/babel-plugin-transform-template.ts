@@ -13,13 +13,13 @@ import * as Babel from '@babel/core'
  * 1. Removes the `PrismaClient` import from the `@prisma/client` module. This is mostly cleanup, since we
  * know no one in the transformed script will use it
  *
- * 2. Adds a `import { PCW } from "@prisma/studio-pcw"` statement at the top of the file.
+ * 2. Adds a `import PCW from "@prisma/studio-pcw"` statement at the top of the file. (PCW is CommonJS)
  *
  * 3. Replaces all instances of `const variable = new PrismaClient()` with:
  * ```
  * const schema = '...';
  * const schemaPath = '...';
- * const pcw = new PCW('...');
+ * const pcw = new PCW.PCW('...');
  * const variable = await pcw.getPrismaClient()
  * ```
  *
@@ -38,10 +38,10 @@ import * as Babel from '@babel/core'
  *
  * This outputs:
  * ```
- * import { PCW } from '@prisma/studio-pcw'
+ * import PCW from '@prisma/studio-pcw'
  * import { Prisma } from '@prisma/client'
  *
- * const pcw = new PCW("schema-string", schemaPath);
+ * const pcw = new PCW.PCW("schema-string", schemaPath);
  * const prisma = await pcw.getPrismaClient()
  *
  * await prisma.user.findMany()
@@ -65,10 +65,10 @@ export function babelPluginTransformTemplate(
       return {
         visitor: {
           Program(path) {
-            // Add a `import { PCW } from "@prisma/studio-pcw"` at the top of the file
+            // Add a `import PCW from "@prisma/studio-pcw"` at the top of the file
             path.node.body.unshift(
               Babel.types.importDeclaration(
-                [Babel.types.importSpecifier(Babel.types.identifier('PCW'), Babel.types.identifier('PCW'))],
+                [Babel.types.importDefaultSpecifier(Babel.types.identifier('PCW'))],
                 Babel.types.stringLiteral('@prisma/studio-pcw')
               )
             )
@@ -106,15 +106,10 @@ export function babelPluginTransformTemplate(
              * ```
              * const schema = '...'
              * const schemaPath = '...'
-             * const pcw = new PCW(
+             * const pcw = new PCW.PCW(
              *   schema,
              *   schemaPath,
-             *   { envVarName: process.env.envVarName },
-             *   {
-             *     resolve: {
-             *       ".prisma/client": require.resolve(".prisma/client")
-             *     }
-             *   }
+             *   { envVarName: process.env.envVarName }
              * );
              * const variable = await pcw.getPrismaClient()
              * ```
@@ -151,38 +146,27 @@ export function babelPluginTransformTemplate(
                 ])
               )
 
-              // Replace with `const pcw = new PCW(...)
+              // Replace with `const pcw = new PCW.PCW(schema, schemaPath, { envVarName: "..." })
               path.replaceWith(
                 Babel.types.variableDeclaration('const', [
                   Babel.types.variableDeclarator(
                     Babel.types.identifier('pcw'),
-                    Babel.types.newExpression(Babel.types.identifier('PCW'), [
-                      Babel.types.identifier('schema'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
-                      Babel.types.identifier('schemaPath'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
-                      Babel.types.objectExpression([
-                        Babel.types.objectProperty(
-                          Babel.types.identifier(datasourceUrlEnvironmentVariableName),
-                          Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
-                        ),
-                      ]),
-                      Babel.types.objectExpression([
-                        Babel.types.objectProperty(
-                          Babel.types.identifier('resolve'),
-                          Babel.types.objectExpression([
-                            Babel.types.objectProperty(
-                              Babel.types.stringLiteral('.prisma/client'),
-                              Babel.types.callExpression(
-                                Babel.types.memberExpression(
-                                  Babel.types.identifier('require'),
-                                  Babel.types.identifier('resolve')
-                                ),
-                                [Babel.types.stringLiteral('.prisma/client')]
-                              )
-                            ),
-                          ])
-                        ),
-                      ]),
-                    ])
+                    Babel.types.newExpression(
+                      Babel.types.memberExpression(
+                        Babel.types.identifier('PCW'),
+                        Babel.types.identifier('PCW')
+                      ),
+                      [
+                        Babel.types.identifier('schema'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
+                        Babel.types.identifier('schemaPath'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
+                        Babel.types.objectExpression([
+                          Babel.types.objectProperty(
+                            Babel.types.identifier(datasourceUrlEnvironmentVariableName),
+                            Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
+                          ),
+                        ]),
+                      ]
+                    )
                   ),
                 ])
               )
