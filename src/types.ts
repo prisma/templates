@@ -26,6 +26,8 @@ export type File = {
 
 export type BaseTemplateParameters = {
   datasourceProvider?: Data.PrismaDatasourceProviderName
+  repositoryOwner?: String
+  repositoryHandle?: String
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
