@@ -9364,10 +9364,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.1.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.7.10\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
-    \\"typescript\\": \\"4.4.2\\"
+    \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -9527,25 +9527,13 @@ export async function seed() {
 exports[`templates can be instantiated with custom repository owner and repository handle musicStreamingService 1`] = `
 MusicStreamingService {
   "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-var faker = _interopRequireWildcard(require(\\"faker\\"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"function\\") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+    "prisma/seed.mjs": Object {
+      "content": "import PCW from \\"@prisma/studio-pcw\\";
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new _studioPcw.PCW(schema, schemaPath, {
+const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  resolve: {
-    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-  }
 });
 const {
   prisma: prisma
@@ -9656,7 +9644,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -10090,7 +10078,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -10191,7 +10179,7 @@ model Playlist {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -10281,10 +10269,7 @@ async function main() {
         // each playlist will have a random list of songs
         songs: {
           connect: songs
-            .slice(
-              0,
-              faker.datatype.number({ min: 1, max: songs.length - 1 }),
-            )
+            .slice(0, faker.datatype.number({ min: 1, max: songs.length - 1 }))
             .map(({ id }) => ({ id })),
         },
       },
@@ -11467,25 +11452,13 @@ a {
 exports[`templates can be instantiated with custom repository owner and repository handle rentalsPlatform 1`] = `
 RentalsPlatform {
   "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-var faker = _interopRequireWildcard(require(\\"faker\\"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"function\\") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+    "prisma/seed.mjs": Object {
+      "content": "import PCW from \\"@prisma/studio-pcw\\";
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new _studioPcw.PCW(schema, schemaPath, {
+const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  resolve: {
-    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-  }
 });
 const {
   prisma: prisma
@@ -11612,7 +11585,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -11980,7 +11953,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -12075,7 +12048,7 @@ model Media {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -12160,7 +12133,6 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-
   rooms.forEach(
     async (room) =>
       await prisma.room.create({
@@ -12190,7 +12162,6 @@ async function main() {
       },
     })
   }
-
 }
 
 main()
@@ -12624,25 +12595,13 @@ main()
 exports[`templates can be instantiated with custom repository owner and repository handle saas 1`] = `
 Saas {
   "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-var faker = _interopRequireWildcard(require(\\"faker\\"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"function\\") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+    "prisma/seed.mjs": Object {
+      "content": "import PCW from \\"@prisma/studio-pcw\\";
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: saas\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new _studioPcw.PCW(schema, schemaPath, {
+const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  resolve: {
-    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-  }
 });
 const {
   prisma: prisma
@@ -12696,7 +12655,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -12934,7 +12893,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -12998,7 +12957,7 @@ model Invite {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -13409,25 +13368,13 @@ main()
 exports[`templates can be instantiated with custom repository owner and repository handle urlShortener 1`] = `
 UrlShortener {
   "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-
-var _studioPcw = require(\\"@prisma/studio-pcw\\");
-
-var faker = _interopRequireWildcard(require(\\"faker\\"));
-
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== \\"function\\") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== \\"object\\" && typeof obj !== \\"function\\") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== \\"default\\" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+    "prisma/seed.mjs": Object {
+      "content": "import PCW from \\"@prisma/studio-pcw\\";
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: urlShortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new _studioPcw.PCW(schema, schemaPath, {
+const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  resolve: {
-    \\".prisma/client\\": require.resolve(\\".prisma/client\\")
-  }
 });
 const {
   prisma: prisma
@@ -13469,7 +13416,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -13639,7 +13586,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -13691,7 +13638,7 @@ model User {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
