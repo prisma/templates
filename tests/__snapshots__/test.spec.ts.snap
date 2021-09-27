@@ -9455,7 +9455,7 @@ Empty {
     "README.md": Object {
       "content": "# Empty Prisma Project
 
-An empty Prisma Schema with no models, perfect as a starting point for your own schema.<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+An empty Prisma Schema with no models, perfect as a starting point for your own schema.<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
@@ -9784,7 +9784,7 @@ Once you clone your repo, you'll want to set up this repo for local development.
    - [Read more about the Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
    - [Read more about database seeding](https://www.prisma.io/docs/guides/database/seed-database)
 
-To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
@@ -10861,7 +10861,7 @@ Nextjs {
     "README.md": Object {
       "content": "# Vercel deployment example
 
-[Deployment guide](https://www.prisma.io/docs/guides/deployment/deploying-to-vercel)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+[Deployment guide](https://www.prisma.io/docs/guides/deployment/deploying-to-vercel)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
@@ -11740,7 +11740,7 @@ Once you clone your repo, you'll want to set up this repo for local development.
    - [Read more about the Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
    - [Read more about database seeding](https://www.prisma.io/docs/guides/database/seed-database)
 
-To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
@@ -12826,7 +12826,7 @@ Once you clone your repo, you'll want to set up this repo for local development.
    - [Read more about the Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
    - [Read more about database seeding](https://www.prisma.io/docs/guides/database/seed-database)
 
-To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
@@ -13597,7 +13597,7 @@ Once you clone your repo, you'll want to set up this repo for local development.
    - [Read more about the Prisma Schema](https://www.prisma.io/docs/concepts/components/prisma-schema)
    - [Read more about database seeding](https://www.prisma.io/docs/guides/database/seed-database)
 
-To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node)
+To learn more about Prisma, we recommend reading through our [Getting Started guide](https://www.prisma.io/docs/getting-started)<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma/templates-node&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
       ",
       "path": "README.md",
     },
