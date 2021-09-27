@@ -6,7 +6,7 @@ exports[`Template classes have static data artifcats musicStreamingService 1`] =
 Object {
   "prisma/seed.mjs": Object {
     "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -132,7 +132,7 @@ exports[`Template classes have static data artifcats rentalsPlatform 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -272,7 +272,7 @@ exports[`Template classes have static data artifcats saas 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: saas\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -339,7 +339,7 @@ exports[`Template classes have static data artifcats urlShortener 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: urlShortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -409,10 +409,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.1.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.7.10\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
-    \\"typescript\\": \\"4.4.2\\"
+    \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -994,7 +994,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -1095,7 +1095,7 @@ model Playlist {
   },
   "prisma/seed.ts": Object {
     "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -1185,10 +1185,7 @@ async function main() {
         // each playlist will have a random list of songs
         songs: {
           connect: songs
-            .slice(
-              0,
-              faker.datatype.number({ min: 1, max: songs.length - 1 }),
-            )
+            .slice(0, faker.datatype.number({ min: 1, max: songs.length - 1 }))
             .map(({ id }) => ({ id })),
         },
       },
@@ -2718,7 +2715,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -2813,7 +2810,7 @@ model Media {
   },
   "prisma/seed.ts": Object {
     "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -2898,7 +2895,6 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-
   rooms.forEach(
     async (room) =>
       await prisma.room.create({
@@ -2928,7 +2924,6 @@ async function main() {
       },
     })
   }
-
 }
 
 main()
@@ -3588,7 +3583,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -3652,7 +3647,7 @@ model Invite {
   },
   "prisma/seed.ts": Object {
     "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -4221,7 +4216,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -4273,7 +4268,7 @@ model User {
   },
   "prisma/seed.ts": Object {
     "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -4707,10 +4702,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.1.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.7.10\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"prisma\\": \\"3.1.1\\",
     \\"ts-node\\": \\"10.2.1\\",
-    \\"typescript\\": \\"4.4.2\\"
+    \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -4872,7 +4867,7 @@ MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -5420,7 +5415,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -5521,7 +5516,7 @@ model Playlist {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -5611,10 +5606,7 @@ async function main() {
         // each playlist will have a random list of songs
         songs: {
           connect: songs
-            .slice(
-              0,
-              faker.datatype.number({ min: 1, max: songs.length - 1 }),
-            )
+            .slice(0, faker.datatype.number({ min: 1, max: songs.length - 1 }))
             .map(({ id }) => ({ id })),
         },
       },
@@ -6798,7 +6790,7 @@ RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -7296,7 +7288,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -7391,7 +7383,7 @@ model Media {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -7476,7 +7468,6 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-
   rooms.forEach(
     async (room) =>
       await prisma.room.create({
@@ -7506,7 +7497,6 @@ async function main() {
       },
     })
   }
-
 }
 
 main()
@@ -7942,7 +7932,7 @@ Saas {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: saas\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -8237,7 +8227,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -8301,7 +8291,7 @@ model Invite {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
@@ -8714,7 +8704,7 @@ UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import PCW from \\"@prisma/studio-pcw\\";
-import * as faker from 'faker';
+import faker from 'faker';
 const schema = \`PRISMA TEMPLATE: urlShortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
@@ -8929,7 +8919,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.9.6\\",
+    \\"@types/node\\": \\"16.10.1\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.1.1\\",
@@ -8981,7 +8971,7 @@ model User {
     },
     "prisma/seed.ts": Object {
       "content": "import { PrismaClient } from '@prisma/client'
-import * as faker from 'faker'
+import faker from 'faker'
 
 const prisma = new PrismaClient()
 
