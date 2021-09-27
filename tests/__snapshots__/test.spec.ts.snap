@@ -4,7 +4,7 @@ exports[`Template classes have static data artifcats empty 1`] = `Object {}`;
 
 exports[`Template classes have static data artifcats musicStreamingService 1`] = `
 Object {
-  "prisma/seed.js": Object {
+  "prisma/seed.mjs": Object {
     "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -133,7 +133,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-    "path": "prisma/seed.js",
+    "path": "prisma/seed.mjs",
   },
 }
 `;
@@ -142,7 +142,7 @@ exports[`Template classes have static data artifcats nextjs 1`] = `Object {}`;
 
 exports[`Template classes have static data artifcats rentalsPlatform 1`] = `
 Object {
-  "prisma/seed.js": Object {
+  "prisma/seed.mjs": Object {
     "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -287,14 +287,14 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-    "path": "prisma/seed.js",
+    "path": "prisma/seed.mjs",
   },
 }
 `;
 
 exports[`Template classes have static data artifcats saas 1`] = `
 Object {
-  "prisma/seed.js": Object {
+  "prisma/seed.mjs": Object {
     "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -366,14 +366,14 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-    "path": "prisma/seed.js",
+    "path": "prisma/seed.mjs",
   },
 }
 `;
 
 exports[`Template classes have static data artifcats urlShortener 1`] = `
 Object {
-  "prisma/seed.js": Object {
+  "prisma/seed.mjs": Object {
     "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -433,7 +433,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-    "path": "prisma/seed.js",
+    "path": "prisma/seed.mjs",
   },
 }
 `;
@@ -4918,7 +4918,7 @@ export async function seed() {
 exports[`templates can be instantiated with custom datasourceProvider musicStreamingService 1`] = `
 MusicStreamingService {
   "artifacts": Object {
-    "prisma/seed.js": Object {
+    "prisma/seed.mjs": Object {
       "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -5047,7 +5047,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -6856,7 +6856,7 @@ a {
 exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform 1`] = `
 RentalsPlatform {
   "artifacts": Object {
-    "prisma/seed.js": Object {
+    "prisma/seed.mjs": Object {
       "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -7001,7 +7001,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -8012,7 +8012,7 @@ main()
 exports[`templates can be instantiated with custom datasourceProvider saas 1`] = `
 Saas {
   "artifacts": Object {
-    "prisma/seed.js": Object {
+    "prisma/seed.mjs": Object {
       "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -8084,7 +8084,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
@@ -8796,7 +8796,7 @@ main()
 exports[`templates can be instantiated with custom datasourceProvider urlShortener 1`] = `
 UrlShortener {
   "artifacts": Object {
-    "prisma/seed.js": Object {
+    "prisma/seed.mjs": Object {
       "content": "\\"use strict\\";
 
 var _studioPcw = require(\\"@prisma/studio-pcw\\");
@@ -8856,7 +8856,7 @@ main().catch(e => {
 }).finally(async () => {
   await prisma.$disconnect();
 });",
-      "path": "prisma/seed.js",
+      "path": "prisma/seed.mjs",
     },
   },
   "files": Object {
