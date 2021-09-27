@@ -40,8 +40,8 @@ describe('templates can be instantiated', () => {
       it(Template.metadata.name, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
-          repositoryOwner: "prisma",
-          repositoryHandle: "templates-node"
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
         })
         expect(template).toMatchSnapshot()
       })
