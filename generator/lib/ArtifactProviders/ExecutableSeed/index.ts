@@ -33,7 +33,6 @@ const babelTransform = ({ templateName, content }: { templateName: string; conte
         },
       }), // transform imports
       '@babel/plugin-transform-typescript', // strip types
-      '@babel/plugin-transform-modules-commonjs', // convert ES imports to CommonJS so it is executable in plain Node
     ],
   })!.code!
 }
