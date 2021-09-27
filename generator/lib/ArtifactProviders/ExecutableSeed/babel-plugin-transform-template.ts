@@ -193,6 +193,10 @@ export function babelPluginTransformTemplate(
                         ]),
                         Babel.types.objectExpression([
                           Babel.types.objectProperty(
+                            Babel.types.identifier('forcePrismaLibrary'),
+                            Babel.types.booleanLiteral(true)
+                          ),
+                          Babel.types.objectProperty(
                             Babel.types.identifier('resolve'),
                             Babel.types.objectExpression([
                               Babel.types.objectProperty(
