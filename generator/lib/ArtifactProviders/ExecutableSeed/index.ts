@@ -15,7 +15,7 @@ export const run: ArtifactProvider = (params) => {
 
   return [
     {
-      path: 'prisma/seed.js',
+      path: 'prisma/seed.mjs', // Mark this as an ESM to enable top-level await (which the seed script uses after Babel transform)
       content: seedSourceCode,
     },
   ]
