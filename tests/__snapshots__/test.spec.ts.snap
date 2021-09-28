@@ -15,7 +15,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -147,7 +147,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -293,7 +293,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -366,7 +366,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -4900,7 +4900,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -6829,7 +6829,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -7977,7 +7977,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
@@ -8755,7 +8755,7 @@ const pcw = new PCW.PCW(schema, schemaPath, {
 }, {
   forcePrismaLibrary: true,
   resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client\\")
+    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
   }
 });
 const {
