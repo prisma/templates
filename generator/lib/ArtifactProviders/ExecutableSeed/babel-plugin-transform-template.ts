@@ -214,7 +214,7 @@ export function babelPluginTransformTemplate(
                                       ),
                                       []
                                     ),
-                                    Babel.types.stringLiteral('node_modules/.prisma/client'),
+                                    Babel.types.stringLiteral('node_modules/.prisma/client/index.js'),
                                   ]
                                 )
                               ),
