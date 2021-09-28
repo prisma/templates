@@ -35,4 +35,16 @@ describe('templates can be instantiated', () => {
       })
     })
   })
+  describe('with custom repository owner and repository handle', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
+        })
+        expect(template).toMatchSnapshot()
+      })
+    })
+  })
 })
