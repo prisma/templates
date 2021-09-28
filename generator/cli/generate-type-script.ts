@@ -255,7 +255,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
       const templateParameterDefaults: Required<TemplateParameters> = {
         datasourceProvider: Data.PrismaDatasourceProviderName.postgresql,
         repositoryOwner: null,
-        repositoryHandle: null
+        repositoryHandle: null,
+        engineType: null
       }
 
       ${sourceCodeSectionHeader('Class')}

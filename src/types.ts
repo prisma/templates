@@ -24,10 +24,12 @@ export type File = {
   path: string
 }
 
+type EngineType = 'library' | 'binary' | 'dataproxy'
 export type BaseTemplateParameters = {
   datasourceProvider?: Data.PrismaDatasourceProviderName
   repositoryOwner?: string | null
   repositoryHandle?: string | null
+  engineType?: EngineType | null
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>

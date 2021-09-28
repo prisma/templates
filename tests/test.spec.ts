@@ -47,4 +47,17 @@ describe('templates can be instantiated', () => {
       })
     })
   })
+  describe('with custom engineType', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
+          engineType: 'library',
+        })
+        expect(template).toMatchSnapshot()
+      })
+    })
+  })
 })
