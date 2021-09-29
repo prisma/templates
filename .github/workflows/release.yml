@@ -1,0 +1,25 @@
+name: Release Stable
+
+on: workflow_dispatch
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - name: Get all git commits and tags
+        run: git fetch --prune --unshallow --tags
+      - name: Install dependencies
+        run: yarn --fronzen-lockfile
+      - name: Release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          yarn -s release:stable
