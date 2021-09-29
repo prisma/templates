@@ -9765,7 +9765,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }",
   "path": "prisma/schema.prisma",
 }
@@ -9783,7 +9783,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }
 
 model User {
@@ -9861,7 +9861,7 @@ exports[`templates can be instantiated with custom engineType nextJs 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }
 
 datasource db {
@@ -9907,7 +9907,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }
 
 model User {
@@ -9987,7 +9987,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }
 
 model User {
@@ -10036,7 +10036,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\" 
- engineType = \\"library\\"
+  engineType = \\"library\\"
 }
 
 model Link {

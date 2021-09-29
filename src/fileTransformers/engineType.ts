@@ -9,7 +9,7 @@ export const engineType: FileTransformer = (params) => {
     if (parameters.engineType) {
       content = content.replace(
         `provider = "prisma-client-js"`,
-        `provider = "prisma-client-js" \n engineType = "${parameters.engineType}"`
+        `provider = "prisma-client-js" \n  engineType = "${parameters.engineType}"`
       )
     }
   }
