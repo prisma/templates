@@ -43,7 +43,7 @@ describe('templates can be instantiated', () => {
           repositoryOwner: 'prisma',
           repositoryHandle: 'templates-node',
         })
-        expect(template).toMatchSnapshot()
+        expect(template.files['README.md']).toMatchSnapshot()
       })
     })
   })
@@ -56,7 +56,20 @@ describe('templates can be instantiated', () => {
           repositoryHandle: 'templates-node',
           engineType: 'library',
         })
-        expect(template).toMatchSnapshot()
+        expect(template.files['prisma/schema.prisma']).toMatchSnapshot()
+      })
+    })
+  })
+  describe('with custom @prisma/client dependency', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
+          engineType: 'library',
+        })
+        expect(template.files['package.json']).toMatchSnapshot()
       })
     })
   })

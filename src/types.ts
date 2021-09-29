@@ -1,6 +1,7 @@
 import { Data } from './data'
 import { Generated } from './generated'
 import { Index } from './utils'
+import { EngineType } from './data/prisma'
 
 export * from './generated/types'
 
@@ -24,11 +25,25 @@ export type File = {
   path: string
 }
 
-type EngineType = 'library' | 'binary' | 'dataproxy'
 export type BaseTemplateParameters = {
   datasourceProvider?: Data.PrismaDatasourceProviderName
+  /**
+   * The repository owner to use for the deploy to vercel button in the template's README.md.
+   *
+   * @default '??'
+   */
   repositoryOwner?: string | null
+  /**
+   * The repository name to use for the deploy to vercel button in the template's README.md.
+   *
+   * @default '??'
+   */
   repositoryHandle?: string | null
+  /**
+   * The PSL prisma client generator block engineType setting.
+   *
+   * @default '??'
+   */
   engineType?: EngineType | null
 }
 
