@@ -1,7 +1,7 @@
 import { Data } from './data'
+import { EngineType } from './data/prisma'
 import { Generated } from './generated'
 import { Index } from './utils'
-import { EngineType } from './data/prisma'
 
 export * from './generated/types'
 
