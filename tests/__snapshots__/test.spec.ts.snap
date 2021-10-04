@@ -10570,3 +10570,304 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
   "path": "README.md",
 }
 `;
+
+exports[`templates can be instantiated with no custom engineType empty 1`] = `
+Object {
+  "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+generator client {
+  provider = \\"prisma-client-js\\"
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`templates can be instantiated with no custom engineType musicStreamingService 1`] = `
+Object {
+  "content": "// Schema for a fictional music streaming service
+// This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  name         String
+  email        String        @unique
+  interactions Interaction[]
+  playlists    Playlist[]
+}
+
+model Interaction {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  songId    String?
+  userId    String?
+  isLiked   Boolean  @default(false)
+  playCount Int
+  song      Song?    @relation(fields: [songId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model Song {
+  id           String        @id @default(uuid())
+  interactions Interaction[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  name         String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  albumId      String?
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  artistId     String
+  length       Float
+  track        Int?
+  lyrics       String?
+  playlist     Playlist[]
+  fileUrl      String
+}
+
+model Artist {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  albums    Album[]
+  songs     Song[]
+}
+
+model Album {
+  id        String   @id @default(uuid())
+  songs     Song[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  artists   Artist[]
+  name      String
+  cover     String
+}
+
+model Playlist {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  songs     Song[]
+  name      String
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`templates can be instantiated with no custom engineType nextJs 1`] = `
+Object {
+  "content": "generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+model Post {
+  post_id   Int     @id @default(autoincrement())
+  content   String?
+  title     String
+  author_id Int?
+  author    User?   @relation(fields: [author_id], references: [user_id])
+}
+
+model Profile {
+  bio        String?
+  profile_id Int     @id @default(autoincrement())
+  user_id    Int
+  user       User    @relation(fields: [user_id], references: [user_id])
+}
+
+model User {
+  email    String    @unique
+  name     String?
+  user_id  Int       @id @default(autoincrement())
+  posts    Post[]
+  profiles Profile[]
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`templates can be instantiated with no custom engineType rentalsPlatform 1`] = `
+Object {
+  "content": "// Schema for a fictional hotel
+// This hotel tracks rooms, user reservations & reviews
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  email        String        @unique
+  name         String
+  reservations Reservation[]
+  reviews      Review[]
+}
+
+model Reservation {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  startDate DateTime
+  endDate   DateTime
+  price     Int
+  total     Int
+  room      Room?    @relation(fields: [roomId], references: [id])
+  roomId    String?
+}
+
+model Room {
+  id                 String        @id @default(uuid())
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  reservations       Reservation[]
+  totalOccupancy     Int           @default(5)
+  totalBedrooms      Int           @default(5)
+  totalBathrooms     Int           @default(5)
+  summary            String?
+  address            String
+  isSmoking          Boolean       @default(false)
+  hasTV              Boolean       @default(true)
+  hasAirConditioning Boolean       @default(true)
+  hasHeating         Boolean       @default(true)
+  hasWIFI            Boolean       @default(true)
+  price              Int
+  media              Media[]
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  rating    Int
+  comment   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  room      Room?    @relation(fields: [roomId], references: [id])
+  roomId    String?
+  fileName  String
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`templates can be instantiated with no custom engineType saas 1`] = `
+Object {
+  "content": "// Schema for an identity service for a SaaS
+// This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String?
+  email     String
+  account   Account? @relation(fields: [accountId], references: [id])
+  accountId String?
+}
+
+model Account {
+  id                   String   @id @default(uuid())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  invites              Invite[]
+  users                User[]
+  stripeCustomerId     String
+  stripeSubscriptionId String
+  referrer             String?
+  isActive             Boolean
+}
+
+model Invite {
+  id        String   @id @default(uuid())
+  dateSent  DateTime @default(now())
+  email     String
+  account   Account? @relation(fields: [accountId], references: [id])
+  accountId String?
+  isValid   Boolean  @default(true)
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`templates can be instantiated with no custom engineType urlShortener 1`] = `
+Object {
+  "content": "// Schema for a simple URL shortener
+// This schema tracks short links by associating them to a user
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
+model Link {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  url       String
+  shortUrl  String
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String?
+  email     String
+  links     Link[]
+}",
+  "path": "prisma/schema.prisma",
+}
+`;

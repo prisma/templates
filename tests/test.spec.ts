@@ -60,6 +60,16 @@ describe('templates can be instantiated', () => {
       })
     })
   })
+  describe('with no custom engineType', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+        })
+        expect(template.files['prisma/schema.prisma']).toMatchSnapshot()
+      })
+    })
+  })
   describe('with custom @prisma/client dependency', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
       it(Template.metadata.name, () => {
