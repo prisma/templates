@@ -73,4 +73,29 @@ describe('templates can be instantiated', () => {
       })
     })
   })
+  describe('with custom @prisma/client dependency not set to binary', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
+          engineType: 'library',
+        })
+        expect(template.files['package.json']).toMatchSnapshot()
+      })
+    })
+  })
+  describe('with custom @prisma/client dependency not set at all', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.name, () => {
+        const template = new Template({
+          datasourceProvider: 'mysql',
+          repositoryOwner: 'prisma',
+          repositoryHandle: 'templates-node',
+        })
+        expect(template.files['package.json']).toMatchSnapshot()
+      })
+    })
+  })
 })

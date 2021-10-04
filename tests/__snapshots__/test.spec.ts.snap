@@ -4889,6 +4889,394 @@ Object {
 }
 `;
 
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all empty 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"empty\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"scripts\\": {
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all musicStreamingService 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"music-streaming-service\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all nextJs 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"nextjs\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"next\\": \\"11.1.2\\",
+    \\"react\\": \\"17.0.2\\",
+    \\"react-dom\\": \\"17.0.2\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/react\\": \\"17.0.24\\",
+    \\"eslint\\": \\"7.32.0\\",
+    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"next dev\\",
+    \\"build\\": \\"next build\\",
+    \\"start\\": \\"next start\\",
+    \\"lint\\": \\"next lint\\",
+    \\"prisma:generate\\": \\"prisma generate\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all rentalsPlatform 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"rentals-platform\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all saas 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"saas\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all urlShortener 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"url-shortener\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node prisma/seed\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary empty 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"empty\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"scripts\\": {
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary musicStreamingService 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"music-streaming-service\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary nextJs 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"nextjs\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"next\\": \\"11.1.2\\",
+    \\"react\\": \\"17.0.2\\",
+    \\"react-dom\\": \\"17.0.2\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/react\\": \\"17.0.24\\",
+    \\"eslint\\": \\"7.32.0\\",
+    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"next dev\\",
+    \\"build\\": \\"next build\\",
+    \\"start\\": \\"next start\\",
+    \\"lint\\": \\"next lint\\",
+    \\"prisma:generate\\": \\"prisma generate\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary rentalsPlatform 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"rentals-platform\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary saas 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"saas\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary urlShortener 1`] = `
+Object {
+  "content": "{
+  \\"name\\": \\"url-shortener\\",
+  \\"license\\": \\"UNLICENSED\\",
+  \\"engines\\": {
+    \\"node\\": \\">=12.2.0\\"
+  },
+  \\"dependencies\\": {
+    \\"@prisma/client\\": \\"3.1.1\\"
+  },
+  \\"devDependencies\\": {
+    \\"@types/faker\\": \\"5.5.8\\",
+    \\"@types/node\\": \\"16.10.1\\",
+    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"faker\\": \\"5.5.3\\",
+    \\"prisma\\": \\"3.1.1\\",
+    \\"ts-node\\": \\"10.2.1\\",
+    \\"typescript\\": \\"4.4.3\\"
+  },
+  \\"prisma\\": {
+    \\"seed\\": \\"ts-node prisma/seed\\"
+  },
+  \\"scripts\\": {
+    \\"init\\": \\"prisma db push && prisma db seed\\",
+    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+  }
+}",
+  "path": "package.json",
+}
+`;
+
 exports[`templates can be instantiated with custom @prisma/client dependency rentalsPlatform 1`] = `
 Object {
   "content": "{
