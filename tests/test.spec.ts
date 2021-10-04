@@ -67,7 +67,7 @@ describe('templates can be instantiated', () => {
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
           repositoryHandle: 'templates-node',
-          engineType: 'library',
+          engineType: 'dataproxy',
         })
         expect(template.files['package.json']).toMatchSnapshot()
       })

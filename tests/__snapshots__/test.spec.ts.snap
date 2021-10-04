@@ -4800,7 +4800,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\"
+    \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"16.10.1\\",
@@ -4825,7 +4825,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\"
+    \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
@@ -4857,7 +4857,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\",
+    \\"@prisma/client\\": \\"dataproxy\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -4898,7 +4898,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\"
+    \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
@@ -4930,7 +4930,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\"
+    \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
@@ -4962,7 +4962,7 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.0-integration-data-proxy-engine.1\\"
+    \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
