@@ -14,11 +14,8 @@ export const engineType: FileTransformer = (params) => {
     }
   }
   if (file.path === 'package.json') {
-    if (parameters.engineType) {
-      content = content.replace(
-        `"@prisma/client": "3.1.1"`,
-        `"@prisma/client": "3.1.0-integration-data-proxy-engine.1"`
-      )
+    if (parameters.engineType && parameters.engineType === 'dataproxy') {
+      content = content.replace(`"@prisma/client": "3.1.1"`, `"@prisma/client": "dataproxy"`)
     }
   }
 
