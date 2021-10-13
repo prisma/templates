@@ -1,23 +1,28 @@
 import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 export const engineType: FileTransformer = (params) => {
-  const { file, parameters } = params
+  const { file, parameters, tools } = params
 
   let content = file.content
 
   switch (file.path) {
     case 'prisma/schema.prisma':
       if (parameters.engineType) {
-        content = content.replace(
-          `provider = "prisma-client-js"`,
+        content = tools.replaceContent({
+          file,
+          pattern: /provider *= *"prisma-client-js"/,
           // eslint-disable-next-line
-          `provider = "prisma-client-js" \n  engineType = "${parameters.engineType}"`
-        )
+          replacement: `provider = "prisma-client-js" \n  engineType = "${parameters.engineType}"`,
+        })
       }
       break
     case 'package.json':
       if (parameters.engineType === 'dataproxy') {
-        content = content.replace(/"@prisma\/client": ".+"/, `"@prisma/client": "dataproxy"`)
+        content = tools.replaceContent({
+          file,
+          pattern: /"@prisma\/client": ".+"/,
+          replacement: `"@prisma/client": "dataproxy"`,
+        })
       }
       break
   }
