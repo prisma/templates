@@ -122,9 +122,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
     "path": "prisma/seed.mjs",
@@ -192,9 +190,7 @@ async function main() {
   })));
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
     "path": "prisma/seed.mjs",
@@ -338,9 +334,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
     "path": "prisma/seed.mjs",
@@ -411,9 +405,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
     "path": "prisma/seed.mjs",
@@ -472,9 +464,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
     "path": "prisma/seed.mjs",
@@ -498,12 +488,12 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
@@ -1082,15 +1072,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -1107,13 +1097,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -1140,19 +1130,19 @@ model Interaction {
 
 model Song {
   id           String        @id @default(uuid())
-  interactions Interaction[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String
-  album        Album?        @relation(fields: [albumId], references: [id])
   albumId      String?
-  artist       Artist        @relation(fields: [artistId], references: [id])
   artistId     String
   length       Float
   track        Int?
   lyrics       String?
-  playlist     Playlist[]
   fileUrl      String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  interactions Interaction[]
+  playlist     Playlist[]
 }
 
 model Artist {
@@ -1160,28 +1150,28 @@ model Artist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  albums    Album[]
   songs     Song[]
+  albums    Album[]
 }
 
 model Album {
   id        String   @id @default(uuid())
-  songs     Song[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  artists   Artist[]
   name      String
   cover     String
+  songs     Song[]
+  artists   Artist[]
 }
 
 model Playlist {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user      User?    @relation(fields: [userId], references: [id])
   userId    String?
-  songs     Song[]
   name      String
+  user      User?    @relation(fields: [userId], references: [id])
+  songs     Song[]
 }",
     "path": "prisma/schema.prisma",
   },
@@ -1285,13 +1275,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -1788,20 +1774,20 @@ module.exports = {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"@prisma/client\\": \\"3.2.1\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"@types/react\\": \\"17.0.24\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/react\\": \\"17.0.29\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -2037,6 +2023,7 @@ export default handler",
 import Head from 'next/head'
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 async function fetchApi(endpoint: string) {
   const response = await fetch(\`/api/\${endpoint}\`)
@@ -2109,10 +2096,22 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        Powered by{' '}
-        <img src=\\"/vercel.svg\\" alt=\\"Vercel Logo\\" className={styles.logo} />
+        Powered by
+        <img
+          src=\\"/vercel.svg\\"
+          alt=\\"Vercel Logo\\"
+          className={styles.logo}
+          width={71}
+          height={16}
+        />
         &
-        <img src=\\"/prisma.svg\\" alt=\\"Prisma Logo\\" className={styles.logo} />
+        <Image
+          src=\\"/prisma.svg\\"
+          alt=\\"Prisma Logo\\"
+          className={styles.logo}
+          width={32}
+          height={16}
+        />
       </footer>
     </div>
   )
@@ -2201,18 +2200,16 @@ async function main() {
   )
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
     "path": "prisma/seed.ts",
   },
   "public/prisma.svg": Object {
-    "content": "<svg width=\\"106\\" height=\\"128\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
-<path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\" fill=\\"black\\"/>
+    "content": "<svg width=\\"13\\" height=\\"16\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+  <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\"
+    d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\"
+    fill=\\"black\\" />
 </svg>",
     "path": "public/prisma.svg",
   },
@@ -2318,7 +2315,6 @@ main()
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-
 .apiButton {
   margin: 0.5rem;
   flex-basis: 45%;
@@ -2338,11 +2334,12 @@ main()
 }
 
 .apiButton:hover {
-  background-color: #0071f2;  
+  background-color: #0071f2;
 }
 
 .logo {
   height: 1em;
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
@@ -2397,7 +2394,7 @@ main()
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
 .code {
@@ -2821,15 +2818,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -2846,13 +2843,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -2870,20 +2867,19 @@ model Reservation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String?
-  user      User?    @relation(fields: [userId], references: [id])
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
   id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
-  reservations       Reservation[]
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
@@ -2896,6 +2892,7 @@ model Room {
   hasWIFI            Boolean       @default(true)
   price              Int
   media              Media[]
+  reservations       Reservation[]
 }
 
 model Review {
@@ -2904,17 +2901,17 @@ model Review {
   updatedAt DateTime @updatedAt
   rating    Int
   comment   String
-  user      User     @relation(fields: [userId], references: [id])
   userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
   fileName  String
+  room      Room?    @relation(fields: [roomId], references: [id])
 }",
     "path": "prisma/schema.prisma",
   },
@@ -3036,13 +3033,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -3689,15 +3682,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -3714,13 +3707,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "// Schema for an identity service for a SaaS
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -3729,29 +3722,29 @@ model User {
   updatedAt DateTime @updatedAt
   name      String?
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
+  account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
   id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  invites              Invite[]
-  users                User[]
   stripeCustomerId     String
   stripeSubscriptionId String
   referrer             String?
   isActive             Boolean
+  invites              Invite[]
+  users                User[]
 }
 
 model Invite {
   id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
   isValid   Boolean  @default(true)
+  account   Account? @relation(fields: [accountId], references: [id])
 }",
     "path": "prisma/schema.prisma",
   },
@@ -3801,13 +3794,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -4322,15 +4311,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -4347,13 +4336,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model Link {
@@ -4362,8 +4351,8 @@ model Link {
   updatedAt DateTime @updatedAt
   url       String
   shortUrl  String
-  User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+  User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -4413,13 +4402,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
     "path": "prisma/seed.ts",
   },
   "public/index.html": Object {
@@ -4815,9 +4800,9 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
@@ -4841,11 +4826,11 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -4876,13 +4861,13 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"@types/react\\": \\"17.0.24\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/react\\": \\"17.0.29\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -4910,12 +4895,12 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
@@ -4935,15 +4920,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -4967,20 +4952,20 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"@prisma/client\\": \\"3.2.1\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"@types/react\\": \\"17.0.24\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/react\\": \\"17.0.29\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5008,15 +4993,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5040,15 +5025,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5072,15 +5057,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5104,12 +5089,12 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
@@ -5129,15 +5114,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5161,20 +5146,20 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"@prisma/client\\": \\"3.2.1\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"@types/react\\": \\"17.0.24\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/react\\": \\"17.0.29\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5202,15 +5187,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5234,15 +5219,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5266,15 +5251,15 @@ Object {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5302,11 +5287,11 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5334,11 +5319,11 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5366,11 +5351,11 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -5403,12 +5388,12 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"scripts\\": {
@@ -5559,8 +5544,10 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema.",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "icon": "battery",
     "name": "empty",
   },
 }
@@ -5687,9 +5674,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
       "path": "prisma/seed.mjs",
@@ -6121,15 +6106,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -6146,13 +6131,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -6179,19 +6164,19 @@ model Interaction {
 
 model Song {
   id           String        @id @default(uuid())
-  interactions Interaction[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String
-  album        Album?        @relation(fields: [albumId], references: [id])
   albumId      String?
-  artist       Artist        @relation(fields: [artistId], references: [id])
   artistId     String
   length       Float
   track        Int?
   lyrics       String?
-  playlist     Playlist[]
   fileUrl      String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  interactions Interaction[]
+  playlist     Playlist[]
 }
 
 model Artist {
@@ -6199,28 +6184,28 @@ model Artist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  albums    Album[]
   songs     Song[]
+  albums    Album[]
 }
 
 model Album {
   id        String   @id @default(uuid())
-  songs     Song[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  artists   Artist[]
   name      String
   cover     String
+  songs     Song[]
+  artists   Artist[]
 }
 
 model Playlist {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user      User?    @relation(fields: [userId], references: [id])
   userId    String?
-  songs     Song[]
   name      String
+  user      User?    @relation(fields: [userId], references: [id])
+  songs     Song[]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6324,13 +6309,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -6773,8 +6754,10 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API.",
     "displayName": "Music Streaming Service",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
+    "icon": "music",
     "name": "musicStreamingService",
   },
 }
@@ -6841,9 +6824,7 @@ async function main() {
   })));
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
       "path": "prisma/seed.mjs",
@@ -6901,20 +6882,20 @@ module.exports = {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\",
+    \\"@prisma/client\\": \\"3.2.1\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
-    \\"@types/react\\": \\"17.0.24\\",
+    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/react\\": \\"17.0.29\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -7150,6 +7131,7 @@ export default handler",
 import Head from 'next/head'
 import { useState } from 'react'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 async function fetchApi(endpoint: string) {
   const response = await fetch(\`/api/\${endpoint}\`)
@@ -7222,10 +7204,22 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        Powered by{' '}
-        <img src=\\"/vercel.svg\\" alt=\\"Vercel Logo\\" className={styles.logo} />
+        Powered by
+        <img
+          src=\\"/vercel.svg\\"
+          alt=\\"Vercel Logo\\"
+          className={styles.logo}
+          width={71}
+          height={16}
+        />
         &
-        <img src=\\"/prisma.svg\\" alt=\\"Prisma Logo\\" className={styles.logo} />
+        <Image
+          src=\\"/prisma.svg\\"
+          alt=\\"Prisma Logo\\"
+          className={styles.logo}
+          width={32}
+          height={16}
+        />
       </footer>
     </div>
   )
@@ -7314,18 +7308,16 @@ async function main() {
   )
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
       "path": "prisma/seed.ts",
     },
     "public/prisma.svg": Object {
-      "content": "<svg width=\\"106\\" height=\\"128\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
-<path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\" fill=\\"black\\"/>
+      "content": "<svg width=\\"13\\" height=\\"16\\" viewBox=\\"0 0 106 128\\" fill=\\"none\\" xmlns=\\"http://www.w3.org/2000/svg\\">
+  <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\"
+    d=\\"M105.306 97.5187L61.2843 4.03669V4.03469C60.1803 1.69769 57.8763 0.155691 55.2653 0.0126908C52.5863 -0.143309 50.1863 1.14869 48.8323 3.34769L1.08827 80.6777C-0.390728 83.0877 -0.361728 86.0597 1.17227 88.4407L24.5103 124.593C25.9013 126.751 28.3113 128 30.8163 128C31.5263 128 32.2403 127.9 32.9423 127.692L100.686 107.656C102.761 107.042 104.458 105.574 105.346 103.628C106.231 101.681 106.217 99.4527 105.306 97.5187ZM95.4493 101.529L37.9703 118.529C36.2143 119.049 34.5313 117.53 34.9003 115.759L55.4343 17.4197C55.8183 15.5807 58.3603 15.2887 59.1623 16.9917L97.1823 97.7277C97.8993 99.2507 97.0813 101.047 95.4493 101.529Z\\"
+    fill=\\"black\\" />
 </svg>",
       "path": "public/prisma.svg",
     },
@@ -7431,7 +7423,6 @@ main()
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-
 .apiButton {
   margin: 0.5rem;
   flex-basis: 45%;
@@ -7451,11 +7442,12 @@ main()
 }
 
 .apiButton:hover {
-  background-color: #0071f2;  
+  background-color: #0071f2;
 }
 
 .logo {
   height: 1em;
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
@@ -7510,7 +7502,7 @@ main()
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
 .code {
@@ -7572,8 +7564,10 @@ a {
     },
   },
   "metadata": Object {
+    "description": "Schema for a blog built with Next.js",
     "displayName": "Next JS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
+    "icon": "triangle",
     "name": "nextJs",
   },
 }
@@ -7716,9 +7710,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
       "path": "prisma/seed.mjs",
@@ -8084,15 +8076,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -8109,13 +8101,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -8133,20 +8125,19 @@ model Reservation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String?
-  user      User?    @relation(fields: [userId], references: [id])
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
   id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
-  reservations       Reservation[]
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
@@ -8159,6 +8150,7 @@ model Room {
   hasWIFI            Boolean       @default(true)
   price              Int
   media              Media[]
+  reservations       Reservation[]
 }
 
 model Review {
@@ -8167,17 +8159,17 @@ model Review {
   updatedAt DateTime @updatedAt
   rating    Int
   comment   String
-  user      User     @relation(fields: [userId], references: [id])
   userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
   fileName  String
+  room      Room?    @relation(fields: [roomId], references: [id])
 }",
       "path": "prisma/schema.prisma",
     },
@@ -8299,13 +8291,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -8720,8 +8708,10 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API.",
     "displayName": "Rentals Platform",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
+    "icon": "home",
     "name": "rentalsPlatform",
   },
 }
@@ -8791,9 +8781,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
       "path": "prisma/seed.mjs",
@@ -9029,15 +9017,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -9054,13 +9042,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "// Schema for an identity service for a SaaS
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -9069,29 +9057,29 @@ model User {
   updatedAt DateTime @updatedAt
   name      String?
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
+  account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
   id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  invites              Invite[]
-  users                User[]
   stripeCustomerId     String
   stripeSubscriptionId String
   referrer             String?
   isActive             Boolean
+  invites              Invite[]
+  users                User[]
 }
 
 model Invite {
   id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
   isValid   Boolean  @default(true)
+  account   Account? @relation(fields: [accountId], references: [id])
 }",
       "path": "prisma/schema.prisma",
     },
@@ -9141,13 +9129,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -9498,8 +9482,10 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "Saas",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "icon": "cloud",
     "name": "saas",
   },
 }
@@ -9557,9 +9543,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error(e);
-}).finally(async () => {
+main().finally(async () => {
   await prisma.$disconnect();
 });",
       "path": "prisma/seed.mjs",
@@ -9727,15 +9711,15 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"node\\": \\">=12.2.0\\"
   },
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.1.1\\"
+    \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.1\\",
+    \\"@types/node\\": \\"16.10.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.1.1\\",
-    \\"ts-node\\": \\"10.2.1\\",
+    \\"prisma\\": \\"3.2.1\\",
+    \\"ts-node\\": \\"10.3.0\\",
     \\"typescript\\": \\"4.4.3\\"
   },
   \\"prisma\\": {
@@ -9752,13 +9736,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model Link {
@@ -9767,8 +9751,8 @@ model Link {
   updatedAt DateTime @updatedAt
   url       String
   shortUrl  String
-  User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+  User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -9818,13 +9802,9 @@ async function main() {
   }
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })",
+main().finally(async () => {
+  await prisma.$disconnect()
+})",
       "path": "prisma/seed.ts",
     },
     "public/index.html": Object {
@@ -10147,8 +10127,10 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a URL shortener with a REST API.",
     "displayName": "Url Shortener",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
+    "icon": "link-2",
     "name": "urlShortener",
   },
 }
@@ -10176,14 +10158,14 @@ Object {
   "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
 
-datasource db {
-  provider = \\"mysql\\"
-  url      = env(\\"DATABASE_URL\\")
-}
-
 generator client {
   provider = \\"prisma-client-js\\" 
   engineType = \\"library\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
 }
 
 model User {
@@ -10210,19 +10192,19 @@ model Interaction {
 
 model Song {
   id           String        @id @default(uuid())
-  interactions Interaction[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String
-  album        Album?        @relation(fields: [albumId], references: [id])
   albumId      String?
-  artist       Artist        @relation(fields: [artistId], references: [id])
   artistId     String
   length       Float
   track        Int?
   lyrics       String?
-  playlist     Playlist[]
   fileUrl      String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  interactions Interaction[]
+  playlist     Playlist[]
 }
 
 model Artist {
@@ -10230,28 +10212,28 @@ model Artist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  albums    Album[]
   songs     Song[]
+  albums    Album[]
 }
 
 model Album {
   id        String   @id @default(uuid())
-  songs     Song[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  artists   Artist[]
   name      String
   cover     String
+  songs     Song[]
+  artists   Artist[]
 }
 
 model Playlist {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user      User?    @relation(fields: [userId], references: [id])
   userId    String?
-  songs     Song[]
   name      String
+  user      User?    @relation(fields: [userId], references: [id])
+  songs     Song[]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10300,14 +10282,14 @@ Object {
   "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
 
-datasource db {
-  provider = \\"mysql\\"
-  url      = env(\\"DATABASE_URL\\")
-}
-
 generator client {
   provider = \\"prisma-client-js\\" 
   engineType = \\"library\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
 }
 
 model User {
@@ -10325,20 +10307,19 @@ model Reservation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String?
-  user      User?    @relation(fields: [userId], references: [id])
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
   id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
-  reservations       Reservation[]
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
@@ -10351,6 +10332,7 @@ model Room {
   hasWIFI            Boolean       @default(true)
   price              Int
   media              Media[]
+  reservations       Reservation[]
 }
 
 model Review {
@@ -10359,17 +10341,17 @@ model Review {
   updatedAt DateTime @updatedAt
   rating    Int
   comment   String
-  user      User     @relation(fields: [userId], references: [id])
   userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
   fileName  String
+  room      Room?    @relation(fields: [roomId], references: [id])
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10380,14 +10362,14 @@ Object {
   "content": "// Schema for an identity service for a SaaS
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
 
-datasource db {
-  provider = \\"mysql\\"
-  url      = env(\\"DATABASE_URL\\")
-}
-
 generator client {
   provider = \\"prisma-client-js\\" 
   engineType = \\"library\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
 }
 
 model User {
@@ -10396,29 +10378,29 @@ model User {
   updatedAt DateTime @updatedAt
   name      String?
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
+  account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
   id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  invites              Invite[]
-  users                User[]
   stripeCustomerId     String
   stripeSubscriptionId String
   referrer             String?
   isActive             Boolean
+  invites              Invite[]
+  users                User[]
 }
 
 model Invite {
   id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
   isValid   Boolean  @default(true)
+  account   Account? @relation(fields: [accountId], references: [id])
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10429,14 +10411,14 @@ Object {
   "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
 
-datasource db {
-  provider = \\"mysql\\"
-  url      = env(\\"DATABASE_URL\\")
-}
-
 generator client {
   provider = \\"prisma-client-js\\" 
   engineType = \\"library\\"
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
 }
 
 model Link {
@@ -10445,8 +10427,8 @@ model Link {
   updatedAt DateTime @updatedAt
   url       String
   shortUrl  String
-  User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+  User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -10604,13 +10586,13 @@ Object {
   "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -10637,19 +10619,19 @@ model Interaction {
 
 model Song {
   id           String        @id @default(uuid())
-  interactions Interaction[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String
-  album        Album?        @relation(fields: [albumId], references: [id])
   albumId      String?
-  artist       Artist        @relation(fields: [artistId], references: [id])
   artistId     String
   length       Float
   track        Int?
   lyrics       String?
-  playlist     Playlist[]
   fileUrl      String
+  album        Album?        @relation(fields: [albumId], references: [id])
+  artist       Artist        @relation(fields: [artistId], references: [id])
+  interactions Interaction[]
+  playlist     Playlist[]
 }
 
 model Artist {
@@ -10657,28 +10639,28 @@ model Artist {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
-  albums    Album[]
   songs     Song[]
+  albums    Album[]
 }
 
 model Album {
   id        String   @id @default(uuid())
-  songs     Song[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  artists   Artist[]
   name      String
   cover     String
+  songs     Song[]
+  artists   Artist[]
 }
 
 model Playlist {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  user      User?    @relation(fields: [userId], references: [id])
   userId    String?
-  songs     Song[]
   name      String
+  user      User?    @relation(fields: [userId], references: [id])
+  songs     Song[]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10726,13 +10708,13 @@ Object {
   "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -10750,20 +10732,19 @@ model Reservation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String?
-  user      User?    @relation(fields: [userId], references: [id])
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
   id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
-  reservations       Reservation[]
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
@@ -10776,6 +10757,7 @@ model Room {
   hasWIFI            Boolean       @default(true)
   price              Int
   media              Media[]
+  reservations       Reservation[]
 }
 
 model Review {
@@ -10784,17 +10766,17 @@ model Review {
   updatedAt DateTime @updatedAt
   rating    Int
   comment   String
-  user      User     @relation(fields: [userId], references: [id])
   userId    String
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  room      Room?    @relation(fields: [roomId], references: [id])
   roomId    String?
   fileName  String
+  room      Room?    @relation(fields: [roomId], references: [id])
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10805,13 +10787,13 @@ Object {
   "content": "// Schema for an identity service for a SaaS
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model User {
@@ -10820,29 +10802,29 @@ model User {
   updatedAt DateTime @updatedAt
   name      String?
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
+  account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
   id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  invites              Invite[]
-  users                User[]
   stripeCustomerId     String
   stripeSubscriptionId String
   referrer             String?
   isActive             Boolean
+  invites              Invite[]
+  users                User[]
 }
 
 model Invite {
   id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String
-  account   Account? @relation(fields: [accountId], references: [id])
   accountId String?
   isValid   Boolean  @default(true)
+  account   Account? @relation(fields: [accountId], references: [id])
 }",
   "path": "prisma/schema.prisma",
 }
@@ -10853,13 +10835,13 @@ Object {
   "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
 
+generator client {
+  provider = \\"prisma-client-js\\"
+}
+
 datasource db {
   provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
-}
-
-generator client {
-  provider = \\"prisma-client-js\\"
 }
 
 model Link {
@@ -10868,8 +10850,8 @@ model Link {
   updatedAt DateTime @updatedAt
   url       String
   shortUrl  String
-  User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+  User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
