@@ -14,7 +14,7 @@ jobs:
           node-version: '14'
           cache: 'yarn'
       - name: Install dependencies
-        run: yarn --fronzen-lockfile
+        run: yarn --frozen-lockfile
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
