@@ -157,10 +157,13 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
  * @returns
  */
 const getTemplateIconOrDescription = (path: string, key: 'icon' | 'description'): string => {
-  const filePath = glob.sync(`${path}/package.json`)
-  const content = FS.read(filePath[0]!, 'json')
+  const filePath: string[] = glob.sync(`${path}/package.json`)
+  //eslint-disable-next-line
+  const content: { [key: string]: any } = FS.read(filePath[0]!, 'json')
+  //eslint-disable-next-line
   if (content.prismaInfo && content.prismaInfo[key]) {
-    return content.prismaInfo[key]
+    //eslint-disable-next-line
+    return content.prismaInfo[key as string] as string
   }
   return ''
 }
