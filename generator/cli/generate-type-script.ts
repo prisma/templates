@@ -144,28 +144,50 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
     name: templateName(Path.basename(path)),
     displayName: startCase(Path.basename(path)),
-    icon: getTemplateIconOrDescription(path, 'icon'),
-    description: getTemplateIconOrDescription(path, 'description'),
+    icon: getTemplateIcon(Path.basename(path)),
+    description: getTemplateDescription(Path.basename(path)),
     path,
   }))
 }
 
-/**
- * @param path  The absolute path to the downloaded template respository folder from which to read the
- *              package.json.
- * @param key   The nested key/value to return inside package.json.
- * @returns
- */
-const getTemplateIconOrDescription = (path: string, key: 'icon' | 'description'): string => {
-  const filePath: string[] = glob.sync(`${path}/package.json`)
-  //eslint-disable-next-line
-  const content: { [key: string]: any } = FS.read(filePath[0]!, 'json')
-  //eslint-disable-next-line
-  if (content.prismaInfo && content.prismaInfo[key]) {
-    //eslint-disable-next-line
-    return content.prismaInfo[key as string] as string
+export type iconTypes = 'triangle' | 'music' | 'home' | 'cloud' | 'link-2' | 'battery' | ''
+
+const getTemplateIcon = (id: string): iconTypes => {
+  switch (id) {
+    case 'nextJS':
+      return 'triangle'
+    case 'musicStreamingService':
+      return 'music'
+    case 'rentalsPlatform':
+      return 'home'
+    case 'saas':
+      return 'cloud'
+    case 'urlShortener':
+      return 'link-2'
+    case 'empty':
+      return 'battery'
+    default:
+      return ''
   }
-  return ''
+}
+
+const getTemplateDescription = (id: string): string => {
+  switch (id) {
+    case 'nextJS':
+      return 'Schema for a blog built with Next.js'
+    case 'musicStreamingService':
+      return 'Schema for a fictional music streaming service with a REST API.'
+    case 'rentalsPlatform':
+      return 'Schema for a fictional hotel with a REST API.'
+    case 'saas':
+      return 'Schema for an identity service for a SaaS with a REST API'
+    case 'urlShortener':
+      return 'Schema for a URL shortener with a REST API.'
+    case 'empty':
+      return 'An empty schema with no models, to build your own your own schema.'
+    default:
+      return ''
+  }
 }
 
 /**
