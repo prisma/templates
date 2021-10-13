@@ -1,4 +1,5 @@
 import { PrismaTemplates } from '~/src'
+import { PrismaDatasourceProviderName } from '~/src/data/prisma'
 
 describe('Template classes have static data', () => {
   describe('files', () => {
@@ -26,15 +27,18 @@ describe('Template classes have static data', () => {
 
 describe('templates can be instantiated', () => {
   describe('with custom datasourceProvider', () => {
-    Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
-        const template = new Template({
-          datasourceProvider: 'mysql',
+    Object.values(PrismaDatasourceProviderName).forEach((datasourceProvider) => {
+      Object.values(PrismaTemplates.Templates).forEach((Template) => {
+        it(`${Template.metadata.name} X ${datasourceProvider}`, () => {
+          const template = new Template({
+            datasourceProvider,
+          })
+          expect(template).toMatchSnapshot()
         })
-        expect(template).toMatchSnapshot()
       })
     })
   })
+
   describe('with custom repository owner and repository handle', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
       it(Template.metadata.name, () => {
