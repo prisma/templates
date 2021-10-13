@@ -144,8 +144,25 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
     name: templateName(Path.basename(path)),
     displayName: startCase(Path.basename(path)),
+    icon: getTemplateIconOrDescription(path, 'icon'),
+    description: getTemplateIconOrDescription(path, 'description'),
     path,
   }))
+}
+
+/**
+ * @param path  The absolute path to the downloaded template respository folder from which to read the
+ *              package.json.
+ * @param key   The nested key/value to return inside package.json.
+ * @returns
+ */
+const getTemplateIconOrDescription = (path: string, key: 'icon' | 'description'): string => {
+  const filePath = glob.sync(`${path}/package.json`)
+  const content = FS.read(filePath[0]!, 'json')
+  if (content.prismaInfo && content.prismaInfo[key]) {
+    return content.prismaInfo[key]
+  }
+  return ''
 }
 
 /**
@@ -234,6 +251,16 @@ ${indentBlock(4, escapeBackticks(f.content))}
          * The GitHub repo URL that this template comes from.
          */
         githubUrl: '${githubRepoUrl}/tree/main/${templateInfo.name}',
+
+        /**
+         * The template's icon.
+         */
+        icon: '${templateInfo.icon}',
+
+        /**
+         * The template's description.
+         */
+        description: '${templateInfo.description}',
       }
 
       ${sourceCodeSectionHeader('Files')}

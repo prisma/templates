@@ -4745,48 +4745,60 @@ main()
 
 exports[`Template classes have static data metadata empty 1`] = `
 Object {
+  "description": "An empty schema with no models, to build your own your own schema.",
   "displayName": "Empty",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+  "icon": "battery",
   "name": "empty",
 }
 `;
 
 exports[`Template classes have static data metadata musicStreamingService 1`] = `
 Object {
+  "description": "Schema for a fictional music streaming service with a REST API.",
   "displayName": "Music Streaming Service",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
+  "icon": "music",
   "name": "musicStreamingService",
 }
 `;
 
 exports[`Template classes have static data metadata nextJs 1`] = `
 Object {
+  "description": "Schema for a blog built with Next.js",
   "displayName": "Next JS",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
+  "icon": "triangle",
   "name": "nextJs",
 }
 `;
 
 exports[`Template classes have static data metadata rentalsPlatform 1`] = `
 Object {
+  "description": "Schema for a fictional hotel with a REST API.",
   "displayName": "Rentals Platform",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
+  "icon": "home",
   "name": "rentalsPlatform",
 }
 `;
 
 exports[`Template classes have static data metadata saas 1`] = `
 Object {
+  "description": "Schema for an identity service for a SaaS with a REST API",
   "displayName": "Saas",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+  "icon": "cloud",
   "name": "saas",
 }
 `;
 
 exports[`Template classes have static data metadata urlShortener 1`] = `
 Object {
+  "description": "Schema for a URL shortener with a REST API.",
   "displayName": "Url Shortener",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
+  "icon": "link-2",
   "name": "urlShortener",
 }
 `;
