@@ -15,7 +15,7 @@ export const engineType: FileTransformer = (params) => {
   }
   if (file.path === 'package.json') {
     if (parameters.engineType && parameters.engineType === 'dataproxy') {
-      content = content.replace(`"@prisma/client": "3.1.1"`, `"@prisma/client": "dataproxy"`)
+      content = content.replace(`"@prisma/client": "latest"`, `"@prisma/client": "dataproxy"`)
     }
   }
 
