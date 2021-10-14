@@ -27,7 +27,7 @@ export type File = {
 }
 
 export type BaseTemplateParameters = {
-  datasourceProvider?: Data.PrismaDatasourceProviderName
+  datasourceProvider: Data.PrismaDatasourceProviderName
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *
