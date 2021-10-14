@@ -147,25 +147,6 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
   }))
 }
 
-const getTemplateDescription = (id: string): string => {
-  switch (id) {
-    case 'blog':
-      return 'Schema for a blog built with Next.js'
-    case 'musicStreamingService':
-      return 'Schema for a fictional music streaming service with a REST API.'
-    case 'rentalsPlatform':
-      return 'Schema for a fictional hotel with a REST API.'
-    case 'saas':
-      return 'Schema for an identity service for a SaaS with a REST API'
-    case 'urlShortener':
-      return 'Schema for a URL shortener with a REST API.'
-    case 'empty':
-      return 'An empty schema with no models, to build your own your own schema.'
-    default:
-      throw `Unknown template ${id}`
-  }
-}
-
 /**
  * Create the module source code for a template.
  */
