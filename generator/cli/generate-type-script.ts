@@ -143,37 +143,15 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
     name: templateName(Path.basename(path)),
-    displayName: startCase(Path.basename(path)),
-    icon: getTemplateIcon(Path.basename(path)),
-    description: getTemplateDescription(Path.basename(path)),
+    displayName: Path.basename(path),
+    description: require(`${path}/package.json`).description,
     path,
   }))
 }
 
-export type iconTypes = 'triangle' | 'music' | 'home' | 'cloud' | 'link-2' | 'battery' | ''
-
-const getTemplateIcon = (id: string): iconTypes => {
-  switch (id) {
-    case 'nextJS':
-      return 'triangle'
-    case 'musicStreamingService':
-      return 'music'
-    case 'rentalsPlatform':
-      return 'home'
-    case 'saas':
-      return 'cloud'
-    case 'urlShortener':
-      return 'link-2'
-    case 'empty':
-      return 'battery'
-    default:
-      return ''
-  }
-}
-
 const getTemplateDescription = (id: string): string => {
   switch (id) {
-    case 'nextJS':
+    case 'blog':
       return 'Schema for a blog built with Next.js'
     case 'musicStreamingService':
       return 'Schema for a fictional music streaming service with a REST API.'
@@ -186,7 +164,7 @@ const getTemplateDescription = (id: string): string => {
     case 'empty':
       return 'An empty schema with no models, to build your own your own schema.'
     default:
-      return ''
+      throw `Unknown template ${id}`
   }
 }
 
@@ -276,11 +254,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
          * The GitHub repo URL that this template comes from.
          */
         githubUrl: '${githubRepoUrl}/tree/main/${templateInfo.name}',
-
-        /**
-         * The template's icon.
-         */
-        icon: '${templateInfo.icon}',
 
         /**
          * The template's description.
