@@ -357,9 +357,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
       export {
         ${templateClassName(templateInfo.name)}
       }
-
-
-
     `
 
   return sourceCode
