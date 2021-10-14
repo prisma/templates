@@ -1,7 +1,7 @@
 import endent from 'endent'
 import glob from 'fast-glob'
 import * as FS from 'fs-jetpack'
-import { camelCase, startCase, upperFirst } from 'lodash'
+import { camelCase, kebabCase, upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
@@ -9,8 +9,6 @@ import { TemplateInfo } from '../lib/types'
 import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/utils'
 
 const log = console.log
-
-const templateName = (x: string) => camelCase(x)
 
 const templateClassName = (x: string) => upperFirst(camelCase(x))
 
@@ -54,7 +52,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              ${templateName(_.name)}: Templates.${templateClassName(_.name)}
+              "${_.name}": Templates.${templateClassName(_.name)}
             `
           })
           .join('\n')}
@@ -64,7 +62,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              ${templateName(_.name)}: Templates.${templateClassName(_.name)}.Parameters
+              "${_.name}": Templates.${templateClassName(_.name)}.Parameters
             `
           })
           .join('\n')}
@@ -74,7 +72,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              ${templateName(_.name)}: typeof Templates.${templateClassName(_.name)}
+              "${_.name}": typeof Templates.${templateClassName(_.name)}
             `
           })
           .join('\n')}
@@ -142,7 +140,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
  */
 const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
-    name: templateName(Path.basename(path)),
+    name: require(`${path}/package.json`).name,
     displayName: Path.basename(path),
     description: require(`${path}/package.json`).description,
     path,
