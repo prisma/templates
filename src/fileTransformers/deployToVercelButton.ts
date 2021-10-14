@@ -1,3 +1,4 @@
+import { PrismaTemplates } from '../'
 import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 export const deployToVercelButton: FileTransformer = (params) => {
@@ -6,11 +7,25 @@ export const deployToVercelButton: FileTransformer = (params) => {
   let content = file.content
 
   if (parameters.repositoryHandle && parameters.repositoryOwner && file.path === 'README.md') {
-    const encodedURI = encodeURI(parameters.repositoryOwner + '/' + parameters.repositoryHandle)
-    content = content.concat(
-      `<br/><br/>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2F${encodedURI}&env=DATABASE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Data%20Proxy%2C%20then%20ude%20its%20connection%20string)
-      `
-    )
+    const deployButtonUrl = PrismaTemplates.Utils.getVercelDeployButtonUrl({
+      repositoryOwner: parameters.repositoryOwner,
+      repositoryHandle: parameters.repositoryHandle,
+      environmentVariableNames: ['DATABASE_URL', 'DATABASE_MIGRATE_URL'],
+      environmentVariablesDescription:
+        "Connection string for the database this deployment will talk to. If you're using the Prisma Data Proxy, then use its connection string.",
+    })
+
+    const deployButton = `[![Deploy with Vercel](https://vercel.com/button)](${deployButtonUrl})`
+
+    // Assume the first line of the file is the title, skip over it
+    const firstLineBreakIndex = content.split('\n')[0]?.length || 0
+
+    // Add a deploy button after the title
+    content = [
+      ...content.slice(0, firstLineBreakIndex + 1),
+      `${deployButton}<br />`,
+      ...content.slice(firstLineBreakIndex),
+    ].join('')
   }
 
   return content
