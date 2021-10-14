@@ -15,7 +15,6 @@ export abstract class AbstractTemplate<
     name: Name
     displayName: string
     githubUrl: null | string
-    icon: string
     description: string
   }
   public abstract files: FilesIndex
