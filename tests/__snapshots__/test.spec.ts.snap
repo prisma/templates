@@ -29600,7 +29600,7 @@ model User {
 exports[`templates can be instantiated with custom repository owner and repository handle empty 1`] = `
 Object {
   "content": "# Empty Prisma Project
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 An empty Prisma Schema with no models, perfect as a starting point for your own schema.",
   "path": "README.md",
@@ -29610,7 +29610,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
 exports[`templates can be instantiated with custom repository owner and repository handle music-streaming-service 1`] = `
 Object {
   "content": "# Music Streaming Service
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/musicStreamingService/diagram.png)
 
@@ -29635,7 +29635,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`templates can be instantiated with custom repository owner and repository handle nextjs 1`] = `
 Object {
   "content": "# Next.js Blog
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 A simple blog example, built with Next.js & Prisma
 
@@ -29656,7 +29656,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`templates can be instantiated with custom repository owner and repository handle rentals-platform 1`] = `
 Object {
   "content": "# Rentals Platform
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database Diagram](https://github.com/prisma/prisma-schema-examples/blob/main/rentalsPlatform/diagram.png?raw=true)
 
@@ -29681,7 +29681,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`templates can be instantiated with custom repository owner and repository handle saas 1`] = `
 Object {
   "content": "# SaaS
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 Generic Prisma schema example for a SaaS that has a referral system.
 
@@ -29708,7 +29708,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`templates can be instantiated with custom repository owner and repository handle url-shortener 1`] = `
 Object {
   "content": "# URL Shortener
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Connection%20string%20for%20the%20database%20this%20deployment%20will%20talk%20to.%20If%20you're%20using%20the%20Prisma%20Data%20Proxy%2C%20then%20use%20its%20connection%20string.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/urlShortener/diagram.png)
 
