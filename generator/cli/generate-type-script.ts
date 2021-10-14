@@ -1,7 +1,7 @@
 import endent from 'endent'
 import glob from 'fast-glob'
 import * as FS from 'fs-jetpack'
-import { camelCase, kebabCase, upperFirst } from 'lodash'
+import { camelCase, upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
@@ -139,12 +139,17 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
  * TODO
  */
 const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
-  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => ({
-    name: require(`${path}/package.json`).name,
-    displayName: Path.basename(path),
-    description: require(`${path}/package.json`).description,
-    path,
-  }))
+  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
+
+    return {
+      name,
+      displayName: Path.basename(path),
+      description,
+      path,
+    }
+  })
 }
 
 /**
