@@ -9,7 +9,7 @@ describe('Template classes have static data', () => {
       })
     })
   })
-  describe('artifcats', () => {
+  describe('artifacts', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
       it(Template.metadata.name, () => {
         expect(Template.artifacts).toMatchSnapshot()

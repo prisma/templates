@@ -12,7 +12,7 @@ export const engineType: FileTransformer = (params) => {
           file,
           pattern: /provider *= *"prisma-client-js"/,
           // eslint-disable-next-line
-          replacement: `provider = "prisma-client-js" \n  engineType = "${parameters.engineType}"`,
+          replacement: `provider = "prisma-client-js"\n  engineType = "${parameters.engineType}"`,
         })
       }
       break

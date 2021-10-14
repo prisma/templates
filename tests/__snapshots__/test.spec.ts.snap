@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Template classes have static data artifcats empty 1`] = `Object {}`;
+exports[`Template classes have static data artifacts empty 1`] = `Object {}`;
 
-exports[`Template classes have static data artifcats musicStreamingService 1`] = `
+exports[`Template classes have static data artifacts music-streaming-service 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -130,13 +130,13 @@ main().finally(async () => {
 }
 `;
 
-exports[`Template classes have static data artifcats nextJs 1`] = `
+exports[`Template classes have static data artifacts nextjs 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -198,13 +198,13 @@ main().finally(async () => {
 }
 `;
 
-exports[`Template classes have static data artifcats rentalsPlatform 1`] = `
+exports[`Template classes have static data artifacts rentals-platform 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -342,7 +342,7 @@ main().finally(async () => {
 }
 `;
 
-exports[`Template classes have static data artifcats saas 1`] = `
+exports[`Template classes have static data artifacts saas 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
@@ -413,13 +413,13 @@ main().finally(async () => {
 }
 `;
 
-exports[`Template classes have static data artifcats urlShortener 1`] = `
+exports[`Template classes have static data artifacts url-shortener 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -483,6 +483,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   "package.json": Object {
     "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -645,7 +646,7 @@ export async function seed() {
 }
 `;
 
-exports[`Template classes have static data files musicStreamingService 1`] = `
+exports[`Template classes have static data files music-streaming-service 1`] = `
 Object {
   "README.md": Object {
     "content": "# Music Streaming Service
@@ -1067,6 +1068,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   "package.json": Object {
     "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -1693,9 +1695,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -1721,7 +1723,7 @@ main()
 }
 `;
 
-exports[`Template classes have static data files nextJs 1`] = `
+exports[`Template classes have static data files nextjs 1`] = `
 Object {
   "README.md": Object {
     "content": "# Vercel deployment example
@@ -1769,6 +1771,7 @@ module.exports = {
   "package.json": Object {
     "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -2457,7 +2460,7 @@ a {
 }
 `;
 
-exports[`Template classes have static data files rentalsPlatform 1`] = `
+exports[`Template classes have static data files rentals-platform 1`] = `
 Object {
   "README.md": Object {
     "content": "# Rentals Platform
@@ -2813,6 +2816,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   "package.json": Object {
     "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -3677,6 +3681,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   "package.json": Object {
     "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4148,7 +4153,7 @@ main()
 }
 `;
 
-exports[`Template classes have static data files urlShortener 1`] = `
+exports[`Template classes have static data files url-shortener 1`] = `
 Object {
   "README.md": Object {
     "content": "# URL Shortener
@@ -4306,6 +4311,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   "package.json": Object {
     "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4730,49 +4736,55 @@ main()
 
 exports[`Template classes have static data metadata empty 1`] = `
 Object {
+  "description": "An empty schema with no models, to build your own your own schema",
   "displayName": "Empty",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
   "name": "empty",
 }
 `;
 
-exports[`Template classes have static data metadata musicStreamingService 1`] = `
+exports[`Template classes have static data metadata music-streaming-service 1`] = `
 Object {
+  "description": "Schema for a fictional music streaming service with a REST API",
   "displayName": "Music Streaming Service",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-  "name": "musicStreamingService",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+  "name": "music-streaming-service",
 }
 `;
 
-exports[`Template classes have static data metadata nextJs 1`] = `
+exports[`Template classes have static data metadata nextjs 1`] = `
 Object {
-  "displayName": "Next JS",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-  "name": "nextJs",
+  "description": "Schema for a blog built with Next.js",
+  "displayName": "Blog",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+  "name": "nextjs",
 }
 `;
 
-exports[`Template classes have static data metadata rentalsPlatform 1`] = `
+exports[`Template classes have static data metadata rentals-platform 1`] = `
 Object {
+  "description": "Schema for a fictional hotel with a REST API",
   "displayName": "Rentals Platform",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-  "name": "rentalsPlatform",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+  "name": "rentals-platform",
 }
 `;
 
 exports[`Template classes have static data metadata saas 1`] = `
 Object {
-  "displayName": "Saas",
+  "description": "Schema for an identity service for a SaaS with a REST API",
+  "displayName": "SaaS",
   "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
   "name": "saas",
 }
 `;
 
-exports[`Template classes have static data metadata urlShortener 1`] = `
+exports[`Template classes have static data metadata url-shortener 1`] = `
 Object {
-  "displayName": "Url Shortener",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-  "name": "urlShortener",
+  "description": "Schema for a URL shortener with a REST API",
+  "displayName": "URL Shortener",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+  "name": "url-shortener",
 }
 `;
 
@@ -4780,6 +4792,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency emp
 Object {
   "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4801,10 +4814,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency musicStreamingService 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency music-streaming-service 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4833,10 +4847,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency nextJs 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency nextjs 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4878,6 +4893,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency not
 Object {
   "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4899,10 +4915,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set at all musicStreamingService 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all music-streaming-service 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4931,10 +4948,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set at all nextJs 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all nextjs 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -4972,10 +4990,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set at all rentalsPlatform 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all rentals-platform 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5008,6 +5027,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency not
 Object {
   "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5036,10 +5056,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set at all urlShortener 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set at all url-shortener 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5072,6 +5093,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency not
 Object {
   "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5093,10 +5115,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set to binary musicStreamingService 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary music-streaming-service 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5125,10 +5148,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set to binary nextJs 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary nextjs 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5166,10 +5190,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set to binary rentalsPlatform 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary rentals-platform 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5202,6 +5227,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency not
 Object {
   "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5230,10 +5256,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency not set to binary urlShortener 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency not set to binary url-shortener 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5262,10 +5289,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency rentalsPlatform 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency rentals-platform 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5298,6 +5326,7 @@ exports[`templates can be instantiated with custom @prisma/client dependency saa
 Object {
   "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5326,10 +5355,11 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom @prisma/client dependency urlShortener 1`] = `
+exports[`templates can be instantiated with custom @prisma/client dependency url-shortener 1`] = `
 Object {
   "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5371,6 +5401,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "package.json": Object {
       "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5533,6 +5564,7 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
     "name": "empty",
@@ -5553,6 +5585,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "package.json": Object {
       "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5714,6 +5747,7 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
     "name": "empty",
@@ -5734,6 +5768,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "package.json": Object {
       "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -5895,6 +5930,7 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
     "name": "empty",
@@ -5915,6 +5951,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "package.json": Object {
       "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -6076,6 +6113,7 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
     "name": "empty",
@@ -6096,6 +6134,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     "package.json": Object {
       "content": "{
   \\"name\\": \\"empty\\",
+  \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -6257,6 +6296,7 @@ export async function seed() {
     },
   },
   "metadata": Object {
+    "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
     "name": "empty",
@@ -6264,14 +6304,14 @@ export async function seed() {
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider musicStreamingService X mongodb 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider music-streaming-service X mongodb 1`] = `
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -6812,6 +6852,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -7439,9 +7480,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -7466,21 +7507,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-    "name": "musicStreamingService",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "name": "music-streaming-service",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider musicStreamingService X mysql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider music-streaming-service X mysql 1`] = `
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -8021,6 +8063,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -8647,9 +8690,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -8674,21 +8717,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-    "name": "musicStreamingService",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "name": "music-streaming-service",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider musicStreamingService X postgresql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider music-streaming-service X postgresql 1`] = `
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -9229,6 +9273,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -9855,9 +9900,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -9882,21 +9927,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-    "name": "musicStreamingService",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "name": "music-streaming-service",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider musicStreamingService X sqlite 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider music-streaming-service X sqlite 1`] = `
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -10437,6 +10483,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -11063,9 +11110,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -11090,21 +11137,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-    "name": "musicStreamingService",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "name": "music-streaming-service",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider musicStreamingService X sqlserver 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider music-streaming-service X sqlserver 1`] = `
 MusicStreamingService {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: musicStreamingService\`;
+const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -11645,6 +11693,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"music-streaming-service\\",
+  \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -12271,9 +12320,9 @@ const main = async () => {
   const albums = await prisma.album.findMany({
     where: {
       name: {
-        contains: ' '
-      }
-    }
+        contains: ' ',
+      },
+    },
   })
 
   console.log('Albums that have more than 1 word: ', albums)
@@ -12298,21 +12347,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/musicStreamingService",
-    "name": "musicStreamingService",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "name": "music-streaming-service",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider nextJs X mongodb 1`] = `
-NextJs {
+exports[`templates can be instantiated with custom datasourceProvider nextjs X mongodb 1`] = `
+Nextjs {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -12419,6 +12469,7 @@ module.exports = {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -13107,21 +13158,22 @@ a {
     },
   },
   "metadata": Object {
-    "displayName": "Next JS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-    "name": "nextJs",
+    "description": "Schema for a blog built with Next.js",
+    "displayName": "Blog",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider nextJs X mysql 1`] = `
-NextJs {
+exports[`templates can be instantiated with custom datasourceProvider nextjs X mysql 1`] = `
+Nextjs {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -13228,6 +13280,7 @@ module.exports = {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -13915,21 +13968,22 @@ a {
     },
   },
   "metadata": Object {
-    "displayName": "Next JS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-    "name": "nextJs",
+    "description": "Schema for a blog built with Next.js",
+    "displayName": "Blog",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider nextJs X postgresql 1`] = `
-NextJs {
+exports[`templates can be instantiated with custom datasourceProvider nextjs X postgresql 1`] = `
+Nextjs {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -14036,6 +14090,7 @@ module.exports = {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -14723,21 +14778,22 @@ a {
     },
   },
   "metadata": Object {
-    "displayName": "Next JS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-    "name": "nextJs",
+    "description": "Schema for a blog built with Next.js",
+    "displayName": "Blog",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider nextJs X sqlite 1`] = `
-NextJs {
+exports[`templates can be instantiated with custom datasourceProvider nextjs X sqlite 1`] = `
+Nextjs {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -14844,6 +14900,7 @@ module.exports = {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -15531,21 +15588,22 @@ a {
     },
   },
   "metadata": Object {
-    "displayName": "Next JS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-    "name": "nextJs",
+    "description": "Schema for a blog built with Next.js",
+    "displayName": "Blog",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider nextJs X sqlserver 1`] = `
-NextJs {
+exports[`templates can be instantiated with custom datasourceProvider nextjs X sqlserver 1`] = `
+Nextjs {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextJs\`;
+const schema = \`PRISMA TEMPLATE: nextjs\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -15652,6 +15710,7 @@ module.exports = {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"nextjs\\",
+  \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -16339,21 +16398,22 @@ a {
     },
   },
   "metadata": Object {
-    "displayName": "Next JS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextJs",
-    "name": "nextJs",
+    "description": "Schema for a blog built with Next.js",
+    "displayName": "Blog",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "name": "nextjs",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform X mongodb 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider rentals-platform X mongodb 1`] = `
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -16844,6 +16904,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -17482,21 +17543,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-    "name": "rentalsPlatform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "name": "rentals-platform",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform X mysql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider rentals-platform X mysql 1`] = `
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -17987,6 +18049,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -18624,21 +18687,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-    "name": "rentalsPlatform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "name": "rentals-platform",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform X postgresql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider rentals-platform X postgresql 1`] = `
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -19129,6 +19193,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -19766,21 +19831,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-    "name": "rentalsPlatform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "name": "rentals-platform",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform X sqlite 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider rentals-platform X sqlite 1`] = `
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -20271,6 +20337,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -20908,21 +20975,22 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-    "name": "rentalsPlatform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "name": "rentals-platform",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider rentalsPlatform X sqlserver 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider rentals-platform X sqlserver 1`] = `
 RentalsPlatform {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentalsPlatform\`;
+const schema = \`PRISMA TEMPLATE: rentals-platform\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -21413,6 +21481,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"rentals-platform\\",
+  \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -22050,9 +22119,10 @@ main()
     },
   },
   "metadata": Object {
+    "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentalsPlatform",
-    "name": "rentalsPlatform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "name": "rentals-platform",
   },
 }
 `;
@@ -22352,6 +22422,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -22823,7 +22894,8 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Saas",
+    "description": "Schema for an identity service for a SaaS with a REST API",
+    "displayName": "SaaS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
     "name": "saas",
   },
@@ -23125,6 +23197,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -23595,7 +23668,8 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Saas",
+    "description": "Schema for an identity service for a SaaS with a REST API",
+    "displayName": "SaaS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
     "name": "saas",
   },
@@ -23897,6 +23971,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -24367,7 +24442,8 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Saas",
+    "description": "Schema for an identity service for a SaaS with a REST API",
+    "displayName": "SaaS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
     "name": "saas",
   },
@@ -24669,6 +24745,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -25139,7 +25216,8 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Saas",
+    "description": "Schema for an identity service for a SaaS with a REST API",
+    "displayName": "SaaS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
     "name": "saas",
   },
@@ -25441,6 +25519,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"saas\\",
+  \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -25911,21 +25990,22 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Saas",
+    "description": "Schema for an identity service for a SaaS with a REST API",
+    "displayName": "SaaS",
     "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
     "name": "saas",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider urlShortener X mongodb 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider url-shortener X mongodb 1`] = `
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -26133,6 +26213,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -26555,21 +26636,22 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Url Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-    "name": "urlShortener",
+    "description": "Schema for a URL shortener with a REST API",
+    "displayName": "URL Shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "name": "url-shortener",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider urlShortener X mysql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider url-shortener X mysql 1`] = `
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -26777,6 +26859,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -27198,21 +27281,22 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Url Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-    "name": "urlShortener",
+    "description": "Schema for a URL shortener with a REST API",
+    "displayName": "URL Shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "name": "url-shortener",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider urlShortener X postgresql 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider url-shortener X postgresql 1`] = `
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -27420,6 +27504,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -27841,21 +27926,22 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Url Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-    "name": "urlShortener",
+    "description": "Schema for a URL shortener with a REST API",
+    "displayName": "URL Shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "name": "url-shortener",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider urlShortener X sqlite 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider url-shortener X sqlite 1`] = `
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -28063,6 +28149,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -28484,21 +28571,22 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Url Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-    "name": "urlShortener",
+    "description": "Schema for a URL shortener with a REST API",
+    "displayName": "URL Shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "name": "url-shortener",
   },
 }
 `;
 
-exports[`templates can be instantiated with custom datasourceProvider urlShortener X sqlserver 1`] = `
+exports[`templates can be instantiated with custom datasourceProvider url-shortener X sqlserver 1`] = `
 UrlShortener {
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
 import PCW from \\"@prisma/studio-pcw\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: urlShortener\`;
+const schema = \`PRISMA TEMPLATE: url-shortener\`;
 const schemaPath = \\"/tmp/schema.prisma\\";
 const pcw = new PCW.PCW(schema, schemaPath, {
   PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
@@ -28706,6 +28794,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     "package.json": Object {
       "content": "{
   \\"name\\": \\"url-shortener\\",
+  \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
     \\"node\\": \\">=12.2.0\\"
@@ -29127,9 +29216,10 @@ main()
     },
   },
   "metadata": Object {
-    "displayName": "Url Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/urlShortener",
-    "name": "urlShortener",
+    "description": "Schema for a URL shortener with a REST API",
+    "displayName": "URL Shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "name": "url-shortener",
   },
 }
 `;
@@ -29144,20 +29234,20 @@ datasource db {
 }
 
 generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }",
   "path": "prisma/schema.prisma",
 }
 `;
 
-exports[`templates can be instantiated with custom engineType musicStreamingService 1`] = `
+exports[`templates can be instantiated with custom engineType music-streaming-service 1`] = `
 Object {
   "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
 
 generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }
 
@@ -29237,10 +29327,10 @@ model Playlist {
 }
 `;
 
-exports[`templates can be instantiated with custom engineType nextJs 1`] = `
+exports[`templates can be instantiated with custom engineType nextjs 1`] = `
 Object {
   "content": "generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }
 
@@ -29275,13 +29365,13 @@ model User {
 }
 `;
 
-exports[`templates can be instantiated with custom engineType rentalsPlatform 1`] = `
+exports[`templates can be instantiated with custom engineType rentals-platform 1`] = `
 Object {
   "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
 
 generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }
 
@@ -29361,7 +29451,7 @@ Object {
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
 
 generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }
 
@@ -29404,13 +29494,13 @@ model Invite {
 }
 `;
 
-exports[`templates can be instantiated with custom engineType urlShortener 1`] = `
+exports[`templates can be instantiated with custom engineType url-shortener 1`] = `
 Object {
   "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
 
 generator client {
-  provider = \\"prisma-client-js\\" 
+  provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
 }
 
@@ -29451,7 +29541,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
 }
 `;
 
-exports[`templates can be instantiated with custom repository owner and repository handle musicStreamingService 1`] = `
+exports[`templates can be instantiated with custom repository owner and repository handle music-streaming-service 1`] = `
 Object {
   "content": "# Music Streaming Service
 
@@ -29476,7 +29566,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 }
 `;
 
-exports[`templates can be instantiated with custom repository owner and repository handle nextJs 1`] = `
+exports[`templates can be instantiated with custom repository owner and repository handle nextjs 1`] = `
 Object {
   "content": "# Vercel deployment example
 
@@ -29486,7 +29576,7 @@ Object {
 }
 `;
 
-exports[`templates can be instantiated with custom repository owner and repository handle rentalsPlatform 1`] = `
+exports[`templates can be instantiated with custom repository owner and repository handle rentals-platform 1`] = `
 Object {
   "content": "# Rentals Platform
 
@@ -29538,7 +29628,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 }
 `;
 
-exports[`templates can be instantiated with custom repository owner and repository handle urlShortener 1`] = `
+exports[`templates can be instantiated with custom repository owner and repository handle url-shortener 1`] = `
 Object {
   "content": "# URL Shortener
 
@@ -29579,7 +29669,7 @@ generator client {
 }
 `;
 
-exports[`templates can be instantiated with no custom engineType musicStreamingService 1`] = `
+exports[`templates can be instantiated with no custom engineType music-streaming-service 1`] = `
 Object {
   "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
@@ -29664,7 +29754,7 @@ model Playlist {
 }
 `;
 
-exports[`templates can be instantiated with no custom engineType nextJs 1`] = `
+exports[`templates can be instantiated with no custom engineType nextjs 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
@@ -29701,7 +29791,7 @@ model User {
 }
 `;
 
-exports[`templates can be instantiated with no custom engineType rentalsPlatform 1`] = `
+exports[`templates can be instantiated with no custom engineType rentals-platform 1`] = `
 Object {
   "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
@@ -29828,7 +29918,7 @@ model Invite {
 }
 `;
 
-exports[`templates can be instantiated with no custom engineType urlShortener 1`] = `
+exports[`templates can be instantiated with no custom engineType url-shortener 1`] = `
 Object {
   "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user
