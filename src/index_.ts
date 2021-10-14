@@ -9,7 +9,7 @@ export const Utils = {
     const repository = encodeURIComponent(params.repositoryOwner + '/' + params.repositoryHandle)
     const envVars = ['DATABASE_URL', 'DATABASE_MIGRATE_URL'].join(',')
     const envVarDescription = encodeURIComponent(
-      "Connection string for the database this deployment will talk to. If you're using the Prisma Data Proxy, then use its connection string."
+      'Database connection strings your app depends on. You should switch back to the Prisma Data Platform to figure out what values to input here.'
     )
 
     return `https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2F${repository}&env=${envVars}&envDescription=${envVarDescription}`
