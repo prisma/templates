@@ -1,5 +1,5 @@
-import { FileTransformer } from '../fileTransformer/fileTransformer'
 import { PrismaTemplates } from '../'
+import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 export const deployToVercelButton: FileTransformer = (params) => {
   const { file, parameters } = params
