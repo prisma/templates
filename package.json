@@ -73,7 +73,7 @@
     "lodash": "4.17.21",
     "nodemon": "2.0.13",
     "prettier": "2.4.1",
-    "ts-jest": "27.0.5",
+    "ts-jest": "27.0.6",
     "ts-nameof": "5.0.0",
     "ts-node": "10.3.0",
     "ts-patch": "1.4.4",
