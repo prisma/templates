@@ -492,10 +492,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -1077,13 +1077,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -1794,15 +1794,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -2836,13 +2836,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -3701,13 +3701,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4331,13 +4331,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -4812,10 +4812,10 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -4838,13 +4838,13 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4874,15 +4874,15 @@ Object {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4913,10 +4913,10 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -4939,13 +4939,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4975,15 +4975,15 @@ Object {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5014,13 +5014,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5047,13 +5047,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5080,13 +5080,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -5113,10 +5113,10 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -5139,13 +5139,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5175,15 +5175,15 @@ Object {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5214,13 +5214,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5247,13 +5247,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5280,13 +5280,13 @@ Object {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -5313,13 +5313,13 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5346,13 +5346,13 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -5379,13 +5379,13 @@ Object {
     \\"@prisma/client\\": \\"dataproxy\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -5421,10 +5421,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -5605,10 +5605,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -5788,10 +5788,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -5971,10 +5971,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -6154,10 +6154,10 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\"
@@ -6872,13 +6872,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -8083,13 +8083,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -9293,13 +9293,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -10503,13 +10503,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -11713,13 +11713,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -12503,15 +12503,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -13325,15 +13325,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -14146,15 +14146,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -14967,15 +14967,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -15788,15 +15788,15 @@ module.exports = {
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
-    \\"@types/react\\": \\"17.0.29\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
+    \\"@types/react\\": \\"17.0.30\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -16979,13 +16979,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -18124,13 +18124,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -19268,13 +19268,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -20412,13 +20412,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -21556,13 +21556,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -22497,13 +22497,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -23272,13 +23272,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -24046,13 +24046,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -24820,13 +24820,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -25594,13 +25594,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -26288,13 +26288,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -26934,13 +26934,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -27579,13 +27579,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -28224,13 +28224,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -28869,13 +28869,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     \\"@prisma/client\\": \\"3.2.1\\"
   },
   \\"devDependencies\\": {
-    \\"@types/faker\\": \\"5.5.8\\",
-    \\"@types/node\\": \\"16.10.4\\",
+    \\"@types/faker\\": \\"5.5.9\\",
+    \\"@types/node\\": \\"16.11.0\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.2.1\\",
     \\"ts-node\\": \\"10.3.0\\",
-    \\"typescript\\": \\"4.4.3\\"
+    \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
