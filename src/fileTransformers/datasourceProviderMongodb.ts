@@ -14,14 +14,9 @@ export const datasourceProviderMongodb: FileTransformer = (params) => {
   switch (file.path) {
     case 'prisma/schema.prisma':
       if (parameters.datasourceProvider === 'mongodb') {
-        /**
-         * @remarks This approach won't work if we get into a situation with multiple preview feature
-         *          flags across different file transformers since they'll just blindly stack up.
-         */
-        content = tools.replaceContent({
-          file,
-          pattern: /(provider *= *"prisma-client-js")/,
-          replacement: `$1\n  previewFeatures = ["mongoDb"]`,
+        content = tools.prismaSchema.addPreviewFlag({
+          file: params.file,
+          previewFlag: 'mongoDb',
         })
       }
       break

@@ -15,13 +15,10 @@ export const engineType: FileTransformer = (params) => {
           replacement: `provider = "prisma-client-js"\n  engineType = "${parameters.engineType}"`,
         })
       }
-      break
-    case 'package.json':
       if (parameters.engineType === 'dataproxy') {
-        content = tools.replaceContent({
+        content = tools.prismaSchema.addPreviewFlag({
           file,
-          pattern: /"@prisma\/client": ".+"/,
-          replacement: `"@prisma/client": "dataproxy"`,
+          previewFlag: 'dataproxy',
         })
       }
       break
