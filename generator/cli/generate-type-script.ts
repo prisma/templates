@@ -1,7 +1,7 @@
 import endent from 'endent'
 import glob from 'fast-glob'
 import * as FS from 'fs-jetpack'
-import { camelCase, upperFirst } from 'lodash'
+import { camelCase, snakeCase, upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
@@ -100,7 +100,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              | Templates.${templateClassName(_.name)}.Name
+              | Templates.${templateClassName(_.name)}.Handles.Pascal
             `
           })
           .join('\n')}
@@ -208,13 +208,34 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
   const githubRepoUrl = `https://github.com/prisma/prisma-schema-examples`
 
+  const handles = {
+    kebab: {
+      jsdoc: `Good for URLs, publishable to npm, etc.`,
+      value: templateInfo.name,
+    },
+    pascal: {
+      jsdoc: `Good for class names, type names, etc. e.g. GraphQL object types.`,
+      value: upperFirst(camelCase(templateInfo.name)),
+    },
+    camel: {
+      jsdoc: `Good for object indexes`,
+      value: camelCase(templateInfo.name),
+    },
+    snake: {
+      jsdoc: `Good for enums, constants, etc.`,
+      value: snakeCase(templateInfo.name).toLowerCase(),
+    },
+    upper: {
+      jsdoc: `Good for environment names, constants, etc.`,
+      value: snakeCase(templateInfo.name).toUpperCase(),
+    },
+  }
   const sourceCode = endent`
       /**
        * This module was generated.
        * 
        * It contains data about the "${templateInfo.name}" template.
        */
-
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
@@ -223,12 +244,66 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
       ${sourceCodeSectionHeader('Metadata')}
 
+      const handleMap = {
+        ${Object.entries(handles)
+          .map(([k, item]) => {
+            if (k === 'kebab' && handles.kebab.value === handles.camel.value) return null
+            if (k === 'snake' && handles.snake.value === handles.camel.value) return null
+            return `
+            ['${item.value}']: {
+              /**
+               * ${handles.kebab.jsdoc}
+               */
+              kebab: '${handles.kebab.value}',
+              /**
+               *  ${handles.pascal.jsdoc}
+               */
+              pascal: '${handles.pascal.value}',
+              /**
+               *  ${handles.camel.jsdoc}
+               */
+              camel: '${handles.camel.value}',
+              /**
+               *  ${handles.upper.jsdoc}
+               */
+              upper: '${handles.upper.value}',
+              /**
+               *  ${handles.snake.jsdoc}
+               */
+              snake: '${handles.snake.value}',
+            },
+          `
+          })
+          .filter((_) => _ !== null)
+          .join('\n')}
+      } as const
+
       const metadata = {
         /**
-         * The template's name.
+         * The template's handles in various forms.
          */
-        name: '${templateInfo.name}' as const,
-
+        handles: {
+          /**
+           * ${handles.kebab.jsdoc}
+           */
+          kebab: '${handles.kebab.value}',
+          /**
+           *  ${handles.pascal.jsdoc}
+           */
+          pascal: '${handles.pascal.value}',
+          /**
+           *  ${handles.camel.jsdoc}
+           */
+          camel: '${handles.camel.value}',
+          /**
+           *  ${handles.upper.jsdoc}
+           */
+          upper: '${handles.upper.value}',
+          /**
+           *  ${handles.snake.jsdoc}
+           */
+          snake: '${handles.snake.value}',
+        } as const,
         /**
          * The template's expressive name.
          */
@@ -275,7 +350,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
        */
       class ${templateClassName(
         templateInfo.name
-      )} implements AbstractTemplate<typeof metadata.name, typeof files, typeof artifacts> {
+      )} implements AbstractTemplate<typeof files, typeof artifacts> {
+        /**
+         * Convert between metadata handle formats in a type-safe way.
+         */
+        static handleMap = handleMap
         /**
          * Template metadata like name, etc.
          */
@@ -337,7 +416,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
         /**
          * The template's name.
          */
-        export type Name = typeof metadata.name
+        export namespace Handles {
+          export type Pascal = typeof metadata.handles.pascal
+          export type Property = typeof metadata.handles.camel
+          export type Slug = typeof metadata.handles.kebab
+        }
         /**
          * Template files indexed by thier path on disk.
          */
