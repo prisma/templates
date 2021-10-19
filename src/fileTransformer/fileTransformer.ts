@@ -1,4 +1,5 @@
 import { inspect } from 'util'
+import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
 
@@ -9,6 +10,17 @@ export type Tools = {
    * This does a simple string.replace but will throw an error if the given pattern does not match anything.
    */
   replaceContent(params: { file: File; pattern: RegExp; replacement: string }): string
+  /**
+   * Tools designed specifically for working with Prisma Schema.
+   */
+  prismaSchema: {
+    /**
+     * Add a preview flag to the Prisma Client generator block.
+     *
+     * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
+     */
+    addPreviewFlag(params: { file: File; previewFlag: PreviewFlag }): string
+  }
 }
 
 export type Params = {
@@ -54,5 +66,22 @@ const tools: Tools = {
     }
 
     return file.content.replace(pattern, replacement)
+  },
+  prismaSchema: {
+    addPreviewFlag(params) {
+      if (previewFeaturesPattern.exec(params.file.content)) {
+        return tools.replaceContent({
+          file: params.file,
+          pattern: /previewFeatures(.*)=(.*)\[(.+)]/,
+          replacement: `previewFeatures$1=$2[$3, "${params.previewFlag}"]`,
+        })
+      } else {
+        return tools.replaceContent({
+          file: params.file,
+          pattern: /(provider *= *"prisma-client-js")/,
+          replacement: `$1\n  previewFeatures = ["${params.previewFlag}"]`,
+        })
+      }
+    },
   },
 }
