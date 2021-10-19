@@ -9,5 +9,6 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
       engineType: 'dataproxy',
     })
     expect(template.files['prisma/schema.prisma']).toMatchSnapshot()
+    expect(template.files['README.md']).toMatchSnapshot()
   })
 })
