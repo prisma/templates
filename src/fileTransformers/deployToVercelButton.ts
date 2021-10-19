@@ -10,6 +10,7 @@ export const deployToVercelButton: FileTransformer = (params) => {
     const deployButtonUrl = PrismaTemplates.Utils.getVercelDeployButtonUrl({
       repositoryOwner: parameters.repositoryOwner,
       repositoryHandle: parameters.repositoryHandle,
+      dataproxy: parameters.engineType === 'dataproxy',
     })
 
     const deployButton = `[![Deploy with Vercel](https://vercel.com/button)](${deployButtonUrl})`
