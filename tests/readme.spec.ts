@@ -8,7 +8,7 @@ describe('vercel button', () => {
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
           repositoryHandle: 'templates-node',
-          engineType: 'dataproxy',
+          dataproxy: true,
         })
         expect(template.files['README.md'].content.match(/Deploy with Vercel.*/)?.[0]).toMatch(
           /.*env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&.*/
@@ -23,7 +23,7 @@ describe('vercel button', () => {
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
           repositoryHandle: 'templates-node',
-          engineType: 'binary',
+          dataproxy: false,
         })
         expect(template.files['README.md'].content.match(/Deploy with Vercel.*/)?.[0]).toMatch(
           /.*env=DATABASE_URL,DATABASE_MIGRATE_URL&.*/
