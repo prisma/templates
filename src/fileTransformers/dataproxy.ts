@@ -1,7 +1,7 @@
 import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 export const dataproxy: FileTransformer = (params) => {
-  const { file, parameters, tools } = params
+  const { file, parameters, tools, template } = params
 
   let content = file.content
 
@@ -18,8 +18,10 @@ export const dataproxy: FileTransformer = (params) => {
           file,
           data: {
             scripts: {
-              'prisma:generate': "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
-              'prisma:migrate': 'DATABASE_URL="$MIGRATE_DATABASE_URL" prisma migrate deploy',
+              build:
+                template === 'Nextjs'
+                  ? `PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build`
+                  : `PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate`,
             },
           },
         })

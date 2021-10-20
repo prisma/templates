@@ -1,5 +1,6 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
+import { PrismaTemplates } from '..'
 import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
@@ -36,6 +37,7 @@ export type Tools = {
 }
 
 export type Params = {
+  template: PrismaTemplates.$Types.TemplateTag
   file: File
   parameters: BaseTemplateParametersResolved
   tools: Tools
@@ -43,19 +45,21 @@ export type Params = {
 
 export type FileTransformer = (params: Params) => string
 
-export const runStack = <T extends Index<File>>(
-  transformers: FileTransformer[],
-  files: T,
+export const runStack = <T extends Index<File>>(params: {
+  template: PrismaTemplates.$Types.TemplateTag
+  transformers: FileTransformer[]
+  files: T
   parameters: Params['parameters']
-): T => {
-  return mapValues(files, (file) => {
-    const contentTransformed = transformers.reduce((content, transformer) => {
+}): T => {
+  return mapValues(params.files, (file) => {
+    const contentTransformed = params.transformers.reduce((content, transformer) => {
       return transformer({
+        template: params.template,
         file: {
           ...file,
           content,
         },
-        parameters,
+        parameters: params.parameters,
         tools,
       })
     }, file.content)
