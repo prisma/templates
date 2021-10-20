@@ -35,7 +35,8 @@ Object {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -61,7 +62,9 @@ Object {
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -94,7 +97,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -127,7 +132,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -160,7 +167,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -193,7 +202,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -235,7 +246,8 @@ Object {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -261,7 +273,9 @@ Object {
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -294,7 +308,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -327,7 +343,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -360,7 +378,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -393,7 +413,9 @@ Object {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
   "path": "package.json",
@@ -600,7 +622,8 @@ module.exports = {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -924,7 +947,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -1472,7 +1495,8 @@ module.exports = {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -1796,6 +1820,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -2343,7 +2368,8 @@ module.exports = {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -2667,6 +2693,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -3214,7 +3241,8 @@ module.exports = {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -3538,6 +3566,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -4085,7 +4114,8 @@ module.exports = {
     \\"build\\": \\"next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -4409,6 +4439,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -4791,7 +4822,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -4806,7 +4839,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -4988,7 +5021,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -5003,6 +5038,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5184,7 +5220,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -5199,6 +5237,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5380,7 +5419,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -5395,6 +5436,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5576,7 +5618,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -5591,6 +5635,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6315,7 +6360,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -6326,7 +6373,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -7540,7 +7587,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -7551,6 +7600,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -8764,7 +8814,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -8775,6 +8827,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -9988,7 +10041,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -9999,6 +10054,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -11212,7 +11268,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -11223,6 +11281,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -12386,7 +12445,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -12397,7 +12458,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -13545,7 +13606,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -13556,6 +13619,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -14703,7 +14767,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -14714,6 +14780,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -15861,7 +15928,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -15872,6 +15941,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -17019,7 +17089,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -17030,6 +17102,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -17974,7 +18047,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -17985,7 +18060,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -18763,7 +18838,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -18774,6 +18851,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -19551,7 +19629,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -19562,6 +19642,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -20339,7 +20420,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -20350,6 +20433,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -21127,7 +21211,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -21138,6 +21224,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -21835,7 +21922,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -21846,7 +21935,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"mongoDb\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -22495,7 +22584,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -22506,6 +22597,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -23154,7 +23246,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -23165,6 +23259,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -23813,7 +23908,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -23824,6 +23921,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -24472,7 +24570,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
-    \\"dev\\": \\"ts-node ./sandbox.ts\\"
+    \\"dev\\": \\"ts-node ./sandbox.ts\\",
+    \\"prisma:generate\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\",
+    \\"prisma:migrate\\": \\"DATABASE_URL=\\\\\\"$MIGRATE_DATABASE_URL\\\\\\" prisma migrate deploy\\"
   }
 }",
       "path": "package.json",
@@ -24483,6 +24583,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -24891,6 +24992,7 @@ Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -24936,6 +25038,7 @@ datasource db {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -24949,6 +25052,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25035,6 +25139,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25115,6 +25220,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25164,6 +25270,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25330,6 +25437,7 @@ exports[`with no custom engineType Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25374,6 +25482,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -25386,6 +25495,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25471,6 +25581,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25550,6 +25661,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {
@@ -25598,6 +25710,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
 }
 
 datasource db {

@@ -5,7 +5,7 @@ export const dataproxy: FileTransformer = (params) => {
 
   let content = file.content
 
-  if (parameters.dataproxy !== false) {
+  if (parameters.dataproxy) {
     switch (file.path) {
       case 'prisma/schema.prisma':
         content = tools.prismaSchema.addPreviewFlag({

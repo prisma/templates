@@ -13,7 +13,7 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
 })
 
 Object.values(PrismaTemplates.Templates).forEach((Template) => {
-  it(`dataproxy is the default: ${Template.metadata.displayName}`, () => {
+  it(`is enabled by default: ${Template.metadata.displayName}`, () => {
     expect(
       new Template({
         datasourceProvider: 'mysql',
@@ -28,5 +28,17 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
         repositoryHandle: 'templates-node',
       })
     )
+  })
+})
+
+Object.values(PrismaTemplates.Templates).forEach((Template) => {
+  it(`can be disabled: ${Template.metadata.displayName}`, () => {
+    const template = new Template({
+      datasourceProvider: 'mysql',
+      repositoryOwner: 'prisma',
+      repositoryHandle: 'templates-node',
+      dataproxy: false,
+    })
+    expect(template.files['prisma/schema.prisma']).toMatchSnapshot()
   })
 })
