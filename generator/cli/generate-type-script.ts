@@ -99,11 +99,15 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
       export namespace TemplateHandle {
         ${handleKinds
           .map(
-            (handleKind) => endent`
-              export type ${upperFirst(handleKind)} = ${templateInfos
-              .map((_) => `'${_.handles[handleKind].value}'`)
-              .join(` | `)}
-            `
+            // prettier-ignore
+            (handleKind) => `export const ${upperFirst(handleKind)} = [${templateInfos.map((_) => `'${_.handles[handleKind].value}'`).join(`, `)}] as const`
+          )
+          .join(`\n`)}
+
+        ${handleKinds
+          .map(
+            // prettier-ignore
+            (handleKind) => `export type ${upperFirst(handleKind)} = ${templateInfos.map((_) => `'${_.handles[handleKind].value}'`).join(` | `)}`
           )
           .join(`\n`)}
       }
@@ -148,23 +152,23 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
 
     const handles = {
       kebab: {
-        jsdoc: `Good for URLs, publishable to npm, etc.`,
+        jsdoc: `Good for URLs, npm package name.`,
         value: name,
       },
       pascal: {
-        jsdoc: `Good for class names, type names, etc. e.g. GraphQL object types.`,
+        jsdoc: `Good for class names, type names.`,
         value: upperFirst(camelCase(name)),
       },
       camel: {
-        jsdoc: `Good for object indexes`,
+        jsdoc: `Good for object properties.`,
         value: camelCase(name),
       },
       snake: {
-        jsdoc: `Good for enums, constants, etc.`,
+        jsdoc: `Good for enums, constants.`,
         value: snakeCase(name).toLowerCase(),
       },
       upper: {
-        jsdoc: `Good for environment names, constants, etc.`,
+        jsdoc: `Good for environment names, constants.`,
         value: snakeCase(name).toUpperCase(),
       },
     }
