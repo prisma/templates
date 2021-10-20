@@ -363,7 +363,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         /**
          * Type brand for discriminant union use-cases.
          */
-        static _tag = ${templateInfo.handles.pascal}
+        static _tag = '${templateInfo.handles.pascal.value}' as const
 
         /**
          * Convert between metadata handle formats in a type-safe way.
@@ -396,7 +396,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         //
         // Instance properties
         //
-        public _tag = ${templateInfo.handles.pascal}
+        public _tag = '${templateInfo.handles.pascal.value}' as const
 
         /**
          * Template metadata like name, etc.
