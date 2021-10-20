@@ -2,6 +2,7 @@ export type Handle = {
   jsdoc: string
   value: string
 }
+
 export type TemplateInfo = {
   handles: {
     kebab: Handle
