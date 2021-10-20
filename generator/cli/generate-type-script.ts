@@ -359,23 +359,33 @@ ${indentBlock(4, escapeBackticks(f.content))}
        * A "${templateInfo.displayName}" Prisma template.
        */
       class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files, typeof artifacts> {
+
+        /**
+         * Type brand for discriminant union use-cases.
+         */
+        static _tag = '${templateInfo.handles.pascal.value}' as const
+
         /**
          * Convert between metadata handle formats in a type-safe way.
          */
         static handleMap = handleMap
+
         /**
          * Template metadata like name, etc.
          */
         static metadata = metadata
+
         /**
          * Template files indexed by thier path on disk. Note that the files on a template class instance can
          * have different contents than the files on template class constructor.
          */
         static files = files
+
         /**
          * Derived assets from the template files.
          */
         static artifacts = artifacts
+
         /**
          * Metadata about the parameters accepted by this template.
          */
@@ -386,6 +396,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
         //
         // Instance properties
         //
+
+        /**
+         * Type brand for discriminant union use-cases.
+         */
+        public _tag = '${templateInfo.handles.pascal.value}' as const
 
         /**
          * Template metadata like name, etc.

@@ -5435,6 +5435,7 @@ Object {
 
 exports[`templates can be instantiated with custom datasourceProvider Blog X mongodb 1`] = `
 Nextjs {
+  "_tag": "Nextjs",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -6263,6 +6264,7 @@ a {
 
 exports[`templates can be instantiated with custom datasourceProvider Blog X mysql 1`] = `
 Nextjs {
+  "_tag": "Nextjs",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -7090,6 +7092,7 @@ a {
 
 exports[`templates can be instantiated with custom datasourceProvider Blog X postgresql 1`] = `
 Nextjs {
+  "_tag": "Nextjs",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -7917,6 +7920,7 @@ a {
 
 exports[`templates can be instantiated with custom datasourceProvider Blog X sqlite 1`] = `
 Nextjs {
+  "_tag": "Nextjs",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -8744,6 +8748,7 @@ a {
 
 exports[`templates can be instantiated with custom datasourceProvider Blog X sqlserver 1`] = `
 Nextjs {
+  "_tag": "Nextjs",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -9571,6 +9576,7 @@ a {
 
 exports[`templates can be instantiated with custom datasourceProvider Empty X mongodb 1`] = `
 Empty {
+  "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
     "README.md": Object {
@@ -9761,6 +9767,7 @@ export async function seed() {
 
 exports[`templates can be instantiated with custom datasourceProvider Empty X mysql 1`] = `
 Empty {
+  "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
     "README.md": Object {
@@ -9950,6 +9957,7 @@ export async function seed() {
 
 exports[`templates can be instantiated with custom datasourceProvider Empty X postgresql 1`] = `
 Empty {
+  "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
     "README.md": Object {
@@ -10139,6 +10147,7 @@ export async function seed() {
 
 exports[`templates can be instantiated with custom datasourceProvider Empty X sqlite 1`] = `
 Empty {
+  "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
     "README.md": Object {
@@ -10328,6 +10337,7 @@ export async function seed() {
 
 exports[`templates can be instantiated with custom datasourceProvider Empty X sqlserver 1`] = `
 Empty {
+  "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
     "README.md": Object {
@@ -10517,6 +10527,7 @@ export async function seed() {
 
 exports[`templates can be instantiated with custom datasourceProvider Music Streaming Service X mongodb 1`] = `
 MusicStreamingService {
+  "_tag": "MusicStreamingService",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -11734,6 +11745,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Music Streaming Service X mysql 1`] = `
 MusicStreamingService {
+  "_tag": "MusicStreamingService",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -12950,6 +12962,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Music Streaming Service X postgresql 1`] = `
 MusicStreamingService {
+  "_tag": "MusicStreamingService",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -14166,6 +14179,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Music Streaming Service X sqlite 1`] = `
 MusicStreamingService {
+  "_tag": "MusicStreamingService",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -15382,6 +15396,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Music Streaming Service X sqlserver 1`] = `
 MusicStreamingService {
+  "_tag": "MusicStreamingService",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -16598,6 +16613,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Rentals Platform X mongodb 1`] = `
 RentalsPlatform {
+  "_tag": "RentalsPlatform",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -17749,6 +17765,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Rentals Platform X mysql 1`] = `
 RentalsPlatform {
+  "_tag": "RentalsPlatform",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -18899,6 +18916,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Rentals Platform X postgresql 1`] = `
 RentalsPlatform {
+  "_tag": "RentalsPlatform",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -20049,6 +20067,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Rentals Platform X sqlite 1`] = `
 RentalsPlatform {
+  "_tag": "RentalsPlatform",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -21199,6 +21218,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider Rentals Platform X sqlserver 1`] = `
 RentalsPlatform {
+  "_tag": "RentalsPlatform",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -22349,6 +22369,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider SaaS X mongodb 1`] = `
 Saas {
+  "_tag": "Saas",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -23130,6 +23151,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider SaaS X mysql 1`] = `
 Saas {
+  "_tag": "Saas",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -23910,6 +23932,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider SaaS X postgresql 1`] = `
 Saas {
+  "_tag": "Saas",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -24690,6 +24713,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider SaaS X sqlite 1`] = `
 Saas {
+  "_tag": "Saas",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -25470,6 +25494,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider SaaS X sqlserver 1`] = `
 Saas {
+  "_tag": "Saas",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -26250,6 +26275,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider URL Shortener X mongodb 1`] = `
 UrlShortener {
+  "_tag": "UrlShortener",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -26902,6 +26928,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider URL Shortener X mysql 1`] = `
 UrlShortener {
+  "_tag": "UrlShortener",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -27553,6 +27580,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider URL Shortener X postgresql 1`] = `
 UrlShortener {
+  "_tag": "UrlShortener",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -28204,6 +28232,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider URL Shortener X sqlite 1`] = `
 UrlShortener {
+  "_tag": "UrlShortener",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
@@ -28855,6 +28884,7 @@ main()
 
 exports[`templates can be instantiated with custom datasourceProvider URL Shortener X sqlserver 1`] = `
 UrlShortener {
+  "_tag": "UrlShortener",
   "artifacts": Object {
     "prisma/seed.mjs": Object {
       "content": "import path from \\"path\\";
