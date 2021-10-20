@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`has handle data lists 1`] = `
+Object {
+  "Camel": Array [
+    "nextjs",
+    "empty",
+    "musicStreamingService",
+    "rentalsPlatform",
+    "saas",
+    "urlShortener",
+  ],
+  "Kebab": Array [
+    "nextjs",
+    "empty",
+    "music-streaming-service",
+    "rentals-platform",
+    "saas",
+    "url-shortener",
+  ],
+  "Pascal": Array [
+    "Nextjs",
+    "Empty",
+    "MusicStreamingService",
+    "RentalsPlatform",
+    "Saas",
+    "UrlShortener",
+  ],
+  "Snake": Array [
+    "nextjs",
+    "empty",
+    "music_streaming_service",
+    "rentals_platform",
+    "saas",
+    "url_shortener",
+  ],
+  "Upper": Array [
+    "NEXTJS",
+    "EMPTY",
+    "MUSIC_STREAMING_SERVICE",
+    "RENTALS_PLATFORM",
+    "SAAS",
+    "URL_SHORTENER",
+  ],
+}
+`;
