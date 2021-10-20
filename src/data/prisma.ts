@@ -8,7 +8,7 @@ export const PrismaDatasourceProviderName = {
 
 export type PrismaDatasourceProviderName = keyof typeof PrismaDatasourceProviderName
 
-export type EngineType = 'library' | 'binary' | 'dataproxy'
+export type EngineType = 'library' | 'binary'
 
 export const previewFeaturesPattern = /previewFeatures *= *\[/
 

@@ -4,11 +4,11 @@ exports[`Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -43,13 +43,13 @@ Object {
   "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -62,11 +62,11 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -148,11 +148,11 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -228,11 +228,11 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -277,11 +277,11 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
-  provider = \\"mysql\\"
+  provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 

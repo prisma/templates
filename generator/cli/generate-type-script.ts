@@ -96,6 +96,20 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
           })
           .join('\n')}
 
+      export type TemplateTag =
+        ${templateInfos
+          .map((_) => {
+            return endent`
+              | Templates.${_.handles.pascal.value}.Tag
+            `
+          })
+          .join('\n')}
+
+      export const TemplateTag = [
+        ${templateInfos.map((_) => `Templates.${_.handles.pascal.value}._tag,`).join('\n')}
+      ] as const
+      
+
       export namespace TemplateHandle {
         ${handleKinds
           .map(
@@ -350,7 +364,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
         datasourceProvider: Data.PrismaDatasourceProviderName.postgresql,
         repositoryOwner: null,
         repositoryHandle: null,
-        engineType: null
+        engineType: null,
+        dataproxy: true,
       }
 
       ${sourceCodeSectionHeader('Class')}
@@ -376,7 +391,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         static metadata = metadata
 
         /**
-         * Template files indexed by thier path on disk. Note that the files on a template class instance can
+         * Template files indexed by their path on disk. Note that the files on a template class instance can
          * have different contents than the files on template class constructor.
          */
         static files = files
@@ -406,11 +421,13 @@ ${indentBlock(4, escapeBackticks(f.content))}
          * Template metadata like name, etc.
          */
         public metadata = metadata
+
         /**
-         * Template files indexed by thier path on disk. Note that the files on a template class instance can
+         * Template files indexed by their path on disk. Note that the files on a template class instance can
          * have different contents than the files on template class constructor.
          */
         public files = files
+
         /**
          * Derived assets from the template files.
          */
@@ -426,7 +443,12 @@ ${indentBlock(4, escapeBackticks(f.content))}
             ...parameters,
           }
 
-          this.files = FileTransformer.runStack(Object.values(FileTransformers), files, parameters_)
+          this.files = FileTransformer.runStack({
+            template: this._tag,
+            transformers: Object.values(FileTransformers),
+            files,
+            parameters: parameters_
+          })
         }
       }
 
@@ -437,21 +459,29 @@ ${indentBlock(4, escapeBackticks(f.content))}
        */
       namespace ${templateInfo.handles.pascal.value} {
         /**
-         * The template's name.
+         * The template's tag.
+         */
+        export type Tag = '${templateInfo.handles.pascal.value}'
+
+        /**
+         * The template's handles.
          */
         export namespace Handles {
           export type Pascal = typeof metadata.handles.pascal
           export type Property = typeof metadata.handles.camel
           export type Slug = typeof metadata.handles.kebab
         }
+
         /**
-         * Template files indexed by thier path on disk.
+         * Template files indexed by their path on disk.
          */
         export type Files = typeof files
+
         /**
          * Derived assets from the template files.
          */
         export type Artifacts = typeof artifacts
+
         /**
          * Parameters accepted by this template.
          */

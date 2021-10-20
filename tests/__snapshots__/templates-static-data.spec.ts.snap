@@ -535,24 +535,25 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
     "path": "README.md",
   },
   "lib/prisma.ts": Object {
-    "content": "import { PrismaClient } from '@prisma/client'
+    "content": "/**
+ * Avoid instantiating too many instances of Prisma, especially in development.
+ *
+ * @link https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
+ */
 
-declare global {
-  var prisma: PrismaClient
-}
+import { PrismaClient } from '@prisma/client'
 
-// Avoid instantiating too many instances of Prisma in development
-// https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
+let prisma: PrismaClient
+
 if (process.env.NODE_ENV === 'production') {
   prisma = new PrismaClient()
 } else {
-  if (!global.prisma) {
-    global.prisma = new PrismaClient()
-  }
-  prisma = global.prisma
+  const g = global as any
+  if (!g.prisma) g.prisma = new PrismaClient()
+  prisma = g.prisma
 }
 
-export default prisma",
+export { prisma }",
     "path": "lib/prisma.ts",
   },
   "next-env.d.ts": Object {
@@ -577,7 +578,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
@@ -632,7 +633,7 @@ export default handler",
   },
   "pages/api/posts.ts": Object {
     "content": "import { NextApiHandler } from 'next'
-import prisma from '../../lib/prisma'
+import { prisma } from '../../lib/prisma'
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
@@ -677,9 +678,9 @@ export default handler",
     "path": "pages/api/posts.ts",
   },
   "pages/api/seed.ts": Object {
-    "content": "import { NextApiHandler } from 'next'
-import { Prisma } from '@prisma/client'
-import prisma from '../../lib/prisma'
+    "content": "import { Prisma } from '@prisma/client'
+import { NextApiHandler } from 'next'
+import { prisma } from '../../lib/prisma'
 
 const handler: NextApiHandler = async (req, res) => {
   try {
@@ -776,9 +777,9 @@ export default handler",
     "path": "pages/api/seed.ts",
   },
   "pages/api/users.ts": Object {
-    "content": "import { NextApiHandler } from 'next'
-import { Prisma } from '@prisma/client'
-import prisma from '../../lib/prisma'
+    "content": "import { Prisma } from '@prisma/client'
+import { NextApiHandler } from 'next'
+import { prisma } from '../../lib/prisma'
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'GET') {
@@ -1283,7 +1284,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
@@ -1875,7 +1876,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
@@ -2893,7 +2894,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
@@ -3765,7 +3766,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
@@ -4402,7 +4403,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"engines\\": {
-    \\"node\\": \\">=12.2.0\\"
+    \\"node\\": \\">=14.0.0\\"
   },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"

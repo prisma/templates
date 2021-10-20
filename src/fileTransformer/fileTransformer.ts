@@ -1,4 +1,6 @@
+import { merge } from 'lodash'
 import { inspect } from 'util'
+import { PrismaTemplates } from '../'
 import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
@@ -10,6 +12,17 @@ export type Tools = {
    * This does a simple string.replace but will throw an error if the given pattern does not match anything.
    */
   replaceContent(params: { file: File; pattern: RegExp; replacement: string }): string
+  /**
+   * Tools for working with JSON files
+   */
+  json: {
+    /**
+     * Deep merge an object into a JSON file. Uses Lodash merge.
+     *
+     * The file is automatically deserialized and re-serialized after the data merge.
+     */
+    merge(params: { file: File; data: Record<string, unknown> }): string
+  }
   /**
    * Tools designed specifically for working with Prisma Schema.
    */
@@ -24,6 +37,7 @@ export type Tools = {
 }
 
 export type Params = {
+  template: PrismaTemplates.$Types.TemplateTag
   file: File
   parameters: BaseTemplateParametersResolved
   tools: Tools
@@ -31,19 +45,21 @@ export type Params = {
 
 export type FileTransformer = (params: Params) => string
 
-export const runStack = <T extends Index<File>>(
-  transformers: FileTransformer[],
-  files: T,
+export const runStack = <T extends Index<File>>(params: {
+  template: PrismaTemplates.$Types.TemplateTag
+  transformers: FileTransformer[]
+  files: T
   parameters: Params['parameters']
-): T => {
-  return mapValues(files, (file) => {
-    const contentTransformed = transformers.reduce((content, transformer) => {
+}): T => {
+  return mapValues(params.files, (file) => {
+    const contentTransformed = params.transformers.reduce((content, transformer) => {
       return transformer({
+        template: params.template,
         file: {
           ...file,
           content,
         },
-        parameters,
+        parameters: params.parameters,
         tools,
       })
     }, file.content)
@@ -66,6 +82,14 @@ const tools: Tools = {
     }
 
     return file.content.replace(pattern, replacement)
+  },
+  json: {
+    merge(params) {
+      const data = JSON.parse(params.file.content) as Record<string, unknown>
+      const data_ = merge(data, params.data)
+      const json = JSON.stringify(data_, null, 2)
+      return json
+    },
   },
   prismaSchema: {
     addPreviewFlag(params) {
