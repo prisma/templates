@@ -51,7 +51,7 @@
     "@homer0/prettier-plugin-jsdoc": "4.0.6",
     "@prisma-labs/prettier-config": "0.1.0",
     "@types/jest": "27.0.2",
-    "@types/lodash": "4.14.175",
+    "@types/lodash": "4.14.176",
     "@types/node": "16.9.6",
     "@types/ts-nameof": "4.2.1",
     "@typescript-eslint/eslint-plugin": "5.1.0",
