@@ -146,7 +146,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
  * TODO
  */
 const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
-  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true }).map((path) => {
+  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true, dot: false }).map((path) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
 
@@ -191,7 +191,7 @@ const createSourceCodeTemplate = (params: {
 }): string => {
   const { templateInfo } = params
 
-  const filePaths = glob.sync(`${templateInfo.path}/**/*`)
+  const filePaths = glob.sync(`${templateInfo.path}/**/*`, { dot: true })
 
   const files = filePaths
     .filter((filePath) => !(filePath.endsWith('.png') || filePath.endsWith('.jpeg')))

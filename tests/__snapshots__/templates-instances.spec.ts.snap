@@ -469,6 +469,49 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".eslintrc.json": Object {
+      "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+      "path": ".eslintrc.json",
+    },
+    ".gitignore": Object {
+      "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Next.js Blog
 
@@ -1298,6 +1341,49 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".eslintrc.json": Object {
+      "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+      "path": ".eslintrc.json",
+    },
+    ".gitignore": Object {
+      "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Next.js Blog
 
@@ -2126,6 +2212,49 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".eslintrc.json": Object {
+      "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+      "path": ".eslintrc.json",
+    },
+    ".gitignore": Object {
+      "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Next.js Blog
 
@@ -2954,6 +3083,49 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".eslintrc.json": Object {
+      "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+      "path": ".eslintrc.json",
+    },
+    ".gitignore": Object {
+      "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Next.js Blog
 
@@ -3782,6 +3954,49 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".eslintrc.json": Object {
+      "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+      "path": ".eslintrc.json",
+    },
+    ".gitignore": Object {
+      "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Next.js Blog
 
@@ -4546,6 +4761,12 @@ Empty {
   "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Empty Prisma Project
 
@@ -4737,6 +4958,12 @@ Empty {
   "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Empty Prisma Project
 
@@ -4927,6 +5154,12 @@ Empty {
   "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Empty Prisma Project
 
@@ -5117,6 +5350,12 @@ Empty {
   "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Empty Prisma Project
 
@@ -5307,6 +5546,12 @@ Empty {
   "_tag": "Empty",
   "artifacts": Object {},
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Empty Prisma Project
 
@@ -5621,6 +5866,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Music Streaming Service
 
@@ -6839,6 +7091,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Music Streaming Service
 
@@ -8056,6 +8315,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Music Streaming Service
 
@@ -9273,6 +9539,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Music Streaming Service
 
@@ -10490,6 +10763,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Music Streaming Service
 
@@ -11723,6 +12003,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Rentals Platform
 
@@ -12875,6 +13162,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Rentals Platform
 
@@ -14026,6 +14320,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Rentals Platform
 
@@ -15177,6 +15478,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Rentals Platform
 
@@ -16328,6 +16636,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# Rentals Platform
 
@@ -17406,6 +17721,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# SaaS
 
@@ -18188,6 +18510,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# SaaS
 
@@ -18969,6 +19298,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# SaaS
 
@@ -19750,6 +20086,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# SaaS
 
@@ -20531,6 +20874,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# SaaS
 
@@ -21300,6 +21650,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# URL Shortener
 
@@ -21953,6 +22310,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# URL Shortener
 
@@ -22605,6 +22969,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# URL Shortener
 
@@ -23257,6 +23628,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# URL Shortener
 
@@ -23909,6 +24287,13 @@ main().finally(async () => {
     },
   },
   "files": Object {
+    ".gitignore": Object {
+      "content": "node_modules/
+dist/
+*.env*
+.vercel",
+      "path": ".gitignore",
+    },
     "README.md": Object {
       "content": "# URL Shortener
 

@@ -474,6 +474,49 @@ main().finally(async () => {
 
 exports[`files Blog 1`] = `
 Object {
+  ".eslintrc.json": Object {
+    "content": "{
+  \\"extends\\": \\"next/core-web-vitals\\"
+}",
+    "path": ".eslintrc.json",
+  },
+  ".gitignore": Object {
+    "content": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# Next.js Blog
 
@@ -1222,6 +1265,12 @@ a {
 
 exports[`files Empty 1`] = `
 Object {
+  ".gitignore": Object {
+    "content": "node_modules/
+dist/
+*.env*",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# Empty Prisma Project
 
@@ -1396,6 +1445,13 @@ export async function seed() {
 
 exports[`files Music Streaming Service 1`] = `
 Object {
+  ".gitignore": Object {
+    "content": "node_modules/
+dist/
+*.env*
+.vercel",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# Music Streaming Service
 
@@ -2473,6 +2529,13 @@ main()
 
 exports[`files Rentals Platform 1`] = `
 Object {
+  ".gitignore": Object {
+    "content": "node_modules/
+dist/
+*.env*
+.vercel",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# Rentals Platform
 
@@ -3468,6 +3531,13 @@ main()
 
 exports[`files SaaS 1`] = `
 Object {
+  ".gitignore": Object {
+    "content": "node_modules/
+dist/
+*.env*
+.vercel",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# SaaS
 
@@ -4166,6 +4236,13 @@ main()
 
 exports[`files URL Shortener 1`] = `
 Object {
+  ".gitignore": Object {
+    "content": "node_modules/
+dist/
+*.env*
+.vercel",
+    "path": ".gitignore",
+  },
   "README.md": Object {
     "content": "# URL Shortener
 
