@@ -6,7 +6,7 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
       datasourceProvider: 'mongodb',
       repositoryOwner: 'prisma',
       repositoryHandle: 'templates-node',
-      engineType: 'dataproxy',
+      dataproxy: true,
     })
     expect(template.files['prisma/schema.prisma']).toMatchSnapshot()
   })

@@ -1,6 +1,6 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
-import { PrismaTemplates } from '..'
+import { PrismaTemplates } from '../'
 import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
