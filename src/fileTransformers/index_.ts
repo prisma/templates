@@ -1,4 +1,5 @@
+export * from './dataproxy'
 export * from './datasourceProviderMongodb'
-export * from './prismaSchemaProvider'
 export * from './deployToVercelButton'
 export * from './engineType'
+export * from './prismaSchemaProvider'

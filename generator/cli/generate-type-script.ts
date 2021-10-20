@@ -350,7 +350,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
         datasourceProvider: Data.PrismaDatasourceProviderName.postgresql,
         repositoryOwner: null,
         repositoryHandle: null,
-        engineType: null
+        engineType: null,
+        dataproxy: true,
       }
 
       ${sourceCodeSectionHeader('Class')}

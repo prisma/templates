@@ -57,6 +57,12 @@ export type BaseTemplateParameters = {
    * @default null
    */
   engineType?: EngineType | null
+  /**
+   * Is Prisma Dataproxy being used?
+   *
+   * @default true
+   */
+  dataproxy?: boolean
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
