@@ -4947,7 +4947,7 @@ exports[`Template classes have static data metadata Blog 1`] = `
 Object {
   "description": "Schema for a blog built with Next.js",
   "displayName": "Blog",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
   "handles": Object {
     "camel": "nextjs",
     "kebab": "nextjs",
@@ -4962,7 +4962,7 @@ exports[`Template classes have static data metadata Empty 1`] = `
 Object {
   "description": "An empty schema with no models, to build your own your own schema",
   "displayName": "Empty",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
   "handles": Object {
     "camel": "empty",
     "kebab": "empty",
@@ -4977,7 +4977,7 @@ exports[`Template classes have static data metadata Music Streaming Service 1`] 
 Object {
   "description": "Schema for a fictional music streaming service with a REST API",
   "displayName": "Music Streaming Service",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
   "handles": Object {
     "camel": "musicStreamingService",
     "kebab": "music-streaming-service",
@@ -4992,7 +4992,7 @@ exports[`Template classes have static data metadata Rentals Platform 1`] = `
 Object {
   "description": "Schema for a fictional hotel with a REST API",
   "displayName": "Rentals Platform",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
   "handles": Object {
     "camel": "rentalsPlatform",
     "kebab": "rentals-platform",
@@ -5007,7 +5007,7 @@ exports[`Template classes have static data metadata SaaS 1`] = `
 Object {
   "description": "Schema for an identity service for a SaaS with a REST API",
   "displayName": "SaaS",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
   "handles": Object {
     "camel": "saas",
     "kebab": "saas",
@@ -5022,7 +5022,7 @@ exports[`Template classes have static data metadata URL Shortener 1`] = `
 Object {
   "description": "Schema for a URL shortener with a REST API",
   "displayName": "URL Shortener",
-  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+  "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
   "handles": Object {
     "camel": "urlShortener",
     "kebab": "url-shortener",
@@ -6249,7 +6249,7 @@ a {
   "metadata": Object {
     "description": "Schema for a blog built with Next.js",
     "displayName": "Blog",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
     "handles": Object {
       "camel": "nextjs",
       "kebab": "nextjs",
@@ -7076,7 +7076,7 @@ a {
   "metadata": Object {
     "description": "Schema for a blog built with Next.js",
     "displayName": "Blog",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
     "handles": Object {
       "camel": "nextjs",
       "kebab": "nextjs",
@@ -7903,7 +7903,7 @@ a {
   "metadata": Object {
     "description": "Schema for a blog built with Next.js",
     "displayName": "Blog",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
     "handles": Object {
       "camel": "nextjs",
       "kebab": "nextjs",
@@ -8730,7 +8730,7 @@ a {
   "metadata": Object {
     "description": "Schema for a blog built with Next.js",
     "displayName": "Blog",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
     "handles": Object {
       "camel": "nextjs",
       "kebab": "nextjs",
@@ -9557,7 +9557,7 @@ a {
   "metadata": Object {
     "description": "Schema for a blog built with Next.js",
     "displayName": "Blog",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/nextjs",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Blog",
     "handles": Object {
       "camel": "nextjs",
       "kebab": "nextjs",
@@ -9747,7 +9747,7 @@ export async function seed() {
   "metadata": Object {
     "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
     "handles": Object {
       "camel": "empty",
       "kebab": "empty",
@@ -9936,7 +9936,7 @@ export async function seed() {
   "metadata": Object {
     "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
     "handles": Object {
       "camel": "empty",
       "kebab": "empty",
@@ -10125,7 +10125,7 @@ export async function seed() {
   "metadata": Object {
     "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
     "handles": Object {
       "camel": "empty",
       "kebab": "empty",
@@ -10314,7 +10314,7 @@ export async function seed() {
   "metadata": Object {
     "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
     "handles": Object {
       "camel": "empty",
       "kebab": "empty",
@@ -10503,7 +10503,7 @@ export async function seed() {
   "metadata": Object {
     "description": "An empty schema with no models, to build your own your own schema",
     "displayName": "Empty",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/empty",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Empty",
     "handles": Object {
       "camel": "empty",
       "kebab": "empty",
@@ -11720,7 +11720,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
     "handles": Object {
       "camel": "musicStreamingService",
       "kebab": "music-streaming-service",
@@ -12936,7 +12936,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
     "handles": Object {
       "camel": "musicStreamingService",
       "kebab": "music-streaming-service",
@@ -14152,7 +14152,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
     "handles": Object {
       "camel": "musicStreamingService",
       "kebab": "music-streaming-service",
@@ -15368,7 +15368,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
     "handles": Object {
       "camel": "musicStreamingService",
       "kebab": "music-streaming-service",
@@ -16584,7 +16584,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional music streaming service with a REST API",
     "displayName": "Music Streaming Service",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/music-streaming-service",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Music Streaming Service",
     "handles": Object {
       "camel": "musicStreamingService",
       "kebab": "music-streaming-service",
@@ -17735,7 +17735,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
     "handles": Object {
       "camel": "rentalsPlatform",
       "kebab": "rentals-platform",
@@ -18885,7 +18885,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
     "handles": Object {
       "camel": "rentalsPlatform",
       "kebab": "rentals-platform",
@@ -20035,7 +20035,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
     "handles": Object {
       "camel": "rentalsPlatform",
       "kebab": "rentals-platform",
@@ -21185,7 +21185,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
     "handles": Object {
       "camel": "rentalsPlatform",
       "kebab": "rentals-platform",
@@ -22335,7 +22335,7 @@ main()
   "metadata": Object {
     "description": "Schema for a fictional hotel with a REST API",
     "displayName": "Rentals Platform",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/rentals-platform",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/Rentals Platform",
     "handles": Object {
       "camel": "rentalsPlatform",
       "kebab": "rentals-platform",
@@ -23116,7 +23116,7 @@ main()
   "metadata": Object {
     "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "SaaS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
     "handles": Object {
       "camel": "saas",
       "kebab": "saas",
@@ -23896,7 +23896,7 @@ main()
   "metadata": Object {
     "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "SaaS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
     "handles": Object {
       "camel": "saas",
       "kebab": "saas",
@@ -24676,7 +24676,7 @@ main()
   "metadata": Object {
     "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "SaaS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
     "handles": Object {
       "camel": "saas",
       "kebab": "saas",
@@ -25456,7 +25456,7 @@ main()
   "metadata": Object {
     "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "SaaS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
     "handles": Object {
       "camel": "saas",
       "kebab": "saas",
@@ -26236,7 +26236,7 @@ main()
   "metadata": Object {
     "description": "Schema for an identity service for a SaaS with a REST API",
     "displayName": "SaaS",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/saas",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/SaaS",
     "handles": Object {
       "camel": "saas",
       "kebab": "saas",
@@ -26888,7 +26888,7 @@ main()
   "metadata": Object {
     "description": "Schema for a URL shortener with a REST API",
     "displayName": "URL Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
     "handles": Object {
       "camel": "urlShortener",
       "kebab": "url-shortener",
@@ -27539,7 +27539,7 @@ main()
   "metadata": Object {
     "description": "Schema for a URL shortener with a REST API",
     "displayName": "URL Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
     "handles": Object {
       "camel": "urlShortener",
       "kebab": "url-shortener",
@@ -28190,7 +28190,7 @@ main()
   "metadata": Object {
     "description": "Schema for a URL shortener with a REST API",
     "displayName": "URL Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
     "handles": Object {
       "camel": "urlShortener",
       "kebab": "url-shortener",
@@ -28841,7 +28841,7 @@ main()
   "metadata": Object {
     "description": "Schema for a URL shortener with a REST API",
     "displayName": "URL Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
     "handles": Object {
       "camel": "urlShortener",
       "kebab": "url-shortener",
@@ -29492,7 +29492,7 @@ main()
   "metadata": Object {
     "description": "Schema for a URL shortener with a REST API",
     "displayName": "URL Shortener",
-    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/url-shortener",
+    "githubUrl": "https://github.com/prisma/prisma-schema-examples/tree/main/URL Shortener",
     "handles": Object {
       "camel": "urlShortener",
       "kebab": "url-shortener",

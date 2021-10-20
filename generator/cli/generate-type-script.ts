@@ -10,7 +10,7 @@ import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/ut
 
 const log = console.log
 
-const templateClassName = (x: string) => upperFirst(camelCase(x))
+const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 
 /**
  * Generate TypeScript code for templates in given dir.
@@ -52,17 +52,17 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              "${_.name}": Templates.${templateClassName(_.name)}
+              "${_.handles.pascal.value}": Templates.${_.handles.pascal.value}
             `
           })
           .join('\n')}
       }
 
-      export type TemplateParmetersByName = {
+      export type TemplateParametersByName = {
         ${templateInfos
           .map((_) => {
             return endent`
-              "${_.name}": Templates.${templateClassName(_.name)}.Parameters
+              "${_.handles.pascal.value}": Templates.${_.handles.pascal.value}.Parameters
             `
           })
           .join('\n')}
@@ -72,7 +72,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              "${_.name}": typeof Templates.${templateClassName(_.name)}
+              "${_.handles.pascal.value}": typeof Templates.${_.handles.pascal.value}
             `
           })
           .join('\n')}
@@ -82,7 +82,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              | typeof Templates.${templateClassName(_.name)}
+              | typeof Templates.${_.handles.pascal.value}
             `
           })
           .join('\n')}
@@ -91,19 +91,22 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
         ${templateInfos
           .map((_) => {
             return endent`
-              | Templates.${templateClassName(_.name)}
+              | Templates.${_.handles.pascal.value}
             `
           })
           .join('\n')}
 
-      export type TemplateNames =
-        ${templateInfos
-          .map((_) => {
-            return endent`
-              | Templates.${templateClassName(_.name)}.Handles.Pascal
+      export namespace TemplateHandle {
+        ${handleKinds
+          .map(
+            (handleKind) => endent`
+              export type ${upperFirst(handleKind)} = ${templateInfos
+              .map((_) => `'${_.handles[handleKind].value}'`)
+              .join(` | `)}
             `
-          })
-          .join('\n')}
+          )
+          .join(`\n`)}
+      }
     `,
   })
 
@@ -111,20 +114,20 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
     path: Path.join(outputDir, `templates/index.ts`),
     content: endent`
       ${templateInfos
-        .map((template) => {
-          return `export { ${templateClassName(template.name)} } from './${template.name}'`
+        .map((_) => {
+          return `export { ${_.handles.pascal.value} } from './${_.handles.pascal.value}'`
         })
         .join('\n')}
     `,
   })
 
   fileOutputs.push(
-    ...templateInfos.map((templateInfo) => {
-      const sourceCodePath = Path.join(outputDir, `templates/${templateInfo.name}.ts`)
+    ...templateInfos.map((_) => {
+      const sourceCodePath = Path.join(outputDir, `templates/${_.handles.pascal.value}.ts`)
 
       return {
         path: sourceCodePath,
-        content: createSourceCodeTemplate({ templateInfo, templatesRepoDir }),
+        content: createSourceCodeTemplate({ templateInfo: _, templatesRepoDir }),
       }
     })
   )
@@ -143,8 +146,31 @@ const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] 
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
 
+    const handles = {
+      kebab: {
+        jsdoc: `Good for URLs, publishable to npm, etc.`,
+        value: name,
+      },
+      pascal: {
+        jsdoc: `Good for class names, type names, etc. e.g. GraphQL object types.`,
+        value: upperFirst(camelCase(name)),
+      },
+      camel: {
+        jsdoc: `Good for object indexes`,
+        value: camelCase(name),
+      },
+      snake: {
+        jsdoc: `Good for enums, constants, etc.`,
+        value: snakeCase(name).toLowerCase(),
+      },
+      upper: {
+        jsdoc: `Good for environment names, constants, etc.`,
+        value: snakeCase(name).toUpperCase(),
+      },
+    }
+
     return {
-      name,
+      handles,
       displayName: Path.basename(path),
       description,
       path,
@@ -208,33 +234,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
   const githubRepoUrl = `https://github.com/prisma/prisma-schema-examples`
 
-  const handles = {
-    kebab: {
-      jsdoc: `Good for URLs, publishable to npm, etc.`,
-      value: templateInfo.name,
-    },
-    pascal: {
-      jsdoc: `Good for class names, type names, etc. e.g. GraphQL object types.`,
-      value: upperFirst(camelCase(templateInfo.name)),
-    },
-    camel: {
-      jsdoc: `Good for object indexes`,
-      value: camelCase(templateInfo.name),
-    },
-    snake: {
-      jsdoc: `Good for enums, constants, etc.`,
-      value: snakeCase(templateInfo.name).toLowerCase(),
-    },
-    upper: {
-      jsdoc: `Good for environment names, constants, etc.`,
-      value: snakeCase(templateInfo.name).toUpperCase(),
-    },
-  }
   const sourceCode = endent`
       /**
        * This module was generated.
        * 
-       * It contains data about the "${templateInfo.name}" template.
+       * It contains data about the "${templateInfo.displayName}" template.
        */
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
@@ -245,32 +249,34 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Metadata')}
 
       const handleMap = {
-        ${Object.entries(handles)
+        ${Object.entries(templateInfo.handles)
           .map(([k, item]) => {
-            if (k === 'kebab' && handles.kebab.value === handles.camel.value) return null
-            if (k === 'snake' && handles.snake.value === handles.camel.value) return null
+            if (k === 'kebab' && templateInfo.handles.kebab.value === templateInfo.handles.camel.value)
+              return null
+            if (k === 'snake' && templateInfo.handles.snake.value === templateInfo.handles.camel.value)
+              return null
             return `
             ['${item.value}']: {
               /**
-               * ${handles.kebab.jsdoc}
+               * ${templateInfo.handles.kebab.jsdoc}
                */
-              kebab: '${handles.kebab.value}',
+              kebab: '${templateInfo.handles.kebab.value}',
               /**
-               *  ${handles.pascal.jsdoc}
+               *  ${templateInfo.handles.pascal.jsdoc}
                */
-              pascal: '${handles.pascal.value}',
+              pascal: '${templateInfo.handles.pascal.value}',
               /**
-               *  ${handles.camel.jsdoc}
+               *  ${templateInfo.handles.camel.jsdoc}
                */
-              camel: '${handles.camel.value}',
+              camel: '${templateInfo.handles.camel.value}',
               /**
-               *  ${handles.upper.jsdoc}
+               *  ${templateInfo.handles.upper.jsdoc}
                */
-              upper: '${handles.upper.value}',
+              upper: '${templateInfo.handles.upper.value}',
               /**
-               *  ${handles.snake.jsdoc}
+               *  ${templateInfo.handles.snake.jsdoc}
                */
-              snake: '${handles.snake.value}',
+              snake: '${templateInfo.handles.snake.value}',
             },
           `
           })
@@ -284,25 +290,25 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         handles: {
           /**
-           * ${handles.kebab.jsdoc}
+           * ${templateInfo.handles.kebab.jsdoc}
            */
-          kebab: '${handles.kebab.value}',
+          kebab: '${templateInfo.handles.kebab.value}',
           /**
-           *  ${handles.pascal.jsdoc}
+           *  ${templateInfo.handles.pascal.jsdoc}
            */
-          pascal: '${handles.pascal.value}',
+          pascal: '${templateInfo.handles.pascal.value}',
           /**
-           *  ${handles.camel.jsdoc}
+           *  ${templateInfo.handles.camel.jsdoc}
            */
-          camel: '${handles.camel.value}',
+          camel: '${templateInfo.handles.camel.value}',
           /**
-           *  ${handles.upper.jsdoc}
+           *  ${templateInfo.handles.upper.jsdoc}
            */
-          upper: '${handles.upper.value}',
+          upper: '${templateInfo.handles.upper.value}',
           /**
-           *  ${handles.snake.jsdoc}
+           *  ${templateInfo.handles.snake.jsdoc}
            */
-          snake: '${handles.snake.value}',
+          snake: '${templateInfo.handles.snake.value}',
         } as const,
         /**
          * The template's expressive name.
@@ -312,7 +318,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         /**
          * The GitHub repo URL that this template comes from.
          */
-        githubUrl: '${githubRepoUrl}/tree/main/${templateInfo.name}',
+        githubUrl: '${githubRepoUrl}/tree/main/${templateInfo.displayName}',
 
         /**
          * The template's description.
@@ -346,11 +352,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Class')}
 
       /**
-       * A "${templateInfo.name}" Prisma template.
+       * A "${templateInfo.displayName}" Prisma template.
        */
-      class ${templateClassName(
-        templateInfo.name
-      )} implements AbstractTemplate<typeof files, typeof artifacts> {
+      class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files, typeof artifacts> {
         /**
          * Convert between metadata handle formats in a type-safe way.
          */
@@ -410,9 +414,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Namespace')}
 
       /**
-       * Types belonging to the "${templateInfo.name}" Prisma template.
+       * Types belonging to the "${templateInfo.handles.pascal.value}" Prisma template.
        */
-      namespace ${templateClassName(templateInfo.name)} {
+      namespace ${templateInfo.handles.pascal.value} {
         /**
          * The template's name.
          */
@@ -438,7 +442,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Exports')}
 
       export {
-        ${templateClassName(templateInfo.name)}
+        ${templateInfo.handles.pascal.value}
       }
     `
 

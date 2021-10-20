@@ -9,7 +9,7 @@ export const run: ArtifactProvider = (params) => {
   if (!prismaSeedTs || prismaSeedTs.content === '') return []
 
   const seedSourceCode = babelTransform({
-    templateName: params.templateInfo.name,
+    templateName: params.templateInfo.handles.kebab.value,
     content: prismaSeedTs.content,
   })
 
