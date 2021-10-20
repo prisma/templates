@@ -1,6 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`empty 1`] = `
+exports[`Blog 1`] = `
+Object {
+  "content": "generator client {
+  provider = \\"prisma-client-js\\"
+  previewFeatures = [\\"dataproxy\\"]
+}
+
+datasource db {
+  provider = \\"mysql\\"
+  url      = env(\\"DATABASE_URL\\")
+}
+
+model Post {
+  post_id   Int     @id @default(autoincrement())
+  content   String?
+  title     String
+  author_id Int?
+  author    User?   @relation(fields: [author_id], references: [user_id])
+}
+
+model Profile {
+  bio        String?
+  profile_id Int     @id @default(autoincrement())
+  user_id    Int
+  user       User    @relation(fields: [user_id], references: [user_id])
+}
+
+model User {
+  email    String    @unique
+  name     String?
+  user_id  Int       @id @default(autoincrement())
+  posts    Post[]
+  profiles Profile[]
+}",
+  "path": "prisma/schema.prisma",
+}
+`;
+
+exports[`Empty 1`] = `
 Object {
   "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
@@ -17,7 +55,7 @@ generator client {
 }
 `;
 
-exports[`music-streaming-service 1`] = `
+exports[`Music Streaming Service 1`] = `
 Object {
   "content": "// Schema for a fictional music streaming service
 // This service contains songs, albums, artists & playlists, and tracks user interactions with each of them
@@ -103,45 +141,7 @@ model Playlist {
 }
 `;
 
-exports[`nextjs 1`] = `
-Object {
-  "content": "generator client {
-  provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
-}
-
-datasource db {
-  provider = \\"mysql\\"
-  url      = env(\\"DATABASE_URL\\")
-}
-
-model Post {
-  post_id   Int     @id @default(autoincrement())
-  content   String?
-  title     String
-  author_id Int?
-  author    User?   @relation(fields: [author_id], references: [user_id])
-}
-
-model Profile {
-  bio        String?
-  profile_id Int     @id @default(autoincrement())
-  user_id    Int
-  user       User    @relation(fields: [user_id], references: [user_id])
-}
-
-model User {
-  email    String    @unique
-  name     String?
-  user_id  Int       @id @default(autoincrement())
-  posts    Post[]
-  profiles Profile[]
-}",
-  "path": "prisma/schema.prisma",
-}
-`;
-
-exports[`rentals-platform 1`] = `
+exports[`Rentals Platform 1`] = `
 Object {
   "content": "// Schema for a fictional hotel
 // This hotel tracks rooms, user reservations & reviews
@@ -221,7 +221,7 @@ model Media {
 }
 `;
 
-exports[`saas 1`] = `
+exports[`SaaS 1`] = `
 Object {
   "content": "// Schema for an identity service for a SaaS
 // This service tracks existing users & their accounts, as well as invites for users who haven't joined yet
@@ -270,7 +270,7 @@ model Invite {
 }
 `;
 
-exports[`url-shortener 1`] = `
+exports[`URL Shortener 1`] = `
 Object {
   "content": "// Schema for a simple URL shortener
 // This schema tracks short links by associating them to a user

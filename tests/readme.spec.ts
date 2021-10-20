@@ -3,7 +3,7 @@ import { PrismaTemplates } from '~/src'
 describe('vercel button', () => {
   describe('with dataproxy', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(`${Template.metadata.name}`, () => {
+      it(`${Template.metadata.displayName}`, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
@@ -18,7 +18,7 @@ describe('vercel button', () => {
   })
   describe('without dataproxy', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(`${Template.metadata.name}`, () => {
+      it(`${Template.metadata.displayName}`, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',

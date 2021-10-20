@@ -4,22 +4,29 @@ import { PrismaDatasourceProviderName } from '~/src/data/prisma'
 describe('Template classes have static data', () => {
   describe('files', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         expect(Template.files).toMatchSnapshot()
       })
     })
   })
   describe('artifacts', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         expect(Template.artifacts).toMatchSnapshot()
       })
     })
   })
   describe('metadata', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         expect(Template.metadata).toMatchSnapshot()
+      })
+    })
+  })
+  describe('handleMap', () => {
+    Object.values(PrismaTemplates.Templates).forEach((Template) => {
+      it(Template.metadata.displayName, () => {
+        expect(Template.handleMap).toMatchSnapshot()
       })
     })
   })
@@ -29,7 +36,7 @@ describe('templates can be instantiated', () => {
   describe('with custom datasourceProvider', () => {
     Object.values(PrismaDatasourceProviderName).forEach((datasourceProvider) => {
       Object.values(PrismaTemplates.Templates).forEach((Template) => {
-        it(`${Template.metadata.name} X ${datasourceProvider}`, () => {
+        it(`${Template.metadata.displayName} X ${datasourceProvider}`, () => {
           const template = new Template({
             datasourceProvider,
           })
@@ -41,7 +48,7 @@ describe('templates can be instantiated', () => {
 
   describe('with custom repository owner and repository handle', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
@@ -53,7 +60,7 @@ describe('templates can be instantiated', () => {
   })
   describe('with custom engineType', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
@@ -66,7 +73,7 @@ describe('templates can be instantiated', () => {
   })
   describe('with no custom engineType', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
         })
@@ -77,7 +84,7 @@ describe('templates can be instantiated', () => {
 
   describe('with custom @prisma/client dependency not set to binary', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',
@@ -90,7 +97,7 @@ describe('templates can be instantiated', () => {
   })
   describe('with custom @prisma/client dependency not set at all', () => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
-      it(Template.metadata.name, () => {
+      it(Template.metadata.displayName, () => {
         const template = new Template({
           datasourceProvider: 'mysql',
           repositoryOwner: 'prisma',

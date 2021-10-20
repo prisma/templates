@@ -1,18 +1,21 @@
 import { Data } from './data'
 import { EngineType } from './data/prisma'
-import { Generated } from './generated'
 import { Index } from './utils'
 
 export * from './generated/types'
 
 export abstract class AbstractTemplate<
-  // eslint-disable-next-line
-  Name extends Generated.Types.TemplateNames = any,
   FilesIndex extends Index<File> = Index<File>,
   ArtifactsIndex extends Index<File> = Index<File>
 > {
   public abstract metadata: {
-    name: Name
+    handles: {
+      pascal: string
+      camel: string
+      kebab: string
+      upper: string
+      snake: string
+    }
     displayName: string
     githubUrl: null | string
     description: string
@@ -48,7 +51,9 @@ export type BaseTemplateParameters = {
   /**
    * The PSL prisma client generator block engineType setting.
    *
-   * @default '??'
+   * If `null` then omitted, thus using the Prisma default.
+   *
+   * @default null
    */
   engineType?: EngineType | null
 }
