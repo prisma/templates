@@ -8,6 +8,7 @@ export abstract class AbstractTemplate<
   FilesIndex extends Index<File> = Index<File>,
   ArtifactsIndex extends Index<File> = Index<File>
 > {
+  public abstract _tag: string
   public abstract metadata: {
     handles: {
       pascal: string
