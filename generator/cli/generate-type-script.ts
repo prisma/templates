@@ -396,6 +396,10 @@ ${indentBlock(4, escapeBackticks(f.content))}
         //
         // Instance properties
         //
+
+        /**
+         * Type brand for discriminant union use-cases.
+         */
         public _tag = '${templateInfo.handles.pascal.value}' as const
 
         /**
