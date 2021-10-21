@@ -21,10 +21,3 @@ describe('metadata', () => {
     })
   })
 })
-describe('handleMap', () => {
-  Object.values(PrismaTemplates.Templates).forEach((Template) => {
-    it(Template.metadata.displayName, () => {
-      expect(Template.handleMap).toMatchSnapshot()
-    })
-  })
-})

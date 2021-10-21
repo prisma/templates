@@ -4805,18 +4805,6 @@ main()
 }
 `;
 
-exports[`handleMap Blog 1`] = `undefined`;
-
-exports[`handleMap Empty 1`] = `undefined`;
-
-exports[`handleMap Music Streaming Service 1`] = `undefined`;
-
-exports[`handleMap Rentals Platform 1`] = `undefined`;
-
-exports[`handleMap SaaS 1`] = `undefined`;
-
-exports[`handleMap URL Shortener 1`] = `undefined`;
-
 exports[`metadata Blog 1`] = `
 Object {
   "description": "Schema for a blog built with Next.js",
