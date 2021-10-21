@@ -6,9 +6,6 @@ Object {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -48,9 +45,6 @@ Object {
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -75,9 +69,6 @@ Object {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -109,9 +100,6 @@ Object {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -143,9 +131,6 @@ Object {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -177,9 +162,6 @@ Object {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -211,9 +193,6 @@ Object {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -253,9 +232,6 @@ Object {
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -280,9 +256,6 @@ Object {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -314,9 +287,6 @@ Object {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -348,9 +318,6 @@ Object {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -382,9 +349,6 @@ Object {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -582,9 +546,6 @@ module.exports = {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -1455,9 +1416,6 @@ module.exports = {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -2328,9 +2286,6 @@ module.exports = {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -3201,9 +3156,6 @@ module.exports = {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -4074,9 +4026,6 @@ module.exports = {
   \\"name\\": \\"nextjs\\",
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\",
     \\"next\\": \\"11.1.2\\",
@@ -4797,9 +4746,6 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -4995,9 +4941,6 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -5193,9 +5136,6 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -5391,9 +5331,6 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -5589,9 +5526,6 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"name\\": \\"empty\\",
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -6323,9 +6257,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -7549,9 +7480,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -8775,9 +8703,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -10001,9 +9926,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -11227,9 +11149,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"music-streaming-service\\",
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -12403,9 +12322,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -13563,9 +13479,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -14723,9 +14636,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -15883,9 +15793,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -17043,9 +16950,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"rentals-platform\\",
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -18000,9 +17904,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -18790,9 +18691,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -19580,9 +19478,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -20370,9 +20265,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -21160,9 +21052,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"saas\\",
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -21870,9 +21759,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -22531,9 +22417,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -23192,9 +23075,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -23853,9 +23733,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
@@ -24514,9 +24391,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"name\\": \\"url-shortener\\",
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
-  \\"engines\\": {
-    \\"node\\": \\">=14.0.0\\"
-  },
   \\"dependencies\\": {
     \\"@prisma/client\\": \\"3.3.0\\"
   },
