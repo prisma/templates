@@ -125,6 +125,49 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
           )
           .join(`\n`)}
       }
+
+      /**
+       * Convert between template metadata handle formats in a type-safe way.
+       */
+      export const handleMap = {
+        ${templateInfos
+          .map((templateInfo) => {
+            return Object.entries(templateInfo.handles)
+              .map(([k, item]) => {
+                if (k === 'kebab' && templateInfo.handles.kebab.value === templateInfo.handles.camel.value)
+                  return null
+                if (k === 'snake' && templateInfo.handles.snake.value === templateInfo.handles.camel.value)
+                  return null
+                return endent`
+                  '${item.value}': {
+                    /**
+                     * ${templateInfo.handles.kebab.jsdoc}
+                     */
+                    kebab: '${templateInfo.handles.kebab.value}',
+                    /**
+                     *  ${templateInfo.handles.pascal.jsdoc}
+                     */
+                    pascal: '${templateInfo.handles.pascal.value}',
+                    /**
+                     *  ${templateInfo.handles.camel.jsdoc}
+                     */
+                    camel: '${templateInfo.handles.camel.value}',
+                    /**
+                     *  ${templateInfo.handles.upper.jsdoc}
+                     */
+                    upper: '${templateInfo.handles.upper.value}',
+                    /**
+                     *  ${templateInfo.handles.snake.jsdoc}
+                     */
+                    snake: '${templateInfo.handles.snake.value}',
+                  },
+                `
+              })
+              .filter((_) => _ !== null)
+              .join('\n')
+          })
+          .join('\n')}
+      } as const
     `,
   })
 
@@ -266,42 +309,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
       ${sourceCodeSectionHeader('Metadata')}
 
-      const handleMap = {
-        ${Object.entries(templateInfo.handles)
-          .map(([k, item]) => {
-            if (k === 'kebab' && templateInfo.handles.kebab.value === templateInfo.handles.camel.value)
-              return null
-            if (k === 'snake' && templateInfo.handles.snake.value === templateInfo.handles.camel.value)
-              return null
-            return `
-            ['${item.value}']: {
-              /**
-               * ${templateInfo.handles.kebab.jsdoc}
-               */
-              kebab: '${templateInfo.handles.kebab.value}',
-              /**
-               *  ${templateInfo.handles.pascal.jsdoc}
-               */
-              pascal: '${templateInfo.handles.pascal.value}',
-              /**
-               *  ${templateInfo.handles.camel.jsdoc}
-               */
-              camel: '${templateInfo.handles.camel.value}',
-              /**
-               *  ${templateInfo.handles.upper.jsdoc}
-               */
-              upper: '${templateInfo.handles.upper.value}',
-              /**
-               *  ${templateInfo.handles.snake.jsdoc}
-               */
-              snake: '${templateInfo.handles.snake.value}',
-            },
-          `
-          })
-          .filter((_) => _ !== null)
-          .join('\n')}
-      } as const
-
       const metadata = {
         /**
          * The template's handles in various forms.
@@ -379,11 +386,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
          * Type brand for discriminant union use-cases.
          */
         static _tag = '${templateInfo.handles.pascal.value}' as const
-
-        /**
-         * Convert between metadata handle formats in a type-safe way.
-         */
-        static handleMap = handleMap
 
         /**
          * Template metadata like name, etc.

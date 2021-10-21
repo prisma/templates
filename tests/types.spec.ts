@@ -1,5 +1,5 @@
 import { PrismaTemplates } from '~/src'
 
-it('has handle data lists', () => {
-  expect(PrismaTemplates.$Types.TemplateHandle).toMatchSnapshot()
+it('has various data centric helpers', () => {
+  expect(PrismaTemplates.$Types).toMatchSnapshot()
 })
