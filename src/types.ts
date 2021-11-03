@@ -36,7 +36,7 @@ export type BaseTemplateParameters = {
    *
    * @default 'postgresql'
    */
-  datasourceProvider?: Data.PrismaDatasourceProviderName
+  datasourceProvider?: Data.DatasourceProviderName
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *
@@ -63,6 +63,14 @@ export type BaseTemplateParameters = {
    * @default true
    */
   dataproxy?: boolean
+  /**
+   * The PSL prisma client generator block referentialIntegrity setting.
+   *
+   * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-integrity
+   * @remarks When the default is used, no changes to the PSL are made since this is the Prisma default.
+   * @default 'foreignKeys'
+   */
+  referentialIntegrity?: Data.ReferentialIntegritySettingValue
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
