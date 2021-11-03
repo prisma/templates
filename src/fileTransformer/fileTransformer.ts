@@ -1,9 +1,12 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
 import { PrismaTemplates } from '../'
+import { Data } from '../data'
 import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
+
+type Tool<Params> = (params: { file: File } & Params) => string
 
 export type Tools = {
   /**
@@ -11,7 +14,7 @@ export type Tools = {
    *
    * This does a simple string.replace but will throw an error if the given pattern does not match anything.
    */
-  replaceContent(params: { file: File; pattern: RegExp; replacement: string }): string
+  replaceContent: Tool<{ pattern: RegExp; replacement: string }>
   /**
    * Tools for working with JSON files
    */
@@ -21,7 +24,7 @@ export type Tools = {
      *
      * The file is automatically deserialized and re-serialized after the data merge.
      */
-    merge(params: { file: File; data: Record<string, unknown> }): string
+    merge: Tool<{ data: Record<string, unknown> }>
   }
   /**
    * Tools designed specifically for working with Prisma Schema.
@@ -32,7 +35,13 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag(params: { file: File; previewFlag: PreviewFlag }): string
+    addPreviewFlag: Tool<{ file: File; previewFlag: PreviewFlag }>
+    /**
+     * Set the referentialIntegrity datasource setting.
+     *
+     * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-integrity
+     */
+    setReferentialIntegrity: Tool<{ value: Data.ReferentialIntegritySettingValue }>
   }
 }
 
@@ -106,6 +115,13 @@ const tools: Tools = {
           replacement: `$1\n  previewFeatures = ["${params.previewFlag}"]`,
         })
       }
+    },
+    setReferentialIntegrity(params) {
+      return tools.replaceContent({
+        file: params.file,
+        pattern: /(url *= *env\(".+"\))/,
+        replacement: `$1\n  referentialIntegrity = "${params.value}"`,
+      })
     },
   },
 }

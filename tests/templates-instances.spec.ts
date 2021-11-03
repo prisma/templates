@@ -1,8 +1,8 @@
 import { PrismaTemplates } from '~/src'
-import { PrismaDatasourceProviderName } from '~/src/data/prisma'
+import { DatasourceProviderName } from '~/src/data/prisma'
 
 describe('with custom datasourceProvider', () => {
-  Object.values(PrismaDatasourceProviderName).forEach((datasourceProvider) => {
+  Object.values(DatasourceProviderName).forEach((datasourceProvider) => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
       it(`${Template.metadata.displayName} X ${datasourceProvider}`, () => {
         const template = new Template({
