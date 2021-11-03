@@ -4795,10 +4795,10 @@ ts-node@10.3.0:
     make-error "^1.1.1"
     yn "3.1.1"
 
-ts-patch@1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/ts-patch/-/ts-patch-1.4.4.tgz#c4814af4ab36183ddcf04c178f0153ce6ef48245"
-  integrity sha512-b0CxxrkrCGsD22gl5BtSFlXzyTFP2mbOVffxMOWRrwdSh37sM01wzxSY4wlbBiHHHAJICmaaDgESzJ8lKkVoZA==
+ts-patch@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ts-patch/-/ts-patch-2.0.1.tgz#08c17caef856b431641fc9fc88015f41195435b6"
+  integrity sha512-mP7beU1QkmyDs1+SzXYVaSTD6Xo7ZCibOJ3sZkb/xsQjoAQXvn4oPjk0keC2LfCNAgilqtqgjiWp3pQri1uz4w==
   dependencies:
     chalk "^4.1.0"
     glob "^7.1.7"
