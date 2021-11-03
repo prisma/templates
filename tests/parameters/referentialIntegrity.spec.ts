@@ -26,3 +26,14 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
     )
   })
 })
+
+Object.values(PrismaTemplates.Templates).forEach((Template) => {
+  it(`By default referentialIntegrity is set to foreignKeys: ${Template.metadata.displayName}`, () => {
+    const template = new Template({
+      datasourceProvider: 'postgresql',
+      repositoryOwner: 'prisma',
+      repositoryHandle: 'templates-node',
+    })
+    expect(template.files['prisma/schema.prisma'].content).not.toMatch(/referentialIntegrity/)
+  })
+})
