@@ -8,7 +8,7 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
       repositoryHandle: 'templates-node',
       referentialIntegrity: 'foreignKeys',
     })
-    expect(template.files['prisma/schema.prisma'].content).not.toMatch(/.*referentialIntegrity.*/g)
+    expect(template.files['prisma/schema.prisma'].content).not.toMatch(/referentialIntegrity/)
   })
 })
 
@@ -20,6 +20,9 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
       repositoryHandle: 'templates-node',
       referentialIntegrity: 'prisma',
     })
-    expect(template.files['prisma/schema.prisma'].content).toMatch(/.*referentialIntegrity = "prisma".*/g)
+    expect(template.files['prisma/schema.prisma'].content).toMatch(/referentialIntegrity *= *"prisma"/)
+    expect(template.files['prisma/schema.prisma'].content).toMatch(
+      /previewFeatures.+"referentialIntegrity"\]/
+    )
   })
 })
