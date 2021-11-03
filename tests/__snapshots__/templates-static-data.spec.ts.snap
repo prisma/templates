@@ -585,13 +585,13 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.1\\",
-    \\"@types/react\\": \\"17.0.30\\",
+    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/react\\": \\"17.0.32\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
@@ -1284,9 +1284,9 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.3.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.1\\",
+    \\"@types/node\\": \\"16.11.4\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"scripts\\": {
@@ -1874,11 +1874,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.1\\",
+    \\"@types/node\\": \\"16.11.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
@@ -2889,11 +2889,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.1\\",
+    \\"@types/node\\": \\"16.11.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
@@ -3758,11 +3758,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.1\\",
+    \\"@types/node\\": \\"16.11.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
@@ -4392,11 +4392,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.1\\",
+    \\"@types/node\\": \\"16.11.4\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.3.0\\",
-    \\"ts-node\\": \\"10.3.0\\",
+    \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
   \\"prisma\\": {
