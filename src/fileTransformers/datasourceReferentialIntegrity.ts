@@ -14,6 +14,7 @@ export const datasourceReferentialIntegrity: FileTransformer = (params) => {
   let content = file.content
 
   if (
+    parameters.referentialIntegrity &&
     parameters.referentialIntegrity !== Data.referentialIntegritySettingValueDefault &&
     file.path === 'prisma/schema.prisma'
   ) {
