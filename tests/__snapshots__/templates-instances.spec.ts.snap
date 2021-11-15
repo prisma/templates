@@ -7,19 +7,19 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -46,11 +46,11 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -70,14 +70,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -101,14 +101,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -132,14 +132,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -163,14 +163,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -194,19 +194,19 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -233,11 +233,11 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -257,14 +257,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -288,14 +288,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -319,14 +319,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -350,14 +350,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -547,19 +547,19 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -1417,19 +1417,19 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -2287,19 +2287,19 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -3157,19 +3157,19 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -4027,19 +4027,19 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\",
+    \\"@prisma/client\\": \\"3.4.2\\",
     \\"next\\": \\"11.1.2\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"@types/react\\": \\"17.0.32\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/react\\": \\"17.0.34\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.2\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -4747,11 +4747,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -4942,11 +4942,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -5137,11 +5137,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -5332,11 +5332,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -5527,11 +5527,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.4\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"@types/node\\": \\"16.11.7\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -6258,14 +6258,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -7481,14 +7481,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -8704,14 +8704,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -9927,14 +9927,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -11150,14 +11150,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -12323,14 +12323,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -13480,14 +13480,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -14637,14 +14637,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -15794,14 +15794,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -16951,14 +16951,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -17905,14 +17905,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -18692,14 +18692,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -19479,14 +19479,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -20266,14 +20266,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -21053,14 +21053,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -21760,14 +21760,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -22418,14 +22418,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -23076,14 +23076,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -23734,14 +23734,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
@@ -24392,14 +24392,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.3.0\\"
+    \\"@prisma/client\\": \\"3.4.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.4\\",
+    \\"@types/node\\": \\"16.11.7\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.3.0\\",
+    \\"prisma\\": \\"3.4.2\\",
     \\"ts-node\\": \\"10.4.0\\",
     \\"typescript\\": \\"4.4.4\\"
   },
