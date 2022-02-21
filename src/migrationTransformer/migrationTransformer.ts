@@ -10,6 +10,11 @@ export type Params = {
 }
 
 export const selectSql = (params: Params): MigrationSql => {
-  const index = `${params.template}${params.parameters.datasourceProvider}`
-  return (migrations as any)[index] ?? []
+  if (
+    params.parameters.datasourceProvider === 'sqlite' ||
+    params.parameters.datasourceProvider === 'mongodb'
+  ) {
+    return []
+  }
+  return migrations[`${params.template}${params.parameters.datasourceProvider}`]
 }

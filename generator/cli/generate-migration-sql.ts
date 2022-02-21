@@ -74,9 +74,7 @@ export default async function generateMigrationSql(params: {
   )
   log(`Done generating all migration sql.`)
   // Export all from generatedMigrations/index.ts
-  console.log(exportsList)
   const exports = exportsList.join(',').replace("'", '\n')
-  console.log({ exports })
   FS.append(indexFile, `export default {${exports}}`)
 
   return Promise.resolve()
