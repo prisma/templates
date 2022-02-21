@@ -202,7 +202,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 /**
  * TODO
  */
-const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
+export const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
   return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true, dot: false }).map((path) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
@@ -304,6 +304,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
+      import { MigrationTransformer } from '../../migrationTransformer'
       import { Data } from '../../data'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
@@ -436,6 +437,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public artifacts = artifacts
 
+        public migrationSql: MigrationTransformer.MigrationSql
+
         //
         // Constructor
         //
@@ -445,6 +448,11 @@ ${indentBlock(4, escapeBackticks(f.content))}
             ...templateParameterDefaults,
             ...parameters,
           }
+
+          this.migrationSql = MigrationTransformer.selectSql({
+            template: this._tag,
+            parameters: parameters_
+          })
 
           this.files = FileTransformer.runStack({
             template: this._tag,

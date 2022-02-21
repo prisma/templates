@@ -2,9 +2,11 @@ import arg from 'arg'
 import Path from 'path'
 import downloadTemplatesRepo from './download-templates-repo'
 import generateTypeScript from './generate-type-script'
+import generateMigrationSql from './generate-migration-sql'
 
 const args = arg({
   '--download-templates-repo': Boolean,
+  '--generate-migration-sql': Boolean,
   '--generate-type-script': Boolean,
 })
 
@@ -17,10 +19,17 @@ main().catch((error) => {
 async function main(): Promise<void> {
   const dirName = 'templates-repo'
   const templatesRepoDir = Path.join(__dirname, '../..', dirName)
-
+  const migrationSqlOutputDir = Path.join(__dirname, '../../src/generated/migrations')
   if (args['--download-templates-repo']) {
     //eslint-disable-next-line
     await downloadTemplatesRepo({ dir: templatesRepoDir })
+  }
+
+  if (args['--generate-migration-sql']) {
+    await generateMigrationSql({
+      templatesRepoDir,
+      outputDir: migrationSqlOutputDir,
+    })
   }
 
   if (args['--generate-type-script']) {

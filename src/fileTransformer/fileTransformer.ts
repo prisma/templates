@@ -80,7 +80,7 @@ export const runStack = <T extends Index<File>>(params: {
   }) as T
 }
 
-const tools: Tools = {
+export const tools: Tools = {
   replaceContent(params) {
     const { pattern, file, replacement } = params
 

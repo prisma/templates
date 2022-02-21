@@ -7,21 +7,21 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -46,13 +46,13 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -70,16 +70,16 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -101,16 +101,16 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -132,16 +132,16 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -163,16 +163,16 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -194,21 +194,21 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -233,13 +233,13 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -257,16 +257,16 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -288,16 +288,16 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -319,16 +319,16 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -350,16 +350,16 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -547,21 +547,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -1241,6 +1241,7 @@ a {
       "upper": "NEXTJS",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -1417,21 +1418,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -2111,6 +2112,47 @@ a {
       "upper": "NEXTJS",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \`Post\` (
+    \`post_id\` INTEGER NOT NULL AUTO_INCREMENT,
+    \`content\` VARCHAR(191) NULL,
+    \`title\` VARCHAR(191) NOT NULL,
+    \`author_id\` INTEGER NULL,
+
+    PRIMARY KEY (\`post_id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Profile\` (
+    \`bio\` VARCHAR(191) NULL,
+    \`profile_id\` INTEGER NOT NULL AUTO_INCREMENT,
+    \`user_id\` INTEGER NOT NULL,
+
+    PRIMARY KEY (\`profile_id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`User\` (
+    \`email\` VARCHAR(191) NOT NULL,
+    \`name\` VARCHAR(191) NULL,
+    \`user_id\` INTEGER NOT NULL AUTO_INCREMENT,
+
+    UNIQUE INDEX \`User_email_key\`(\`email\`),
+    PRIMARY KEY (\`user_id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Post\` ADD CONSTRAINT \`Post_author_id_fkey\` FOREIGN KEY (\`author_id\`) REFERENCES \`User\`(\`user_id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Profile\` ADD CONSTRAINT \`Profile_user_id_fkey\` FOREIGN KEY (\`user_id\`) REFERENCES \`User\`(\`user_id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -2287,21 +2329,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -2981,6 +3023,50 @@ a {
       "upper": "NEXTJS",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \\"Post\\" (
+    \\"post_id\\" SERIAL NOT NULL,
+    \\"content\\" TEXT,
+    \\"title\\" TEXT NOT NULL,
+    \\"author_id\\" INTEGER,
+
+    CONSTRAINT \\"Post_pkey\\" PRIMARY KEY (\\"post_id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Profile\\" (
+    \\"bio\\" TEXT,
+    \\"profile_id\\" SERIAL NOT NULL,
+    \\"user_id\\" INTEGER NOT NULL,
+
+    CONSTRAINT \\"Profile_pkey\\" PRIMARY KEY (\\"profile_id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"email\\" TEXT NOT NULL,
+    \\"name\\" TEXT,
+    \\"user_id\\" SERIAL NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"user_id\\")
+)",
+    "
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Post\\" ADD CONSTRAINT \\"Post_author_id_fkey\\" FOREIGN KEY (\\"author_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Profile\\" ADD CONSTRAINT \\"Profile_user_id_fkey\\" FOREIGN KEY (\\"user_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -3157,21 +3243,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -3851,6 +3937,7 @@ a {
       "upper": "NEXTJS",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -4027,21 +4114,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4721,6 +4808,65 @@ a {
       "upper": "NEXTJS",
     },
   },
+  "migrationSql": Array [
+    "BEGIN TRY
+
+BEGIN TRAN",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Post] (
+    [post_id] INT NOT NULL IDENTITY(1,1),
+    [content] NVARCHAR(1000),
+    [title] NVARCHAR(1000) NOT NULL,
+    [author_id] INT,
+    CONSTRAINT [Post_pkey] PRIMARY KEY ([post_id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Profile] (
+    [bio] NVARCHAR(1000),
+    [profile_id] INT NOT NULL IDENTITY(1,1),
+    [user_id] INT NOT NULL,
+    CONSTRAINT [Profile_pkey] PRIMARY KEY ([profile_id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[User] (
+    [email] NVARCHAR(1000) NOT NULL,
+    [name] NVARCHAR(1000),
+    [user_id] INT NOT NULL IDENTITY(1,1),
+    CONSTRAINT [User_pkey] PRIMARY KEY ([user_id]),
+    CONSTRAINT [User_email_key] UNIQUE ([email])
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Post] ADD CONSTRAINT [Post_author_id_fkey] FOREIGN KEY ([author_id]) REFERENCES [dbo].[User]([user_id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Profile] ADD CONSTRAINT [Profile_user_id_fkey] FOREIGN KEY ([user_id]) REFERENCES [dbo].[User]([user_id]) ON DELETE NO ACTION ON UPDATE CASCADE",
+    "
+
+COMMIT TRAN",
+    "
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN",
+    "
+END",
+    "
+THROW
+
+END CATCH",
+  ],
 }
 `;
 
@@ -4747,13 +4893,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -4916,6 +5062,7 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -4942,13 +5089,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5111,6 +5258,9 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
+  "migrationSql": Array [
+    "-- This is an empty migration.",
+  ],
 }
 `;
 
@@ -5137,13 +5287,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5306,6 +5456,9 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
+  "migrationSql": Array [
+    "-- This is an empty migration.",
+  ],
 }
 `;
 
@@ -5332,13 +5485,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5501,6 +5654,7 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -5527,13 +5681,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.17\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5696,6 +5850,9 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
+  "migrationSql": Array [
+    "-- This is an empty migration.",
+  ],
 }
 `;
 
@@ -6258,16 +6415,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -6919,6 +7076,7 @@ main()
       "upper": "MUSIC_STREAMING_SERVICE",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -7481,16 +7639,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -8142,6 +8300,142 @@ main()
       "upper": "MUSIC_STREAMING_SERVICE",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \`User\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+    \`email\` VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX \`User_email_key\`(\`email\`),
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Interaction\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`songId\` VARCHAR(191) NULL,
+    \`userId\` VARCHAR(191) NULL,
+    \`isLiked\` BOOLEAN NOT NULL DEFAULT false,
+    \`playCount\` INTEGER NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Song\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+    \`albumId\` VARCHAR(191) NULL,
+    \`artistId\` VARCHAR(191) NOT NULL,
+    \`length\` DOUBLE NOT NULL,
+    \`track\` INTEGER NULL,
+    \`lyrics\` VARCHAR(191) NULL,
+    \`fileUrl\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Artist\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Album\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+    \`cover\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Playlist\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`userId\` VARCHAR(191) NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`_AlbumToArtist\` (
+    \`A\` VARCHAR(191) NOT NULL,
+    \`B\` VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX \`_AlbumToArtist_AB_unique\`(\`A\`, \`B\`),
+    INDEX \`_AlbumToArtist_B_index\`(\`B\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`_PlaylistToSong\` (
+    \`A\` VARCHAR(191) NOT NULL,
+    \`B\` VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX \`_PlaylistToSong_AB_unique\`(\`A\`, \`B\`),
+    INDEX \`_PlaylistToSong_B_index\`(\`B\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_songId_fkey\` FOREIGN KEY (\`songId\`) REFERENCES \`Song\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_albumId_fkey\` FOREIGN KEY (\`albumId\`) REFERENCES \`Album\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Playlist\` ADD CONSTRAINT \`Playlist_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`_AlbumToArtist\` ADD FOREIGN KEY (\`A\`) REFERENCES \`Album\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`_AlbumToArtist\` ADD FOREIGN KEY (\`B\`) REFERENCES \`Artist\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`_PlaylistToSong\` ADD FOREIGN KEY (\`A\`) REFERENCES \`Playlist\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`_PlaylistToSong\` ADD FOREIGN KEY (\`B\`) REFERENCES \`Song\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -8704,16 +8998,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -9365,6 +9659,155 @@ main()
       "upper": "MUSIC_STREAMING_SERVICE",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT NOT NULL,
+    \\"email\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Interaction\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"songId\\" TEXT,
+    \\"userId\\" TEXT,
+    \\"isLiked\\" BOOLEAN NOT NULL DEFAULT false,
+    \\"playCount\\" INTEGER NOT NULL,
+
+    CONSTRAINT \\"Interaction_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Song\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT NOT NULL,
+    \\"albumId\\" TEXT,
+    \\"artistId\\" TEXT NOT NULL,
+    \\"length\\" DOUBLE PRECISION NOT NULL,
+    \\"track\\" INTEGER,
+    \\"lyrics\\" TEXT,
+    \\"fileUrl\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Song_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Artist\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Artist_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Album\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT NOT NULL,
+    \\"cover\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Album_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Playlist\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"userId\\" TEXT,
+    \\"name\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Playlist_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"_AlbumToArtist\\" (
+    \\"A\\" TEXT NOT NULL,
+    \\"B\\" TEXT NOT NULL
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"_PlaylistToSong\\" (
+    \\"A\\" TEXT NOT NULL,
+    \\"B\\" TEXT NOT NULL
+)",
+    "
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
+    "
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"_AlbumToArtist_AB_unique\\" ON \\"_AlbumToArtist\\"(\\"A\\", \\"B\\")",
+    "
+
+-- CreateIndex
+CREATE INDEX \\"_AlbumToArtist_B_index\\" ON \\"_AlbumToArtist\\"(\\"B\\")",
+    "
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"A\\", \\"B\\")",
+    "
+
+-- CreateIndex
+CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\")",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"_AlbumToArtist\\" ADD FOREIGN KEY (\\"A\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"_AlbumToArtist\\" ADD FOREIGN KEY (\\"B\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"_PlaylistToSong\\" ADD FOREIGN KEY (\\"A\\") REFERENCES \\"Playlist\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"_PlaylistToSong\\" ADD FOREIGN KEY (\\"B\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -9927,16 +10370,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -10588,6 +11031,7 @@ main()
       "upper": "MUSIC_STREAMING_SERVICE",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -11150,16 +11594,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -11811,6 +12255,161 @@ main()
       "upper": "MUSIC_STREAMING_SERVICE",
     },
   },
+  "migrationSql": Array [
+    "BEGIN TRY
+
+BEGIN TRAN",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[User] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000) NOT NULL,
+    [email] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [User_pkey] PRIMARY KEY ([id]),
+    CONSTRAINT [User_email_key] UNIQUE ([email])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Interaction] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Interaction_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [songId] NVARCHAR(1000),
+    [userId] NVARCHAR(1000),
+    [isLiked] BIT NOT NULL CONSTRAINT [Interaction_isLiked_df] DEFAULT 0,
+    [playCount] INT NOT NULL,
+    CONSTRAINT [Interaction_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Song] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Song_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000) NOT NULL,
+    [albumId] NVARCHAR(1000),
+    [artistId] NVARCHAR(1000) NOT NULL,
+    [length] FLOAT(53) NOT NULL,
+    [track] INT,
+    [lyrics] NVARCHAR(1000),
+    [fileUrl] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Song_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Artist] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Artist_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Artist_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Album] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Album_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000) NOT NULL,
+    [cover] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Album_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Playlist] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Playlist_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [userId] NVARCHAR(1000),
+    [name] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Playlist_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[_AlbumToArtist] (
+    [A] NVARCHAR(1000) NOT NULL,
+    [B] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [_AlbumToArtist_AB_unique] UNIQUE ([A],[B])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[_PlaylistToSong] (
+    [A] NVARCHAR(1000) NOT NULL,
+    [B] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [_PlaylistToSong_AB_unique] UNIQUE ([A],[B])
+)",
+    "
+
+-- CreateIndex
+CREATE INDEX [_AlbumToArtist_B_index] ON [dbo].[_AlbumToArtist]([B])",
+    "
+
+-- CreateIndex
+CREATE INDEX [_PlaylistToSong_B_index] ON [dbo].[_PlaylistToSong]([B])",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_songId_fkey] FOREIGN KEY ([songId]) REFERENCES [dbo].[Song]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_albumId_fkey] FOREIGN KEY ([albumId]) REFERENCES [dbo].[Album]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Playlist] ADD CONSTRAINT [Playlist_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[_AlbumToArtist] ADD CONSTRAINT [FK___AlbumToArtist__A] FOREIGN KEY ([A]) REFERENCES [dbo].[Album]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[_AlbumToArtist] ADD CONSTRAINT [FK___AlbumToArtist__B] FOREIGN KEY ([B]) REFERENCES [dbo].[Artist]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [FK___PlaylistToSong__A] FOREIGN KEY ([A]) REFERENCES [dbo].[Playlist]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [FK___PlaylistToSong__B] FOREIGN KEY ([B]) REFERENCES [dbo].[Song]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
+    "
+
+COMMIT TRAN",
+    "
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN",
+    "
+END",
+    "
+THROW
+
+END CATCH",
+  ],
 }
 `;
 
@@ -12323,16 +12922,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -12968,6 +13567,7 @@ main()
       "upper": "RENTALS_PLATFORM",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -13480,16 +14080,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -14125,6 +14725,98 @@ main()
       "upper": "RENTALS_PLATFORM",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \`User\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`email\` VARCHAR(191) NOT NULL,
+    \`name\` VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX \`User_email_key\`(\`email\`),
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Reservation\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`userId\` VARCHAR(191) NULL,
+    \`startDate\` DATETIME(3) NOT NULL,
+    \`endDate\` DATETIME(3) NOT NULL,
+    \`price\` INTEGER NOT NULL,
+    \`total\` INTEGER NOT NULL,
+    \`roomId\` VARCHAR(191) NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Room\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`totalOccupancy\` INTEGER NOT NULL DEFAULT 5,
+    \`totalBedrooms\` INTEGER NOT NULL DEFAULT 5,
+    \`totalBathrooms\` INTEGER NOT NULL DEFAULT 5,
+    \`summary\` VARCHAR(191) NULL,
+    \`address\` VARCHAR(191) NOT NULL,
+    \`isSmoking\` BOOLEAN NOT NULL DEFAULT false,
+    \`hasTV\` BOOLEAN NOT NULL DEFAULT true,
+    \`hasAirConditioning\` BOOLEAN NOT NULL DEFAULT true,
+    \`hasHeating\` BOOLEAN NOT NULL DEFAULT true,
+    \`hasWIFI\` BOOLEAN NOT NULL DEFAULT true,
+    \`price\` INTEGER NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Review\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`rating\` INTEGER NOT NULL,
+    \`comment\` VARCHAR(191) NOT NULL,
+    \`userId\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Media\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`roomId\` VARCHAR(191) NULL,
+    \`fileName\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Review\` ADD CONSTRAINT \`Review_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Media\` ADD CONSTRAINT \`Media_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -14637,16 +15329,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -15282,6 +15974,101 @@ main()
       "upper": "RENTALS_PLATFORM",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"email\\" TEXT NOT NULL,
+    \\"name\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Reservation\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"userId\\" TEXT,
+    \\"startDate\\" TIMESTAMP(3) NOT NULL,
+    \\"endDate\\" TIMESTAMP(3) NOT NULL,
+    \\"price\\" INTEGER NOT NULL,
+    \\"total\\" INTEGER NOT NULL,
+    \\"roomId\\" TEXT,
+
+    CONSTRAINT \\"Reservation_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Room\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"totalOccupancy\\" INTEGER NOT NULL DEFAULT 5,
+    \\"totalBedrooms\\" INTEGER NOT NULL DEFAULT 5,
+    \\"totalBathrooms\\" INTEGER NOT NULL DEFAULT 5,
+    \\"summary\\" TEXT,
+    \\"address\\" TEXT NOT NULL,
+    \\"isSmoking\\" BOOLEAN NOT NULL DEFAULT false,
+    \\"hasTV\\" BOOLEAN NOT NULL DEFAULT true,
+    \\"hasAirConditioning\\" BOOLEAN NOT NULL DEFAULT true,
+    \\"hasHeating\\" BOOLEAN NOT NULL DEFAULT true,
+    \\"hasWIFI\\" BOOLEAN NOT NULL DEFAULT true,
+    \\"price\\" INTEGER NOT NULL,
+
+    CONSTRAINT \\"Room_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Review\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"rating\\" INTEGER NOT NULL,
+    \\"comment\\" TEXT NOT NULL,
+    \\"userId\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Review_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Media\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"roomId\\" TEXT,
+    \\"fileName\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"Media_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateIndex
+CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Media\\" ADD CONSTRAINT \\"Media_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -15794,16 +16581,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -16439,6 +17226,7 @@ main()
       "upper": "RENTALS_PLATFORM",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -16951,16 +17739,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -17596,6 +18384,114 @@ main()
       "upper": "RENTALS_PLATFORM",
     },
   },
+  "migrationSql": Array [
+    "BEGIN TRY
+
+BEGIN TRAN",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[User] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [email] NVARCHAR(1000) NOT NULL,
+    [name] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [User_pkey] PRIMARY KEY ([id]),
+    CONSTRAINT [User_email_key] UNIQUE ([email])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Reservation] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Reservation_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [userId] NVARCHAR(1000),
+    [startDate] DATETIME2 NOT NULL,
+    [endDate] DATETIME2 NOT NULL,
+    [price] INT NOT NULL,
+    [total] INT NOT NULL,
+    [roomId] NVARCHAR(1000),
+    CONSTRAINT [Reservation_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Room] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Room_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [totalOccupancy] INT NOT NULL CONSTRAINT [Room_totalOccupancy_df] DEFAULT 5,
+    [totalBedrooms] INT NOT NULL CONSTRAINT [Room_totalBedrooms_df] DEFAULT 5,
+    [totalBathrooms] INT NOT NULL CONSTRAINT [Room_totalBathrooms_df] DEFAULT 5,
+    [summary] NVARCHAR(1000),
+    [address] NVARCHAR(1000) NOT NULL,
+    [isSmoking] BIT NOT NULL CONSTRAINT [Room_isSmoking_df] DEFAULT 0,
+    [hasTV] BIT NOT NULL CONSTRAINT [Room_hasTV_df] DEFAULT 1,
+    [hasAirConditioning] BIT NOT NULL CONSTRAINT [Room_hasAirConditioning_df] DEFAULT 1,
+    [hasHeating] BIT NOT NULL CONSTRAINT [Room_hasHeating_df] DEFAULT 1,
+    [hasWIFI] BIT NOT NULL CONSTRAINT [Room_hasWIFI_df] DEFAULT 1,
+    [price] INT NOT NULL,
+    CONSTRAINT [Room_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Review] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Review_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [rating] INT NOT NULL,
+    [comment] NVARCHAR(1000) NOT NULL,
+    [userId] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Review_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Media] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Media_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [roomId] NVARCHAR(1000),
+    [fileName] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Media_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Review] ADD CONSTRAINT [Review_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE NO ACTION ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Media] ADD CONSTRAINT [Media_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+COMMIT TRAN",
+    "
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN",
+    "
+END",
+    "
+THROW
+
+END CATCH",
+  ],
 }
 `;
 
@@ -17905,16 +18801,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -18383,6 +19279,7 @@ main()
       "upper": "SAAS",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -18692,16 +19589,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -19170,6 +20067,54 @@ main()
       "upper": "SAAS",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \`User\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NULL,
+    \`email\` VARCHAR(191) NOT NULL,
+    \`accountId\` VARCHAR(191) NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Account\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`stripeCustomerId\` VARCHAR(191) NOT NULL,
+    \`stripeSubscriptionId\` VARCHAR(191) NOT NULL,
+    \`referrer\` VARCHAR(191) NULL,
+    \`isActive\` BOOLEAN NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`Invite\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`dateSent\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`email\` VARCHAR(191) NOT NULL,
+    \`accountId\` VARCHAR(191) NULL,
+    \`isValid\` BOOLEAN NOT NULL DEFAULT true,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`User\` ADD CONSTRAINT \`User_accountId_fkey\` FOREIGN KEY (\`accountId\`) REFERENCES \`Account\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Invite\` ADD CONSTRAINT \`Invite_accountId_fkey\` FOREIGN KEY (\`accountId\`) REFERENCES \`Account\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -19479,16 +20424,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -19957,6 +20902,54 @@ main()
       "upper": "SAAS",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT,
+    \\"email\\" TEXT NOT NULL,
+    \\"accountId\\" TEXT,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Account\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"stripeCustomerId\\" TEXT NOT NULL,
+    \\"stripeSubscriptionId\\" TEXT NOT NULL,
+    \\"referrer\\" TEXT,
+    \\"isActive\\" BOOLEAN NOT NULL,
+
+    CONSTRAINT \\"Account_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"Invite\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"dateSent\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"email\\" TEXT NOT NULL,
+    \\"accountId\\" TEXT,
+    \\"isValid\\" BOOLEAN NOT NULL DEFAULT true,
+
+    CONSTRAINT \\"Invite_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"User\\" ADD CONSTRAINT \\"User_accountId_fkey\\" FOREIGN KEY (\\"accountId\\") REFERENCES \\"Account\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Invite\\" ADD CONSTRAINT \\"Invite_accountId_fkey\\" FOREIGN KEY (\\"accountId\\") REFERENCES \\"Account\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -20266,16 +21259,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -20744,6 +21737,7 @@ main()
       "upper": "SAAS",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -21053,16 +22047,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -21531,6 +22525,72 @@ main()
       "upper": "SAAS",
     },
   },
+  "migrationSql": Array [
+    "BEGIN TRY
+
+BEGIN TRAN",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[User] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000),
+    [email] NVARCHAR(1000) NOT NULL,
+    [accountId] NVARCHAR(1000),
+    CONSTRAINT [User_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Account] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Account_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [stripeCustomerId] NVARCHAR(1000) NOT NULL,
+    [stripeSubscriptionId] NVARCHAR(1000) NOT NULL,
+    [referrer] NVARCHAR(1000),
+    [isActive] BIT NOT NULL,
+    CONSTRAINT [Account_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Invite] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [dateSent] DATETIME2 NOT NULL CONSTRAINT [Invite_dateSent_df] DEFAULT CURRENT_TIMESTAMP,
+    [email] NVARCHAR(1000) NOT NULL,
+    [accountId] NVARCHAR(1000),
+    [isValid] BIT NOT NULL CONSTRAINT [Invite_isValid_df] DEFAULT 1,
+    CONSTRAINT [Invite_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[User] ADD CONSTRAINT [User_accountId_fkey] FOREIGN KEY ([accountId]) REFERENCES [dbo].[Account]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Invite] ADD CONSTRAINT [Invite_accountId_fkey] FOREIGN KEY ([accountId]) REFERENCES [dbo].[Account]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+COMMIT TRAN",
+    "
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN",
+    "
+END",
+    "
+THROW
+
+END CATCH",
+  ],
 }
 `;
 
@@ -21760,16 +22820,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -22189,6 +23249,7 @@ main()
       "upper": "URL_SHORTENER",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -22418,16 +23479,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -22847,6 +23908,36 @@ main()
       "upper": "URL_SHORTENER",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \`Link\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`url\` VARCHAR(191) NOT NULL,
+    \`shortUrl\` VARCHAR(191) NOT NULL,
+    \`userId\` VARCHAR(191) NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- CreateTable
+CREATE TABLE \`User\` (
+    \`id\` VARCHAR(191) NOT NULL,
+    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    \`updatedAt\` DATETIME(3) NOT NULL,
+    \`name\` VARCHAR(191) NULL,
+    \`email\` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (\`id\`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+    "
+
+-- AddForeignKey
+ALTER TABLE \`Link\` ADD CONSTRAINT \`Link_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -23076,16 +24167,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -23505,6 +24596,36 @@ main()
       "upper": "URL_SHORTENER",
     },
   },
+  "migrationSql": Array [
+    "-- CreateTable
+CREATE TABLE \\"Link\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"url\\" TEXT NOT NULL,
+    \\"shortUrl\\" TEXT NOT NULL,
+    \\"userId\\" TEXT,
+
+    CONSTRAINT \\"Link_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- CreateTable
+CREATE TABLE \\"User\\" (
+    \\"id\\" TEXT NOT NULL,
+    \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    \\"updatedAt\\" TIMESTAMP(3) NOT NULL,
+    \\"name\\" TEXT,
+    \\"email\\" TEXT NOT NULL,
+
+    CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE \\"Link\\" ADD CONSTRAINT \\"Link_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
+    "",
+  ],
 }
 `;
 
@@ -23734,16 +24855,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -24163,6 +25284,7 @@ main()
       "upper": "URL_SHORTENER",
     },
   },
+  "migrationSql": Array [],
 }
 `;
 
@@ -24392,16 +25514,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
+    \\"@types/node\\": \\"17.0.17\\",
     \\"@vercel/node\\": \\"1.12.1\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -24821,6 +25943,55 @@ main()
       "upper": "URL_SHORTENER",
     },
   },
+  "migrationSql": Array [
+    "BEGIN TRY
+
+BEGIN TRAN",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[Link] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [Link_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [url] NVARCHAR(1000) NOT NULL,
+    [shortUrl] NVARCHAR(1000) NOT NULL,
+    [userId] NVARCHAR(1000),
+    CONSTRAINT [Link_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- CreateTable
+CREATE TABLE [dbo].[User] (
+    [id] NVARCHAR(1000) NOT NULL,
+    [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
+    [updatedAt] DATETIME2 NOT NULL,
+    [name] NVARCHAR(1000),
+    [email] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [User_pkey] PRIMARY KEY ([id])
+)",
+    "
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Link] ADD CONSTRAINT [Link_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
+    "
+
+COMMIT TRAN",
+    "
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN",
+    "
+END",
+    "
+THROW
+
+END CATCH",
+  ],
 }
 `;
 
