@@ -31,7 +31,7 @@
     "build:ts": "yarn build:ts:cjs && yarn build:ts:esm",
     "build:ts:cjs": "tsc --project tsconfig.cjs.json",
     "build:ts:esm": "tsc --project tsconfig.esm.json",
-    "build:gen": "yarn -s build:gen:download-templates-repo && yarn -s build:gen:generate-type-script && yarn -s build:gen:generate-migration-sql",
+    "build:gen": "yarn -s build:gen:download-templates-repo && yarn -s build:gen:generate-migration-sql && yarn -s build:gen:generate-type-script ",
     "build:gen:download-templates-repo": "yarn -s ts-node generator/cli --download-templates-repo",
     "build:gen:generate-type-script": "yarn -s ts-node generator/cli --generate-type-script",
     "build:gen:generate-migration-sql": "yarn -s ts-node generator/cli --generate-migration-sql",
@@ -44,6 +44,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
+    "prepend-file": "^2.0.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

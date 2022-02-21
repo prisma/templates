@@ -19,7 +19,7 @@ main().catch((error) => {
 async function main(): Promise<void> {
   const dirName = 'templates-repo'
   const templatesRepoDir = Path.join(__dirname, '../..', dirName)
-  const migrationSqlOutputDir = Path.join(__dirname, '../../src/generated/migrations')
+  const migrationSqlOutputDir = Path.join(__dirname, '../../src/generatedMigrations')
   if (args['--download-templates-repo']) {
     //eslint-disable-next-line
     await downloadTemplatesRepo({ dir: templatesRepoDir })
