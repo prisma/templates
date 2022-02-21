@@ -1,6 +1,7 @@
 import { PrismaTemplates } from '../'
-import { BaseTemplateParametersResolved } from '../types'
 import migrations from '../generatedMigrations/index'
+import { BaseTemplateParametersResolved } from '../types'
+
 export type MigrationSql = string[]
 
 export type Params = {
@@ -9,6 +10,6 @@ export type Params = {
 }
 
 export const selectSql = (params: Params): MigrationSql => {
-  let index = `${params.template}${params.parameters.datasourceProvider}`
+  const index = `${params.template}${params.parameters.datasourceProvider}`
   return (migrations as any)[index] ?? []
 }
