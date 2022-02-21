@@ -1,8 +1,8 @@
-import { PrismaTemplates } from '..'
-import { Data } from '../data'
-import { BaseTemplateParametersResolved } from '../types'
 import fs from 'fs-jetpack'
 import Path from 'path'
+import { PrismaTemplates } from '../'
+import { Data } from '../data'
+import { BaseTemplateParametersResolved } from '../types'
 
 export type MigrationSql = string[]
 

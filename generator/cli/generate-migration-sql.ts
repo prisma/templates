@@ -11,7 +11,7 @@ export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb' 
 export default function generateMigrationSql(params: {
   templatesRepoDir: string
   outputDir: string
-}): Promise<any> {
+}): Promise<void> {
   log(`generating migration sql for each template x provider to ${params.outputDir}`)
 
   FS.remove(params.outputDir)
