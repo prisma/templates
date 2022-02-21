@@ -32,8 +32,8 @@ export default async function generateMigrationSql(params: {
           const templateName = t.displayName.trim()
           const schemaPath = `./templates-repo/${templateName}/prisma/schema.prisma`
           const newSchemaPath = `/tmp/${t.handles.pascal.value}/${provider}/schema.prisma`
-          const filename = `${t.handles.pascal.value}-${provider}Migration.ts`
-          const filenameExtentionless = `${t.handles.pascal.value}-${provider}Migration`
+          const filename = `${t.handles.pascal.value}-${provider}.ts`
+          const filenameExtentionless = `${t.handles.pascal.value}-${provider}`
           const outputPath = params.outputDir + `/${filename}`
           const exportName = t.handles.pascal.value + provider
           exportsList.push(exportName)
