@@ -304,7 +304,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
-      import { MigrationTransformer } from '../../migrationTransformer'
+      import { MigrationSql } from '../../logic'
       import { Data } from '../../data'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
@@ -437,7 +437,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public artifacts = artifacts
 
-        public migrationSql: MigrationTransformer.MigrationSql
+        public migrationSql: MigrationSql.MigrationSqlResponse
 
         //
         // Constructor
@@ -449,7 +449,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
             ...parameters,
           }
 
-          this.migrationSql = MigrationTransformer.selectSql({
+          this.migrationSql = MigrationSql.select({
             template: this._tag,
             parameters: parameters_
           })

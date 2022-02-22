@@ -3,7 +3,7 @@ import Path from 'path'
 import downloadTemplatesRepo from './download-templates-repo'
 import generateTypeScript from './generate-type-script'
 import generateMigrationSql from './generate-migration-sql'
-
+import FS from 'fs-jetpack'
 const args = arg({
   '--download-templates-repo': Boolean,
   '--generate-migration-sql': Boolean,
@@ -26,6 +26,12 @@ async function main(): Promise<void> {
   }
 
   if (args['--generate-migration-sql']) {
+    if (FS.inspect(templatesRepoDir) === undefined) {
+      console.log(
+        `${templatesRepoDir} is empty. Please run build:gen:download-templates-repo.  Skipping migration generation.`
+      )
+      return
+    }
     await generateMigrationSql({
       templatesRepoDir,
       outputDir: migrationSqlOutputDir,

@@ -1,6 +1,6 @@
 import { Data } from './data'
 import { EngineType } from './data/prisma'
-import { MigrationTransformer } from './migrationTransformer'
+import { MigrationSql } from './logic'
 import { Index } from './utils'
 
 export * from './generated/types'
@@ -24,7 +24,7 @@ export abstract class AbstractTemplate<
   }
   public abstract files: FilesIndex
   public abstract artifacts: ArtifactsIndex
-  public abstract migrationSql: MigrationTransformer.MigrationSql
+  public abstract migrationSql: MigrationSql.MigrationSqlResponse
 }
 
 export type File = {

@@ -5,8 +5,7 @@ import { getTemplateInfos } from './generate-type-script'
 import { tools } from '../../src/fileTransformer/fileTransformer'
 import { File } from '../../src/types'
 import { Data } from '~/src/data'
-import prependFile from 'prepend-file'
-export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb' | 'sqlite'>
+export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb'>
 
 export default async function generateMigrationSql(params: {
   templatesRepoDir: string
@@ -21,22 +20,20 @@ export default async function generateMigrationSql(params: {
   log(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
 
   const indexFile = `${params.outputDir}/index.ts`
-  FS.write(indexFile, '')
 
-  const exportsList: string[] = []
-  const providers: DatasourceProvider[] = ['postgresql', 'mysql', 'sqlserver']
+  const exportsList: { template: string; provider: string }[] = []
+  const providers: DatasourceProvider[] = ['postgresql', 'mysql', 'sqlserver', 'sqlite']
   await Promise.all(
     providers.map(async (provider) => {
       await Promise.all(
-        templateInfos.map(async (t) => {
+        templateInfos.map((t) => {
           const templateName = t.displayName.trim()
           const schemaPath = `./templates-repo/${templateName}/prisma/schema.prisma`
           const newSchemaPath = `/tmp/${t.handles.pascal.value}/${provider}/schema.prisma`
           const filename = `${t.handles.pascal.value}-${provider}.ts`
-          const filenameExtentionless = `${t.handles.pascal.value}-${provider}`
           const outputPath = params.outputDir + `/${filename}`
           const exportName = t.handles.pascal.value + provider
-          exportsList.push(exportName)
+          exportsList.push({ template: t.handles.pascal.value, provider })
           // Replace schema provider for diff command
           const content = FS.read(schemaPath)
           if (!content) throw new Error('Could not copy')
@@ -60,22 +57,25 @@ export default async function generateMigrationSql(params: {
           // Remove command that is returned in migrate diff response
           const substr = '--script'
           const commandIndexEnd = res.stdout.indexOf(substr)
-          const formatted = splitSql(res.stdout.substr(commandIndexEnd + substr.length))
-          // Write sql to disk as a ts object default export
+          // Write response to disk as ts
+          const contents = JSON.stringify(splitSql(res.stdout.substr(commandIndexEnd + substr.length)))
+          const formatted = `const ${exportName} = ` + `${contents}` + `;export default ${exportName}`
           FS.write(outputPath, formatted)
-          await prependFile(outputPath, `const ${exportName} = `)
-          FS.append(outputPath, `;export default ${exportName}`)
-          // Add individual exports to generatedMigrations/index.ts
-          FS.append(indexFile, `import ${exportName} from "./${filenameExtentionless}"; \n`)
           log(`Output to ${outputPath}`)
         })
       )
     })
   )
   log(`Done generating all migration sql.`)
-  // Export all from generatedMigrations/index.ts
-  const exports = exportsList.join(',').replace("'", '\n')
-  FS.append(indexFile, `export default {${exports}}`)
+  // Add individual exports to generatedMigrations/index.ts
+  FS.write(indexFile, '')
+  const createImportsList: string = exportsList.reduce((acc, { template, provider }) => {
+    return acc + `import ${template}${provider} from "./${template}-${provider}"; \n`
+  }, '')
+  const createExportsList: string = exportsList.reduce((acc, { template, provider }) => {
+    return acc + template + provider + ','
+  }, '')
+  FS.append(indexFile, createImportsList + `export default {${createExportsList}}`)
 
   return Promise.resolve()
 }
@@ -100,6 +100,8 @@ function connectionString(datasourceProvider: DatasourceProvider) {
       return 'mysql://prisma:prisma@localhost:5444/doesntexist'
     case 'sqlserver':
       return 'sqlserver://localhost:5444;database=doesntexist;user=prisma;password=prisma;encrypt=true'
+    case 'sqlite':
+      return 'file:./dev.db'
     default:
       return ''
   }

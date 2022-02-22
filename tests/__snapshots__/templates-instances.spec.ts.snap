@@ -2114,43 +2114,43 @@ a {
   },
   "migrationSql": Array [
     "-- CreateTable
-CREATE TABLE \`Post\` (
-    \`post_id\` INTEGER NOT NULL AUTO_INCREMENT,
-    \`content\` VARCHAR(191) NULL,
-    \`title\` VARCHAR(191) NOT NULL,
-    \`author_id\` INTEGER NULL,
+CREATE TABLE Post (
+    post_id INTEGER NOT NULL AUTO_INCREMENT,
+    content VARCHAR(191) NULL,
+    title VARCHAR(191) NOT NULL,
+    author_id INTEGER NULL,
 
-    PRIMARY KEY (\`post_id\`)
+    PRIMARY KEY (post_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Profile\` (
-    \`bio\` VARCHAR(191) NULL,
-    \`profile_id\` INTEGER NOT NULL AUTO_INCREMENT,
-    \`user_id\` INTEGER NOT NULL,
+CREATE TABLE Profile (
+    bio VARCHAR(191) NULL,
+    profile_id INTEGER NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
 
-    PRIMARY KEY (\`profile_id\`)
+    PRIMARY KEY (profile_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`User\` (
-    \`email\` VARCHAR(191) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
-    \`user_id\` INTEGER NOT NULL AUTO_INCREMENT,
+CREATE TABLE User (
+    email VARCHAR(191) NOT NULL,
+    name VARCHAR(191) NULL,
+    user_id INTEGER NOT NULL AUTO_INCREMENT,
 
-    UNIQUE INDEX \`User_email_key\`(\`email\`),
-    PRIMARY KEY (\`user_id\`)
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (user_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Post\` ADD CONSTRAINT \`Post_author_id_fkey\` FOREIGN KEY (\`author_id\`) REFERENCES \`User\`(\`user_id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Post ADD CONSTRAINT Post_author_id_fkey FOREIGN KEY (author_id) REFERENCES User(user_id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Profile\` ADD CONSTRAINT \`Profile_user_id_fkey\` FOREIGN KEY (\`user_id\`) REFERENCES \`User\`(\`user_id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+ALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE RESTRICT ON UPDATE CASCADE",
     "",
   ],
 }
@@ -5258,9 +5258,7 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
-  "migrationSql": Array [
-    "-- This is an empty migration.",
-  ],
+  "migrationSql": Array [],
 }
 `;
 
@@ -5456,9 +5454,7 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
-  "migrationSql": Array [
-    "-- This is an empty migration.",
-  ],
+  "migrationSql": Array [],
 }
 `;
 
@@ -5850,9 +5846,7 @@ export async function seed() {
       "upper": "EMPTY",
     },
   },
-  "migrationSql": Array [
-    "-- This is an empty migration.",
-  ],
+  "migrationSql": Array [],
 }
 `;
 
@@ -8302,138 +8296,138 @@ main()
   },
   "migrationSql": Array [
     "-- CreateTable
-CREATE TABLE \`User\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
-    \`email\` VARCHAR(191) NOT NULL,
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    email VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX \`User_email_key\`(\`email\`),
-    PRIMARY KEY (\`id\`)
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Interaction\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`songId\` VARCHAR(191) NULL,
-    \`userId\` VARCHAR(191) NULL,
-    \`isLiked\` BOOLEAN NOT NULL DEFAULT false,
-    \`playCount\` INTEGER NOT NULL,
+CREATE TABLE Interaction (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    songId VARCHAR(191) NULL,
+    userId VARCHAR(191) NULL,
+    isLiked BOOLEAN NOT NULL DEFAULT false,
+    playCount INTEGER NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Song\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
-    \`albumId\` VARCHAR(191) NULL,
-    \`artistId\` VARCHAR(191) NOT NULL,
-    \`length\` DOUBLE NOT NULL,
-    \`track\` INTEGER NULL,
-    \`lyrics\` VARCHAR(191) NULL,
-    \`fileUrl\` VARCHAR(191) NOT NULL,
+CREATE TABLE Song (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    albumId VARCHAR(191) NULL,
+    artistId VARCHAR(191) NOT NULL,
+    length DOUBLE NOT NULL,
+    track INTEGER NULL,
+    lyrics VARCHAR(191) NULL,
+    fileUrl VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Artist\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+CREATE TABLE Artist (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Album\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
-    \`cover\` VARCHAR(191) NOT NULL,
+CREATE TABLE Album (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    cover VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Playlist\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+CREATE TABLE Playlist (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    userId VARCHAR(191) NULL,
+    name VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`_AlbumToArtist\` (
-    \`A\` VARCHAR(191) NOT NULL,
-    \`B\` VARCHAR(191) NOT NULL,
+CREATE TABLE _AlbumToArtist (
+    A VARCHAR(191) NOT NULL,
+    B VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX \`_AlbumToArtist_AB_unique\`(\`A\`, \`B\`),
-    INDEX \`_AlbumToArtist_B_index\`(\`B\`)
+    UNIQUE INDEX _AlbumToArtist_AB_unique(A, B),
+    INDEX _AlbumToArtist_B_index(B)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`_PlaylistToSong\` (
-    \`A\` VARCHAR(191) NOT NULL,
-    \`B\` VARCHAR(191) NOT NULL,
+CREATE TABLE _PlaylistToSong (
+    A VARCHAR(191) NOT NULL,
+    B VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX \`_PlaylistToSong_AB_unique\`(\`A\`, \`B\`),
-    INDEX \`_PlaylistToSong_B_index\`(\`B\`)
+    UNIQUE INDEX _PlaylistToSong_AB_unique(A, B),
+    INDEX _PlaylistToSong_B_index(B)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Interaction ADD CONSTRAINT Interaction_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_songId_fkey\` FOREIGN KEY (\`songId\`) REFERENCES \`Song\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Interaction ADD CONSTRAINT Interaction_songId_fkey FOREIGN KEY (songId) REFERENCES Song(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+ALTER TABLE Song ADD CONSTRAINT Song_artistId_fkey FOREIGN KEY (artistId) REFERENCES Artist(id) ON DELETE RESTRICT ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_albumId_fkey\` FOREIGN KEY (\`albumId\`) REFERENCES \`Album\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Song ADD CONSTRAINT Song_albumId_fkey FOREIGN KEY (albumId) REFERENCES Album(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Playlist\` ADD CONSTRAINT \`Playlist_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Playlist ADD CONSTRAINT Playlist_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`_AlbumToArtist\` ADD FOREIGN KEY (\`A\`) REFERENCES \`Album\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+ALTER TABLE _AlbumToArtist ADD FOREIGN KEY (A) REFERENCES Album(id) ON DELETE CASCADE ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`_AlbumToArtist\` ADD FOREIGN KEY (\`B\`) REFERENCES \`Artist\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+ALTER TABLE _AlbumToArtist ADD FOREIGN KEY (B) REFERENCES Artist(id) ON DELETE CASCADE ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`_PlaylistToSong\` ADD FOREIGN KEY (\`A\`) REFERENCES \`Playlist\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+ALTER TABLE _PlaylistToSong ADD FOREIGN KEY (A) REFERENCES Playlist(id) ON DELETE CASCADE ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`_PlaylistToSong\` ADD FOREIGN KEY (\`B\`) REFERENCES \`Song\`(\`id\`) ON DELETE CASCADE ON UPDATE CASCADE",
+ALTER TABLE _PlaylistToSong ADD FOREIGN KEY (B) REFERENCES Song(id) ON DELETE CASCADE ON UPDATE CASCADE",
     "",
   ],
 }
@@ -14727,94 +14721,94 @@ main()
   },
   "migrationSql": Array [
     "-- CreateTable
-CREATE TABLE \`User\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`email\` VARCHAR(191) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    email VARCHAR(191) NOT NULL,
+    name VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX \`User_email_key\`(\`email\`),
-    PRIMARY KEY (\`id\`)
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Reservation\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
-    \`startDate\` DATETIME(3) NOT NULL,
-    \`endDate\` DATETIME(3) NOT NULL,
-    \`price\` INTEGER NOT NULL,
-    \`total\` INTEGER NOT NULL,
-    \`roomId\` VARCHAR(191) NULL,
+CREATE TABLE Reservation (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    userId VARCHAR(191) NULL,
+    startDate DATETIME(3) NOT NULL,
+    endDate DATETIME(3) NOT NULL,
+    price INTEGER NOT NULL,
+    total INTEGER NOT NULL,
+    roomId VARCHAR(191) NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Room\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`totalOccupancy\` INTEGER NOT NULL DEFAULT 5,
-    \`totalBedrooms\` INTEGER NOT NULL DEFAULT 5,
-    \`totalBathrooms\` INTEGER NOT NULL DEFAULT 5,
-    \`summary\` VARCHAR(191) NULL,
-    \`address\` VARCHAR(191) NOT NULL,
-    \`isSmoking\` BOOLEAN NOT NULL DEFAULT false,
-    \`hasTV\` BOOLEAN NOT NULL DEFAULT true,
-    \`hasAirConditioning\` BOOLEAN NOT NULL DEFAULT true,
-    \`hasHeating\` BOOLEAN NOT NULL DEFAULT true,
-    \`hasWIFI\` BOOLEAN NOT NULL DEFAULT true,
-    \`price\` INTEGER NOT NULL,
+CREATE TABLE Room (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    totalOccupancy INTEGER NOT NULL DEFAULT 5,
+    totalBedrooms INTEGER NOT NULL DEFAULT 5,
+    totalBathrooms INTEGER NOT NULL DEFAULT 5,
+    summary VARCHAR(191) NULL,
+    address VARCHAR(191) NOT NULL,
+    isSmoking BOOLEAN NOT NULL DEFAULT false,
+    hasTV BOOLEAN NOT NULL DEFAULT true,
+    hasAirConditioning BOOLEAN NOT NULL DEFAULT true,
+    hasHeating BOOLEAN NOT NULL DEFAULT true,
+    hasWIFI BOOLEAN NOT NULL DEFAULT true,
+    price INTEGER NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Review\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`rating\` INTEGER NOT NULL,
-    \`comment\` VARCHAR(191) NOT NULL,
-    \`userId\` VARCHAR(191) NOT NULL,
+CREATE TABLE Review (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    rating INTEGER NOT NULL,
+    comment VARCHAR(191) NOT NULL,
+    userId VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Media\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`roomId\` VARCHAR(191) NULL,
-    \`fileName\` VARCHAR(191) NOT NULL,
+CREATE TABLE Media (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    roomId VARCHAR(191) NULL,
+    fileName VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Reservation ADD CONSTRAINT Reservation_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Reservation ADD CONSTRAINT Reservation_roomId_fkey FOREIGN KEY (roomId) REFERENCES Room(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Review\` ADD CONSTRAINT \`Review_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE",
+ALTER TABLE Review ADD CONSTRAINT Review_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE RESTRICT ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Media\` ADD CONSTRAINT \`Media_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Media ADD CONSTRAINT Media_roomId_fkey FOREIGN KEY (roomId) REFERENCES Room(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "",
   ],
 }
@@ -20069,50 +20063,50 @@ main()
   },
   "migrationSql": Array [
     "-- CreateTable
-CREATE TABLE \`User\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
-    \`email\` VARCHAR(191) NOT NULL,
-    \`accountId\` VARCHAR(191) NULL,
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NULL,
+    email VARCHAR(191) NOT NULL,
+    accountId VARCHAR(191) NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Account\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`stripeCustomerId\` VARCHAR(191) NOT NULL,
-    \`stripeSubscriptionId\` VARCHAR(191) NOT NULL,
-    \`referrer\` VARCHAR(191) NULL,
-    \`isActive\` BOOLEAN NOT NULL,
+CREATE TABLE Account (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    stripeCustomerId VARCHAR(191) NOT NULL,
+    stripeSubscriptionId VARCHAR(191) NOT NULL,
+    referrer VARCHAR(191) NULL,
+    isActive BOOLEAN NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`Invite\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`dateSent\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`email\` VARCHAR(191) NOT NULL,
-    \`accountId\` VARCHAR(191) NULL,
-    \`isValid\` BOOLEAN NOT NULL DEFAULT true,
+CREATE TABLE Invite (
+    id VARCHAR(191) NOT NULL,
+    dateSent DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    email VARCHAR(191) NOT NULL,
+    accountId VARCHAR(191) NULL,
+    isValid BOOLEAN NOT NULL DEFAULT true,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- AddForeignKey
-ALTER TABLE \`User\` ADD CONSTRAINT \`User_accountId_fkey\` FOREIGN KEY (\`accountId\`) REFERENCES \`Account\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE User ADD CONSTRAINT User_accountId_fkey FOREIGN KEY (accountId) REFERENCES Account(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Invite\` ADD CONSTRAINT \`Invite_accountId_fkey\` FOREIGN KEY (\`accountId\`) REFERENCES \`Account\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Invite ADD CONSTRAINT Invite_accountId_fkey FOREIGN KEY (accountId) REFERENCES Account(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "",
   ],
 }
@@ -23910,32 +23904,32 @@ main()
   },
   "migrationSql": Array [
     "-- CreateTable
-CREATE TABLE \`Link\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`url\` VARCHAR(191) NOT NULL,
-    \`shortUrl\` VARCHAR(191) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
+CREATE TABLE Link (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    url VARCHAR(191) NOT NULL,
+    shortUrl VARCHAR(191) NOT NULL,
+    userId VARCHAR(191) NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- CreateTable
-CREATE TABLE \`User\` (
-    \`id\` VARCHAR(191) NOT NULL,
-    \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
-    \`email\` VARCHAR(191) NOT NULL,
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NULL,
+    email VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (\`id\`)
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
     "
 
 -- AddForeignKey
-ALTER TABLE \`Link\` ADD CONSTRAINT \`Link_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE",
+ALTER TABLE Link ADD CONSTRAINT Link_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
     "",
   ],
 }
@@ -26746,4 +26740,296 @@ model User {
 }",
   "path": "prisma/schema.prisma",
 }
+`;
+
+exports[`with referential integrity Blog X mysql 1`] = `
+Array [
+  "-- CreateTable
+CREATE TABLE Post (
+    post_id INTEGER NOT NULL AUTO_INCREMENT,
+    content VARCHAR(191) NULL,
+    title VARCHAR(191) NOT NULL,
+    author_id INTEGER NULL,
+
+    PRIMARY KEY (post_id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Profile (
+    bio VARCHAR(191) NULL,
+    profile_id INTEGER NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
+
+    PRIMARY KEY (profile_id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE User (
+    email VARCHAR(191) NOT NULL,
+    name VARCHAR(191) NULL,
+    user_id INTEGER NOT NULL AUTO_INCREMENT,
+
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (user_id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "",
+]
+`;
+
+exports[`with referential integrity Empty X mysql 1`] = `Array []`;
+
+exports[`with referential integrity Music Streaming Service X mysql 1`] = `
+Array [
+  "-- CreateTable
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    email VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Interaction (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    songId VARCHAR(191) NULL,
+    userId VARCHAR(191) NULL,
+    isLiked BOOLEAN NOT NULL DEFAULT false,
+    playCount INTEGER NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Song (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    albumId VARCHAR(191) NULL,
+    artistId VARCHAR(191) NOT NULL,
+    length DOUBLE NOT NULL,
+    track INTEGER NULL,
+    lyrics VARCHAR(191) NULL,
+    fileUrl VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Artist (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Album (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+    cover VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Playlist (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    userId VARCHAR(191) NULL,
+    name VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE _AlbumToArtist (
+    A VARCHAR(191) NOT NULL,
+    B VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX _AlbumToArtist_AB_unique(A, B),
+    INDEX _AlbumToArtist_B_index(B)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE _PlaylistToSong (
+    A VARCHAR(191) NOT NULL,
+    B VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX _PlaylistToSong_AB_unique(A, B),
+    INDEX _PlaylistToSong_B_index(B)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "",
+]
+`;
+
+exports[`with referential integrity Rentals Platform X mysql 1`] = `
+Array [
+  "-- CreateTable
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    email VARCHAR(191) NOT NULL,
+    name VARCHAR(191) NOT NULL,
+
+    UNIQUE INDEX User_email_key(email),
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Reservation (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    userId VARCHAR(191) NULL,
+    startDate DATETIME(3) NOT NULL,
+    endDate DATETIME(3) NOT NULL,
+    price INTEGER NOT NULL,
+    total INTEGER NOT NULL,
+    roomId VARCHAR(191) NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Room (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    totalOccupancy INTEGER NOT NULL DEFAULT 5,
+    totalBedrooms INTEGER NOT NULL DEFAULT 5,
+    totalBathrooms INTEGER NOT NULL DEFAULT 5,
+    summary VARCHAR(191) NULL,
+    address VARCHAR(191) NOT NULL,
+    isSmoking BOOLEAN NOT NULL DEFAULT false,
+    hasTV BOOLEAN NOT NULL DEFAULT true,
+    hasAirConditioning BOOLEAN NOT NULL DEFAULT true,
+    hasHeating BOOLEAN NOT NULL DEFAULT true,
+    hasWIFI BOOLEAN NOT NULL DEFAULT true,
+    price INTEGER NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Review (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    rating INTEGER NOT NULL,
+    comment VARCHAR(191) NOT NULL,
+    userId VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Media (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    roomId VARCHAR(191) NULL,
+    fileName VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "",
+]
+`;
+
+exports[`with referential integrity SaaS X mysql 1`] = `
+Array [
+  "-- CreateTable
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NULL,
+    email VARCHAR(191) NOT NULL,
+    accountId VARCHAR(191) NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Account (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    stripeCustomerId VARCHAR(191) NOT NULL,
+    stripeSubscriptionId VARCHAR(191) NOT NULL,
+    referrer VARCHAR(191) NULL,
+    isActive BOOLEAN NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE Invite (
+    id VARCHAR(191) NOT NULL,
+    dateSent DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    email VARCHAR(191) NOT NULL,
+    accountId VARCHAR(191) NULL,
+    isValid BOOLEAN NOT NULL DEFAULT true,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "",
+]
+`;
+
+exports[`with referential integrity URL Shortener X mysql 1`] = `
+Array [
+  "-- CreateTable
+CREATE TABLE Link (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    url VARCHAR(191) NOT NULL,
+    shortUrl VARCHAR(191) NOT NULL,
+    userId VARCHAR(191) NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "
+
+-- CreateTable
+CREATE TABLE User (
+    id VARCHAR(191) NOT NULL,
+    createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updatedAt DATETIME(3) NOT NULL,
+    name VARCHAR(191) NULL,
+    email VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
+  "",
+]
 `;
