@@ -79,7 +79,7 @@ export default async function generateMigrationSql(params: {
           FS.remove(newSchemaPath)
           FS.file(newSchemaPath)
           FS.write(newSchemaPath, modifiedSchema)
-          log(`Wrote modified template schema to ${newSchemaPath}`)
+          log.info(`Wrote modified template schema`, { newSchemaPath })
           // Make sure output path exists
           FS.file(outputPath)
           const res = execa.commandSync(
@@ -98,12 +98,12 @@ export default async function generateMigrationSql(params: {
           const contents = JSON.stringify(splitSql(res.stdout.substr(commandIndexEnd + substr.length)))
           const formatted = `const ${exportName} = ` + `${contents}` + `;export default ${exportName}`
           FS.write(outputPath, formatted)
-          log(`Output to ${outputPath}`)
+          log.info(`Output`, { outputPath })
         })
       )
     })
   )
-  log(`Done generating all migration sql.`)
+  log.info(`Done generating all migration sql`)
   // Add individual exports to generatedMigrations/index.ts
   FS.write(indexFile, '')
   const createImportsList: string = exportsList.reduce((acc, { template, provider }) => {
