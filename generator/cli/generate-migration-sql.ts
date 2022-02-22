@@ -1,28 +1,65 @@
 import execa from 'execa'
 import * as FS from 'fs-jetpack'
-import { log } from 'console'
-import { getTemplateInfos } from './generate-type-script'
+import { log } from 'floggy'
 import { tools } from '../../src/fileTransformer/fileTransformer'
 import { File } from '../../src/types'
 import { Data } from '~/src/data'
+import { getTemplateInfos } from '../lib/templates'
+
 export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb'>
+
+interface Combination {
+  /**
+   * Should referential integrity be used or not?
+   */
+  referentialIntegrity: boolean
+  /**
+   * What database to use?
+   */
+  datasourceProvider: DatasourceProvider
+  /**
+   * What template to use?
+   */
+  templateTag: string
+}
 
 export default async function generateMigrationSql(params: {
   templatesRepoDir: string
   outputDir: string
 }): Promise<void> {
-  log(`generating migration sql for each template x provider to ${params.outputDir}`)
+  log.info(`generating migration sql`, { params })
 
   FS.remove(params.outputDir)
 
-  const templateInfos = getTemplateInfos({ templatesRepoDir: params.templatesRepoDir })
+  const templateInfos = getTemplateInfos({
+    templatesRepoDir: params.templatesRepoDir,
+  })
 
-  log(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
+  log.info(`Found templates`, { templates: templateInfos.map((t) => t.displayName) })
 
   const indexFile = `${params.outputDir}/index.ts`
 
   const exportsList: { template: string; provider: string }[] = []
   const providers: DatasourceProvider[] = ['postgresql', 'mysql', 'sqlserver', 'sqlite']
+
+  const referentialIntegrityValues = [true, false] as const
+
+  const combinations = referentialIntegrityValues.flatMap((referentialIntegrity) =>
+    templateInfos.flatMap((t) =>
+      providers.map(
+        (datasourceProvider): Combination => ({
+          referentialIntegrity,
+          templateTag: t.handles.pascal.value,
+          datasourceProvider,
+        })
+      )
+    )
+  )
+
+  log.info(`Found migration sql combinations`, { count: combinations.length })
+
+  // TODO use combinations
+
   await Promise.all(
     providers.map(async (provider) => {
       await Promise.all(

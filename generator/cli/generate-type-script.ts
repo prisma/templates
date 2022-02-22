@@ -1,11 +1,11 @@
 import endent from 'endent'
 import glob from 'fast-glob'
 import * as FS from 'fs-jetpack'
-import { camelCase, snakeCase, upperFirst } from 'lodash'
+import { upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
-import { TemplateInfo } from '../lib/types'
+import { getTemplateInfos, TemplateInfo } from '../lib/templates'
 import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/utils'
 
 const log = console.log
@@ -196,46 +196,6 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
   fileOutputs.forEach((output) => {
     FS.write(output.path, output.content)
     log(`Output file: ${output.path}`)
-  })
-}
-
-/**
- * TODO
- */
-export const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
-  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true, dot: false }).map((path) => {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
-
-    const handles = {
-      kebab: {
-        jsdoc: `Good for URLs, npm package name.`,
-        value: name,
-      },
-      pascal: {
-        jsdoc: `Good for class names, type names.`,
-        value: upperFirst(camelCase(name)),
-      },
-      camel: {
-        jsdoc: `Good for object properties.`,
-        value: camelCase(name),
-      },
-      snake: {
-        jsdoc: `Good for enums, constants.`,
-        value: snakeCase(name).toLowerCase(),
-      },
-      upper: {
-        jsdoc: `Good for environment names, constants.`,
-        value: snakeCase(name).toUpperCase(),
-      },
-    }
-
-    return {
-      handles,
-      displayName: Path.basename(path),
-      description,
-      path,
-    }
   })
 }
 
