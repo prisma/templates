@@ -14,18 +14,6 @@ describe('with custom datasourceProvider', () => {
   })
 })
 
-describe('with referential integrity', () => {
-  Object.values(PrismaTemplates.Templates).forEach((Template) => {
-    it(`${Template.metadata.displayName} X mysql`, () => {
-      const template = new Template({
-        datasourceProvider: 'mysql',
-        referentialIntegrity: 'prisma',
-      })
-      expect(template.migrationSql).toMatchSnapshot()
-    })
-  })
-})
-
 describe('with custom repository owner and repository handle', () => {
   Object.values(PrismaTemplates.Templates).forEach((Template) => {
     it(Template.metadata.displayName, () => {

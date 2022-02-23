@@ -22,7 +22,7 @@ async function main(): Promise<void> {
   const migrationSqlOutputDir = Path.join(__dirname, '../../src/generatedMigrations')
   if (args['--download-templates-repo']) {
     //eslint-disable-next-line
-    await downloadTemplatesRepo({ dir: templatesRepoDir })
+    downloadTemplatesRepo({ dir: templatesRepoDir })
   }
 
   if (args['--generate-migration-sql']) {
@@ -32,7 +32,7 @@ async function main(): Promise<void> {
       )
       return
     }
-    await generateMigrationSql({
+    generateMigrationSql({
       templatesRepoDir,
       outputDir: migrationSqlOutputDir,
     })
@@ -41,6 +41,6 @@ async function main(): Promise<void> {
   if (args['--generate-type-script']) {
     const outputDir = Path.join(__dirname, `../../src/generated`)
     //eslint-disable-next-line
-    await generateTypeScript({ templatesRepoDir, outputDir })
+    generateTypeScript({ templatesRepoDir, outputDir })
   }
 }

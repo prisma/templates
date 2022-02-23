@@ -1,9 +1,15 @@
 import * as Babel from '@babel/core'
+import { Index } from '~/src/utils'
+import { TemplateInfo } from '../../templates'
 import { datasourceUrlEnvironmentVariableName } from '../../utils'
 import { ArtifactProvider } from '../types'
 import { babelPluginTransformTemplate } from './babel-plugin-transform-template'
+import { File } from '~/src/types'
 
-export const run: ArtifactProvider = (params) => {
+export const run: ArtifactProvider = <T extends Index<File>>(params: {
+  templateInfo: TemplateInfo
+  files: T
+}) => {
   const prismaSeedTs = params.files['prisma/seed.ts']
 
   if (!prismaSeedTs || prismaSeedTs.content === '') return []

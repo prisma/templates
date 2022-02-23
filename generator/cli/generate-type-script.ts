@@ -397,7 +397,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public artifacts = artifacts
 
-        public migrationSql: MigrationSql.MigrationSqlResponse
+        public migrationSql: MigrationSql.MigrationSql
 
         //
         // Constructor

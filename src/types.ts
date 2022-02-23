@@ -24,7 +24,7 @@ export abstract class AbstractTemplate<
   }
   public abstract files: FilesIndex
   public abstract artifacts: ArtifactsIndex
-  public abstract migrationSql: MigrationSql.MigrationSqlResponse
+  public abstract migrationSql: MigrationSql.MigrationSql
 }
 
 export type File = {
