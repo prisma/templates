@@ -1,4 +1,4 @@
-import { DatasourceProvider } from '~/generator/cli/generate-migration-sql'
+import { DatasourceProvider } from '~/src/types'
 import { PrismaTemplates } from '../../'
 import migrations from '../../generatedMigrations/index'
 import { BaseTemplateParametersResolved } from '../../types'

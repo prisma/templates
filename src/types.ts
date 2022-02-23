@@ -76,3 +76,5 @@ export type BaseTemplateParameters = {
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
+
+export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb'>

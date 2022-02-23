@@ -5,8 +5,8 @@ import { upperFirst } from 'lodash'
 import * as Path from 'path'
 import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
-import { getTemplateInfos, TemplateInfo } from '../lib/templates'
-import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/utils'
+import { getTemplateInfos, TemplateInfo } from '~/src/templates'
+import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '~/src/utils'
 
 const log = console.log
 

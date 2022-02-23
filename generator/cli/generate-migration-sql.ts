@@ -1,13 +1,11 @@
 import execa from 'execa'
 import * as FS from 'fs-jetpack'
 import { log } from 'floggy'
-import { Data } from '~/src/data'
-import { getTemplateInfos } from '../lib/templates'
-import { generateConnectionString, replaceProvider, replaceReferentialIntegrity, clean } from '../lib/utils'
+import { getTemplateInfos } from '~/src/templates'
+import { generateConnectionString, replaceProvider, replaceReferentialIntegrity, clean } from '~/src/utils'
 import { MigrationFileName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
-
-export type DatasourceProvider = Exclude<Data.DatasourceProviderName, 'mongodb'>
+import { DatasourceProvider } from '~/src/types'
 
 interface Combination {
   /**
