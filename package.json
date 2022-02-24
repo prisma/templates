@@ -89,5 +89,8 @@
   "importSorter": {
     "emptyLinesBetweenGroups": 0,
     "wrappingStyle": "prettier"
+  },
+  "peerDependencies": {
+    "@prisma/client": "^3.5"
   }
 }
