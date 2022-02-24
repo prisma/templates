@@ -44,7 +44,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
-    "@prisma/utils": "^0.0.0-dripip.pr.2.10",
+    "@prisma/utils": "^0.0.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

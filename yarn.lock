@@ -1019,10 +1019,10 @@
     terminal-link "2.1.1"
     tmp "0.2.1"
 
-"@prisma/utils@^0.0.0-dripip.pr.2.10":
-  version "0.0.0-dripip.pr.2.10"
-  resolved "https://registry.yarnpkg.com/@prisma/utils/-/utils-0.0.0-dripip.pr.2.10.tgz#ce19a45565438699ee7aaf35ef6904b6b667a4bb"
-  integrity sha512-aiX5qW2Qlmtu9ANEIsgA4PfL1Kec4ASfEIgTjEpstdUEAk66uaxKNSkQN5kwHgRijPyO9aPVhjJx+I/+iqWZ7g==
+"@prisma/utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@prisma/utils/-/utils-0.0.1.tgz#cc6082331d59a38ef12be7411009ab1083952e98"
+  integrity sha512-Zs2dyf9tvvjNXdvkPj5iMr1zN/xigwAI+YeH/sHQRU1IzPKnJ0xVWJFeq4e14sb4xkgpFke7qwPCmwLUH8xXXw==
   dependencies:
     "@opentelemetry/api" "^1.0.4"
     "@prisma/sdk" "^3.9.2"
