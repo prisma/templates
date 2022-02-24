@@ -7,21 +7,21 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -46,13 +46,13 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -70,16 +70,16 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -101,16 +101,16 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -132,16 +132,16 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -163,16 +163,16 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -194,21 +194,21 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -233,13 +233,13 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -257,16 +257,16 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -288,16 +288,16 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -319,16 +319,16 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -350,16 +350,16 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -547,21 +547,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -896,7 +896,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -1417,21 +1417,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -1766,7 +1766,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -2114,7 +2114,7 @@ a {
 }
 `;
 
-exports[`with custom datasourceProvider Blog X postgresql 1`] = `
+exports[`with custom datasourceProvider Blog X postgres 1`] = `
 Nextjs {
   "_tag": "Nextjs",
   "artifacts": Object {
@@ -2287,21 +2287,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -2636,11 +2636,11 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -3157,21 +3157,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -3506,7 +3506,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4027,21 +4027,21 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\",
-    \\"next\\": \\"11.1.2\\",
+    \\"@prisma/client\\": \\"3.9.2\\",
+    \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@types/react\\": \\"17.0.34\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
-    \\"eslint-config-next\\": \\"11.1.2\\",
+    \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -4376,7 +4376,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4747,13 +4747,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -4772,7 +4772,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -4942,13 +4942,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -4967,7 +4967,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5114,7 +5114,7 @@ export async function seed() {
 }
 `;
 
-exports[`with custom datasourceProvider Empty X postgresql 1`] = `
+exports[`with custom datasourceProvider Empty X postgres 1`] = `
 Empty {
   "_tag": "Empty",
   "artifacts": Object {},
@@ -5137,13 +5137,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5156,13 +5156,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5332,13 +5332,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5357,7 +5357,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5527,13 +5527,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
@@ -5552,7 +5552,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6258,16 +6258,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -6286,7 +6286,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -7481,16 +7481,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -7509,7 +7509,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -8145,7 +8145,7 @@ main()
 }
 `;
 
-exports[`with custom datasourceProvider Music Streaming Service X postgresql 1`] = `
+exports[`with custom datasourceProvider Music Streaming Service X postgres 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
   "artifacts": Object {
@@ -8704,16 +8704,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -8732,11 +8732,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -9927,16 +9927,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -9955,7 +9955,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -11150,16 +11150,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -11178,7 +11178,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -12323,16 +12323,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -12351,7 +12351,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -13480,16 +13480,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -13508,7 +13508,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -14128,7 +14128,7 @@ main()
 }
 `;
 
-exports[`with custom datasourceProvider Rentals Platform X postgresql 1`] = `
+exports[`with custom datasourceProvider Rentals Platform X postgres 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
   "artifacts": Object {
@@ -14637,16 +14637,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -14665,11 +14665,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -15794,16 +15794,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -15822,7 +15822,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -16951,16 +16951,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -16979,7 +16979,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -17905,16 +17905,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -17933,7 +17933,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -18692,16 +18692,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -18720,7 +18720,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -19173,7 +19173,7 @@ main()
 }
 `;
 
-exports[`with custom datasourceProvider SaaS X postgresql 1`] = `
+exports[`with custom datasourceProvider SaaS X postgres 1`] = `
 Saas {
   "_tag": "Saas",
   "artifacts": Object {
@@ -19479,16 +19479,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -19507,11 +19507,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -20266,16 +20266,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -20294,7 +20294,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -21053,16 +21053,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node ./prisma/seed.ts\\"
@@ -21081,7 +21081,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -21760,16 +21760,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -21788,7 +21788,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -22418,16 +22418,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -22446,7 +22446,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -22850,7 +22850,7 @@ main()
 }
 `;
 
-exports[`with custom datasourceProvider URL Shortener X postgresql 1`] = `
+exports[`with custom datasourceProvider URL Shortener X postgres 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
   "artifacts": Object {
@@ -23076,16 +23076,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -23104,11 +23104,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -23734,16 +23734,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -23762,7 +23762,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24392,16 +24392,16 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.4.2\\"
+    \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"16.11.7\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.4.2\\",
-    \\"ts-node\\": \\"10.4.0\\",
-    \\"typescript\\": \\"4.4.4\\"
+    \\"prisma\\": \\"3.9.2\\",
+    \\"ts-node\\": \\"10.5.0\\",
+    \\"typescript\\": \\"4.5.5\\"
   },
   \\"prisma\\": {
     \\"seed\\": \\"ts-node prisma/seed\\"
@@ -24420,7 +24420,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24829,7 +24829,7 @@ Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24875,7 +24875,7 @@ datasource db {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -24889,7 +24889,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24976,7 +24976,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25057,7 +25057,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25107,7 +25107,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25274,7 +25274,7 @@ exports[`with no custom engineType Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25319,7 +25319,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -25332,7 +25332,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25418,7 +25418,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25498,7 +25498,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25547,7 +25547,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {

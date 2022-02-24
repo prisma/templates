@@ -1,10 +1,10 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
 import { PrismaTemplates } from '../'
-import { Data } from '../data'
-import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
+import { PrismaUtils } from '@prisma/utils'
+import { previewFeaturesPattern } from '@prisma/utils/dist-cjs/Schema'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 
@@ -35,13 +35,13 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag: Tool<{ file: File; previewFlag: PreviewFlag }>
+    addPreviewFlag: Tool<{ file: File; previewFlag: PrismaUtils.Schema.PreviewFlag }>
     /**
      * Set the referentialIntegrity datasource setting.
      *
      * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-integrity
      */
-    setReferentialIntegrity: Tool<{ value: Data.ReferentialIntegritySettingValue }>
+    setReferentialIntegrity: Tool<{ value: PrismaUtils.Schema.ReferentialIntegritySettingValue }>
   }
 }
 
