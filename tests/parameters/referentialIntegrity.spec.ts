@@ -3,7 +3,7 @@ import { PrismaTemplates } from '~/src'
 Object.values(PrismaTemplates.Templates).forEach((Template) => {
   it(`Setting referentialIntegrity to the default does nothing because it is the Prisma default already: ${Template.metadata.displayName}`, () => {
     const template = new Template({
-      datasourceProvider: 'postgresql',
+      datasourceProvider: 'postgres',
       repositoryOwner: 'prisma',
       repositoryHandle: 'templates-node',
       referentialIntegrity: 'foreignKeys',
@@ -15,7 +15,7 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
 Object.values(PrismaTemplates.Templates).forEach((Template) => {
   it(`Setting referentialIntegrity to non-default changes the PSL output: ${Template.metadata.displayName}`, () => {
     const template = new Template({
-      datasourceProvider: 'postgresql',
+      datasourceProvider: 'postgres',
       repositoryOwner: 'prisma',
       repositoryHandle: 'templates-node',
       referentialIntegrity: 'prisma',
@@ -30,7 +30,7 @@ Object.values(PrismaTemplates.Templates).forEach((Template) => {
 Object.values(PrismaTemplates.Templates).forEach((Template) => {
   it(`By default referentialIntegrity is set to foreignKeys: ${Template.metadata.displayName}`, () => {
     const template = new Template({
-      datasourceProvider: 'postgresql',
+      datasourceProvider: 'postgres',
       repositoryOwner: 'prisma',
       repositoryHandle: 'templates-node',
     })

@@ -1,8 +1,7 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
+import { PrismaUtils } from '@prisma/utils'
 import { PrismaTemplates } from '../'
-import { Data } from '../data'
-import { previewFeaturesPattern, PreviewFlag } from '../data/prisma'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
 
@@ -35,13 +34,13 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag: Tool<{ file: File; previewFlag: PreviewFlag }>
+    addPreviewFlag: Tool<{ file: File; previewFlag: PrismaUtils.Schema.PreviewFlag }>
     /**
      * Set the referentialIntegrity datasource setting.
      *
      * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-integrity
      */
-    setReferentialIntegrity: Tool<{ value: Data.ReferentialIntegritySettingValue }>
+    setReferentialIntegrity: Tool<{ value: PrismaUtils.Schema.ReferentialIntegritySettingValue }>
   }
 }
 
@@ -102,25 +101,15 @@ const tools: Tools = {
   },
   prismaSchema: {
     addPreviewFlag(params) {
-      if (previewFeaturesPattern.exec(params.file.content)) {
-        return tools.replaceContent({
-          file: params.file,
-          pattern: /previewFeatures(.*)=(.*)\[(.+)]/,
-          replacement: `previewFeatures$1=$2[$3, "${params.previewFlag}"]`,
-        })
-      } else {
-        return tools.replaceContent({
-          file: params.file,
-          pattern: /(provider *= *"prisma-client-js")/,
-          replacement: `$1\n  previewFeatures = ["${params.previewFlag}"]`,
-        })
-      }
+      return PrismaUtils.Schema.addPreviewFlag({
+        previewFlag: params.previewFlag,
+        prismaSchemaContent: params.file.content,
+      })
     },
     setReferentialIntegrity(params) {
-      return tools.replaceContent({
-        file: params.file,
-        pattern: /(url *= *env\(".+"\))/,
-        replacement: `$1\n  referentialIntegrity = "${params.value}"`,
+      return PrismaUtils.Schema.setReferentialIntegrity({
+        value: params.value,
+        prismaSchemaContent: params.file.content,
       })
     },
   },

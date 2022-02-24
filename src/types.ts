@@ -1,5 +1,4 @@
-import { Data } from './data'
-import { EngineType } from './data/prisma'
+import { PrismaUtils } from '@prisma/utils'
 import { Index } from './utils'
 
 export * from './generated/types'
@@ -36,7 +35,7 @@ export type BaseTemplateParameters = {
    *
    * @default 'postgresql'
    */
-  datasourceProvider?: Data.DatasourceProviderName
+  datasourceProvider?: PrismaUtils.Schema.ProviderTypeNormalized
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *
@@ -56,7 +55,7 @@ export type BaseTemplateParameters = {
    *
    * @default null
    */
-  engineType?: EngineType | null
+  engineType?: PrismaUtils.Engines.EmbedStrategy | null
   /**
    * Is Prisma Dataproxy being used?
    *
@@ -70,7 +69,7 @@ export type BaseTemplateParameters = {
    * @remarks When the default is used, no changes to the PSL are made since this is the Prisma default.
    * @default 'foreignKeys'
    */
-  referentialIntegrity?: Data.ReferentialIntegritySettingValue
+  referentialIntegrity?: PrismaUtils.Schema.ReferentialIntegritySettingValue
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
