@@ -25,7 +25,7 @@
     "format:check:prettier": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx --fix",
     "lint:check": "eslint . --ext .ts,.tsx --max-warnings 0",
-    "type-check": "yarn tsc --noEmit",
+    "type-check": "yarn -s build:gen && yarn -s tsc --noEmit",
     "dev": "yarn -s clean && tsc --build --watch",
     "dev:gen": "nodemon  --watch generator --ext ts --exec 'yarn -s build:gen:generate-type-script'",
     "build": "yarn -s clean && yarn build:gen && yarn build:ts",
