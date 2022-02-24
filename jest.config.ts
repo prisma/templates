@@ -8,12 +8,11 @@ const tsconfig: {
 } = TypeScript.readConfigFile('tsconfig.json', (path) => Fs.readFileSync(path, { encoding: 'utf-8' }))
 
 const config = {
-  rootDir: './tests',
   transform: {
     '^.+\\.ts$': '@swc/jest',
   },
   moduleNameMapper: pathsToModuleNameMapper(tsconfig.config?.compilerOptions?.paths ?? {}, {
-    prefix: '<rootDir>/..',
+    prefix: '<rootDir>',
   }),
   watchPlugins: [
     'jest-watch-typeahead/filename',

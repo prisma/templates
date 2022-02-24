@@ -12,6 +12,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
+    "skipLibCheck": true,
     // We handle these with ESLint:
     // "noUnusedLocals": false,
     // "noUnusedParameters": false,
@@ -47,7 +48,7 @@
     ]
   },
   "include": ["."],
-  "exclude": ["templates-repo", "dist-*"],
+  "exclude": ["dist-*"],
   "plugins": [
     {
       "name": "typescript-snapshots-plugin"
