@@ -1,4 +1,4 @@
-import { Data } from '../data'
+import { PrismaUtils } from '@prisma/utils'
 import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 /**
@@ -15,12 +15,12 @@ export const datasourceReferentialIntegrity: FileTransformer = (params) => {
 
   if (
     parameters.referentialIntegrity &&
-    parameters.referentialIntegrity !== Data.referentialIntegritySettingValueDefault &&
+    parameters.referentialIntegrity !== PrismaUtils.Schema.referentialIntegritySettingValueDefault &&
     file.path === 'prisma/schema.prisma'
   ) {
     content = tools.prismaSchema.addPreviewFlag({
       file: params.file,
-      previewFlag: Data.PreviewFlag.referentialIntegrity,
+      previewFlag: PrismaUtils.Schema.PreviewFlag.referentialIntegrity,
     })
 
     content = tools.prismaSchema.setReferentialIntegrity({

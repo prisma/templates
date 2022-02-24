@@ -1,7 +1,7 @@
+import { PrismaUtils } from '@prisma/utils'
 import endent from 'endent'
 import { range } from 'lodash'
-import { Data } from '~/src/data'
-import { tools } from '~/src/fileTransformer/fileTransformer'
+import { tools } from './fileTransformer/fileTransformer'
 import { DatasourceProvider, File } from './types'
 
 export const mapObject = <T, U>(
@@ -108,7 +108,7 @@ export function replaceReferentialIntegrity(params: { file: File; referentialInt
   if (!params.referentialIntegrity) {
     content = tools.prismaSchema.addPreviewFlag({
       file: params.file,
-      previewFlag: Data.PreviewFlag.referentialIntegrity,
+      previewFlag: PrismaUtils.Schema.PreviewFlag.referentialIntegrity,
     })
     content = tools.prismaSchema.setReferentialIntegrity({
       file: {
@@ -126,7 +126,7 @@ export function replaceReferentialIntegrity(params: { file: File; referentialInt
  */
 export function generateConnectionString(datasourceProvider: DatasourceProvider) {
   switch (datasourceProvider) {
-    case 'postgresql':
+    case 'postgres':
       return 'postgresql://prisma:prisma@localhost:5444/doesntexist'
     case 'mysql':
       return 'mysql://prisma:prisma@localhost:5444/doesntexist'

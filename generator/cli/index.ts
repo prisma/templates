@@ -17,9 +17,10 @@ main().catch((error) => {
 
 //eslint-disable-next-line
 async function main(): Promise<void> {
-  const dirName = 'templates-repo'
-  const templatesRepoDir = Path.join(__dirname, '../..', dirName)
+  const dirName = '.templates-repo'
+  const templatesRepoDir = Path.join(__dirname, '../../node_modules', dirName)
   const migrationSqlOutputDir = Path.join(__dirname, '../../src/generatedMigrations')
+
   if (args['--download-templates-repo']) {
     //eslint-disable-next-line
     downloadTemplatesRepo({ dir: templatesRepoDir })

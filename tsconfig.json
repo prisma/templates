@@ -12,6 +12,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
+    "skipLibCheck": true,
     // We handle these with ESLint:
     // "noUnusedLocals": false,
     // "noUnusedParameters": false,
@@ -41,15 +42,13 @@
 
     // Transformer Plugins made possible by https://github.com/nonara/ts-patch
     "plugins": [
-      // https://github.com/dsherret/ts-nameof
-      { "transform": "ts-nameof", "type": "raw" },
       // https://github.com/LeDDGroup/typescript-transform-paths
       { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ]
   },
   "include": ["."],
-  "exclude": ["templates-repo", "dist-*"],
+  "exclude": ["dist-*"],
   "plugins": [
     {
       "name": "typescript-snapshots-plugin"

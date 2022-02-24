@@ -14,7 +14,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -49,7 +49,7 @@ Object {
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -74,8 +74,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -105,8 +105,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -136,8 +136,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -167,8 +167,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -201,7 +201,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -236,7 +236,7 @@ Object {
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -261,8 +261,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -292,8 +292,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -323,8 +323,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -354,8 +354,8 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -554,7 +554,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -896,7 +896,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -1425,7 +1425,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -1767,7 +1767,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -2155,7 +2155,7 @@ ALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) RE
 }
 `;
 
-exports[`with custom datasourceProvider Blog X postgresql 1`] = `
+exports[`with custom datasourceProvider Blog X postgres 1`] = `
 Nextjs {
   "_tag": "Nextjs",
   "artifacts": Object {
@@ -2335,7 +2335,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -2677,11 +2677,11 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -3248,7 +3248,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -3590,7 +3590,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4119,7 +4119,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -4461,7 +4461,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4874,7 +4874,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -4896,7 +4896,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5070,7 +5070,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5092,7 +5092,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5240,7 +5240,7 @@ export async function seed() {
 }
 `;
 
-exports[`with custom datasourceProvider Empty X postgresql 1`] = `
+exports[`with custom datasourceProvider Empty X postgres 1`] = `
 Empty {
   "_tag": "Empty",
   "artifacts": Object {},
@@ -5266,7 +5266,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5282,13 +5282,13 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5462,7 +5462,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5484,7 +5484,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5658,7 +5658,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"3.9.2\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.17\\",
+    \\"@types/node\\": \\"17.0.21\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5680,7 +5680,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6391,8 +6391,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -6415,7 +6415,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -7615,8 +7615,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -7639,7 +7639,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -8410,7 +8410,7 @@ ALTER TABLE _PlaylistToSong ADD FOREIGN KEY (B) REFERENCES Song(id) ON DELETE CA
 }
 `;
 
-exports[`with custom datasourceProvider Music Streaming Service X postgresql 1`] = `
+exports[`with custom datasourceProvider Music Streaming Service X postgres 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
   "artifacts": Object {
@@ -8973,8 +8973,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -8997,11 +8997,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -10344,8 +10344,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -10368,7 +10368,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -11568,8 +11568,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -11592,7 +11592,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -12876,8 +12876,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -12900,7 +12900,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -14034,8 +14034,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -14058,7 +14058,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -14769,7 +14769,7 @@ ALTER TABLE Media ADD CONSTRAINT Media_roomId_fkey FOREIGN KEY (roomId) REFERENC
 }
 `;
 
-exports[`with custom datasourceProvider Rentals Platform X postgresql 1`] = `
+exports[`with custom datasourceProvider Rentals Platform X postgres 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
   "artifacts": Object {
@@ -15282,8 +15282,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -15306,11 +15306,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -16533,8 +16533,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -16557,7 +16557,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -17691,8 +17691,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -17715,7 +17715,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -18733,8 +18733,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -18757,7 +18757,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -19521,8 +19521,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -19545,7 +19545,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -20045,7 +20045,7 @@ ALTER TABLE Invite ADD CONSTRAINT Invite_accountId_fkey FOREIGN KEY (accountId) 
 }
 `;
 
-exports[`with custom datasourceProvider SaaS X postgresql 1`] = `
+exports[`with custom datasourceProvider SaaS X postgres 1`] = `
 Saas {
   "_tag": "Saas",
   "artifacts": Object {
@@ -20355,8 +20355,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -20379,11 +20379,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -21189,8 +21189,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -21213,7 +21213,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -21977,8 +21977,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -22001,7 +22001,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -22730,8 +22730,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -22754,7 +22754,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
 }
 
 datasource db {
@@ -23389,8 +23389,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -23413,7 +23413,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -23846,7 +23846,7 @@ ALTER TABLE Link ADD CONSTRAINT Link_userId_fkey FOREIGN KEY (userId) REFERENCES
 }
 `;
 
-exports[`with custom datasourceProvider URL Shortener X postgresql 1`] = `
+exports[`with custom datasourceProvider URL Shortener X postgres 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
   "artifacts": Object {
@@ -24076,8 +24076,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -24100,11 +24100,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
-  provider = \\"postgresql\\"
+  provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -24763,8 +24763,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -24787,7 +24787,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25422,8 +25422,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.17\\",
-    \\"@vercel/node\\": \\"1.12.1\\",
+    \\"@types/node\\": \\"17.0.21\\",
+    \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"3.9.2\\",
     \\"ts-node\\": \\"10.5.0\\",
@@ -25446,7 +25446,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25884,7 +25884,7 @@ Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25930,7 +25930,7 @@ datasource db {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -25944,7 +25944,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26031,7 +26031,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26112,7 +26112,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26162,7 +26162,7 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26329,7 +26329,7 @@ exports[`with no custom engineType Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26374,7 +26374,7 @@ datasource db {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -26387,7 +26387,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26473,7 +26473,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26553,7 +26553,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26602,7 +26602,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataproxy\\"]
+  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {

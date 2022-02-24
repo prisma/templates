@@ -2,10 +2,11 @@ import execa from 'execa'
 import * as FS from 'fs-jetpack'
 import { log } from 'floggy'
 import { getTemplateInfos } from '~/src/templates'
-import { generateConnectionString, replaceProvider, replaceReferentialIntegrity, clean } from '~/src/utils'
+import { generateConnectionString, replaceProvider, clean, replaceReferentialIntegrity } from '~/src/utils'
 import { MigrationFileName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvider } from '~/src/types'
+import { PrismaUtils } from '@prisma/utils'
 
 interface Combination {
   /**
@@ -40,7 +41,7 @@ export default function generateMigrationSql(params: { templatesRepoDir: string;
   const indexFile = `${params.outputDir}/index.ts`
 
   const exportsList: MigrationFileName[] = []
-  const providers: DatasourceProvider[] = ['postgresql', 'mysql', 'sqlserver', 'sqlite']
+  const providers: DatasourceProvider[] = ['postgres', 'mysql', 'sqlserver', 'sqlite']
 
   const referentialIntegrityValues = [true, false] as const
 
@@ -57,9 +58,11 @@ export default function generateMigrationSql(params: { templatesRepoDir: string;
     )
   )
 
-  log.info(`Found migration sql combinations`, { count: combinations.length })
-  combinations.map((combination) => {
-    const schemaPath = `./templates-repo/${combination.templateName}/prisma/schema.prisma`
+  log.info(`Found migration sql combinations`, { combinations })
+
+  // TODO async parallel
+  combinations.forEach((combination) => {
+    const schemaPath = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
     const newSchemaPath = `/tmp/${combination.templateTag}/${combination.datasourceProvider}/schema.prisma`
     const exportName: MigrationFileName = `${combination.templateTag}${combination.datasourceProvider}${
       combination.referentialIntegrity ? 'ReferentialIntegrity' : ''
@@ -67,7 +70,7 @@ export default function generateMigrationSql(params: { templatesRepoDir: string;
     const fileName = params.outputDir + `/${exportName}.ts`
     exportsList.push(exportName)
     const content = FS.read(schemaPath)
-    if (!content) throw new Error('Could not copy')
+    if (!content) throw new Error(`Could not read schema at path ${schemaPath}`)
     const schemaWithCorrectProvider = replaceProvider(combination.datasourceProvider, {
       content: content,
       path: schemaPath,
