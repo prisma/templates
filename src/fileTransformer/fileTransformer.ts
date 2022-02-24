@@ -1,7 +1,6 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
 import { PrismaUtils } from '@prisma/utils'
-import { previewFeaturesPattern } from '@prisma/utils/dist-cjs/Schema'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
@@ -102,25 +101,15 @@ const tools: Tools = {
   },
   prismaSchema: {
     addPreviewFlag(params) {
-      if (previewFeaturesPattern.exec(params.file.content)) {
-        return tools.replaceContent({
-          file: params.file,
-          pattern: /previewFeatures(.*)=(.*)\[(.+)]/,
-          replacement: `previewFeatures$1=$2[$3, "${params.previewFlag}"]`,
-        })
-      } else {
-        return tools.replaceContent({
-          file: params.file,
-          pattern: /(provider *= *"prisma-client-js")/,
-          replacement: `$1\n  previewFeatures = ["${params.previewFlag}"]`,
-        })
-      }
+      return PrismaUtils.Schema.addPreviewFlag({
+        previewFlag: params.previewFlag,
+        prismaSchemaContent: params.file.content,
+      })
     },
     setReferentialIntegrity(params) {
-      return tools.replaceContent({
-        file: params.file,
-        pattern: /(url *= *env\(".+"\))/,
-        replacement: `$1\n  referentialIntegrity = "${params.value}"`,
+      return PrismaUtils.Schema.setReferentialIntegrity({
+        value: params.value,
+        prismaSchemaContent: params.file.content,
       })
     },
   },
