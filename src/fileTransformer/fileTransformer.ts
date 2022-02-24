@@ -1,10 +1,10 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
+import { PrismaUtils } from '@prisma/utils'
+import { previewFeaturesPattern } from '@prisma/utils/dist-cjs/Schema'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
-import { PrismaUtils } from '@prisma/utils'
-import { previewFeaturesPattern } from '@prisma/utils/dist-cjs/Schema'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 
