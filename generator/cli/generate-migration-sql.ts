@@ -1,7 +1,7 @@
 import { PrismaUtils } from '@prisma/utils'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaTemplates } from '~/src'
-import { MigrationSql } from '~/src/logic'
+import { DatasourceProvidersNormalizedSupportingMigration, getName } from '~/src/logic/migrationSql/helpers'
 import { getTemplateInfos } from '~/src/templates'
 import { clean } from '~/src/utils'
 import execa from 'execa'
@@ -19,7 +19,7 @@ interface Combination {
   /**
    * What database to use?
    */
-  datasourceProvider: MigrationSql.DatasourceProvidersNormalizedSupportingMigration
+  datasourceProvider: DatasourceProvidersNormalizedSupportingMigration
   /**
    * What template to use?
    */
@@ -108,7 +108,7 @@ export default async function generateMigrationSql(params: {
         rawContent = rawContent.substr(0, commandIndexEndEnd)
       }
 
-      const exportName = MigrationSql.getName(combination)
+      const exportName = getName(combination)
       const formattedContent = JSON.stringify(clean(rawContent), null, 2)
       const moduleName = exportName
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`

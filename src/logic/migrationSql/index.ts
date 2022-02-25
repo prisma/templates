@@ -1,30 +1,12 @@
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
-import { upperFirst } from '../../utils'
+import { getName, MigrationSql } from './helpers'
 import { PrismaUtils } from '@prisma/utils'
-import { DatasourceProviderNormalized } from '@prisma/utils/dist-cjs/Schema'
-
-export type MigrationSql = string[]
-
-export type DatasourceProvidersNormalizedSupportingMigration = Exclude<
-  PrismaUtils.Schema.DatasourceProviderNormalized,
-  'mongodb'
->
-
-export type MigrationFileName =
-  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvidersNormalizedSupportingMigration>}WithReferentialIntegrity${Capitalize<PrismaUtils.Schema.ReferentialIntegritySettingValue>}`
-
-export const getName = (params: {
-  template: PrismaTemplates.$Types.TemplateTag
-  datasourceProvider: DatasourceProvidersNormalizedSupportingMigration
-  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
-}): MigrationFileName =>
-  // prettier-ignore
-  `${params.template}With${upperFirst(params.datasourceProvider)}WithReferentialIntegrity${upperFirst(params.referentialIntegrity)}`
+export * from './helpers'
 
 export const select = (params: {
   template: PrismaTemplates.$Types.TemplateTag
-  datasourceProvider: DatasourceProviderNormalized
+  datasourceProvider: PrismaUtils.Schema.DatasourceProviderNormalized
   referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
 }): MigrationSql => {
   if (
