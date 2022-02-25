@@ -20,7 +20,7 @@ export const datasourceReferentialIntegrity: FileTransformer = (params) => {
   ) {
     content = tools.prismaSchema.addPreviewFlag({
       file: params.file,
-      previewFlag: PrismaUtils.Schema.PreviewFlag.referentialIntegrity,
+      previewFlag: PrismaUtils.Schema.PreviewFeatureFlag.referentialIntegrity,
     })
 
     content = tools.prismaSchema.setReferentialIntegrity({

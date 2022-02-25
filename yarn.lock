@@ -1024,10 +1024,10 @@
     terminal-link "2.1.1"
     tmp "0.2.1"
 
-"@prisma/utils@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@prisma/utils/-/utils-0.0.1.tgz#cc6082331d59a38ef12be7411009ab1083952e98"
-  integrity sha512-Zs2dyf9tvvjNXdvkPj5iMr1zN/xigwAI+YeH/sHQRU1IzPKnJ0xVWJFeq4e14sb4xkgpFke7qwPCmwLUH8xXXw==
+"@prisma/utils@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@prisma/utils/-/utils-0.4.1.tgz#5677a9787ded448a20c23fea176f431d1cbd24fe"
+  integrity sha512-twg+8EcKHMKp5skBH3pao4tvg0i6pLHSmCbeXSM0oxKsbO6yGQ8hZl6Jwjom4mZkoxSRqJPwKaS/kA2wYWSHyw==
   dependencies:
     "@opentelemetry/api" "^1.0.4"
     "@prisma/sdk" "^3.9.2"

@@ -37,7 +37,7 @@ export type BaseTemplateParameters = {
    *
    * @default 'postgresql'
    */
-  datasourceProvider?: PrismaUtils.Schema.ProviderTypeNormalized
+  datasourceProvider?: PrismaUtils.Schema.DatasourceProviderNormalized
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *
@@ -76,4 +76,4 @@ export type BaseTemplateParameters = {
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
 
-export type DatasourceProvider = Exclude<PrismaUtils.Schema.ProviderTypeNormalized, 'mongodb'>
+export type DatasourceProvider = Exclude<PrismaUtils.Schema.DatasourceProviderNormalized, 'mongodb'>

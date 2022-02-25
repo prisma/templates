@@ -1,8 +1,5 @@
-import { PrismaUtils } from '@prisma/utils'
 import endent from 'endent'
-import { range } from 'lodash'
-import { tools } from './fileTransformer/fileTransformer'
-import { DatasourceProvider, File } from './types'
+import * as R from 'remeda'
 
 export const mapObject = <T, U>(
   obj: Record<string, T>,
@@ -67,7 +64,7 @@ export const indentBlock = (size: number, block: string): string => {
     .split('\n')
     .map(
       (_) =>
-        `${range(size)
+        `${R.range(size)(0)
           .map((_) => ' ')
           .join('')}${_}`
     )
@@ -75,6 +72,7 @@ export const indentBlock = (size: number, block: string): string => {
 }
 
 export const globalBackticks = /\u0060/g
+
 /**
  * @returns Array of content split at each semi colon with white space and back ticks removed.
  */
@@ -86,57 +84,6 @@ export const clean = (content?: string): string[] => {
         .split(';')
         .filter((s) => s !== '')
     : []
-}
-
-/**
- * @returns File contents with replaced datasource. File path and content parameters do not need to match.
- */
-export function replaceProvider(datasourceProvider: DatasourceProvider, file: File) {
-  return tools.replaceContent({
-    file,
-    pattern: /provider *= *"postgresql"/,
-    replacement: `provider = "${datasourceProvider}"`,
-  })
-}
-
-/**
- * @returns Modified schema content with referentialIntegrity preview feature enabled and value = "prisma"
- *          if referentialIntegrity parameter is false.
- */
-export function replaceReferentialIntegrity(params: { file: File; referentialIntegrity: boolean }) {
-  let content = params.file.content
-  if (!params.referentialIntegrity) {
-    content = tools.prismaSchema.addPreviewFlag({
-      file: params.file,
-      previewFlag: PrismaUtils.Schema.PreviewFlag.referentialIntegrity,
-    })
-    content = tools.prismaSchema.setReferentialIntegrity({
-      file: {
-        ...params.file,
-        content,
-      },
-      value: 'prisma',
-    })
-  }
-  return content
-}
-
-/**
- * @returns A valid dummy connection string for the given datasource provider.
- */
-export function generateConnectionString(datasourceProvider: DatasourceProvider) {
-  switch (datasourceProvider) {
-    case 'postgres':
-      return 'postgresql://prisma:prisma@localhost:5444/doesntexist'
-    case 'mysql':
-      return 'mysql://prisma:prisma@localhost:5444/doesntexist'
-    case 'sqlserver':
-      return 'sqlserver://localhost:5444;database=doesntexist;user=prisma;password=prisma;encrypt=true'
-    case 'sqlite':
-      return 'file:./dev.db'
-    default:
-      return ''
-  }
 }
 
 export const upperFirst = <S extends string>(s: S): Capitalize<S> => {

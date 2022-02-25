@@ -2,23 +2,19 @@ import execa from 'execa'
 import * as FS from 'fs-jetpack'
 import { log } from 'floggy'
 import { getTemplateInfos } from '~/src/templates'
-import {
-  generateConnectionString,
-  replaceProvider,
-  clean,
-  replaceReferentialIntegrity,
-  upperFirst,
-} from '~/src/utils'
+import { clean, upperFirst } from '~/src/utils'
 import { MigrationFileName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvider } from '~/src/types'
 import { PromisePool } from '@supercharge/promise-pool'
+import { PrismaUtils } from '@prisma/utils'
+import * as Remeda from 'remeda'
 
 interface Combination {
   /**
    * Should referential integrity be used or not?
    */
-  referentialIntegrity: boolean
+  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
   /**
    * What database to use?
    */
@@ -47,22 +43,32 @@ export default async function generateMigrationSql(params: {
 
   log.info(`Found templates`, { templates: templateInfos.map((t) => t.displayName) })
 
-  const providers: DatasourceProvider[] = ['postgres', 'mysql', 'sqlserver', 'sqlite']
+  const providers = Object.values(
+    Remeda.omit(PrismaUtils.Schema.DatasourceProviderNormalized._def.values, ['mongodb'])
+  )
 
-  const referentialIntegrityValues = [true, false] as const
+  const referentialIntegrityValues = Object.values(PrismaUtils.Schema.ReferentialIntegritySettingValue)
 
   const combinations = referentialIntegrityValues.flatMap((referentialIntegrity) =>
     templateInfos.flatMap((t) =>
       providers.map(
         (datasourceProvider): Combination => ({
           referentialIntegrity,
+          datasourceProvider,
           templateTag: t.handles.pascal.value as PrismaTemplates.$Types.TemplateTag,
           templateName: t.displayName.trim(),
-          datasourceProvider,
         })
       )
     )
   )
+  // const combinations: Combination[] = [
+  //   {
+  //     datasourceProvider: 'mysql',
+  //     referentialIntegrity: 'foreignKeys',
+  //     templateName: 'Blog',
+  //     templateTag: 'Nextjs',
+  //   },
+  // ]
 
   log.info(`Found migration sql combinations`, { combinations })
 
@@ -70,21 +76,22 @@ export default async function generateMigrationSql(params: {
     .for(combinations)
     .process(async (combination) => {
       const schemaPath = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
-      const newSchemaPath = `/tmp/${combination.templateTag}/${combination.datasourceProvider}/schema.prisma`
+      const newSchemaPath = `/tmp/t-${combination.templateTag}/p-${combination.datasourceProvider}/ri-${combination.referentialIntegrity}/schema.prisma`
       const exportName: MigrationFileName = `${combination.templateTag}With${upperFirst(
         combination.datasourceProvider
-      )}${combination.referentialIntegrity ? 'WithReferentialIntegrity' : ''}`
+      )}WithReferentialIntegrity${upperFirst(combination.referentialIntegrity)}`
       const content = await FS.readAsync(schemaPath)
       if (!content) throw new Error(`Could not read schema at path ${schemaPath}`)
-      const schemaWithCorrectProvider = replaceProvider(combination.datasourceProvider, {
-        content: content,
-        path: schemaPath,
+      const schemaWithProvider = PrismaUtils.Schema.setDatasourceProvider({
+        prismaSchemaContent: content,
+        value: combination.datasourceProvider,
       })
-      const schemaWithCorrectReferentialIntegrity = replaceReferentialIntegrity({
-        file: { content: schemaWithCorrectProvider, path: schemaPath },
-        referentialIntegrity: combination.referentialIntegrity,
+      const schemaWithReferentialIntegrity = PrismaUtils.Schema.setReferentialIntegrity({
+        prismaSchemaContent: schemaWithProvider,
+        value: combination.referentialIntegrity,
       })
-      await FS.writeAsync(newSchemaPath, schemaWithCorrectReferentialIntegrity)
+      // console.log(schemaWithReferentialIntegrity)
+      await FS.writeAsync(newSchemaPath, schemaWithReferentialIntegrity)
 
       log.info(`Wrote template schema for combo to disk`, { path: newSchemaPath })
 
@@ -93,10 +100,13 @@ export default async function generateMigrationSql(params: {
         {
           cwd: process.cwd(),
           env: {
-            DATABASE_URL: generateConnectionString(combination.datasourceProvider),
+            DATABASE_URL: PrismaUtils.ConnectionString.generate(combination.datasourceProvider),
           },
         }
       )
+      // if (res.failed) {
+      //   console.log(res)
+      // }
       const substr = '--script'
       const commandIndexEnd = res.stdout.indexOf(substr)
       let rawContent = res.stdout.substr(commandIndexEnd + substr.length)

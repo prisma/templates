@@ -3,13 +3,13 @@ import { upperFirst } from '../../utils'
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
 import { BaseTemplateParametersResolved } from '../../types'
+import { PrismaUtils } from '@prisma/utils'
 
 export type MigrationSql = string[]
 
 export type MigrationRecord = Record<MigrationFileName, MigrationSql>
 export type MigrationFileName =
-  | `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}`
-  | `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}WithReferentialIntegrity`
+  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}WithReferentialIntegrity${Capitalize<PrismaUtils.Schema.ReferentialIntegritySettingValue>}`
 
 // const migrationsList: MigrationRecord = migrations
 
@@ -28,10 +28,8 @@ export const select = (params: Params): MigrationSql => {
   }
 
   return MigrationsSql[
-    `${params.template}With${upperFirst(params.parameters.datasourceProvider)}${
-      params.parameters.referentialIntegrity === 'foreignKeys' || !params.parameters.referentialIntegrity
-        ? 'WithReferentialIntegrity'
-        : ''
-    }`
+    `${params.template}With${upperFirst(
+      params.parameters.datasourceProvider
+    )}WithReferentialIntegrity${upperFirst(params.parameters.referentialIntegrity)}`
   ]
 }
