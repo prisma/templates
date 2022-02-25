@@ -1,22 +1,28 @@
-import { DatasourceProvider } from '../../types'
-import { upperFirst } from '../../utils'
+import { PrismaUtils } from '@prisma/utils'
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
-import { BaseTemplateParametersResolved } from '../../types'
-import { PrismaUtils } from '@prisma/utils'
+import { BaseTemplateParametersResolved, DatasourceProvider } from '../../types'
+import { upperFirst } from '../../utils'
 
 export type MigrationSql = string[]
 
-export type MigrationRecord = Record<MigrationFileName, MigrationSql>
-export type MigrationFileName =
-  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}WithReferentialIntegrity${Capitalize<PrismaUtils.Schema.ReferentialIntegritySettingValue>}`
-
-// const migrationsList: MigrationRecord = migrations
+// export type MigrationRecord = Record<MigrationFileName, MigrationSql>
 
 export type Params = {
   template: PrismaTemplates.$Types.TemplateTag
   parameters: BaseTemplateParametersResolved
 }
+
+export const getMigrationName = (params: {
+  template: PrismaTemplates.$Types.TemplateTag
+  datasourceProvider: DatasourceProvider
+  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
+}): MigrationFileName =>
+  // prettier-ignore
+  `${params.template}With${upperFirst(params.datasourceProvider)}WithReferentialIntegrity${upperFirst(params.referentialIntegrity)}`
+
+export type MigrationFileName =
+  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}WithReferentialIntegrity${Capitalize<PrismaUtils.Schema.ReferentialIntegritySettingValue>}`
 
 export const select = (params: Params): MigrationSql => {
   if (
@@ -28,8 +34,10 @@ export const select = (params: Params): MigrationSql => {
   }
 
   return MigrationsSql[
-    `${params.template}With${upperFirst(
-      params.parameters.datasourceProvider
-    )}WithReferentialIntegrity${upperFirst(params.parameters.referentialIntegrity)}`
+    getMigrationName({
+      template: params.template,
+      datasourceProvider: params.parameters.datasourceProvider,
+      referentialIntegrity: params.parameters.referentialIntegrity,
+    })
   ]
 }

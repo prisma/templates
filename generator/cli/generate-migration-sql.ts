@@ -1,14 +1,16 @@
 import execa from 'execa'
 import * as FS from 'fs-jetpack'
-import { log } from 'floggy'
+import { log as rootLog } from 'floggy'
 import { getTemplateInfos } from '~/src/templates'
-import { clean, upperFirst } from '~/src/utils'
-import { MigrationFileName } from '~/src/logic/migrationSql'
+import { clean } from '~/src/utils'
+import { getMigrationName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvider } from '~/src/types'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaUtils } from '@prisma/utils'
 import * as Remeda from 'remeda'
+
+const log = rootLog.child('generateMigrationSql')
 
 interface Combination {
   /**
@@ -22,7 +24,7 @@ interface Combination {
   /**
    * What template to use?
    */
-  templateTag: PrismaTemplates.$Types.TemplateTag
+  template: PrismaTemplates.$Types.TemplateTag
   /**
    * Template name used in path to schema.prisma
    */
@@ -55,33 +57,24 @@ export default async function generateMigrationSql(params: {
         (datasourceProvider): Combination => ({
           referentialIntegrity,
           datasourceProvider,
-          templateTag: t.handles.pascal.value as PrismaTemplates.$Types.TemplateTag,
+          template: t.handles.pascal.value as PrismaTemplates.$Types.TemplateTag,
           templateName: t.displayName.trim(),
         })
       )
     )
   )
-  // const combinations: Combination[] = [
-  //   {
-  //     datasourceProvider: 'mysql',
-  //     referentialIntegrity: 'foreignKeys',
-  //     templateName: 'Blog',
-  //     templateTag: 'Nextjs',
-  //   },
-  // ]
 
   log.info(`Found migration sql combinations`, { combinations })
 
   const { results, errors } = await PromisePool.withConcurrency(50)
     .for(combinations)
     .process(async (combination) => {
-      const schemaPath = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
-      const newSchemaPath = `/tmp/t-${combination.templateTag}/p-${combination.datasourceProvider}/ri-${combination.referentialIntegrity}/schema.prisma`
-      const exportName: MigrationFileName = `${combination.templateTag}With${upperFirst(
-        combination.datasourceProvider
-      )}WithReferentialIntegrity${upperFirst(combination.referentialIntegrity)}`
-      const content = await FS.readAsync(schemaPath)
-      if (!content) throw new Error(`Could not read schema at path ${schemaPath}`)
+      const SchemaPathTemplateOriginal = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
+      const SchemaPathThisCombo = `/tmp/t-${combination.template}/p-${combination.datasourceProvider}/ri-${combination.referentialIntegrity}/schema.prisma`
+
+      const content = await FS.readAsync(SchemaPathTemplateOriginal)
+      if (!content) throw new Error(`Could not read schema at path ${SchemaPathTemplateOriginal}`)
+
       const schemaWithProvider = PrismaUtils.Schema.setDatasourceProvider({
         prismaSchemaContent: content,
         value: combination.datasourceProvider,
@@ -90,13 +83,12 @@ export default async function generateMigrationSql(params: {
         prismaSchemaContent: schemaWithProvider,
         value: combination.referentialIntegrity,
       })
-      // console.log(schemaWithReferentialIntegrity)
-      await FS.writeAsync(newSchemaPath, schemaWithReferentialIntegrity)
 
-      log.info(`Wrote template schema for combo to disk`, { path: newSchemaPath })
+      await FS.writeAsync(SchemaPathThisCombo, schemaWithReferentialIntegrity)
+      log.info(`Wrote template schema for combo to disk`, { path: SchemaPathThisCombo })
 
       const res = await execa.command(
-        `yarn prisma migrate diff --preview-feature --from-empty --to-schema-datamodel ${newSchemaPath}  --script`,
+        `yarn prisma migrate diff --preview-feature --from-empty --to-schema-datamodel ${SchemaPathThisCombo}  --script`,
         {
           cwd: process.cwd(),
           env: {
@@ -104,9 +96,7 @@ export default async function generateMigrationSql(params: {
           },
         }
       )
-      // if (res.failed) {
-      //   console.log(res)
-      // }
+
       const substr = '--script'
       const commandIndexEnd = res.stdout.indexOf(substr)
       let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
@@ -119,14 +109,14 @@ export default async function generateMigrationSql(params: {
         rawContent = rawContent.substr(0, commandIndexEndEnd)
       }
 
+      const exportName = getMigrationName(combination)
       const formattedContent = JSON.stringify(clean(rawContent), null, 2)
       const moduleName = exportName
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`
-      await FS.writeAsync(
-        moduleFilePath,
-        `export const ${exportName}: string[] = ` + `${formattedContent}` + `;`
-      )
+
+      await FS.writeAsync(moduleFilePath, `export const ${exportName} = ${formattedContent}`)
       log.info(`Wrote migration module`, { path: moduleFilePath })
+
       return {
         moduleName,
       }
@@ -149,4 +139,5 @@ export default async function generateMigrationSql(params: {
   const indexNamespaceModule = `export * as MigrationsSql from './index_'`
   await FS.writeAsync(indexNamespaceModuleFilePath, indexNamespaceModule)
   log.info(`Wrote namespace index module`, { path: indexExportsModuleFilePath })
+  log.info(`Done`)
 }

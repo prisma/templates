@@ -33,7 +33,7 @@ async function main(): Promise<void> {
       )
       return
     }
-    generateMigrationSql({
+    await generateMigrationSql({
       templatesRepoDir,
       outputDir: migrationSqlOutputDir,
     })

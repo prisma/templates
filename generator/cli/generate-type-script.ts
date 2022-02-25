@@ -7,8 +7,9 @@ import { File } from '~/src/types'
 import { ArtifactProviders } from '../lib/ArtifactProviders'
 import { getTemplateInfos, TemplateInfo } from '~/src/templates'
 import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '~/src/utils'
+import { log as rootLog } from 'floggy'
 
-const log = console.log
+const log = rootLog.child('generateTypeScript')
 
 const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 
@@ -18,13 +19,13 @@ const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 export default function (params: { templatesRepoDir: string; outputDir: string }): void {
   const { templatesRepoDir, outputDir } = params
 
-  log(`generating type-script code to ${outputDir}`)
+  log.info(`generating type-script code to ${outputDir}`)
 
   FS.remove(outputDir)
 
   const templateInfos = getTemplateInfos({ templatesRepoDir })
 
-  log(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
+  log.info(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
 
   const fileOutputs: File[] = []
 
@@ -195,7 +196,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 
   fileOutputs.forEach((output) => {
     FS.write(output.path, output.content)
-    log(`Output file: ${output.path}`)
+    log.info(`Output file: ${output.path}`)
   })
 }
 
