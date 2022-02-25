@@ -1,5 +1,5 @@
-import { PrismaUtils } from '@prisma/utils'
 import { FileTransformer } from '../fileTransformer/fileTransformer'
+import { PrismaUtils } from '@prisma/utils'
 
 /**
  * Handle setting the referential integrity of the datasource.

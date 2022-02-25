@@ -1,8 +1,8 @@
-import { PrismaUtils } from '@prisma/utils'
-import { DatasourceProviderNormalized } from '@prisma/utils/dist-cjs/Schema'
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
 import { upperFirst } from '../../utils'
+import { PrismaUtils } from '@prisma/utils'
+import { DatasourceProviderNormalized } from '@prisma/utils/dist-cjs/Schema'
 
 export type MigrationSql = string[]
 

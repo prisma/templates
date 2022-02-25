@@ -1,13 +1,13 @@
-import execa from 'execa'
-import * as FS from 'fs-jetpack'
-import { log as rootLog } from 'floggy'
+import { PrismaUtils } from '@prisma/utils'
+import { PromisePool } from '@supercharge/promise-pool'
+import { PrismaTemplates } from '~/src'
+import { MigrationSql } from '~/src/logic'
 import { getTemplateInfos } from '~/src/templates'
 import { clean } from '~/src/utils'
-import { PrismaTemplates } from '~/src'
-import { PromisePool } from '@supercharge/promise-pool'
-import { PrismaUtils } from '@prisma/utils'
+import execa from 'execa'
+import { log as rootLog } from 'floggy'
+import * as FS from 'fs-jetpack'
 import * as Remeda from 'remeda'
-import { MigrationSql } from '~/src/logic'
 
 const log = rootLog.child('generateMigrationSql')
 

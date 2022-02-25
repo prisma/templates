@@ -1,6 +1,6 @@
-import { PrismaUtils } from '@prisma/utils'
 import { MigrationSql } from './logic'
 import { Index } from './utils'
+import { PrismaUtils } from '@prisma/utils'
 
 export * from './generated/types'
 

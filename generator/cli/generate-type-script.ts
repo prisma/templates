@@ -1,13 +1,13 @@
+import { ArtifactProviders } from '../lib/ArtifactProviders'
+import { getTemplateInfos, TemplateInfo } from '~/src/templates'
+import { File } from '~/src/types'
+import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '~/src/utils'
 import endent from 'endent'
 import glob from 'fast-glob'
+import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
 import { upperFirst } from 'lodash'
 import * as Path from 'path'
-import { File } from '~/src/types'
-import { ArtifactProviders } from '../lib/ArtifactProviders'
-import { getTemplateInfos, TemplateInfo } from '~/src/templates'
-import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '~/src/utils'
-import { log as rootLog } from 'floggy'
 
 const log = rootLog.child('generateTypeScript')
 

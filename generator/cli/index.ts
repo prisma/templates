@@ -1,9 +1,9 @@
-import arg from 'arg'
-import Path from 'path'
 import downloadTemplatesRepo from './download-templates-repo'
-import generateTypeScript from './generate-type-script'
 import generateMigrationSql from './generate-migration-sql'
+import generateTypeScript from './generate-type-script'
+import arg from 'arg'
 import FS from 'fs-jetpack'
+import Path from 'path'
 const args = arg({
   '--download-templates-repo': Boolean,
   '--generate-migration-sql': Boolean,

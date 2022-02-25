@@ -4,7 +4,13 @@
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
-  "plugins": ["@typescript-eslint", "only-warn"],
+  "plugins": [
+    "@typescript-eslint",
+    "only-warn",
+    // Import sorting integrated into ESLint.
+    // https://github.com/lydell/eslint-plugin-simple-import-sort
+    "simple-import-sort"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -14,6 +20,12 @@
   ],
   "overrides": [],
   "rules": {
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": []
+      }
+    ],
     "@typescript-eslint/no-namespace": "off",
     // TypeScript makes these safe & effective
     "no-case-declarations": "off",

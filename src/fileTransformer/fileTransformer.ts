@@ -1,10 +1,10 @@
-import { merge } from 'lodash'
-import * as R from 'remeda'
-import { inspect } from 'util'
-import { PrismaUtils } from '@prisma/utils'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index } from '../utils'
+import { PrismaUtils } from '@prisma/utils'
+import { merge } from 'lodash'
+import * as R from 'remeda'
+import { inspect } from 'util'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 

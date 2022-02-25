@@ -1,6 +1,6 @@
 import execa from 'execa'
-import * as FS from 'fs-jetpack'
 import { log as rootLog } from 'floggy'
+import * as FS from 'fs-jetpack'
 const log = rootLog.child('downloadTemplatesRepo')
 
 export default function (params: { dir: string }): void {
