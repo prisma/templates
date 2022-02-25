@@ -2,11 +2,17 @@ import execa from 'execa'
 import * as FS from 'fs-jetpack'
 import { log } from 'floggy'
 import { getTemplateInfos } from '~/src/templates'
-import { generateConnectionString, replaceProvider, clean, replaceReferentialIntegrity } from '~/src/utils'
+import {
+  generateConnectionString,
+  replaceProvider,
+  clean,
+  replaceReferentialIntegrity,
+  upperFirst,
+} from '~/src/utils'
 import { MigrationFileName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvider } from '~/src/types'
-import { PrismaUtils } from '@prisma/utils'
+import { PromisePool } from '@supercharge/promise-pool'
 
 interface Combination {
   /**
@@ -27,10 +33,13 @@ interface Combination {
   templateName: string
 }
 
-export default function generateMigrationSql(params: { templatesRepoDir: string; outputDir: string }): void {
+export default async function generateMigrationSql(params: {
+  templatesRepoDir: string
+  outputDir: string
+}): Promise<void> {
   log.info(`generating migration sql`, { params })
 
-  FS.remove(params.outputDir)
+  await FS.removeAsync(params.outputDir)
 
   const templateInfos = getTemplateInfos({
     templatesRepoDir: params.templatesRepoDir,
@@ -38,9 +47,6 @@ export default function generateMigrationSql(params: { templatesRepoDir: string;
 
   log.info(`Found templates`, { templates: templateInfos.map((t) => t.displayName) })
 
-  const indexFile = `${params.outputDir}/index.ts`
-
-  const exportsList: MigrationFileName[] = []
   const providers: DatasourceProvider[] = ['postgres', 'mysql', 'sqlserver', 'sqlite']
 
   const referentialIntegrityValues = [true, false] as const
@@ -60,68 +66,77 @@ export default function generateMigrationSql(params: { templatesRepoDir: string;
 
   log.info(`Found migration sql combinations`, { combinations })
 
-  // TODO async parallel
-  combinations.forEach((combination) => {
-    const schemaPath = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
-    const newSchemaPath = `/tmp/${combination.templateTag}/${combination.datasourceProvider}/schema.prisma`
-    const exportName: MigrationFileName = `${combination.templateTag}${combination.datasourceProvider}${
-      combination.referentialIntegrity ? 'ReferentialIntegrity' : ''
-    }`
-    const fileName = params.outputDir + `/${exportName}.ts`
-    exportsList.push(exportName)
-    const content = FS.read(schemaPath)
-    if (!content) throw new Error(`Could not read schema at path ${schemaPath}`)
-    const schemaWithCorrectProvider = replaceProvider(combination.datasourceProvider, {
-      content: content,
-      path: schemaPath,
-    })
-    const schemaWithCorrectReferentialIntegrity = replaceReferentialIntegrity({
-      file: { content: schemaWithCorrectProvider, path: schemaPath },
-      referentialIntegrity: combination.referentialIntegrity,
-    })
-    FS.write(newSchemaPath, schemaWithCorrectReferentialIntegrity)
+  const { results, errors } = await PromisePool.withConcurrency(50)
+    .for(combinations)
+    .process(async (combination) => {
+      const schemaPath = `${params.templatesRepoDir}/${combination.templateName}/prisma/schema.prisma`
+      const newSchemaPath = `/tmp/${combination.templateTag}/${combination.datasourceProvider}/schema.prisma`
+      const exportName: MigrationFileName = `${combination.templateTag}With${upperFirst(
+        combination.datasourceProvider
+      )}${combination.referentialIntegrity ? 'WithReferentialIntegrity' : ''}`
+      const content = await FS.readAsync(schemaPath)
+      if (!content) throw new Error(`Could not read schema at path ${schemaPath}`)
+      const schemaWithCorrectProvider = replaceProvider(combination.datasourceProvider, {
+        content: content,
+        path: schemaPath,
+      })
+      const schemaWithCorrectReferentialIntegrity = replaceReferentialIntegrity({
+        file: { content: schemaWithCorrectProvider, path: schemaPath },
+        referentialIntegrity: combination.referentialIntegrity,
+      })
+      await FS.writeAsync(newSchemaPath, schemaWithCorrectReferentialIntegrity)
 
-    log.info(`Wrote modified template schema to disk`, { newSchemaPath })
+      log.info(`Wrote template schema for combo to disk`, { path: newSchemaPath })
 
-    const res = execa.commandSync(
-      `yarn prisma migrate diff --preview-feature --from-empty --to-schema-datamodel ${newSchemaPath}  --script`,
-      {
-        cwd: process.cwd(),
-        env: {
-          DATABASE_URL: generateConnectionString(combination.datasourceProvider),
-        },
+      const res = await execa.command(
+        `yarn prisma migrate diff --preview-feature --from-empty --to-schema-datamodel ${newSchemaPath}  --script`,
+        {
+          cwd: process.cwd(),
+          env: {
+            DATABASE_URL: generateConnectionString(combination.datasourceProvider),
+          },
+        }
+      )
+      const substr = '--script'
+      const commandIndexEnd = res.stdout.indexOf(substr)
+      let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
+      if (combination.datasourceProvider === 'sqlserver') {
+        const substr = 'BEGIN TRAN'
+        const commandIndexEnd = rawContent.indexOf(substr)
+        rawContent = rawContent.substr(commandIndexEnd + substr.length)
+        const substrEnd = 'COMMIT TRAN'
+        const commandIndexEndEnd = rawContent.indexOf(substrEnd)
+        rawContent = rawContent.substr(0, commandIndexEndEnd)
       }
-    )
-    const substr = '--script'
-    const commandIndexEnd = res.stdout.indexOf(substr)
-    let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
-    if (combination.datasourceProvider === 'sqlserver') {
-      const substr = 'BEGIN TRAN'
-      const commandIndexEnd = rawContent.indexOf(substr)
-      rawContent = rawContent.substr(commandIndexEnd + substr.length)
-      const substrEnd = 'COMMIT TRAN'
-      const commandIndexEndEnd = rawContent.indexOf(substrEnd)
-      rawContent = rawContent.substr(0, commandIndexEndEnd)
-    }
 
-    const formattedContent = JSON.stringify(clean(rawContent))
-    FS.write(
-      fileName,
-      `const ${exportName}: string[] = ` + `${formattedContent}` + `;export default ${exportName}`
-    )
+      const formattedContent = JSON.stringify(clean(rawContent), null, 2)
+      const moduleName = exportName
+      const moduleFilePath = params.outputDir + `/${moduleName}.ts`
+      await FS.writeAsync(
+        moduleFilePath,
+        `export const ${exportName}: string[] = ` + `${formattedContent}` + `;`
+      )
+      log.info(`Wrote migration module`, { path: moduleFilePath })
+      return {
+        moduleName,
+      }
+    })
 
-    log.info(`Wrote formatted migrate diff output to disk`, { fileName })
-  })
+  if (errors.length > 0) {
+    log.error(`there were errors`, {
+      errors,
+    })
+  }
 
-  log.info(`Done generating all migration sql`)
+  log.info(`Done writing all migration sql modules`)
 
-  const createImportsList = exportsList.reduce((acc, exportName) => {
-    return acc + `import ${exportName} from "./${exportName}"; \n`
-  }, '')
-  const createExportsList = exportsList.reduce((acc, exportName) => {
-    return acc + exportName + ','
-  }, '')
-  FS.write(indexFile, createImportsList + `export default {${createExportsList}}`)
+  const indexExportsModuleFilePath = `${params.outputDir}/index_.ts`
+  const indexExportsModule = results.map((result) => `export * from './${result.moduleName}'`, '').join('\n')
+  await FS.writeAsync(indexExportsModuleFilePath, indexExportsModule)
+  log.info(`Wrote exports index module`, { path: indexExportsModuleFilePath })
 
-  log.info(`Wrote index.ts to disk in order to export all generated migration sql`)
+  const indexNamespaceModuleFilePath = `${params.outputDir}/index.ts`
+  const indexNamespaceModule = `export * as MigrationsSql from './index_'`
+  await FS.writeAsync(indexNamespaceModuleFilePath, indexNamespaceModule)
+  log.info(`Wrote namespace index module`, { path: indexExportsModuleFilePath })
 }

@@ -1,16 +1,17 @@
-import { DatasourceProvider } from '~/src/types'
+import { DatasourceProvider } from '../../types'
+import { upperFirst } from '../../utils'
 import { PrismaTemplates } from '../../'
-import migrations from '../../generatedMigrations/index'
+import { MigrationsSql } from '../../generatedMigrations'
 import { BaseTemplateParametersResolved } from '../../types'
 
 export type MigrationSql = string[]
 
 export type MigrationRecord = Record<MigrationFileName, MigrationSql>
 export type MigrationFileName =
-  | `${PrismaTemplates.$Types.TemplateTag}${DatasourceProvider}`
-  | `${PrismaTemplates.$Types.TemplateTag}${DatasourceProvider}ReferentialIntegrity`
+  | `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}`
+  | `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvider>}WithReferentialIntegrity`
 
-const migrationsList: MigrationRecord = migrations
+// const migrationsList: MigrationRecord = migrations
 
 export type Params = {
   template: PrismaTemplates.$Types.TemplateTag
@@ -25,10 +26,11 @@ export const select = (params: Params): MigrationSql => {
   ) {
     return []
   }
-  return migrationsList[
-    `${params.template}${params.parameters.datasourceProvider}${
+
+  return MigrationsSql[
+    `${params.template}With${upperFirst(params.parameters.datasourceProvider)}${
       params.parameters.referentialIntegrity === 'foreignKeys' || !params.parameters.referentialIntegrity
-        ? 'ReferentialIntegrity'
+        ? 'WithReferentialIntegrity'
         : ''
     }`
   ]

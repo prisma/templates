@@ -138,3 +138,8 @@ export function generateConnectionString(datasourceProvider: DatasourceProvider)
       return ''
   }
 }
+
+export const upperFirst = <S extends string>(s: S): Capitalize<S> => {
+  // eslint-disable-next-line
+  return (s.charAt(0).toUpperCase() + s.slice(1)) as any
+}
