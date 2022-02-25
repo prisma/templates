@@ -3,7 +3,8 @@ import { inspect } from 'util'
 import { PrismaUtils } from '@prisma/utils'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
-import { Index, mapValues } from '../utils'
+import { Index } from '../utils'
+import * as R from 'remeda'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 
@@ -59,7 +60,7 @@ export const runStack = <T extends Index<File>>(params: {
   files: T
   parameters: Params['parameters']
 }): T => {
-  return mapValues(params.files, (file) => {
+  return R.mapValues(params.files, (file) => {
     const contentTransformed = params.transformers.reduce((content, transformer) => {
       return transformer({
         template: params.template,

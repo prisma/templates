@@ -3,12 +3,11 @@ import * as FS from 'fs-jetpack'
 import { log as rootLog } from 'floggy'
 import { getTemplateInfos } from '~/src/templates'
 import { clean } from '~/src/utils'
-import { getMigrationName } from '~/src/logic/migrationSql'
 import { PrismaTemplates } from '~/src'
-import { DatasourceProvider } from '~/src/types'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaUtils } from '@prisma/utils'
 import * as Remeda from 'remeda'
+import { MigrationSql } from '~/src/logic'
 
 const log = rootLog.child('generateMigrationSql')
 
@@ -20,7 +19,7 @@ interface Combination {
   /**
    * What database to use?
    */
-  datasourceProvider: DatasourceProvider
+  datasourceProvider: MigrationSql.DatasourceProvidersNormalizedSupportingMigration
   /**
    * What template to use?
    */
@@ -109,7 +108,7 @@ export default async function generateMigrationSql(params: {
         rawContent = rawContent.substr(0, commandIndexEndEnd)
       }
 
-      const exportName = getMigrationName(combination)
+      const exportName = MigrationSql.getName(combination)
       const formattedContent = JSON.stringify(clean(rawContent), null, 2)
       const moduleName = exportName
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`

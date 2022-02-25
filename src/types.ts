@@ -75,5 +75,3 @@ export type BaseTemplateParameters = {
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>
-
-export type DatasourceProvider = Exclude<PrismaUtils.Schema.DatasourceProviderNormalized, 'mongodb'>

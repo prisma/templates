@@ -412,7 +412,8 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
           this.migrationSql = MigrationSql.select({
             template: this._tag,
-            parameters: parameters_
+            datasourceProvider: parameters_.datasourceProvider,
+            referentialIntegrity: parameters_.referentialIntegrity 
           })
 
           this.files = FileTransformer.runStack({
