@@ -1,5 +1,9 @@
 import glob from 'fast-glob'
-import { camelCase, snakeCase, upperFirst } from 'lodash'
+import {
+  camelCase,
+  snakeCase,
+  upperFirst,
+} from 'lodash'
 import * as Path from 'path'
 
 export type Handle = {

@@ -1,10 +1,15 @@
-import { PrismaTemplates } from '../'
-import { BaseTemplateParametersResolved, File } from '../types'
-import { Index } from '../utils'
-import { PrismaUtils } from '@prisma/utils'
 import { merge } from 'lodash'
 import * as R from 'remeda'
 import { inspect } from 'util'
+
+import { PrismaUtils } from '@prisma/utils'
+
+import { PrismaTemplates } from '../'
+import {
+  BaseTemplateParametersResolved,
+  File,
+} from '../types'
+import { Index } from '../utils'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 
@@ -35,7 +40,7 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag: Tool<{ file: File; previewFlag: PrismaUtils.Schema.PreviewFeatureFlag }>
+    addPreviewFlag: Tool<{ file: File; previewFlag: PrismaUtils.Schema.PreviewFlag }>
     /**
      * Set the referentialIntegrity datasource setting.
      *
@@ -102,7 +107,7 @@ export const tools: Tools = {
   },
   prismaSchema: {
     addPreviewFlag(params) {
-      return PrismaUtils.Schema.addPreviewFeatureFlag({
+      return PrismaUtils.Schema.addPreviewFlag({
         previewFlag: params.previewFlag,
         prismaSchemaContent: params.file.content,
       })

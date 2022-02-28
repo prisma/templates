@@ -1,6 +1,7 @@
+import { PrismaUtils } from '@prisma/utils'
+
 import { MigrationSql } from './logic'
 import { Index } from './utils'
-import { PrismaUtils } from '@prisma/utils'
 
 export * from './generated/types'
 
@@ -37,7 +38,7 @@ export type BaseTemplateParameters = {
    *
    * @default 'postgresql'
    */
-  datasourceProvider?: PrismaUtils.Schema.DatasourceProviderNormalized
+  datasourceProvider?: PrismaUtils.Schema.ProviderTypeNormalized
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *

@@ -2155,7 +2155,7 @@ ALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) RE
 }
 `;
 
-exports[`with custom datasourceProvider Blog X postgres 1`] = `
+exports[`with custom datasourceProvider Blog X postgresql 1`] = `
 Nextjs {
   "_tag": "Nextjs",
   "artifacts": Object {
@@ -2681,7 +2681,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -5240,7 +5240,7 @@ export async function seed() {
 }
 `;
 
-exports[`with custom datasourceProvider Empty X postgres 1`] = `
+exports[`with custom datasourceProvider Empty X postgresql 1`] = `
 Empty {
   "_tag": "Empty",
   "artifacts": Object {},
@@ -5282,7 +5282,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -8410,7 +8410,7 @@ ALTER TABLE _PlaylistToSong ADD FOREIGN KEY (B) REFERENCES Song(id) ON DELETE CA
 }
 `;
 
-exports[`with custom datasourceProvider Music Streaming Service X postgres 1`] = `
+exports[`with custom datasourceProvider Music Streaming Service X postgresql 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
   "artifacts": Object {
@@ -9001,7 +9001,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -14769,7 +14769,7 @@ ALTER TABLE Media ADD CONSTRAINT Media_roomId_fkey FOREIGN KEY (roomId) REFERENC
 }
 `;
 
-exports[`with custom datasourceProvider Rentals Platform X postgres 1`] = `
+exports[`with custom datasourceProvider Rentals Platform X postgresql 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
   "artifacts": Object {
@@ -15310,7 +15310,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -20045,7 +20045,7 @@ ALTER TABLE Invite ADD CONSTRAINT Invite_accountId_fkey FOREIGN KEY (accountId) 
 }
 `;
 
-exports[`with custom datasourceProvider SaaS X postgres 1`] = `
+exports[`with custom datasourceProvider SaaS X postgresql 1`] = `
 Saas {
   "_tag": "Saas",
   "artifacts": Object {
@@ -20383,7 +20383,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -23846,7 +23846,7 @@ ALTER TABLE Link ADD CONSTRAINT Link_userId_fkey FOREIGN KEY (userId) REFERENCES
 }
 `;
 
-exports[`with custom datasourceProvider URL Shortener X postgres 1`] = `
+exports[`with custom datasourceProvider URL Shortener X postgresql 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
   "artifacts": Object {
@@ -24104,7 +24104,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+  provider = \\"postgresql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 

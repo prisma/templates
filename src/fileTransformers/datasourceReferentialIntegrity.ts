@@ -1,5 +1,6 @@
-import { FileTransformer } from '../fileTransformer/fileTransformer'
 import { PrismaUtils } from '@prisma/utils'
+
+import { FileTransformer } from '../fileTransformer/fileTransformer'
 
 /**
  * Handle setting the referential integrity of the datasource.
@@ -20,7 +21,7 @@ export const datasourceReferentialIntegrity: FileTransformer = (params) => {
   ) {
     content = tools.prismaSchema.addPreviewFlag({
       file: params.file,
-      previewFlag: PrismaUtils.Schema.PreviewFeatureFlag.referentialIntegrity,
+      previewFlag: PrismaUtils.Schema.PreviewFlag.referentialIntegrity,
     })
 
     content = tools.prismaSchema.setReferentialIntegrity({
