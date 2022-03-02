@@ -330,7 +330,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       type TemplateParameters = BaseTemplateParameters
 
       const templateParameterDefaults: Required<TemplateParameters> = {
-        datasourceProvider: PrismaUtils.Schema.ProviderTypeNormalized._def.values.postgresql,
+        datasourceProvider: PrismaUtils.Schema.DatasourceProviderNormalized._def.values.postgres,
         repositoryOwner: null,
         repositoryHandle: null,
         engineType: null,

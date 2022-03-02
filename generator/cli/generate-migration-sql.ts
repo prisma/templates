@@ -45,7 +45,7 @@ export default async function generateMigrationSql(params: {
   log.info(`Found templates`, { templates: templateInfos.map((t) => t.displayName) })
 
   const providers = Object.values(
-    Remeda.omit(PrismaUtils.Schema.ProviderTypeNormalized._def.values, ['mongodb'])
+    Remeda.omit(PrismaUtils.Schema.DatasourceProviderNormalized._def.values, ['mongodb'])
   )
 
   const referentialIntegrityValues = Object.values(PrismaUtils.Schema.ReferentialIntegritySettingValue)
@@ -74,20 +74,16 @@ export default async function generateMigrationSql(params: {
       const content = await FS.readAsync(SchemaPathTemplateOriginal)
       if (!content) throw new Error(`Could not read schema at path ${SchemaPathTemplateOriginal}`)
 
-      const schemaWithProvider = PrismaUtils.Schema.replaceSchemaProvider({
+      const schemaWithProvider = PrismaUtils.Schema.setDatasourceProvider({
         prismaSchemaContent: content,
-        datasourceProvider: combination.datasourceProvider,
+        value: combination.datasourceProvider,
       })
-      const schemaWithReferentialIntegrity = PrismaUtils.Schema.addPreviewFlag({
+      const schemaWithReferentialIntegrity = PrismaUtils.Schema.setReferentialIntegrity({
         prismaSchemaContent: schemaWithProvider,
-        previewFlag: 'referentialIntegrity',
-      })
-      const schemaWithReferentialIntegrityComplete = PrismaUtils.Schema.setReferentialIntegrity({
-        prismaSchemaContent: schemaWithReferentialIntegrity,
         value: combination.referentialIntegrity,
       })
 
-      await FS.writeAsync(SchemaPathThisCombo, schemaWithReferentialIntegrityComplete)
+      await FS.writeAsync(SchemaPathThisCombo, schemaWithReferentialIntegrity)
       log.info(`Wrote template schema for combo to disk`, { path: SchemaPathThisCombo })
 
       const res = await execa.command(

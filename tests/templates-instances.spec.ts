@@ -1,9 +1,8 @@
 import { PrismaTemplates } from '~/src'
-
 import { PrismaUtils } from '@prisma/utils'
 
 describe('with custom datasourceProvider', () => {
-  Object.values(PrismaUtils.Schema.ProviderTypeNormalized._def.values).forEach((datasourceProvider) => {
+  Object.values(PrismaUtils.Schema.DatasourceProviderNormalized._def.values).forEach((datasourceProvider) => {
     Object.values(PrismaTemplates.Templates).forEach((Template) => {
       it(`${Template.metadata.displayName} X ${datasourceProvider}`, () => {
         const template = new Template({

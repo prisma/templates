@@ -1,17 +1,12 @@
-import { PrismaUtils } from '@prisma/utils'
-
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
-import {
-  getName,
-  MigrationSql,
-} from './helpers'
-
+import { getName, MigrationSql } from './helpers'
+import { PrismaUtils } from '@prisma/utils'
 export * from './helpers'
 
 export const select = (params: {
   template: PrismaTemplates.$Types.TemplateTag
-  datasourceProvider: PrismaUtils.Schema.ProviderTypeNormalized
+  datasourceProvider: PrismaUtils.Schema.DatasourceProviderNormalized
   referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
 }): MigrationSql => {
   if (
