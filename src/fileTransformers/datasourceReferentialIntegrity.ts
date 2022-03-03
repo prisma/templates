@@ -18,9 +18,9 @@ export const datasourceReferentialIntegrity: FileTransformer = (params) => {
     parameters.referentialIntegrity !== Reflector.Schema.referentialIntegritySettingValueDefault &&
     file.path === 'prisma/schema.prisma'
   ) {
-    content = tools.prismaSchema.addPreviewFlag({
+    content = tools.prismaSchema.addPreviewFeatureFlag({
       file: params.file,
-      previewFlag: Reflector.Schema.PreviewFeatureFlag.referentialIntegrity,
+      PreviewFeatureFlag: Reflector.Schema.PreviewFeatureFlag.referentialIntegrity,
     })
 
     content = tools.prismaSchema.setReferentialIntegrity({

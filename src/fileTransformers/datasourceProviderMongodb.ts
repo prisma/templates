@@ -14,9 +14,9 @@ export const datasourceProviderMongodb: FileTransformer = (params) => {
   switch (file.path) {
     case 'prisma/schema.prisma':
       if (parameters.datasourceProvider === 'mongodb') {
-        content = tools.prismaSchema.addPreviewFlag({
+        content = tools.prismaSchema.addPreviewFeatureFlag({
           file: params.file,
-          previewFlag: 'mongoDb',
+          PreviewFeatureFlag: 'mongoDb',
         })
       }
       break

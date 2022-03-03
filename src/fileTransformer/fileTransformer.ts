@@ -35,7 +35,10 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag: Tool<{ file: File; previewFlag: Reflector.Schema.PreviewFeatureFlag }>
+    addPreviewFeatureFlag: Tool<{
+      file: File
+      PreviewFeatureFlag: Reflector.Schema.PreviewFeatureFlag
+    }>
     /**
      * Set the referentialIntegrity datasource setting.
      *
@@ -101,9 +104,9 @@ export const tools: Tools = {
     },
   },
   prismaSchema: {
-    addPreviewFlag(params) {
+    addPreviewFeatureFlag(params) {
       return Reflector.Schema.addPreviewFeatureFlag({
-        previewFlag: params.previewFlag,
+        previewFlag: params.PreviewFeatureFlag,
         prismaSchemaContent: params.file.content,
       })
     },
