@@ -1,7 +1,0 @@
-export const NextjsWithMysqlWithReferentialIntegrityForeignKeys = [
-  "-- CreateTable\nCREATE TABLE Post (\n    post_id INTEGER NOT NULL AUTO_INCREMENT,\n    content VARCHAR(191) NULL,\n    title VARCHAR(191) NOT NULL,\n    author_id INTEGER NULL,\n\n    PRIMARY KEY (post_id)\n) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-  "\n\n-- CreateTable\nCREATE TABLE Profile (\n    bio VARCHAR(191) NULL,\n    profile_id INTEGER NOT NULL AUTO_INCREMENT,\n    user_id INTEGER NOT NULL,\n\n    PRIMARY KEY (profile_id)\n) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-  "\n\n-- CreateTable\nCREATE TABLE User (\n    email VARCHAR(191) NOT NULL,\n    name VARCHAR(191) NULL,\n    user_id INTEGER NOT NULL AUTO_INCREMENT,\n\n    UNIQUE INDEX User_email_key(email),\n    PRIMARY KEY (user_id)\n) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-  "\n\n-- AddForeignKey\nALTER TABLE Post ADD CONSTRAINT Post_author_id_fkey FOREIGN KEY (author_id) REFERENCES User(user_id) ON DELETE SET NULL ON UPDATE CASCADE",
-  "\n\n-- AddForeignKey\nALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE RESTRICT ON UPDATE CASCADE"
-]

@@ -1,4 +1,0 @@
-export const UrlShortenerWithPostgresWithReferentialIntegrityPrisma = [
-  "-- CreateTable\nCREATE TABLE \"Link\" (\n    \"id\" TEXT NOT NULL,\n    \"createdAt\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP(3) NOT NULL,\n    \"url\" TEXT NOT NULL,\n    \"shortUrl\" TEXT NOT NULL,\n    \"userId\" TEXT,\n\n    CONSTRAINT \"Link_pkey\" PRIMARY KEY (\"id\")\n)",
-  "\n\n-- CreateTable\nCREATE TABLE \"User\" (\n    \"id\" TEXT NOT NULL,\n    \"createdAt\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP(3) NOT NULL,\n    \"name\" TEXT,\n    \"email\" TEXT NOT NULL,\n\n    CONSTRAINT \"User_pkey\" PRIMARY KEY (\"id\")\n)"
-]
