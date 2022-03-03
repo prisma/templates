@@ -415,7 +415,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
         ${sourceCodeSectionHeader2('Constructor')}
 
-        constructor(parameters: TemplateParameters) {
+        constructor(parameters?: TemplateParameters) {
           const parameters_ = {
             ...templateParameterDefaults,
             ...parameters,
