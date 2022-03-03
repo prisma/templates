@@ -8,9 +8,9 @@ export const dataproxy: FileTransformer = (params) => {
   if (parameters.dataproxy) {
     switch (file.path) {
       case 'prisma/schema.prisma':
-        content = tools.prismaSchema.addPreviewFlag({
+        content = tools.prismaSchema.addPreviewFeatureFlag({
           file,
-          previewFlag: 'dataProxy',
+          PreviewFeatureFlag: 'dataProxy',
         })
         break
       case 'package.json':
