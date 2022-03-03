@@ -1,5 +1,6 @@
-import { Reflector } from '@prisma-spectrum/reflector'
+import { MigrationSql } from './logic'
 import { Index } from './utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 
 export * from './generated/types'
 
@@ -22,6 +23,7 @@ export abstract class AbstractTemplate<
   }
   public abstract files: FilesIndex
   public abstract artifacts: ArtifactsIndex
+  public abstract migrationSql: MigrationSql.MigrationSql
 }
 
 export type File = {

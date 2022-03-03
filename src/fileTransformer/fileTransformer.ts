@@ -1,9 +1,10 @@
-import { merge } from 'lodash'
-import { inspect } from 'util'
-import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
-import { Index, mapValues } from '../utils'
+import { Index } from '../utils'
+import { Reflector } from '@prisma-spectrum/reflector'
+import { merge } from 'lodash'
+import * as R from 'remeda'
+import { inspect } from 'util'
 
 type Tool<Params> = (params: { file: File } & Params) => string
 
@@ -62,7 +63,7 @@ export const runStack = <T extends Index<File>>(params: {
   files: T
   parameters: Params['parameters']
 }): T => {
-  return mapValues(params.files, (file) => {
+  return R.mapValues(params.files, (file) => {
     const contentTransformed = params.transformers.reduce((content, transformer) => {
       return transformer({
         template: params.template,
@@ -82,7 +83,7 @@ export const runStack = <T extends Index<File>>(params: {
   }) as T
 }
 
-const tools: Tools = {
+export const tools: Tools = {
   replaceContent(params) {
     const { pattern, file, replacement } = params
 

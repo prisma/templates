@@ -7,3 +7,4 @@ dist-esm
 tests
 jest.config.ts
 templates-repo
+src/generated

@@ -1,14 +1,15 @@
+import { ArtifactProviders } from '../lib/ArtifactProviders'
+import { getTemplateInfos, TemplateInfo } from '~/src/templates'
+import { File } from '~/src/types'
+import { escapeBackticks, indentBlock, sourceCodeSectionHeader, sourceCodeSectionHeader2 } from '~/src/utils'
 import endent from 'endent'
 import glob from 'fast-glob'
+import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
-import { camelCase, snakeCase, upperFirst } from 'lodash'
+import { upperFirst } from 'lodash'
 import * as Path from 'path'
-import { File } from '~/src/types'
-import { ArtifactProviders } from '../lib/ArtifactProviders'
-import { TemplateInfo } from '../lib/types'
-import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '../lib/utils'
 
-const log = console.log
+const log = rootLog.child('generateTypeScript')
 
 const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 
@@ -18,13 +19,11 @@ const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 export default function (params: { templatesRepoDir: string; outputDir: string }): void {
   const { templatesRepoDir, outputDir } = params
 
-  log(`generating type-script code to ${outputDir}`)
-
-  FS.remove(outputDir)
+  log.info(`generating type-script code to ${outputDir}`)
 
   const templateInfos = getTemplateInfos({ templatesRepoDir })
 
-  log(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
+  log.info(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })
 
   const fileOutputs: File[] = []
 
@@ -195,47 +194,7 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 
   fileOutputs.forEach((output) => {
     FS.write(output.path, output.content)
-    log(`Output file: ${output.path}`)
-  })
-}
-
-/**
- * TODO
- */
-const getTemplateInfos = (params: { templatesRepoDir: string }): TemplateInfo[] => {
-  return glob.sync(`${params.templatesRepoDir}/*`, { onlyDirectories: true, dot: false }).map((path) => {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { name, description } = require(`${path}/package.json`) as { name: string; description: string }
-
-    const handles = {
-      kebab: {
-        jsdoc: `Good for URLs, npm package name.`,
-        value: name,
-      },
-      pascal: {
-        jsdoc: `Good for class names, type names.`,
-        value: upperFirst(camelCase(name)),
-      },
-      camel: {
-        jsdoc: `Good for object properties.`,
-        value: camelCase(name),
-      },
-      snake: {
-        jsdoc: `Good for enums, constants.`,
-        value: snakeCase(name).toLowerCase(),
-      },
-      upper: {
-        jsdoc: `Good for environment names, constants.`,
-        value: snakeCase(name).toUpperCase(),
-      },
-    }
-
-    return {
-      handles,
-      displayName: Path.basename(path),
-      description,
-      path,
-    }
+    log.info(`Output file: ${output.path}`)
   })
 }
 
@@ -304,6 +263,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
+      import { MigrationSql } from '../../logic'
       import { Reflector } from '@prisma-spectrum/reflector'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
@@ -379,7 +339,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Class')}
 
       /**
-       * A "${templateInfo.displayName}" Prisma template.
+       * The "${templateInfo.displayName}" Prisma template.
+       *
+       * ${templateInfo.description}
        */
       class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files, typeof artifacts> {
 
@@ -411,9 +373,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
           defaults: templateParameterDefaults
         }
 
-        //
-        // Instance properties
-        //
+        ${sourceCodeSectionHeader2('Instance Properties')}
 
         /**
          * Type brand for discriminant union use-cases.
@@ -436,15 +396,34 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public artifacts = artifacts
 
-        //
-        // Constructor
-        //
+        /**
+         * SQL commands that taken together will put the database into a state reflecting the initial Prisma schema of this template.
+         * 
+         * This is useful for running migrations in environments where the Prisma Migration engine cannot be used, such as with the Prisma Data Proxy.
+         * 
+         * This SQL has been statically generated using the Prisma CLI [\`migrate diff\`](https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-diff) sub-command. The SQL here is equivalent to the
+         * SQL that shows up in _initial prisma migration file_ (e.g. \`./prisma/migrations/20210409125609_init/migration.sql\`) of this template. 
+         * 
+         * Note that this sequel is influenced by the arguments given to this template such as if referential integrity is enabled or not, and what datasource provider was chosen.
+         * 
+         * This SQL is split by \`;\` such that it can be executed command-by-command using [Prisma Client's raw database access API](https://www.prisma.io/docs/concepts/components/prisma-client/raw-database-access).
+         * Do this inside a [transaction](https://www.prisma.io/docs/concepts/components/prisma-client/transactions) to keep it atomic.
+         */
+        public migrationSql: MigrationSql.MigrationSql
 
-        constructor(parameters: TemplateParameters) {
+        ${sourceCodeSectionHeader2('Constructor')}
+
+        constructor(parameters?: TemplateParameters) {
           const parameters_ = {
             ...templateParameterDefaults,
             ...parameters,
           }
+
+          this.migrationSql = MigrationSql.select({
+            template: this._tag,
+            datasourceProvider: parameters_.datasourceProvider,
+            referentialIntegrity: parameters_.referentialIntegrity 
+          })
 
           this.files = FileTransformer.runStack({
             template: this._tag,
@@ -457,9 +436,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
       ${sourceCodeSectionHeader('Namespace')}
 
-      /**
-       * Types belonging to the "${templateInfo.handles.pascal.value}" Prisma template.
-       */
+      // /**
+      //  * Types belonging to the "${templateInfo.handles.pascal.value}" Prisma template.
+      //  */
       namespace ${templateInfo.handles.pascal.value} {
         /**
          * The template's tag.

@@ -1,10 +1,12 @@
-import arg from 'arg'
-import Path from 'path'
 import downloadTemplatesRepo from './download-templates-repo'
+import generateMigrationSql from './generate-migration-sql'
 import generateTypeScript from './generate-type-script'
-
+import arg from 'arg'
+import FS from 'fs-jetpack'
+import Path from 'path'
 const args = arg({
   '--download-templates-repo': Boolean,
+  '--generate-migration-sql': Boolean,
   '--generate-type-script': Boolean,
 })
 
@@ -17,15 +19,26 @@ main().catch((error) => {
 async function main(): Promise<void> {
   const dirName = '.templates-repo'
   const templatesRepoDir = Path.join(__dirname, '../../node_modules', dirName)
+  const generatedDir = Path.join(__dirname, `../../src/generated`)
 
   if (args['--download-templates-repo']) {
-    //eslint-disable-next-line
-    await downloadTemplatesRepo({ dir: templatesRepoDir })
+    downloadTemplatesRepo({ dir: templatesRepoDir })
+  }
+
+  if (args['--generate-migration-sql']) {
+    if (FS.inspect(templatesRepoDir) === undefined) {
+      console.log(
+        `${templatesRepoDir} is empty. Please run build:gen:download-templates-repo.  Skipping migration generation.`
+      )
+      return
+    }
+    await generateMigrationSql({
+      templatesRepoDir,
+      outputDir: Path.join(generatedDir, '/migrations'),
+    })
   }
 
   if (args['--generate-type-script']) {
-    const outputDir = Path.join(__dirname, `../../src/generated`)
-    //eslint-disable-next-line
-    await generateTypeScript({ templatesRepoDir, outputDir })
+    generateTypeScript({ templatesRepoDir, outputDir: generatedDir })
   }
 }

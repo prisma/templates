@@ -20,7 +20,7 @@ jobs:
           cache: yarn
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-      - run: yarn -s test
+      - run: yarn -s build:gen && yarn -s test
 
   release-canary:
     needs: [test]

@@ -1,11 +1,12 @@
 import execa from 'execa'
+import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
-const log = console.log
+const log = rootLog.child('downloadTemplatesRepo')
 
 export default function (params: { dir: string }): void {
   const { dir } = params
 
-  log(`downloading templates repo source to ${dir}`)
+  log.info(`downloading templates repo source`, { dir })
 
   FS.remove(dir)
 
@@ -13,5 +14,5 @@ export default function (params: { dir: string }): void {
 
   FS.remove(`${dir}/.git`)
 
-  log(`done`)
+  log.info(`done`)
 }
