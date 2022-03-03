@@ -398,6 +398,19 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public artifacts = artifacts
 
+        /**
+         * SQL commands that taken together will put the database into a state reflecting the initial Prisma schema of this template.
+         * 
+         * This is useful for running migrations in environments where the Prisma Migration engine cannot be used, such as with the Prisma Data Proxy.
+         * 
+         * This SQL has been statically generated using the Prisma CLI [\`migrate diff\`](https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-diff) sub-command. The SQL here is equivalent to the
+         * SQL that shows up in _initial prisma migration file_ (e.g. \`./prisma/migrations/20210409125609_init/migration.sql\`) of this template. 
+         * 
+         * Note that this sequel is influenced by the arguments given to this template such as if referential integrity is enabled or not, and what datasource provider was chosen.
+         * 
+         * This SQL is split by \`;\` such that it can be executed command-by-command using [Prisma Client's raw database access API](https://www.prisma.io/docs/concepts/components/prisma-client/raw-database-access).
+         * Do this inside a [transaction](https://www.prisma.io/docs/concepts/components/prisma-client/transactions) to keep it atomic.
+         */
         public migrationSql: MigrationSql.MigrationSql
 
         //
