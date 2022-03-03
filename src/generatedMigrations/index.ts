@@ -1,1 +1,0 @@
-export * as MigrationsSql from './index_'
