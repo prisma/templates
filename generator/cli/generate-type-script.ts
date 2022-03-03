@@ -1,7 +1,7 @@
 import { ArtifactProviders } from '../lib/ArtifactProviders'
 import { getTemplateInfos, TemplateInfo } from '~/src/templates'
 import { File } from '~/src/types'
-import { escapeBackticks, indentBlock, sourceCodeSectionHeader } from '~/src/utils'
+import { escapeBackticks, indentBlock, sourceCodeSectionHeader, sourceCodeSectionHeader2 } from '~/src/utils'
 import endent from 'endent'
 import glob from 'fast-glob'
 import { log as rootLog } from 'floggy'
@@ -341,7 +341,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
       ${sourceCodeSectionHeader('Class')}
 
       /**
-       * A "${templateInfo.displayName}" Prisma template.
+       * The "${templateInfo.displayName}" Prisma template.
+       *
+       * ${templateInfo.description}
        */
       class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files, typeof artifacts> {
 
@@ -373,9 +375,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
           defaults: templateParameterDefaults
         }
 
-        //
-        // Instance properties
-        //
+        ${sourceCodeSectionHeader2('Instance Properties')}
 
         /**
          * Type brand for discriminant union use-cases.
@@ -413,9 +413,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public migrationSql: MigrationSql.MigrationSql
 
-        //
-        // Constructor
-        //
+        ${sourceCodeSectionHeader2('Constructor')}
 
         constructor(parameters: TemplateParameters) {
           const parameters_ = {
@@ -440,9 +438,9 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
       ${sourceCodeSectionHeader('Namespace')}
 
-      /**
-       * Types belonging to the "${templateInfo.handles.pascal.value}" Prisma template.
-       */
+      // /**
+      //  * Types belonging to the "${templateInfo.handles.pascal.value}" Prisma template.
+      //  */
       namespace ${templateInfo.handles.pascal.value} {
         /**
          * The template's tag.

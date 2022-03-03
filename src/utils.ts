@@ -8,12 +8,25 @@ export const datasourceUrlEnvironmentVariableName = `PRISMA_CLOUD_PROJECT_DATASO
 /**
  * Source code helper for building nice separations between code sections
  */
-export function sourceCodeSectionHeader(name: string): string {
+export const sourceCodeSectionHeader = (name: string): string => {
   return endent`
     //
     //
     // ${name}
+    // =========================================================================================
     //
+    //
+  `
+}
+
+/**
+ * Source code helper for building nice separations between code sections
+ */
+export const sourceCodeSectionHeader2 = (title: string): string => {
+  return endent`
+    //
+    // ${title}
+    // ${'-'.repeat(title.length)}
     //
   `
 }
