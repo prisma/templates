@@ -21,8 +21,6 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
 
   log.info(`generating type-script code to ${outputDir}`)
 
-  FS.remove(outputDir)
-
   const templateInfos = getTemplateInfos({ templatesRepoDir })
 
   log.info(`Found templates:`, { templates: templateInfos.map((t) => t.displayName) })

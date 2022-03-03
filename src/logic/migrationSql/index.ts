@@ -1,5 +1,5 @@
 import { PrismaTemplates } from '../../'
-import { MigrationsSql } from '../../generatedMigrations'
+import { MigrationsSql } from '../../generated/migrations'
 import { getName, MigrationSql } from './helpers'
 import { Reflector } from '@prisma-spectrum/reflector'
 export * from './helpers'

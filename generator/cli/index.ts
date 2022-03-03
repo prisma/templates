@@ -19,10 +19,9 @@ main().catch((error) => {
 async function main(): Promise<void> {
   const dirName = '.templates-repo'
   const templatesRepoDir = Path.join(__dirname, '../../node_modules', dirName)
-  const migrationSqlOutputDir = Path.join(__dirname, '../../src/generatedMigrations')
+  const generatedDir = Path.join(__dirname, `../../src/generated`)
 
   if (args['--download-templates-repo']) {
-    //eslint-disable-next-line
     downloadTemplatesRepo({ dir: templatesRepoDir })
   }
 
@@ -35,13 +34,11 @@ async function main(): Promise<void> {
     }
     await generateMigrationSql({
       templatesRepoDir,
-      outputDir: migrationSqlOutputDir,
+      outputDir: Path.join(generatedDir, '/migrations'),
     })
   }
 
   if (args['--generate-type-script']) {
-    const outputDir = Path.join(__dirname, `../../src/generated`)
-    //eslint-disable-next-line
-    generateTypeScript({ templatesRepoDir, outputDir })
+    generateTypeScript({ templatesRepoDir, outputDir: generatedDir })
   }
 }

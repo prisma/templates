@@ -36,8 +36,6 @@ export default async function generateMigrationSql(params: {
 }): Promise<void> {
   log.info(`generating migration sql`, { params })
 
-  await FS.removeAsync(params.outputDir)
-
   const templateInfos = getTemplateInfos({
     templatesRepoDir: params.templatesRepoDir,
   })

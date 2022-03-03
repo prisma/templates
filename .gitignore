@@ -108,4 +108,3 @@ dist-esm
 dist-cjs
 templates-repo
 src/generated
-src/generatedMigrations
