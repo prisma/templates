@@ -1,4 +1,4 @@
-import { PrismaUtils } from '@prisma/utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvidersNormalizedSupportingMigration, getName } from '~/src/logic/migrationSql/helpers'
@@ -15,7 +15,7 @@ interface Combination {
   /**
    * Should referential integrity be used or not?
    */
-  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
+  referentialIntegrity: Reflector.Schema.ReferentialIntegritySettingValue
   /**
    * What database to use?
    */
@@ -45,10 +45,10 @@ export default async function generateMigrationSql(params: {
   log.info(`Found templates`, { templates: templateInfos.map((t) => t.displayName) })
 
   const providers = Object.values(
-    Remeda.omit(PrismaUtils.Schema.DatasourceProviderNormalized._def.values, ['mongodb'])
+    Remeda.omit(Reflector.Schema.DatasourceProviderNormalized._def.values, ['mongodb'])
   )
 
-  const referentialIntegrityValues = Object.values(PrismaUtils.Schema.ReferentialIntegritySettingValue)
+  const referentialIntegrityValues = Object.values(Reflector.Schema.ReferentialIntegritySettingValue)
 
   const combinations = referentialIntegrityValues.flatMap((referentialIntegrity) =>
     templateInfos.flatMap((t) =>
@@ -74,11 +74,11 @@ export default async function generateMigrationSql(params: {
       const content = await FS.readAsync(SchemaPathTemplateOriginal)
       if (!content) throw new Error(`Could not read schema at path ${SchemaPathTemplateOriginal}`)
 
-      const schemaWithProvider = PrismaUtils.Schema.setDatasourceProvider({
+      const schemaWithProvider = Reflector.Schema.setDatasourceProvider({
         prismaSchemaContent: content,
         value: combination.datasourceProvider,
       })
-      const schemaWithReferentialIntegrity = PrismaUtils.Schema.setReferentialIntegrity({
+      const schemaWithReferentialIntegrity = Reflector.Schema.setReferentialIntegrity({
         prismaSchemaContent: schemaWithProvider,
         value: combination.referentialIntegrity,
       })
@@ -91,7 +91,7 @@ export default async function generateMigrationSql(params: {
         {
           cwd: process.cwd(),
           env: {
-            DATABASE_URL: PrismaUtils.ConnectionString.generate(combination.datasourceProvider),
+            DATABASE_URL: Reflector.ConnectionString.generate(combination.datasourceProvider),
           },
         }
       )

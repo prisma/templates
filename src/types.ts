@@ -1,6 +1,6 @@
 import { MigrationSql } from './logic'
 import { Index } from './utils'
-import { PrismaUtils } from '@prisma/utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 
 export * from './generated/types'
 
@@ -37,7 +37,7 @@ export type BaseTemplateParameters = {
    *
    * @default 'postgresql'
    */
-  datasourceProvider?: PrismaUtils.Schema.DatasourceProviderNormalized
+  datasourceProvider?: Reflector.Schema.DatasourceProviderNormalized
   /**
    * The repository owner to use for the deploy to vercel button in the template's README.md.
    *
@@ -57,7 +57,7 @@ export type BaseTemplateParameters = {
    *
    * @default null
    */
-  engineType?: PrismaUtils.Engines.EmbedStrategy | null
+  engineType?: Reflector.Engines.EmbedStrategy | null
   /**
    * Is Prisma Dataproxy being used?
    *
@@ -71,7 +71,7 @@ export type BaseTemplateParameters = {
    * @remarks When the default is used, no changes to the PSL are made since this is the Prisma default.
    * @default 'foreignKeys'
    */
-  referentialIntegrity?: PrismaUtils.Schema.ReferentialIntegritySettingValue
+  referentialIntegrity?: Reflector.Schema.ReferentialIntegritySettingValue
 }
 
 export type BaseTemplateParametersResolved = Required<BaseTemplateParameters>

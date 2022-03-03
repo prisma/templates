@@ -1,4 +1,4 @@
-import { PrismaUtils } from '@prisma/utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaTemplates } from '~/src'
 import { upperFirst } from '~/src/utils'
 
@@ -8,7 +8,7 @@ import { upperFirst } from '~/src/utils'
 export const getName = (params: {
   template: PrismaTemplates.$Types.TemplateTag
   datasourceProvider: DatasourceProvidersNormalizedSupportingMigration
-  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
+  referentialIntegrity: Reflector.Schema.ReferentialIntegritySettingValue
 }): MigrationFileName =>
   // prettier-ignore
   `${params.template}With${upperFirst(params.datasourceProvider)}WithReferentialIntegrity${upperFirst(params.referentialIntegrity)}`
@@ -16,9 +16,9 @@ export const getName = (params: {
 export type MigrationSql = string[]
 
 export type DatasourceProvidersNormalizedSupportingMigration = Exclude<
-  PrismaUtils.Schema.DatasourceProviderNormalized,
+  Reflector.Schema.DatasourceProviderNormalized,
   'mongodb'
 >
 
 export type MigrationFileName =
-  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvidersNormalizedSupportingMigration>}WithReferentialIntegrity${Capitalize<PrismaUtils.Schema.ReferentialIntegritySettingValue>}`
+  `${PrismaTemplates.$Types.TemplateTag}With${Capitalize<DatasourceProvidersNormalizedSupportingMigration>}WithReferentialIntegrity${Capitalize<Reflector.Schema.ReferentialIntegritySettingValue>}`

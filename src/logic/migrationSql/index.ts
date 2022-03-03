@@ -1,13 +1,13 @@
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generatedMigrations'
 import { getName, MigrationSql } from './helpers'
-import { PrismaUtils } from '@prisma/utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 export * from './helpers'
 
 export const select = (params: {
   template: PrismaTemplates.$Types.TemplateTag
-  datasourceProvider: PrismaUtils.Schema.DatasourceProviderNormalized
-  referentialIntegrity: PrismaUtils.Schema.ReferentialIntegritySettingValue
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
+  referentialIntegrity: Reflector.Schema.ReferentialIntegritySettingValue
 }): MigrationSql => {
   if (
     params.datasourceProvider === 'sqlite' ||
