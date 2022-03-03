@@ -1,0 +1,5 @@
+export const SaasWithPostgresWithReferentialIntegrityPrisma = [
+  "-- CreateTable\nCREATE TABLE \"User\" (\n    \"id\" TEXT NOT NULL,\n    \"createdAt\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP(3) NOT NULL,\n    \"name\" TEXT,\n    \"email\" TEXT NOT NULL,\n    \"accountId\" TEXT,\n\n    CONSTRAINT \"User_pkey\" PRIMARY KEY (\"id\")\n)",
+  "\n\n-- CreateTable\nCREATE TABLE \"Account\" (\n    \"id\" TEXT NOT NULL,\n    \"createdAt\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    \"updatedAt\" TIMESTAMP(3) NOT NULL,\n    \"stripeCustomerId\" TEXT NOT NULL,\n    \"stripeSubscriptionId\" TEXT NOT NULL,\n    \"referrer\" TEXT,\n    \"isActive\" BOOLEAN NOT NULL,\n\n    CONSTRAINT \"Account_pkey\" PRIMARY KEY (\"id\")\n)",
+  "\n\n-- CreateTable\nCREATE TABLE \"Invite\" (\n    \"id\" TEXT NOT NULL,\n    \"dateSent\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,\n    \"email\" TEXT NOT NULL,\n    \"accountId\" TEXT,\n    \"isValid\" BOOLEAN NOT NULL DEFAULT true,\n\n    CONSTRAINT \"Invite_pkey\" PRIMARY KEY (\"id\")\n)"
+]

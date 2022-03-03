@@ -1,7 +1,7 @@
 import { PrismaTemplates } from '~/src'
 
 Object.values(PrismaTemplates.Templates).forEach((Template) => {
-  it(`${Template.metadata.displayName}`, () => {
+  it.only(`${Template.metadata.displayName}`, () => {
     const template = new Template({
       datasourceProvider: 'mysql',
       repositoryOwner: 'prisma',

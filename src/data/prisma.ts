@@ -35,7 +35,7 @@
 
 // export const previewFeaturesPattern = /previewFeatures *= *\[/
 
-// export const PreviewFlag = {
+// export const PreviewFeatureFlag = {
 //   mongoDb: 'mongoDb',
 //   dataproxy: 'dataproxy',
 //   /**
@@ -44,4 +44,4 @@
 //   referentialIntegrity: 'referentialIntegrity',
 // } as const
 
-// export type PreviewFlag = keyof typeof PreviewFlag
+// export type PreviewFeatureFlag = keyof typeof PreviewFeatureFlag

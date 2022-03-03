@@ -304,7 +304,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
-      import { PrismaUtils } from '@prisma/utils'
+      import { Reflector } from '@prisma-spectrum/reflector'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
       ${sourceCodeSectionHeader('Metadata')}
@@ -368,12 +368,12 @@ ${indentBlock(4, escapeBackticks(f.content))}
       type TemplateParameters = BaseTemplateParameters
 
       const templateParameterDefaults: Required<TemplateParameters> = {
-        datasourceProvider: PrismaUtils.Schema.ProviderTypeNormalized._def.values.postgres,
+        datasourceProvider: Reflector.Schema.DatasourceProviderNormalized._def.values.postgres,
         repositoryOwner: null,
         repositoryHandle: null,
         engineType: null,
         dataproxy: true,
-        referentialIntegrity: PrismaUtils.Schema.referentialIntegritySettingValueDefault,
+        referentialIntegrity: Reflector.Schema.referentialIntegritySettingValueDefault,
       }
 
       ${sourceCodeSectionHeader('Class')}

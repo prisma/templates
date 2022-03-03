@@ -1,6 +1,6 @@
 import { merge } from 'lodash'
 import { inspect } from 'util'
-import { PrismaUtils } from '@prisma/utils'
+import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaTemplates } from '../'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index, mapValues } from '../utils'
@@ -34,13 +34,16 @@ export type Tools = {
      *
      * Upsert semantics are used: If preview flags are already present then this one is appended. If there are no preview flags yet then the preview flags field is added.
      */
-    addPreviewFlag: Tool<{ file: File; previewFlag: PrismaUtils.Schema.PreviewFlag }>
+    addPreviewFeatureFlag: Tool<{
+      file: File
+      PreviewFeatureFlag: Reflector.Schema.PreviewFeatureFlag
+    }>
     /**
      * Set the referentialIntegrity datasource setting.
      *
      * @see https://www.prisma.io/docs/concepts/components/prisma-schema/relations/referential-integrity
      */
-    setReferentialIntegrity: Tool<{ value: PrismaUtils.Schema.ReferentialIntegritySettingValue }>
+    setReferentialIntegrity: Tool<{ value: Reflector.Schema.ReferentialIntegritySettingValue }>
   }
 }
 
@@ -100,14 +103,14 @@ const tools: Tools = {
     },
   },
   prismaSchema: {
-    addPreviewFlag(params) {
-      return PrismaUtils.Schema.addPreviewFlag({
-        previewFlag: params.previewFlag,
+    addPreviewFeatureFlag(params) {
+      return Reflector.Schema.addPreviewFeatureFlag({
+        previewFlag: params.PreviewFeatureFlag,
         prismaSchemaContent: params.file.content,
       })
     },
     setReferentialIntegrity(params) {
-      return PrismaUtils.Schema.setReferentialIntegrity({
+      return Reflector.Schema.setReferentialIntegrity({
         value: params.value,
         prismaSchemaContent: params.file.content,
       })
