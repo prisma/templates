@@ -24,7 +24,7 @@ jobs:
 
   release-canary:
     needs: [test]
-    uses: prisma-labs/dripip/.github/workflows/release.yml@main
+    uses: prisma-labs/dripip/.github/workflows/release.yml@master
     secrets:
       npmToken: ${{secrets.NPM_TOKEN}}
       githubToken: ${{secrets.GITHUB_TOKEN}}
