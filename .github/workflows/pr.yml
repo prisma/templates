@@ -48,7 +48,6 @@ jobs:
       - uses: prisma/action-node-cache-dependencies@main
       - run: yarn type-check
 
-
   test:
     strategy:
       matrix:
