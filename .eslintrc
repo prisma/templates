@@ -9,7 +9,9 @@
     "only-warn",
     // Import sorting integrated into ESLint.
     // https://github.com/lydell/eslint-plugin-simple-import-sort
-    "simple-import-sort"
+    "simple-import-sort",
+    // https://github.com/microsoft/tsdoc/tree/master/eslint-plugin
+    "tsdoc"
   ],
   "extends": [
     "eslint:recommended",
