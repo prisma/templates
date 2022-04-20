@@ -4,6 +4,16 @@ on:
   - pull_request
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - uses: prisma/action-node-cache-dependencies@main
+
   prettier:
     runs-on: ubuntu-latest
     steps:
@@ -12,9 +22,19 @@ jobs:
         with:
           node-version: 16.x
           cache: yarn
-      - name: Install Dependencies
-        run: yarn --frozen-lockfile
-      - run: yarn -s format:check:prettier
+      - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn format:check:prettier
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+      - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn lint:check
 
   type-check:
     runs-on: ubuntu-latest
@@ -25,21 +45,9 @@ jobs:
         with:
           node-version: 16.x
           cache: yarn
-      - run: yarn --frozen-lockfile
-      - run: yarn -s build:gen && yarn -s type-check
+      - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn type-check
 
-  eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: yarn
-      - name: Install Dependencies
-        run: yarn --frozen-lockfile
-      - run: yarn -s build:gen
-      - run: yarn -s lint:check
 
   test:
     strategy:
@@ -54,5 +62,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-      - run: yarn --frozen-lockfile
+      - uses: prisma/action-node-cache-dependencies@main
       - run: yarn -s build:gen && yarn -s test
