@@ -34,6 +34,7 @@ jobs:
           node-version: 16.x
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn -s build:gen
       - run: yarn lint:check
 
   type-check:
@@ -46,6 +47,7 @@ jobs:
           node-version: 16.x
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn -s build:gen
       - run: yarn type-check
 
   test:
@@ -62,4 +64,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
-      - run: yarn -s build:gen && yarn -s test
+      - run: yarn -s build:gen
+      - run: yarn -s test
