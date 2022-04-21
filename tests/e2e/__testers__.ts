@@ -22,6 +22,7 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
       repositoryOwner: 'prisma',
       repositoryHandle: `templates-node-test-${Template.metadata.handles.kebab}`,
     })
+    await ctx.fs.writeAsync(`.npmrc`, `scripts-prepend-node-path=true`)
     await Promise.all(values(template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     await ctx.run(`npm install`)
     await ctx.fs.writeAsync(
