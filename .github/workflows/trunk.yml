@@ -29,8 +29,10 @@ jobs:
       - run: yarn -s build:gen
       - run: yarn -s test:unit
   release-canary:
-    needs: [test]
-    uses: prisma-labs/dripip/.github/workflows/release.yml@master
-    secrets:
-      npmToken: ${{secrets.NPM_TOKEN}}
-      githubToken: ${{secrets.GITHUB_TOKEN}}
+    runs-on: ubuntu-latest
+    needs: [test-unit]
+    steps:
+      - uses: prisma-labs/dripip@master
+        with:
+          npmToken: ${{secrets.NPM_TOKEN}}
+          githubToken: ${{secrets.GITHUB_TOKEN}}
