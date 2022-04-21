@@ -32,7 +32,7 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
 
     const initResult = await ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatchSnapshot('init stderr')
-    expect(initResult.stdout.replace(/\d+m?s/g, 'XXXms')).toMatchSnapshot('init stdout')
+    expect(initResult.stdout.replace(/(?:\d+\.)?\d+m?s/g, 'XXXms')).toMatchSnapshot('init stdout')
 
     const devResult = await ctx.run(`npm run dev`, { reject: true })
     expect(devResult.stderr).toMatchSnapshot('dev stderr')
