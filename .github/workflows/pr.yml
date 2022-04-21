@@ -50,7 +50,7 @@ jobs:
       - run: yarn -s build:gen
       - run: yarn type-check
 
-  test:
+  test-unit:
     strategy:
       matrix:
         os: ['ubuntu-latest']
@@ -65,4 +65,22 @@ jobs:
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
       - run: yarn -s build:gen
-      - run: yarn -s test
+      - run: yarn -s test:unit
+
+  test-e2e:
+    strategy:
+      matrix:
+        os: ['ubuntu-latest']
+        node-version: [16.x]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+      - run: yarn -s test:db:up
+      - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn -s build:gen
+      - run: yarn -s test:e2e
