@@ -1,7 +1,7 @@
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generated/migrations'
 import { getName, MigrationSql } from './helpers'
-import { Reflector } from '@prisma-spectrum/reflector'
+import { Reflector } from '~/src/lib/Reflector'
 export * from './helpers'
 
 export const select = (params: {

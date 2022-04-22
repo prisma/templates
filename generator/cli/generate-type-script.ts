@@ -264,7 +264,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
       import { MigrationSql } from '../../logic'
-      import { Reflector } from '@prisma-spectrum/reflector'
+      import { Reflector } from '~/src/lib/Reflector'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
 
       ${sourceCodeSectionHeader('Metadata')}
