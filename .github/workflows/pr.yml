@@ -38,7 +38,7 @@ jobs:
         id: get-reflect-templates-cache-key
         run: |
           echo "::set-output name=cacheKey::$(scripts/getReflectTemplatesCacheKey.sh)"
-        shell: bash      
+        shell: bash
       - name: Cache Templates reflection
         uses: actions/cache@v3
         id: templates-cache
