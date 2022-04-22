@@ -1,38 +1,78 @@
 import { PrismaTemplates } from '../../src'
 import { konn, providers } from 'konn'
 import { values } from 'lodash'
+import stripAnsi from 'strip-ansi'
+import * as PG from 'pg'
 
 export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag']) => {
   jest.setTimeout(20_000)
 
   const ctx = konn()
-    .beforeAll(() => ({
-      databaseUrlBase: 'postgres://prisma:prisma@localhost:5401',
-    }))
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
+    .beforeAll(async () => {
+      const Template = PrismaTemplates.Templates[templateName]
+      const template = new Template({
+        dataproxy: false,
+        datasourceProvider: 'postgres',
+        repositoryOwner: 'prisma',
+        repositoryHandle: `templates-node-test-${Template.metadata.handles.kebab}`,
+      })
+      const databaseUrlBase = 'postgres://prisma:prisma@localhost:5401'
+      const databaseName = template.metadata.handles.snake
+      const databaseUrl = `${databaseUrlBase}/${databaseName}`
+
+      const dropTestDatabase = async () => {
+        // TODO Use Prisma once we can: https://github.com/prisma/prisma/issues/5083#issuecomment-1105870733
+        // const Prisma = await import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
+        // const prisma = new Prisma.PrismaClient({
+        //   datasources: {
+        //     db: {
+        //       // Make sure this connection not on same database that we want to drop.
+        //       url: `${databaseUrlBase}/postgres`,
+        //     },
+        //   },
+        // })
+        const pg = new PG.Client({ connectionString: `${databaseUrlBase}/postgres` })
+        await pg.connect()
+        try {
+          // await prisma.$executeRawUnsafe`DROP DATABASE ${databaseName} WITH (FORCE);`
+          await pg.query(`DROP DATABASE ${databaseName} WITH (FORCE);`)
+        } catch (error) {
+          const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
+          if (!isDatabaseNotFoundErorr) throw error
+        } finally {
+          await pg.end()
+        }
+      }
+
+      return {
+        template,
+        dropTestDatabase,
+        databaseName,
+        databaseUrl,
+      }
+    })
+    .afterAll(async (ctx) => {
+      await ctx.dropTestDatabase?.()
+    })
     .done()
 
   it(`${templateName}`, async () => {
-    console.log(ctx.fs.cwd())
-    const Template = PrismaTemplates.Templates[templateName]
-    const template = new Template({
-      dataproxy: false,
-      datasourceProvider: 'postgres',
-      repositoryOwner: 'prisma',
-      repositoryHandle: `templates-node-test-${Template.metadata.handles.kebab}`,
-    })
+    // Useful log during development to manually explore/debug the test project.
+    if (!process.env.CI) console.log(ctx.fs.cwd())
+
     await ctx.fs.writeAsync(`.npmrc`, `scripts-prepend-node-path=true`)
-    await Promise.all(values(template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
+    await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     await ctx.run(`npm install`)
-    await ctx.fs.writeAsync(
-      '.env',
-      `DATABASE_URL='${ctx.databaseUrlBase}/${template.metadata.handles.snake}'`
-    )
+    await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
+    await ctx.dropTestDatabase()
+
+    if (templateName === 'Empty') return
 
     const initResult = await ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatchSnapshot('init stderr')
-    expect(initResult.stdout.replace(/\d+ms/g, 'XXXms')).toMatchSnapshot('init stdout')
+    expect(stripAnsi(initResult.stdout.replace(/(?:\d+\.)?\d+m?s/g, 'XXXms'))).toMatchSnapshot('init stdout')
 
     const devResult = await ctx.run(`npm run dev`, { reject: true })
     expect(devResult.stderr).toMatchSnapshot('dev stderr')
