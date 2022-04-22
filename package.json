@@ -1,6 +1,6 @@
 {
   "name": "@prisma/templates",
-  "version": "0.0.0-dripip",
+  "version": "0.0.0-pr.84.1.e1fd1b9",
   "repository": "git@github.com:prisma/templates-node.git",
   "author": "Prisma Data Inc.",
   "license": "MIT",
@@ -46,7 +46,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
-    "@prisma-spectrum/reflector": "^0.5.2",
+    "@prisma-spectrum/reflector": "^0.0.0-pr.9.2.e2fdbb9",
     "lodash": "^4.17.21",
     "remeda": "^0.0.32",
     "tslib": "^2.3.1"
