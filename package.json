@@ -40,7 +40,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
-    "@prisma-spectrum/reflector": "^0.0.0-pr.9.4.7665486",
+    "@prisma-spectrum/reflector": "^0.6.0",
     "lodash": "^4.17.21",
     "remeda": "^0.0.32",
     "tslib": "^2.3.1"
