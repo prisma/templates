@@ -1,6 +1,6 @@
 {
   "name": "@prisma/templates",
-  "version": "0.0.0-pr.84.1.e1fd1b9",
+  "version": "0.0.0-pr.84.3.98075db",
   "repository": "git@github.com:prisma/templates-node.git",
   "author": "Prisma Data Inc.",
   "license": "MIT",
@@ -8,12 +8,6 @@
     "dist-cjs",
     "dist-esm"
   ],
-  "exports": {
-    ".": {
-      "require": "./dist-cjs/index.js",
-      "import": "./dist-esm/index.js"
-    }
-  },
   "main": "./dist-cjs/index.js",
   "module": "./dist-esm/index.js",
   "scripts": {
@@ -46,7 +40,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
-    "@prisma-spectrum/reflector": "^0.0.0-pr.9.2.e2fdbb9",
+    "@prisma-spectrum/reflector": "^0.0.0-pr.9.4.7665486",
     "lodash": "^4.17.21",
     "remeda": "^0.0.32",
     "tslib": "^2.3.1"
