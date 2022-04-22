@@ -1,0 +1,20 @@
+name: Generate Templates
+runs:
+  using: composite
+  steps:
+    - name: Get Reflect Templates Cache Key
+      id: get-reflect-templates-cache-key
+      run: |
+        cacheKey=$(scripts/getReflectTemplatesCacheKey.sh)
+        echo "cacheKey=$cacheKey"
+        echo "::set-output name=cacheKey::$cacheKey"
+      shell: bash
+    - name: Cache Templates reflection
+      uses: actions/cache@v3
+      id: templates-cache
+      with:
+        path: |
+          src/generated
+        key: ${{ steps.get-reflect-templates-cache-key.outputs.cacheKey }}
+    - run: yarn -s build:gen
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
