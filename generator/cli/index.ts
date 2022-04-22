@@ -31,7 +31,7 @@ async function main(): Promise<void> {
     downloadTemplatesRepo({ dir: templatesRepoDir })
   }
 
-  const cacheKeyFilePath = './node_modules/.cache/reflectTemplatesCacheKey'
+  const cacheKeyFilePath = './node_modules/.cache/reflectTemplatesCacheKey.json'
   const cacheKeyStored = (JSON.parse((await FS.readAsync(cacheKeyFilePath)) || '""') ||
     null) as JsonObject | null
   const result = Execa.sync('./scripts/getReflectTemplatesCacheKey.sh')
@@ -67,7 +67,7 @@ async function main(): Promise<void> {
     generateTypeScript({ templatesRepoDir, outputDir: generatedDir })
   }
 
-  if (cacheKeyStored !== cacheKeyFresh) {
+  if (!isEqual(cacheKeyStored, cacheKeyFresh)) {
     await FS.writeAsync(cacheKeyFilePath, cacheKeyFresh)
   }
 }
