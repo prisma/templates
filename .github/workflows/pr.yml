@@ -64,7 +64,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
-      - run: yarn -s build:gen
+      - uses: ./.github/actions/generateTemplates
       - run: yarn -s test:unit
 
   test-e2e:
@@ -82,5 +82,5 @@ jobs:
           cache: yarn
       - run: yarn -s test:db:up
       - uses: prisma/action-node-cache-dependencies@main
-      - run: yarn -s build:gen
+      - uses: ./.github/actions/generateTemplates
       - run: yarn -s test:e2e

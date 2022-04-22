@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
-      - run: yarn -s build:gen
+      - uses: ./.github/actions/generateTemplates
       - run: yarn -s test:unit
   release-canary:
     runs-on: ubuntu-latest
