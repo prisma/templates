@@ -35,7 +35,7 @@ async function main(): Promise<void> {
   const cacheKeyStored = (JSON.parse((await FS.readAsync(cacheKeyFilePath)) || '""') ||
     null) as JsonObject | null
   const result = Execa.sync('./scripts/getReflectTemplatesCacheKey.sh')
-  const cacheKeyFresh = JSON.parse(result.stdout) as JsonObject
+  const cacheKeyFresh = JSON.parse(Buffer.from(result.stdout, 'base64').toString('utf-8')) as JsonObject
   const generatedDirExists = FS.exists(generatedDir)
   if (generatedDirExists && isEqual(cacheKeyStored, cacheKeyFresh)) {
     moduleLog.warn('cache_hit', {
