@@ -1,6 +1,6 @@
 {
   "name": "@prisma/templates",
-  "version": "0.0.0-pr.84.3.98075db",
+  "version": "0.0.0-dripip",
   "repository": "git@github.com:prisma/templates-node.git",
   "author": "Prisma Data Inc.",
   "license": "MIT",
