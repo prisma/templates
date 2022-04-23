@@ -266,6 +266,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import { MigrationSql } from '../../logic'
       import { Reflector } from '~/src/lib/Reflector'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
+      import { merge } from 'lodash'
 
       ${sourceCodeSectionHeader('Metadata')}
 
@@ -414,10 +415,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         ${sourceCodeSectionHeader2('Constructor')}
 
         constructor(parameters?: TemplateParameters) {
-          const parameters_ = {
-            ...templateParameterDefaults,
-            ...parameters,
-          }
+          const parameters_ = merge({}, templateParameterDefaults, parameters)
 
           this.migrationSql = MigrationSql.select({
             template: this._tag,
