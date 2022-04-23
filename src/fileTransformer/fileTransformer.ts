@@ -1,7 +1,7 @@
 import { PrismaTemplates } from '../'
+import { Reflector } from '../lib/Reflector'
 import { BaseTemplateParametersResolved, File } from '../types'
 import { Index } from '../utils'
-import { Reflector } from '@prisma-spectrum/reflector'
 import { merge } from 'lodash'
 import * as R from 'remeda'
 import { inspect } from 'util'

@@ -1,6 +1,6 @@
 import { MigrationSql } from './logic'
 import { Index } from './utils'
-import { Reflector } from '@prisma-spectrum/reflector'
+import type { Reflector } from '@prisma-spectrum/reflector'
 
 export * from './generated/types'
 

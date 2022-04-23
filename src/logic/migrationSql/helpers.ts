@@ -1,5 +1,5 @@
-import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaTemplates } from '~/src'
+import { Reflector } from '~/src/lib/Reflector'
 import { upperFirst } from '~/src/utils'
 
 /**

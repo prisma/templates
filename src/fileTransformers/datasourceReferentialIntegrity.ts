@@ -1,5 +1,5 @@
 import { FileTransformer } from '../fileTransformer/fileTransformer'
-import { Reflector } from '@prisma-spectrum/reflector'
+import { Reflector } from '../lib/Reflector'
 
 /**
  * Handle setting the referential integrity of the datasource.
