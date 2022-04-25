@@ -5,7 +5,7 @@ runs:
     - name: Get Reflect Templates Cache Key
       id: get-reflect-templates-cache-key
       run: |
-        cacheKey=$(scripts/getReflectTemplatesCacheKey.sh)
+        cacheKeygpg=$(scripts/getReflectTemplatesCacheKey.sh)
         echo "cacheKey=$cacheKey"
         echo "::set-output name=cacheKey::$cacheKey"
       shell: bash
