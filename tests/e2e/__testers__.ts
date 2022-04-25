@@ -50,7 +50,9 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
       }
     })
     .afterAll(async (ctx) => {
-      await ctx.dropTestDatabase?.()
+      if (templateName !== 'Empty') {
+        await ctx.dropTestDatabase?.()
+      }
     })
     .done()
 
@@ -62,9 +64,9 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
     await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     await ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
-    await ctx.dropTestDatabase()
-
     if (templateName === 'Empty') return
+
+    await ctx.dropTestDatabase()
 
     const initResult = await ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatchSnapshot('init stderr')
