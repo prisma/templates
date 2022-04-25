@@ -13,7 +13,7 @@ jobs:
           node-version: 16
           cache: 'yarn'
       - uses: prisma/action-node-cache-dependencies@main
-      - uses: prisma/action-node-cache-dependencies@main
+      - uses: ./.github/actions/generateTemplates
 
   prettier:
     needs: setup
