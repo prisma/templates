@@ -23,26 +23,22 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
       const databaseUrl = `${databaseUrlBase}/${databaseName}`
 
       const dropTestDatabase = async () => {
-        // TODO Use Prisma once we can: https://github.com/prisma/prisma/issues/5083#issuecomment-1105870733
-        // const Prisma = await import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
-        // const prisma = new Prisma.PrismaClient({
-        //   datasources: {
-        //     db: {
-        //       // Make sure this connection not on same database that we want to drop.
-        //       url: `${databaseUrlBase}/postgres`,
-        //     },
-        //   },
-        // })
-        const pg = new PG.Client({ connectionString: `${databaseUrlBase}/postgres` })
-        await pg.connect()
+        const Prisma = await import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
+        const prisma = new Prisma.PrismaClient({
+          datasources: {
+            db: {
+              // Make sure this connection not on same database that we want to drop.
+              url: `${databaseUrlBase}/postgres`,
+            },
+          },
+        })
         try {
-          // await prisma.$executeRawUnsafe`DROP DATABASE ${databaseName} WITH (FORCE);`
-          await pg.query(`DROP DATABASE ${databaseName} WITH (FORCE);`)
+          await prisma.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
         } catch (error) {
           const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
           if (!isDatabaseNotFoundErorr) throw error
         } finally {
-          await pg.end()
+          await prisma.$disconnect()
         }
       }
 
@@ -54,7 +50,9 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
       }
     })
     .afterAll(async (ctx) => {
-      await ctx.dropTestDatabase?.()
+      if (templateName !== 'Empty') {
+        await ctx.dropTestDatabase?.()
+      }
     })
     .done()
 
@@ -66,9 +64,9 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
     await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     await ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
-    await ctx.dropTestDatabase()
-
     if (templateName === 'Empty') return
+
+    await ctx.dropTestDatabase()
 
     const initResult = await ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatchSnapshot('init stderr')

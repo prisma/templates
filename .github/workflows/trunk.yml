@@ -13,6 +13,7 @@ jobs:
           cache: 'yarn'
       - uses: prisma/action-node-cache-dependencies@main
   test-unit:
+    needs: setup
     strategy:
       matrix:
         os: ['ubuntu-latest']

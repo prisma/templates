@@ -13,8 +13,10 @@ jobs:
           node-version: 16
           cache: 'yarn'
       - uses: prisma/action-node-cache-dependencies@main
+      - uses: ./.github/actions/generateTemplates
 
   prettier:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,6 +28,7 @@ jobs:
       - run: yarn format:check:prettier
 
   eslint:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -38,6 +41,7 @@ jobs:
       - run: yarn lint:check
 
   type-check:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -51,6 +55,7 @@ jobs:
       - run: yarn type-check
 
   test-unit:
+    needs: setup
     strategy:
       matrix:
         os: ['ubuntu-latest']
@@ -68,6 +73,7 @@ jobs:
       - run: yarn -s test:unit
 
   test-e2e:
+    needs: setup
     strategy:
       matrix:
         os: ['ubuntu-latest']
