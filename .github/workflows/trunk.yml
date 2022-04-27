@@ -14,24 +14,13 @@ jobs:
       - uses: prisma/action-node-cache-dependencies@main
   test-unit:
     needs: setup
-    strategy:
-      matrix:
-        os: ['ubuntu-latest']
-        node-version: [14.x, 16.x]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: yarn
-      - uses: prisma/action-node-cache-dependencies@main
-      - uses: ./.github/actions/generateTemplates
-      - run: yarn -s test:unit
+    uses: ./.github/workflows/test-unit.yml
+  test-e2e:
+    needs: setup
+    uses: ./.github/workflows/test-e2e.yml
   release-canary:
     runs-on: ubuntu-latest
-    needs: [test-unit]
+    needs: [test-unit, test-e2e]
     steps:
       - uses: prisma-labs/dripip@master
         with:
