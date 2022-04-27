@@ -1,3 +1,3 @@
 import { testTemplate } from './__testers__'
 
-testTemplate({ templateName: 'Empty', patternExpectedInOutput: '' })
+testTemplate({ templateName: 'Empty', expectedDevOutput: '' })
