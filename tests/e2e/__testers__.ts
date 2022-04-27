@@ -3,14 +3,17 @@ import { konn, providers } from 'konn'
 import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
 
-export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag']) => {
-  jest.setTimeout(20_000)
-
+export const testTemplate = (params: {
+  templateName: PrismaTemplates.$Types.Template['_tag']
+  /** A string or regex pattern of the expected output (stdout) when the project dev mode is run.*/
+  expectedDevOutput: RegExp | string
+}) => {
+  jest.setTimeout(50_000)
   const ctx = konn()
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
     .beforeAll(async () => {
-      const Template = PrismaTemplates.Templates[templateName]
+      const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
         dataproxy: false,
         datasourceProvider: 'postgres',
@@ -49,13 +52,13 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
       }
     })
     .afterAll(async (ctx) => {
-      if (templateName !== 'Empty') {
+      if (params.templateName !== 'Empty') {
         await ctx.dropTestDatabase?.()
       }
     })
     .done()
 
-  it(`${templateName}`, async () => {
+  it(`${params.templateName}`, async () => {
     // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
@@ -63,7 +66,7 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
     await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
-    if (templateName === 'Empty') return
+    if (params.templateName === 'Empty') return
 
     await ctx.dropTestDatabase()
 
@@ -74,7 +77,7 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
 
     const devResult = ctx.run(`npm run dev`, { reject: true })
     expect(devResult.stderr).toMatch('')
-    expect(devResult.stdout).toMatch(/Top users \(alphabetical\):/)
+    expect(devResult.stdout).toMatch(params.expectedDevOutput)
 
     // TODO Test the Vercel API
     // await ctx.fs.writeAsync('.vercel/project.json', {
