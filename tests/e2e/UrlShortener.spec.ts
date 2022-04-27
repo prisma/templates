@@ -1,3 +1,3 @@
 import { testTemplate } from './__testers__'
 
-testTemplate('UrlShortener')
+testTemplate({ templateName: 'UrlShortener', patternExpectedInOutput: /Top users \(alphabetical\):/ })

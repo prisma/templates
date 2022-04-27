@@ -3,9 +3,13 @@ import { konn, providers } from 'konn'
 import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
 
-export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag']) => {
-  jest.setTimeout(20_000)
-
+export const testTemplate = (params: {
+  templateName: PrismaTemplates.$Types.Template['_tag']
+  /** A substring expected in the stdout after `npm run dev` */
+  patternExpectedInOutput: RegExp | string
+}) => {
+  jest.setTimeout(50_000)
+  const { templateName, patternExpectedInOutput } = params
   const ctx = konn()
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
@@ -74,7 +78,7 @@ export const testTemplate = (templateName: PrismaTemplates.$Types.Template['_tag
 
     const devResult = ctx.run(`npm run dev`, { reject: true })
     expect(devResult.stderr).toMatch('')
-    expect(devResult.stdout).toMatch(/Top users \(alphabetical\):/)
+    expect(devResult.stdout).toMatch(patternExpectedInOutput)
 
     // TODO Test the Vercel API
     // await ctx.fs.writeAsync('.vercel/project.json', {
