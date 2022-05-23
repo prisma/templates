@@ -22,8 +22,8 @@ import { transformedPrismaSchemaContentEnvironmentVariableName } from '~/src/uti
  *   useDataProxy: true,
  *   connectionString,
  *   schema: {
- *     contents: schemaWithControlledDatasourceUrl,
- *     path: `/tmp/schema.prisma`,
+ *     contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+ *     path: "/tmp/schema.prisma",
  *   },
  * })
  * const prisma = await new variable();
@@ -50,8 +50,8 @@ import { transformedPrismaSchemaContentEnvironmentVariableName } from '~/src/uti
  *   useDataProxy: true,
  *   connectionString,
  *   schema: {
- *     contents: process.env.PARSED_SCHEMA,
- *     path: `/tmp/schema.prisma`,
+ *     contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+ *     path: "/tmp/schema.prisma",
  *   },
  * })
  *
@@ -150,8 +150,8 @@ export function babelPluginTransformTemplate(
              *  useDataProxy: true,
              *  connectionString,
              *  schema: {
-             *    contents: process.env.PARSED_SCHEMA,
-             *    path: `/tmp/schema.prisma`,
+             *    contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+             *    path: "/tmp/schema.prisma",
              *  },
              *});
              * ```
