@@ -18,7 +18,7 @@ import { transformedPrismaSchemaContentEnvironmentVariableName } from '~/src/uti
  *
  * 3. Replaces all instances of `const variable = new PrismaClient()` with:
  * ```
- * const variable = await PrismaClientController.getPrismaClient({
+ * const variable = await Reflector.Client.getPrismaClient({
  *   useDataProxy: true,
  *   connectionString,
  *   schema: {
