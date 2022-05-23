@@ -1,28 +1,32 @@
 import * as Babel from '@babel/core'
+import { transformedPrismaSchemaContentEnvironmentVariableName } from '~/src/utils'
 
 /**
  * A Babel plugin that transforms the seed scripts in templates to make them executable at runtime in Cloud
  *
  * In Cloud, we do not write files to disk and do not generate Prisma Client for the user, so we cannot just
- * run `prisma db seed` to seed the user's DB. Instead, we use the `@prisma/studio-pcw` package, which
+ * run `prisma db seed` to seed the user's DB. Instead, we use @prisma-spectrum/reflector, which
  * generates an in-memory version of the Prisma Client. This babel plugin replaces usage of `@prisma/client`
- * with `@prisma/studio-pcw`.
+ * with this prisma instance.
  *
  * Specifically, here's what it does:
  *
  * 1. Removes the `PrismaClient` import from the `@prisma/client` module. This is mostly cleanup, since we
  * know no one in the transformed script will use it
  *
- * 2. Adds a `import PCW from "@prisma/studio-pcw"` statement at the top of the file. (PCW is CommonJS)
+ * 2. Adds a `import { Reflector } from '@prisma-spectrum/reflector';` statement at the top of the file.
  *
- * 3. Adds a `import path from "path"` statement at the top of the file.
- *
- * 4. Replaces all instances of `const variable = new PrismaClient()` with:
+ * 3. Replaces all instances of `const variable = new PrismaClient()` with:
  * ```
- * const schema = '...';
- * const schemaPath = '...';
- * const pcw = new PCW.PCW('...');
- * const variable = await pcw.getPrismaClient()
+ * const variable = await PrismaClientController.getPrismaClient({
+ *   useDataProxy: true,
+ *   connectionString,
+ *   schema: {
+ *     contents: schemaWithControlledDatasourceUrl,
+ *     path: `/tmp/schema.prisma`,
+ *   },
+ * })
+ * const prisma = await new variable();
  * ```
  *
  * The rest of the file can remain the same.
@@ -40,16 +44,18 @@ import * as Babel from '@babel/core'
  *
  * This outputs:
  * ```
- * import PCW from '@prisma/studio-pcw'
- * import { Prisma } from '@prisma/client'
+ * import { Reflector } from '@prisma-spectrum/reflector';
  *
- * const pcw = new PCW.PCW(
- *  "schema-string",
- *  schemaPath,
- *  { dbEnvVar: "" },
- *  { resolve: { ".prisma/client": path.join(process.env(), "node_modules/.prisma/client") }
- * });
- * const prisma = await pcw.getPrismaClient()
+ * const PrismaClient = await Reflector.Client.getPrismaClient({
+ *   useDataProxy: true,
+ *   connectionString,
+ *   schema: {
+ *     contents: process.env.PARSED_SCHEMA,
+ *     path: `/tmp/schema.prisma`,
+ *   },
+ * })
+ *
+ * const prisma = await new PrismaClient();
  *
  * await prisma.user.findMany()
  * ```
@@ -61,6 +67,7 @@ export type BabelPluginTransformTemplateOptions = {
     content: string
     path: string
     datasourceUrlEnvironmentVariableName: string
+    transformedPrismaSchemaContentEnvironmentVariableName: string
   }
 }
 
@@ -72,11 +79,16 @@ export function babelPluginTransformTemplate(
       return {
         visitor: {
           Program(path) {
-            // Add a `import PCW from "@prisma/studio-pcw"` at the top of the file
+            // Add a `import { Reflector } from '@prisma-spectrum/reflector';` at the top of the file
             path.node.body.unshift(
               Babel.types.importDeclaration(
-                [Babel.types.importDefaultSpecifier(Babel.types.identifier('PCW'))],
-                Babel.types.stringLiteral('@prisma/studio-pcw')
+                [
+                  Babel.types.importSpecifier(
+                    Babel.types.identifier('Reflector'),
+                    Babel.types.identifier('Reflector')
+                  ),
+                ],
+                Babel.types.stringLiteral('@prisma-spectrum/reflector')
               )
             )
 
@@ -106,8 +118,24 @@ export function babelPluginTransformTemplate(
               path.parentPath.remove()
             }
           },
+          VariableDeclaration(path) {
+            /**
+             * Find the `const variable = new PrismaClient` expression and remove it.
+             */
 
-          VariableDeclaration(
+            if (
+              path.node.declarations[0]?.id.type === 'Identifier' &&
+              path.node.declarations[0]?.init?.type === 'NewExpression'
+            ) {
+              const variableConstructor = path.node.declarations[0].init.callee
+
+              if (variableConstructor.type !== 'Identifier' || variableConstructor.name !== 'PrismaClient') {
+                return
+              }
+              path.remove()
+            }
+          },
+          FunctionDeclaration(
             path,
             {
               opts: {
@@ -116,139 +144,79 @@ export function babelPluginTransformTemplate(
             }: { opts: BabelPluginTransformTemplateOptions }
           ) {
             /**
-             * Find the `const variable = new PrismaClient` expression and replace it with:
-             *
+             * Find `async function main() {` and insert after:
              * ```
-             * const schema = '...'
-             * const schemaPath = '...'
-             * const pcw = new PCW.PCW(
-             *   schema,
-             *   schemaPath,
-             *   { envVarName: process.env.envVarName }
-             * );
-             * const variable = await pcw.getPrismaClient()
+             *  const PrismaClient = await Reflector.Client.getPrismaClient({
+             *  useDataProxy: true,
+             *  connectionString,
+             *  schema: {
+             *    contents: process.env.PARSED_SCHEMA,
+             *    path: `/tmp/schema.prisma`,
+             *  },
+             *});
              * ```
              */
-
-            if (
-              path.node.declarations[0]?.id.type === 'Identifier' &&
-              path.node.declarations[0]?.init?.type === 'NewExpression'
-            ) {
-              // If variable declaration is an expression with the `new` keyword
-              const variableName = path.node.declarations[0].id.name
-              const variableConstructor = path.node.declarations[0].init.callee
-
-              if (variableConstructor.type !== 'Identifier' || variableConstructor.name !== 'PrismaClient') {
-                return
-              }
-
-              // Add variable definition `const schema = "..."` ( so we can use it in the PCW constructor below)
-              path.insertBefore(
-                Babel.types.variableDeclaration('const', [
-                  Babel.types.variableDeclarator(
-                    Babel.types.identifier('schema'),
-                    Babel.types.identifier('`' + schemaContent + '`')
-                  ),
-                ])
-              )
-              // Add variable definition `const schemaPath = "..."` ( so we can use it in the PCW constructor below)
-              path.insertBefore(
-                Babel.types.variableDeclaration('const', [
-                  Babel.types.variableDeclarator(
-                    Babel.types.identifier('schemaPath'),
-                    Babel.types.stringLiteral(schemaPath)
-                  ),
-                ])
-              )
-
-              //
-              /**
-               * Replace with:
-               * ```
-               * const pcw = new PCW.PCW(
-               *   schema,
-               *   schemaPath,
-               *   { envVarName: "..." },
-               *   { resolve: { ".prisma/client": path.join(process.cwd(), "node_modules/.prisma/client") } }
-               * )
-               * ```
-               */
-              path.replaceWith(
-                Babel.types.variableDeclaration('const', [
-                  Babel.types.variableDeclarator(
-                    Babel.types.identifier('pcw'),
+            path.node.body.body.unshift(
+              Babel.types.variableDeclaration('const', [
+                Babel.types.variableDeclarator(
+                  Babel.types.identifier('PrismaClient'),
+                  Babel.types.awaitExpression(
                     Babel.types.newExpression(
                       Babel.types.memberExpression(
-                        Babel.types.identifier('PCW'),
-                        Babel.types.identifier('PCW')
+                        Babel.types.identifier('Reflector.Client'),
+                        Babel.types.identifier('getPrismaClient')
                       ),
                       [
-                        Babel.types.identifier('schema'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
-                        Babel.types.identifier('schemaPath'), // There will be a global defined with this name via the `ExportNamedDeclaration` visitor
                         Babel.types.objectExpression([
                           Babel.types.objectProperty(
-                            Babel.types.identifier(datasourceUrlEnvironmentVariableName),
-                            Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
-                          ),
-                        ]),
-                        Babel.types.objectExpression([
-                          Babel.types.objectProperty(
-                            Babel.types.identifier('forcePrismaLibrary'),
+                            Babel.types.identifier(`useDataProxy`),
                             Babel.types.booleanLiteral(true)
                           ),
                           Babel.types.objectProperty(
-                            Babel.types.identifier('resolve'),
+                            Babel.types.identifier(`connectionString`),
+                            Babel.types.identifier(`process.env.${datasourceUrlEnvironmentVariableName}`)
+                          ),
+                          Babel.types.objectProperty(
+                            Babel.types.identifier('schema'),
                             Babel.types.objectExpression([
                               Babel.types.objectProperty(
-                                Babel.types.stringLiteral('.prisma/client'),
-                                Babel.types.callExpression(
-                                  Babel.types.memberExpression(
-                                    Babel.types.identifier('path'),
-                                    Babel.types.identifier('join')
-                                  ),
-                                  [
-                                    Babel.types.callExpression(
-                                      Babel.types.memberExpression(
-                                        Babel.types.identifier('process'),
-                                        Babel.types.identifier('cwd')
-                                      ),
-                                      []
-                                    ),
-                                    Babel.types.stringLiteral('node_modules/.prisma/client/index.js'),
-                                  ]
+                                Babel.types.identifier('contents'),
+                                Babel.types.identifier(
+                                  `process.env.${transformedPrismaSchemaContentEnvironmentVariableName}`
                                 )
+                              ),
+                              Babel.types.objectProperty(
+                                Babel.types.identifier('path'),
+                                Babel.types.identifier(`"${schemaPath}"`)
                               ),
                             ])
                           ),
                         ]),
                       ]
                     )
-                  ),
-                ])
-              )
-
-              // Add `const prisma = await pcw.getPrismaClient();`
-              path.insertAfter(
-                Babel.types.variableDeclaration('const', [
-                  Babel.types.variableDeclarator(
-                    Babel.types.objectPattern([
-                      Babel.types.objectProperty(
-                        Babel.types.identifier(variableName),
-                        Babel.types.identifier(variableName)
-                      ),
-                    ]),
-                    Babel.types.awaitExpression(
-                      Babel.types.callExpression(
-                        Babel.types.memberExpression(
-                          Babel.types.identifier('pcw'),
-                          Babel.types.identifier('getPrismaClient')
-                        ),
-                        []
-                      )
-                    )
-                  ),
-                ])
-              )
+                  )
+                ),
+              ]),
+              //  Add `const prisma = await new PrismaClient();`
+              Babel.types.variableDeclaration('const', [
+                Babel.types.variableDeclarator(
+                  Babel.types.identifier('prisma'),
+                  Babel.types.awaitExpression(
+                    Babel.types.newExpression(Babel.types.identifier('PrismaClient'), [])
+                  )
+                ),
+              ])
+            )
+          },
+          AwaitExpression(path) {
+            // Remove prisma.$disconnect(); because it causes an error in the script
+            if (
+              path.node.argument.type === 'CallExpression' &&
+              path.node.argument.callee.type === 'MemberExpression' &&
+              path.node.argument.callee.property.type === 'Identifier' &&
+              path.node.argument.callee.property.name === '$disconnect'
+            ) {
+              path.remove()
             }
           },
         },

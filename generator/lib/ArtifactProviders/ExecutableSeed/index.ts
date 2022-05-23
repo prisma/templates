@@ -3,7 +3,11 @@ import { babelPluginTransformTemplate } from './babel-plugin-transform-template'
 import * as Babel from '@babel/core'
 import { TemplateInfo } from '~/src/templates'
 import { File } from '~/src/types'
-import { datasourceUrlEnvironmentVariableName, Index } from '~/src/utils'
+import {
+  datasourceUrlEnvironmentVariableName,
+  transformedPrismaSchemaContentEnvironmentVariableName,
+  Index,
+} from '~/src/utils'
 
 export const run: ArtifactProvider = <T extends Index<File>>(params: {
   templateInfo: TemplateInfo
@@ -35,6 +39,7 @@ const babelTransform = ({ templateName, content }: { templateName: string; conte
           content: `PRISMA TEMPLATE: ${templateName}`,
           path: '/tmp/schema.prisma',
           datasourceUrlEnvironmentVariableName,
+          transformedPrismaSchemaContentEnvironmentVariableName,
         },
       }), // transform imports
       '@babel/plugin-transform-typescript', // strip types
