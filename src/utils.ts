@@ -5,8 +5,6 @@ export type Index<T> = Record<string, T>
 
 export const datasourceUrlEnvironmentVariableName = `PRISMA_CLOUD_PROJECT_DATASOURCE_URL`
 
-export const transformedPrismaSchemaContentEnvironmentVariableName = `TRANSFORMED_PRISMA_SCHEMA_CONTENT`
-
 /**
  * Source code helper for building nice separations between code sections
  */
