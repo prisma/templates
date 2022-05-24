@@ -73,19 +73,37 @@ export const testTemplate = (params: {
     // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
+    /**
+     * Setup the project. Write files to disk, install deps, etc.
+     */
     await ctx.fs.writeAsync(`.npmrc`, `scripts-prepend-node-path=true`)
     await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
+
+    /**
+     * Exit early for empty tempalte as there is nothing more to test.
+     */
     if (params.templateName === 'Empty') return
 
+    /**
+     * Drop database before running the tests case it wasn't cleaned up from the previous test run.
+     */
     await ctx.dropTestDatabase()
 
+    /**
+     * Test 1
+     * Check that the initialization script works. This includes running migrate triggering generators and executing the seed.
+     */
     const initResult = ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatch('')
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('The seed command has been executed.')
 
+    /**
+     * Test 2
+     * Check the seed again but this time using the derived module variant part of the template artifacts.
+     */
     // TODO only empty template does not have this artifact. Our short circuit above should narrow the type here...
     if ('prisma/seed.js' in ctx.template.artifacts) {
       const prisma = await ctx.getPrisma()
@@ -100,6 +118,10 @@ export const testTemplate = (params: {
       }
     }
 
+    /**
+     * Test 3
+     * Check the development project script. For most templates this will run some kind of sandbox script against the database.
+     */
     const devResult = ctx.run(`npm run dev`, { reject: true })
     expect(devResult.stderr).toMatch('')
     expect(devResult.stdout).toMatch(params.expectedDevOutput)
