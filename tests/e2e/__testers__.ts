@@ -121,12 +121,16 @@ export const testTemplate = (params: {
     /**
      * Test 3
      * Check the development project script. For most templates this will run some kind of sandbox script against the database.
+     *
+     * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
      */
-    const devResult = ctx.run(`npm run dev`, { reject: true })
-    expect(devResult.stderr).toMatch('')
-    expect(devResult.stdout).toMatch(params.expectedDevOutput)
+    if (ctx.template._tag !== 'Nextjs') {
+      const devResult = ctx.run(`npm run dev`, { reject: true })
+      expect(devResult.stderr).toMatch('')
+      expect(devResult.stdout).toMatch(params.expectedDevOutput)
+    }
 
-    // TODO Test the Vercel API
+    // TODO Test the Vercel API (next dev for Blog template)
     // await ctx.fs.writeAsync('.vercel/project.json', {
     //   projectId: 'prj_6yrTe9CGQagAQwGjr7JEejkxhz3A',
     //   orgId: 'team_ASKXQ5Yc1an2RqJc5BCI9rGw',
