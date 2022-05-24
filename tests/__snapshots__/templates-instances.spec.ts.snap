@@ -418,7 +418,7 @@ const users = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -1283,7 +1283,7 @@ const users = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -2187,7 +2187,7 @@ const users = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -3094,7 +3094,7 @@ const users = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -3959,7 +3959,7 @@ const users = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -5814,7 +5814,7 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -7032,7 +7032,7 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -8384,7 +8384,7 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -9749,7 +9749,7 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -10967,7 +10967,7 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -12400,7 +12400,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -13552,7 +13552,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -14794,7 +14794,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -16039,7 +16039,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -17191,7 +17191,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -18365,7 +18365,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -19148,7 +19148,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -19977,7 +19977,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -20806,7 +20806,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -21589,7 +21589,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -22412,7 +22412,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -23066,7 +23066,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -23748,7 +23748,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -24430,7 +24430,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {
@@ -25084,7 +25084,7 @@ const data = Array.from({
 }));
 
 async function main() {
-  const PrismaClient = await new Reflector.Client.getPrismaClient({
+  const PrismaClient = await Reflector.Client.getPrismaClient({
     useDataProxy: true,
     connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
     schema: {

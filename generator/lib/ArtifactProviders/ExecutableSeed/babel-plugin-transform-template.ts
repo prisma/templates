@@ -161,7 +161,7 @@ export function babelPluginTransformTemplate(
                 Babel.types.variableDeclarator(
                   Babel.types.identifier('PrismaClient'),
                   Babel.types.awaitExpression(
-                    Babel.types.newExpression(
+                    Babel.types.callExpression(
                       Babel.types.memberExpression(
                         Babel.types.identifier('Reflector.Client'),
                         Babel.types.identifier('getPrismaClient')
