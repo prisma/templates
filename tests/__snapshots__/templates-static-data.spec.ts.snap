@@ -2,68 +2,62 @@
 
 exports[`artifacts Blog 1`] = `
 Object {
-  "prisma/seed.mjs": Object {
-    "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
-import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextjs\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
+  "prisma/seed.js": Object {
+    "content": "\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", {
+    value: true
 });
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
+exports.run = run;
+var _faker = _interopRequireDefault(require(\\"faker\\"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const NUMBER_OF_USERS = 10;
 const MAX_POSTS = 10;
 const MAX_PROFILES = 2;
 const users = Array.from({
-  length: NUMBER_OF_USERS
-}).map((_, i) => ({
-  email: faker.internet.email(),
-  name: faker.name.firstName(),
-  posts: {
-    createMany: {
-      data: Array.from({
-        length: faker.datatype.number({
-          min: 0,
-          max: MAX_POSTS
+    length: NUMBER_OF_USERS
+}).map((_, i)=>({
+        email: _faker.default.internet.email(),
+        name: _faker.default.name.firstName(),
+        posts: {
+            createMany: {
+                data: Array.from({
+                    length: _faker.default.datatype.number({
+                        min: 0,
+                        max: MAX_POSTS
+                    })
+                }).map(()=>({
+                        content: _faker.default.lorem.paragraphs(),
+                        title: _faker.default.lorem.words()
+                    })
+                )
+            }
+        },
+        profiles: {
+            createMany: {
+                data: Array.from({
+                    length: _faker.default.datatype.number({
+                        min: 1,
+                        max: MAX_PROFILES
+                    })
+                }).map(()=>({
+                        bio: _faker.default.lorem.paragraph()
+                    })
+                )
+            }
+        }
+    })
+);
+async function run({ prisma  }) {
+    await prisma.$transaction(users.map((user)=>prisma.user.create({
+            data: user
         })
-      }).map(() => ({
-        content: faker.lorem.paragraphs(),
-        title: faker.lorem.words()
-      }))
-    }
-  },
-  profiles: {
-    createMany: {
-      data: Array.from({
-        length: faker.datatype.number({
-          min: 1,
-          max: MAX_PROFILES
-        })
-      }).map(() => ({
-        bio: faker.lorem.paragraph()
-      }))
-    }
-  }
-}));
-
-async function main() {
-  await prisma.$transaction(users.map(user => prisma.user.create({
-    data: user
-  })));
-}
-
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
-    "path": "prisma/seed.mjs",
+    ));
+}",
+    "path": "prisma/seed.js",
   },
 }
 `;
@@ -72,402 +66,371 @@ exports[`artifacts Empty 1`] = `Object {}`;
 
 exports[`artifacts Music Streaming Service 1`] = `
 Object {
-  "prisma/seed.mjs": Object {
-    "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
-import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
+  "prisma/seed.js": Object {
+    "content": "\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", {
+    value: true
 });
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
+exports.run = run;
+var _faker = _interopRequireDefault(require(\\"faker\\"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
 const NUMBER_OF_ARTISTS = 5;
 const NUMBER_OF_USERS = 10;
 const userIds = Array.from({
-  length: NUMBER_OF_USERS
-}).map(() => faker.datatype.uuid());
-
-async function main() {
-  // Create artists
-  await prisma.artist.createMany({
-    data: Array.from({
-      length: NUMBER_OF_ARTISTS
-    }).map(() => ({
-      name: faker.name.firstName()
-    }))
-  });
-  const artists = await prisma.artist.findMany(); // Create songs for each artist
-
-  for (const artist of artists) {
-    await prisma.album.create({
-      data: {
-        cover: faker.image.imageUrl(),
-        name: faker.random.words(2),
-        artists: {
-          connect: {
-            id: artist.id
-          }
-        },
-        songs: {
-          create: Array.from({
-            length: faker.datatype.number({
-              min: 2,
-              max: MAX_NUMBER_OF_SONGS_PER_ARTIST
+    length: NUMBER_OF_USERS
+}).map(()=>_faker.default.datatype.uuid()
+);
+async function run({ prisma  }) {
+    // Create artists
+    await prisma.artist.createMany({
+        data: Array.from({
+            length: NUMBER_OF_ARTISTS
+        }).map(()=>({
+                name: _faker.default.name.firstName()
             })
-          }).map(() => ({
-            artistId: artist.id,
-            fileUrl: faker.internet.url(),
-            length: faker.datatype.float(),
-            name: faker.name.firstName()
-          }))
-        }
-      }
+        )
     });
-  } // Create songs
-
-
-  const songs = await prisma.song.findMany();
-
-  for (const userId of userIds) {
-    // Create users
-    await prisma.user.create({
-      data: {
-        id: userId,
-        email: faker.internet.email(),
-        name: faker.name.firstName(),
-        interactions: {
-          create: Array.from({
-            length: faker.datatype.number({
-              min: 3,
-              max: songs.length
-            })
-          }).map(() => ({
-            playCount: faker.datatype.number({
-              min: 1,
-              max: 1000
-            }),
-            songId: songs[faker.datatype.number({
-              min: 0,
-              max: songs.length - 1
-            })].id,
-            // random boolean
-            isLiked: Math.random() < 0.5
-          }))
-        }
-      }
-    }); // Create Playlists
-
-    await prisma.playlist.create({
-      data: {
-        name: faker.random.words(2),
-        user: {
-          connect: {
-            id: userId
-          }
-        },
-        // each playlist will have a random list of songs
-        songs: {
-          connect: songs.slice(0, faker.datatype.number({
-            min: 1,
-            max: songs.length - 1
-          })).map(({
-            id
-          }) => ({
-            id
-          }))
-        }
-      }
-    });
-  }
-}
-
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
-    "path": "prisma/seed.mjs",
+    const artists = await prisma.artist.findMany();
+    // Create songs for each artist
+    for (const artist of artists){
+        await prisma.album.create({
+            data: {
+                cover: _faker.default.image.imageUrl(),
+                name: _faker.default.random.words(2),
+                artists: {
+                    connect: {
+                        id: artist.id
+                    }
+                },
+                songs: {
+                    create: Array.from({
+                        length: _faker.default.datatype.number({
+                            min: 2,
+                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
+                        })
+                    }).map(()=>({
+                            artistId: artist.id,
+                            fileUrl: _faker.default.internet.url(),
+                            length: _faker.default.datatype.float(),
+                            name: _faker.default.name.firstName()
+                        })
+                    )
+                }
+            }
+        });
+    }
+    // Create songs
+    const songs = await prisma.song.findMany();
+    for (const userId of userIds){
+        // Create users
+        await prisma.user.create({
+            data: {
+                id: userId,
+                email: _faker.default.internet.email(),
+                name: _faker.default.name.firstName(),
+                interactions: {
+                    create: Array.from({
+                        length: _faker.default.datatype.number({
+                            min: 3,
+                            max: songs.length
+                        })
+                    }).map(()=>({
+                            playCount: _faker.default.datatype.number({
+                                min: 1,
+                                max: 1000
+                            }),
+                            songId: songs[_faker.default.datatype.number({
+                                min: 0,
+                                max: songs.length - 1
+                            })].id,
+                            // random boolean
+                            isLiked: Math.random() < 0.5
+                        })
+                    )
+                }
+            }
+        });
+        // Create Playlists
+        await prisma.playlist.create({
+            data: {
+                name: _faker.default.random.words(2),
+                user: {
+                    connect: {
+                        id: userId
+                    }
+                },
+                // each playlist will have a random list of songs
+                songs: {
+                    connect: songs.slice(0, _faker.default.datatype.number({
+                        min: 1,
+                        max: songs.length - 1
+                    })).map(({ id  })=>({
+                            id
+                        })
+                    )
+                }
+            }
+        });
+    }
+}",
+    "path": "prisma/seed.js",
   },
 }
 `;
 
 exports[`artifacts Rentals Platform 1`] = `
 Object {
-  "prisma/seed.mjs": Object {
-    "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
-import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentals-platform\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
+  "prisma/seed.js": Object {
+    "content": "\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", {
+    value: true
 });
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
+exports.run = run;
+var _faker = _interopRequireDefault(require(\\"faker\\"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const NUMBER_OF_USERS = 10;
 const NUMBER_OF_ROOMS = 20;
 const roomIds = Array.from({
-  length: NUMBER_OF_ROOMS
-}).map(() => faker.datatype.uuid());
+    length: NUMBER_OF_ROOMS
+}).map(()=>_faker.default.datatype.uuid()
+);
 const rooms = Array.from({
-  length: NUMBER_OF_ROOMS
-}).map((_, i) => ({
-  id: roomIds[i],
-  price: faker.datatype.number({
-    min: 50,
-    max: 600
-  }),
-  // random address - example: b-365
-  address: \`\${faker.address.streetPrefix()}-\${faker.datatype.number({
-    min: 300,
-    max: 1
-  })}\`,
-  totalOccupancy: faker.datatype.number({
-    min: 1,
-    max: 5
-  }),
-  totalBedrooms: faker.datatype.number({
-    min: 1,
-    max: 5
-  }),
-  totalBathrooms: faker.datatype.number({
-    min: 1,
-    max: 5
-  }),
-  summary: faker.lorem.paragraph(),
-  media: Array.from({
-    length: faker.datatype.number({
-      min: 1,
-      max: 5
+    length: NUMBER_OF_ROOMS
+}).map((_, i)=>({
+        id: roomIds[i],
+        price: _faker.default.datatype.number({
+            min: 50,
+            max: 600
+        }),
+        // random address - example: b-365
+        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
+            min: 300,
+            max: 1
+        })}\`,
+        totalOccupancy: _faker.default.datatype.number({
+            min: 1,
+            max: 5
+        }),
+        totalBedrooms: _faker.default.datatype.number({
+            min: 1,
+            max: 5
+        }),
+        totalBathrooms: _faker.default.datatype.number({
+            min: 1,
+            max: 5
+        }),
+        summary: _faker.default.lorem.paragraph(),
+        media: Array.from({
+            length: _faker.default.datatype.number({
+                min: 1,
+                max: 5
+            })
+        }).map(()=>({
+                fileName: _faker.default.image.imageUrl()
+            })
+        )
     })
-  }).map(() => ({
-    fileName: faker.image.imageUrl()
-  }))
-}));
+);
 const data = Array.from({
-  length: NUMBER_OF_USERS
-}).map(() => ({
-  email: faker.internet.email(),
-  name: faker.name.firstName(),
-  reviews: Array.from({
-    length: faker.datatype.number({
-      max: 1,
-      min: 4
+    length: NUMBER_OF_USERS
+}).map(()=>({
+        email: _faker.default.internet.email(),
+        name: _faker.default.name.firstName(),
+        reviews: Array.from({
+            length: _faker.default.datatype.number({
+                max: 1,
+                min: 4
+            })
+        }).map(()=>({
+                comment: _faker.default.lorem.paragraph(),
+                rating: _faker.default.datatype.number({
+                    max: 1,
+                    min: 5
+                })
+            })
+        ),
+        // create random reservations per user
+        reservations: Array.from({
+            length: _faker.default.datatype.number({
+                min: 1,
+                max: 4
+            })
+        }).map(()=>{
+            const startDate = _faker.default.date.past();
+            const endDate = _faker.default.date.future();
+            const price = _faker.default.datatype.number({
+                min: 50,
+                max: 600
+            });
+            return {
+                startDate,
+                endDate,
+                price,
+                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
+                room: {
+                    connect: {
+                        id: roomIds[_faker.default.datatype.number({
+                            min: 0,
+                            max: NUMBER_OF_ROOMS - 1
+                        })]
+                    }
+                }
+            };
+        })
     })
-  }).map(() => ({
-    comment: faker.lorem.paragraph(),
-    rating: faker.datatype.number({
-      max: 1,
-      min: 5
-    })
-  })),
-  // create random reservations per user
-  reservations: Array.from({
-    length: faker.datatype.number({
-      min: 1,
-      max: 4
-    })
-  }).map(() => {
-    const startDate = faker.date.past();
-    const endDate = faker.date.future();
-    const price = faker.datatype.number({
-      min: 50,
-      max: 600
-    });
-    return {
-      startDate,
-      endDate,
-      price,
-      total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-      // difference between dates * price
-      room: {
-        connect: {
-          id: roomIds[faker.datatype.number({
-            min: 0,
-            max: NUMBER_OF_ROOMS - 1
-          })]
-        }
-      }
-    };
-  })
-}));
-
-async function main() {
-  rooms.forEach(async room => await prisma.room.create({
-    data: {
-      id: room.id,
-      address: room.address,
-      price: room.price,
-      summary: room.summary,
-      media: {
-        create: room.media
-      }
+);
+async function run({ prisma  }) {
+    rooms.forEach(async (room)=>await prisma.room.create({
+            data: {
+                id: room.id,
+                address: room.address,
+                price: room.price,
+                summary: room.summary,
+                media: {
+                    create: room.media
+                }
+            }
+        })
+    );
+    for (let entry of data){
+        await prisma.user.create({
+            data: {
+                email: entry.email,
+                name: entry.name,
+                reservations: {
+                    create: entry.reservations
+                },
+                reviews: {
+                    create: entry.reviews
+                }
+            }
+        });
     }
-  }));
-
-  for (let entry of data) {
-    await prisma.user.create({
-      data: {
-        email: entry.email,
-        name: entry.name,
-        reservations: {
-          create: entry.reservations
-        },
-        reviews: {
-          create: entry.reviews
-        }
-      }
-    });
-  }
-}
-
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
-    "path": "prisma/seed.mjs",
+}",
+    "path": "prisma/seed.js",
   },
 }
 `;
 
 exports[`artifacts SaaS 1`] = `
 Object {
-  "prisma/seed.mjs": Object {
-    "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
-import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: saas\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
+  "prisma/seed.js": Object {
+    "content": "\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", {
+    value: true
 });
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
+exports.run = run;
+var _faker = _interopRequireDefault(require(\\"faker\\"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const NUMBER_OF_USERS = 4;
 const NUMBER_OF_INVITES = 4;
 const data = Array.from({
-  length: NUMBER_OF_USERS
-}).map(() => ({
-  email: faker.internet.email(),
-  name: faker.name.firstName(),
-  account: {
-    stripeCustomerId: faker.datatype.uuid(),
-    stripeSubscriptionId: faker.datatype.uuid(),
-    isActive: true
-  },
-  invites: Array.from({
-    length: faker.datatype.number({
-      min: 0,
-      max: NUMBER_OF_INVITES
-    })
-  }).map(() => ({
-    email: faker.internet.email(),
-    dateSent: faker.date.future()
-  }))
-}));
-
-async function main() {
-  for (let entry of data) {
-    await prisma.user.create({
-      data: {
-        name: entry.name,
-        email: entry.email,
+    length: NUMBER_OF_USERS
+}).map(()=>({
+        email: _faker.default.internet.email(),
+        name: _faker.default.name.firstName(),
         account: {
-          create: {
-            stripeCustomerId: entry.account.stripeCustomerId,
-            stripeSubscriptionId: entry.account.stripeSubscriptionId,
-            isActive: true,
-            invites: {
-              create: entry.invites
+            stripeCustomerId: _faker.default.datatype.uuid(),
+            stripeSubscriptionId: _faker.default.datatype.uuid(),
+            isActive: true
+        },
+        invites: Array.from({
+            length: _faker.default.datatype.number({
+                min: 0,
+                max: NUMBER_OF_INVITES
+            })
+        }).map(()=>({
+                email: _faker.default.internet.email(),
+                dateSent: _faker.default.date.future()
+            })
+        )
+    })
+);
+async function run({ prisma  }) {
+    for (let entry of data){
+        await prisma.user.create({
+            data: {
+                name: entry.name,
+                email: entry.email,
+                account: {
+                    create: {
+                        stripeCustomerId: entry.account.stripeCustomerId,
+                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
+                        isActive: true,
+                        invites: {
+                            create: entry.invites
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-    });
-  }
-}
-
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
-    "path": "prisma/seed.mjs",
+        });
+    }
+}",
+    "path": "prisma/seed.js",
   },
 }
 `;
 
 exports[`artifacts URL Shortener 1`] = `
 Object {
-  "prisma/seed.mjs": Object {
-    "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
-import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: url-shortener\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
+  "prisma/seed.js": Object {
+    "content": "\\"use strict\\";
+Object.defineProperty(exports, \\"__esModule\\", {
+    value: true
 });
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
+exports.run = run;
+var _faker = _interopRequireDefault(require(\\"faker\\"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
 const NUMBER_OF_USERS = 4;
 const MAX_NUMBER_OF_LINKS = 5;
 const data = Array.from({
-  length: NUMBER_OF_USERS
-}).map(() => ({
-  email: faker.internet.email(),
-  name: faker.name.firstName(),
-  links: Array.from({
-    length: faker.datatype.number({
-      min: 0,
-      max: MAX_NUMBER_OF_LINKS
+    length: NUMBER_OF_USERS
+}).map(()=>({
+        email: _faker.default.internet.email(),
+        name: _faker.default.name.firstName(),
+        links: Array.from({
+            length: _faker.default.datatype.number({
+                min: 0,
+                max: MAX_NUMBER_OF_LINKS
+            })
+        }).map(()=>({
+                url: _faker.default.internet.url(),
+                shortUrl: _faker.default.internet.domainWord()
+            })
+        )
     })
-  }).map(() => ({
-    url: faker.internet.url(),
-    shortUrl: faker.internet.domainWord()
-  }))
-}));
-
-async function main() {
-  for (let entry of data) {
-    await prisma.user.create({
-      data: {
-        name: entry.name,
-        email: entry.email,
-        links: {
-          create: entry.links
-        }
-      }
-    });
-  }
-}
-
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
-    "path": "prisma/seed.mjs",
+);
+async function run({ prisma  }) {
+    for (let entry of data){
+        await prisma.user.create({
+            data: {
+                name: entry.name,
+                email: entry.email,
+                links: {
+                    create: entry.links
+                }
+            }
+        });
+    }
+}",
+    "path": "prisma/seed.js",
   },
 }
 `;
@@ -1450,7 +1413,7 @@ dist/
   "README.md": Object {
     "content": "# Music Streaming Service
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/musicStreamingService/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Music%20Streaming%20Service/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -2531,7 +2494,7 @@ dist/
   "README.md": Object {
     "content": "# Rentals Platform
 
-![Database Diagram](https://github.com/prisma/prisma-schema-examples/blob/main/rentalsPlatform/diagram.png?raw=true)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Rentals%20Platform/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -3532,7 +3495,7 @@ dist/
 
 Generic Prisma schema example for a SaaS that has a referral system.
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/saas/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/SaaS/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -4232,7 +4195,7 @@ dist/
   "README.md": Object {
     "content": "# URL Shortener
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/urlShortener/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/URL%20Shortener/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 

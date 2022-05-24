@@ -9,10 +9,11 @@ export const testTemplate = (params: {
   expectedDevOutput: RegExp | string
 }) => {
   jest.setTimeout(50_000)
+
   const ctx = konn()
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
-    .beforeAll(async () => {
+    .beforeAll(async (ctx) => {
       const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
         dataproxy: false,
@@ -23,10 +24,19 @@ export const testTemplate = (params: {
       const databaseUrlBase = 'postgres://prisma:prisma@localhost:5401'
       const databaseName = template.metadata.handles.snake
       const databaseUrl = `${databaseUrlBase}/${databaseName}`
+      const getPrismaClientModule = () => import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
+      const getPrisma = async () =>
+        new (await getPrismaClientModule()).PrismaClient({
+          datasources: {
+            db: {
+              url: databaseUrl,
+            },
+          },
+        })
 
       const dropTestDatabase = async () => {
-        const Prisma = await import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
-        const prisma = new Prisma.PrismaClient({
+        const PrismaClientModule = await getPrismaClientModule()
+        const prisma = new PrismaClientModule.PrismaClient({
           datasources: {
             db: {
               // Make sure this connection not on same database that we want to drop.
@@ -45,6 +55,7 @@ export const testTemplate = (params: {
       }
 
       return {
+        getPrisma,
         template,
         dropTestDatabase,
         databaseName,
@@ -62,24 +73,64 @@ export const testTemplate = (params: {
     // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
+    /**
+     * Setup the project. Write files to disk, install deps, etc.
+     */
     await ctx.fs.writeAsync(`.npmrc`, `scripts-prepend-node-path=true`)
     await Promise.all(values(ctx.template.files).map((file) => ctx.fs.writeAsync(file.path, file.content)))
     ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
+
+    /**
+     * Exit early for empty tempalte as there is nothing more to test.
+     */
     if (params.templateName === 'Empty') return
 
+    /**
+     * Drop database before running the tests case it wasn't cleaned up from the previous test run.
+     */
     await ctx.dropTestDatabase()
 
+    /**
+     * Test 1
+     * Check that the initialization script works. This includes running migrate triggering generators and executing the seed.
+     */
     const initResult = ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatch('')
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('The seed command has been executed.')
 
-    const devResult = ctx.run(`npm run dev`, { reject: true })
-    expect(devResult.stderr).toMatch('')
-    expect(devResult.stdout).toMatch(params.expectedDevOutput)
+    /**
+     * Test 2
+     * Check the seed again but this time using the derived module variant part of the template artifacts.
+     */
+    // TODO only empty template does not have this artifact. Our short circuit above should narrow the type here...
+    if ('prisma/seed.js' in ctx.template.artifacts) {
+      const prisma = await ctx.getPrisma()
+      try {
+        const seedModuleFile = ctx.template.artifacts['prisma/seed.js']
+        ctx.fs.write('seedModule.js', seedModuleFile.content)
+        const seedModule = require(ctx.fs.path('seedModule.js'))
+        // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
+        await seedModule.run({ prisma })
+      } finally {
+        await prisma.$disconnect()
+      }
+    }
 
-    // TODO Test the Vercel API
+    /**
+     * Test 3
+     * Check the development project script. For most templates this will run some kind of sandbox script against the database.
+     *
+     * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
+     */
+    if (ctx.template._tag !== 'Nextjs') {
+      const devResult = ctx.run(`npm run dev`, { reject: true })
+      expect(devResult.stderr).toMatch('')
+      expect(devResult.stdout).toMatch(params.expectedDevOutput)
+    }
+
+    // TODO Test the Vercel API (next dev for Blog template)
     // await ctx.fs.writeAsync('.vercel/project.json', {
     //   projectId: 'prj_6yrTe9CGQagAQwGjr7JEejkxhz3A',
     //   orgId: 'team_ASKXQ5Yc1an2RqJc5BCI9rGw',

@@ -45,8 +45,6 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@babel/core": "7.18.0",
-    "@babel/plugin-transform-typescript": "7.18.1",
     "@prisma-labs/prettier-config": "0.1.0",
     "@prisma/client": "3.14.0",
     "@prisma/sdk": "3.14.0",
