@@ -5,8 +5,8 @@ import { TemplateInfo } from '~/src/templates'
 import { File } from '~/src/types'
 import {
   datasourceUrlEnvironmentVariableName,
-  transformedPrismaSchemaContentEnvironmentVariableName,
   Index,
+  transformedPrismaSchemaContentEnvironmentVariableName,
 } from '~/src/utils'
 
 export const run: ArtifactProvider = <T extends Index<File>>(params: {

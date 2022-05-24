@@ -139,7 +139,7 @@ export function babelPluginTransformTemplate(
             path,
             {
               opts: {
-                schema: { datasourceUrlEnvironmentVariableName, content: schemaContent, path: schemaPath },
+                schema: { datasourceUrlEnvironmentVariableName, path: schemaPath },
               },
             }: { opts: BabelPluginTransformTemplateOptions }
           ) {

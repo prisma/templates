@@ -4,21 +4,8 @@ exports[`artifacts Blog 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
+import { Reflector } from \\"@prisma-spectrum/reflector\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: nextjs\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
-});
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 10;
 const MAX_POSTS = 10;
 const MAX_PROFILES = 2;
@@ -55,14 +42,21 @@ const users = Array.from({
 }));
 
 async function main() {
+  const PrismaClient = await new Reflector.Client.getPrismaClient({
+    useDataProxy: true,
+    connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
+    schema: {
+      contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+      path: \\"/tmp/schema.prisma\\"
+    }
+  });
+  const prisma = await new PrismaClient();
   await prisma.$transaction(users.map(user => prisma.user.create({
     data: user
   })));
 }
 
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
+main().finally(async () => {});",
     "path": "prisma/seed.mjs",
   },
 }
@@ -74,21 +68,8 @@ exports[`artifacts Music Streaming Service 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
+import { Reflector } from \\"@prisma-spectrum/reflector\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: music-streaming-service\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
-});
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
 const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
 const NUMBER_OF_ARTISTS = 5;
 const NUMBER_OF_USERS = 10;
@@ -97,6 +78,15 @@ const userIds = Array.from({
 }).map(() => faker.datatype.uuid());
 
 async function main() {
+  const PrismaClient = await new Reflector.Client.getPrismaClient({
+    useDataProxy: true,
+    connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
+    schema: {
+      contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+      path: \\"/tmp/schema.prisma\\"
+    }
+  });
+  const prisma = await new PrismaClient();
   // Create artists
   await prisma.artist.createMany({
     data: Array.from({
@@ -190,9 +180,7 @@ async function main() {
   }
 }
 
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
+main().finally(async () => {});",
     "path": "prisma/seed.mjs",
   },
 }
@@ -202,21 +190,8 @@ exports[`artifacts Rentals Platform 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
+import { Reflector } from \\"@prisma-spectrum/reflector\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: rentals-platform\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
-});
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 10;
 const NUMBER_OF_ROOMS = 20;
 const roomIds = Array.from({
@@ -306,6 +281,15 @@ const data = Array.from({
 }));
 
 async function main() {
+  const PrismaClient = await new Reflector.Client.getPrismaClient({
+    useDataProxy: true,
+    connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
+    schema: {
+      contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+      path: \\"/tmp/schema.prisma\\"
+    }
+  });
+  const prisma = await new PrismaClient();
   rooms.forEach(async room => await prisma.room.create({
     data: {
       id: room.id,
@@ -334,9 +318,7 @@ async function main() {
   }
 }
 
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
+main().finally(async () => {});",
     "path": "prisma/seed.mjs",
   },
 }
@@ -346,21 +328,8 @@ exports[`artifacts SaaS 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
+import { Reflector } from \\"@prisma-spectrum/reflector\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: saas\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
-});
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const NUMBER_OF_INVITES = 4;
 const data = Array.from({
@@ -385,6 +354,16 @@ const data = Array.from({
 }));
 
 async function main() {
+  const PrismaClient = await new Reflector.Client.getPrismaClient({
+    useDataProxy: true,
+    connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
+    schema: {
+      contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+      path: \\"/tmp/schema.prisma\\"
+    }
+  });
+  const prisma = await new PrismaClient();
+
   for (let entry of data) {
     await prisma.user.create({
       data: {
@@ -405,9 +384,7 @@ async function main() {
   }
 }
 
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
+main().finally(async () => {});",
     "path": "prisma/seed.mjs",
   },
 }
@@ -417,21 +394,8 @@ exports[`artifacts URL Shortener 1`] = `
 Object {
   "prisma/seed.mjs": Object {
     "content": "import path from \\"path\\";
-import PCW from \\"@prisma/studio-pcw\\";
+import { Reflector } from \\"@prisma-spectrum/reflector\\";
 import faker from 'faker';
-const schema = \`PRISMA TEMPLATE: url-shortener\`;
-const schemaPath = \\"/tmp/schema.prisma\\";
-const pcw = new PCW.PCW(schema, schemaPath, {
-  PRISMA_CLOUD_PROJECT_DATASOURCE_URL: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL
-}, {
-  forcePrismaLibrary: true,
-  resolve: {
-    \\".prisma/client\\": path.join(process.cwd(), \\"node_modules/.prisma/client/index.js\\")
-  }
-});
-const {
-  prisma: prisma
-} = await pcw.getPrismaClient();
 const NUMBER_OF_USERS = 4;
 const MAX_NUMBER_OF_LINKS = 5;
 const data = Array.from({
@@ -451,6 +415,16 @@ const data = Array.from({
 }));
 
 async function main() {
+  const PrismaClient = await new Reflector.Client.getPrismaClient({
+    useDataProxy: true,
+    connectionString: process.env.PRISMA_CLOUD_PROJECT_DATASOURCE_URL,
+    schema: {
+      contents: process.env.TRANSFORMED_PRISMA_SCHEMA_CONTENT,
+      path: \\"/tmp/schema.prisma\\"
+    }
+  });
+  const prisma = await new PrismaClient();
+
   for (let entry of data) {
     await prisma.user.create({
       data: {
@@ -464,9 +438,7 @@ async function main() {
   }
 }
 
-main().finally(async () => {
-  await prisma.$disconnect();
-});",
+main().finally(async () => {});",
     "path": "prisma/seed.mjs",
   },
 }
@@ -1450,7 +1422,7 @@ dist/
   "README.md": Object {
     "content": "# Music Streaming Service
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/musicStreamingService/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Music%20Streaming%20Service/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -2531,7 +2503,7 @@ dist/
   "README.md": Object {
     "content": "# Rentals Platform
 
-![Database Diagram](https://github.com/prisma/prisma-schema-examples/blob/main/rentalsPlatform/diagram.png?raw=true)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Rentals%20Platform/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -3532,7 +3504,7 @@ dist/
 
 Generic Prisma schema example for a SaaS that has a referral system.
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/saas/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/SaaS/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
@@ -4232,7 +4204,7 @@ dist/
   "README.md": Object {
     "content": "# URL Shortener
 
-![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/urlShortener/diagram.png)
+![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/URL%20Shortener/diagram.png)
 
 (Generated via https://github.com/notiz-dev/prisma-dbml-generator + https://dbdiagram.io)
 
