@@ -32,8 +32,7 @@ const users = Array.from({
                 }).map(()=>({
                         content: _faker.default.lorem.paragraphs(),
                         title: _faker.default.lorem.words()
-                    })
-                )
+                    }))
             }
         },
         profiles: {
@@ -45,17 +44,14 @@ const users = Array.from({
                     })
                 }).map(()=>({
                         bio: _faker.default.lorem.paragraph()
-                    })
-                )
+                    }))
             }
         }
-    })
-);
+    }));
 async function run({ prisma  }) {
     await prisma.$transaction(users.map((user)=>prisma.user.create({
             data: user
-        })
-    ));
+        })));
 }",
     "path": "prisma/seed.js",
   },
@@ -83,8 +79,7 @@ const NUMBER_OF_ARTISTS = 5;
 const NUMBER_OF_USERS = 10;
 const userIds = Array.from({
     length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid()
-);
+}).map(()=>_faker.default.datatype.uuid());
 async function run({ prisma  }) {
     // Create artists
     await prisma.artist.createMany({
@@ -92,8 +87,7 @@ async function run({ prisma  }) {
             length: NUMBER_OF_ARTISTS
         }).map(()=>({
                 name: _faker.default.name.firstName()
-            })
-        )
+            }))
     });
     const artists = await prisma.artist.findMany();
     // Create songs for each artist
@@ -118,8 +112,7 @@ async function run({ prisma  }) {
                             fileUrl: _faker.default.internet.url(),
                             length: _faker.default.datatype.float(),
                             name: _faker.default.name.firstName()
-                        })
-                    )
+                        }))
                 }
             }
         });
@@ -150,8 +143,7 @@ async function run({ prisma  }) {
                             })].id,
                             // random boolean
                             isLiked: Math.random() < 0.5
-                        })
-                    )
+                        }))
                 }
             }
         });
@@ -171,8 +163,7 @@ async function run({ prisma  }) {
                         max: songs.length - 1
                     })).map(({ id  })=>({
                             id
-                        })
-                    )
+                        }))
                 }
             }
         });
@@ -201,8 +192,7 @@ const NUMBER_OF_USERS = 10;
 const NUMBER_OF_ROOMS = 20;
 const roomIds = Array.from({
     length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid()
-);
+}).map(()=>_faker.default.datatype.uuid());
 const rooms = Array.from({
     length: NUMBER_OF_ROOMS
 }).map((_, i)=>({
@@ -236,10 +226,8 @@ const rooms = Array.from({
             })
         }).map(()=>({
                 fileName: _faker.default.image.imageUrl()
-            })
-        )
-    })
-);
+            }))
+    }));
 const data = Array.from({
     length: NUMBER_OF_USERS
 }).map(()=>({
@@ -256,8 +244,7 @@ const data = Array.from({
                     max: 1,
                     min: 5
                 })
-            })
-        ),
+            })),
         // create random reservations per user
         reservations: Array.from({
             length: _faker.default.datatype.number({
@@ -286,8 +273,7 @@ const data = Array.from({
                 }
             };
         })
-    })
-);
+    }));
 async function run({ prisma  }) {
     rooms.forEach(async (room)=>await prisma.room.create({
             data: {
@@ -299,8 +285,7 @@ async function run({ prisma  }) {
                     create: room.media
                 }
             }
-        })
-    );
+        }));
     for (let entry of data){
         await prisma.user.create({
             data: {
@@ -355,10 +340,8 @@ const data = Array.from({
         }).map(()=>({
                 email: _faker.default.internet.email(),
                 dateSent: _faker.default.date.future()
-            })
-        )
-    })
-);
+            }))
+    }));
 async function run({ prisma  }) {
     for (let entry of data){
         await prisma.user.create({
@@ -413,10 +396,8 @@ const data = Array.from({
         }).map(()=>({
                 url: _faker.default.internet.url(),
                 shortUrl: _faker.default.internet.domainWord()
-            })
-        )
-    })
-);
+            }))
+    }));
 async function run({ prisma  }) {
     for (let entry of data){
         await prisma.user.create({
