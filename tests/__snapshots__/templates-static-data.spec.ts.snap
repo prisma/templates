@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`artifacts Blog 1`] = `undefined`;
-
-exports[`artifacts Empty 1`] = `undefined`;
-
-exports[`artifacts Music Streaming Service 1`] = `undefined`;
-
-exports[`artifacts Rentals Platform 1`] = `undefined`;
-
-exports[`artifacts SaaS 1`] = `undefined`;
-
-exports[`artifacts URL Shortener 1`] = `undefined`;
-
 exports[`files Blog 1`] = `
 Object {
   ".eslintrc.json": Object {

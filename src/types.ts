@@ -1,13 +1,11 @@
 import { MigrationSql } from './logic'
 import { Index } from './utils'
 import type { Reflector } from '@prisma-spectrum/reflector'
+import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 
 export * from './generated/types'
 
-export abstract class AbstractTemplate<
-  FilesIndex extends Index<File> = Index<File>,
-  ArtifactsIndex extends Index<File> = Index<File>
-> {
+export abstract class AbstractTemplate<FilesIndex extends Index<File> = Index<File>> {
   public abstract _tag: string
   public abstract metadata: {
     handles: {
@@ -22,8 +20,8 @@ export abstract class AbstractTemplate<
     description: string
   }
   public abstract files: FilesIndex
-  // public abstract artifacts: ArtifactsIndex
   public abstract migrationSql: MigrationSql.MigrationSql
+  public abstract seed: (params: { prisma: ClientBase }) => Promise<void>
 }
 
 export type File = {

@@ -103,10 +103,8 @@ export const testTemplate = (params: {
 
     /**
      * Test 2
-     * Check the seed again but this time using the derived module variant part of the template artifacts.
+     * Check the seed again but this time using the derived seed function.
      */
-    // TODO only empty template does not have this artifact. Our short circuit above should narrow the type here...
-    // if ('prisma/seed.js' in ctx.template.artifacts) {
     const prisma = await ctx.getPrisma()
     try {
       // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
@@ -114,7 +112,6 @@ export const testTemplate = (params: {
     } finally {
       await prisma.$disconnect()
     }
-    // }
 
     /**
      * Test 3
