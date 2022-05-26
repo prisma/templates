@@ -7,13 +7,6 @@ describe('files', () => {
     })
   })
 })
-describe('artifacts', () => {
-  Object.values(PrismaTemplates.Templates).forEach((Template) => {
-    it(Template.metadata.displayName, () => {
-      expect(Template.artifacts).toMatchSnapshot()
-    })
-  })
-})
 describe('metadata', () => {
   Object.values(PrismaTemplates.Templates).forEach((Template) => {
     it(Template.metadata.displayName, () => {

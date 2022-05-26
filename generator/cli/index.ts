@@ -9,6 +9,8 @@ const args = arg({
   '--download-templates-repo': Boolean,
   '--generate-migration-sql': Boolean,
   '--generate-type-script': Boolean,
+  '--prettier': Boolean,
+  '--no-cache': Boolean,
 })
 import * as Execa from 'execa'
 import { log } from 'floggy'
@@ -37,7 +39,7 @@ async function main(): Promise<void> {
   const result = Execa.sync('./scripts/getReflectTemplatesCacheKey.sh')
   const cacheKeyFresh = JSON.parse(Buffer.from(result.stdout, 'base64').toString('utf-8')) as JsonObject
   const generatedDirExists = FS.exists(generatedDir)
-  if (generatedDirExists && isEqual(cacheKeyStored, cacheKeyFresh)) {
+  if (generatedDirExists && isEqual(cacheKeyStored, cacheKeyFresh) && !args['--no-cache']) {
     moduleLog.warn('cache_hit', {
       message: `delete ${generatedDir} or ${cacheKeyFilePath} to force refresh`,
     })
@@ -64,7 +66,11 @@ async function main(): Promise<void> {
   }
 
   if (args['--generate-type-script']) {
-    generateTypeScript({ templatesRepoDir, outputDir: generatedDir })
+    await generateTypeScript({
+      templatesRepoDir,
+      outputDir: generatedDir,
+      prettier: args['--prettier'] ?? false,
+    })
   }
 
   if (!isEqual(cacheKeyStored, cacheKeyFresh)) {

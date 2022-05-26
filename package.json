@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@prisma-spectrum/reflector": "^0.6.3",
+    "faker": "5.5.3",
     "lodash": "^4.17.21",
     "tslib": "^2.3.1"
   },
