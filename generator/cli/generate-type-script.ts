@@ -8,6 +8,7 @@ import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
 import { upperFirst } from 'lodash'
 import * as Path from 'path'
+import * as Prettier from 'prettier'
 
 const log = rootLog.child('generateTypeScript')
 
@@ -469,7 +470,5 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
   return sourceCode
 }
-
-import * as Prettier from 'prettier'
 
 export default run
