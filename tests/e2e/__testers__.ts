@@ -2,6 +2,7 @@ import { PrismaTemplates } from '../../src'
 import { konn, providers } from 'konn'
 import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
+import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 
 export const testTemplate = (params: {
   templateName: PrismaTemplates.$Types.Template['_tag']
@@ -32,7 +33,7 @@ export const testTemplate = (params: {
               url: databaseUrl,
             },
           },
-        })
+        }) as ClientBase
 
       const dropTestDatabase = async () => {
         const PrismaClientModule = await getPrismaClientModule()
@@ -84,7 +85,7 @@ export const testTemplate = (params: {
     /**
      * Exit early for empty tempalte as there is nothing more to test.
      */
-    if (params.templateName === 'Empty') return
+    if (ctx.template._tag === 'Empty') return
 
     /**
      * Drop database before running the tests case it wasn't cleaned up from the previous test run.
@@ -105,18 +106,15 @@ export const testTemplate = (params: {
      * Check the seed again but this time using the derived module variant part of the template artifacts.
      */
     // TODO only empty template does not have this artifact. Our short circuit above should narrow the type here...
-    if ('prisma/seed.js' in ctx.template.artifacts) {
-      const prisma = await ctx.getPrisma()
-      try {
-        const seedModuleFile = ctx.template.artifacts['prisma/seed.js']
-        ctx.fs.write('seedModule.js', seedModuleFile.content)
-        const seedModule = require(ctx.fs.path('seedModule.js'))
-        // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
-        await seedModule.run({ prisma })
-      } finally {
-        await prisma.$disconnect()
-      }
+    // if ('prisma/seed.js' in ctx.template.artifacts) {
+    const prisma = await ctx.getPrisma()
+    try {
+      // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
+      await ctx.template.seed({ prisma })
+    } finally {
+      await prisma.$disconnect()
     }
+    // }
 
     /**
      * Test 3

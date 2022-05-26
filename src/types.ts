@@ -22,7 +22,7 @@ export abstract class AbstractTemplate<
     description: string
   }
   public abstract files: FilesIndex
-  public abstract artifacts: ArtifactsIndex
+  // public abstract artifacts: ArtifactsIndex
   public abstract migrationSql: MigrationSql.MigrationSql
 }
 

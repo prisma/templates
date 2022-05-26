@@ -1,4 +1,4 @@
-import { ArtifactProviders } from '../lib/ArtifactProviders'
+import { createSeedFunction } from '../lib/SeedFunction'
 import { getTemplateInfos, TemplateInfo } from '~/src/templates'
 import { File } from '~/src/types'
 import { escapeBackticks, indentBlock, sourceCodeSectionHeader, sourceCodeSectionHeader2 } from '~/src/utils'
@@ -14,9 +14,13 @@ const log = rootLog.child('generateTypeScript')
 const handleKinds = [`kebab`, `pascal`, `camel`, `snake`, `upper`] as const
 
 /**
- * Generate TypeScript code for templates in given dir.
+ * Generate TypeScript code for templates in given dir .
  */
-export default function (params: { templatesRepoDir: string; outputDir: string }): void {
+const run = async (params: {
+  templatesRepoDir: string
+  outputDir: string
+  prettier: boolean
+}): Promise<void> => {
   const { templatesRepoDir, outputDir } = params
 
   log.info(`generating type-script code to ${outputDir}`)
@@ -181,13 +185,26 @@ export default function (params: { templatesRepoDir: string; outputDir: string }
     `,
   })
 
+  const prettierConfigPath = await Prettier.resolveConfigFile(process.cwd())
+  if (!prettierConfigPath) throw new Error(`Could not find prettier config file.`)
+
+  const prettierConfig = await Prettier.resolveConfig(prettierConfigPath)
+  if (!prettierConfig) throw new Error(`Could not read prettier config file.`)
+
   fileOutputs.push(
     ...templateInfos.map((_) => {
       const sourceCodePath = Path.join(outputDir, `templates/${_.handles.pascal.value}.ts`)
+      const sourceCodeUnformatted = createSourceCodeTemplate({ templateInfo: _, templatesRepoDir })
+      const sourceCode = params.prettier
+        ? Prettier.format(sourceCodeUnformatted, {
+            ...prettierConfig,
+            parser: 'typescript',
+          })
+        : sourceCodeUnformatted
 
       return {
         path: sourceCodePath,
-        content: createSourceCodeTemplate({ templateInfo: _, templatesRepoDir }),
+        content: sourceCode,
       }
     })
   )
@@ -217,30 +234,9 @@ const createSourceCodeTemplate = (params: {
       content: FS.read(filePath)!,
     }))
 
-  const artifacts: File[] = Object.values(ArtifactProviders).reduce((artifacts, artifactProvider) => {
-    const newArtifacts = artifactProvider.run({
-      templateInfo,
-      files: files.reduce((index, file) => {
-        return Object.assign(index, { [file.path]: file })
-      }, {}),
-    })
-
-    return [...artifacts, ...newArtifacts]
-  }, [] as File[])
+  const prismaSeedFile = files.find((_) => _.path === 'prisma/seed.ts')
 
   const filesByPath = files
-    .map((f) => {
-      // cannot use endent here because it gets messed up by inner endent
-      return `'${f.path}': {
-  path: '${f.path}' as const,
-  content: endent\`
-${indentBlock(4, escapeBackticks(f.content))}
-\`
-}`
-    })
-    .join(',\n')
-
-  const artifactsByPath = artifacts
     .map((f) => {
       // cannot use endent here because it gets messed up by inner endent
       return `'${f.path}': {
@@ -260,6 +256,12 @@ ${indentBlock(4, escapeBackticks(f.content))}
        * 
        * It contains data about the "${templateInfo.displayName}" template.
        */
+
+      // Disable TS type checking because the emitted seed function body otherwise has type errors.
+      // Once https://github.com/Microsoft/TypeScript/issues/19573 is shipped we can disable TS 
+      // type checking on just the seed function.
+      // @ts-nocheck
+
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
@@ -318,12 +320,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
         ${filesByPath}
       }
 
-      ${sourceCodeSectionHeader('Artifacts')}
-
-      const artifacts = {
-        ${artifactsByPath}
-      }
-
       ${sourceCodeSectionHeader('Parameters')}
 
       type TemplateParameters = BaseTemplateParameters
@@ -337,6 +333,13 @@ ${indentBlock(4, escapeBackticks(f.content))}
         referentialIntegrity: Reflector.Schema.referentialIntegritySettingValueDefault,
       }
 
+      /**
+       * Run the seed script for this template.
+       * 
+       * @remarks This is a version of the seed script from the template that has been transformed into a runnable parameterized function.
+       */
+      const seed = ${createSeedFunction({ content: prismaSeedFile?.content ?? '' })}
+
       ${sourceCodeSectionHeader('Class')}
 
       /**
@@ -344,7 +347,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
        *
        * ${templateInfo.description}
        */
-      class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files, typeof artifacts> {
+      class ${templateInfo.handles.pascal.value} implements AbstractTemplate<typeof files> {
 
         /**
          * Type brand for discriminant union use-cases.
@@ -363,16 +366,13 @@ ${indentBlock(4, escapeBackticks(f.content))}
         static files = files
 
         /**
-         * Derived assets from the template files.
-         */
-        static artifacts = artifacts
-
-        /**
          * Metadata about the parameters accepted by this template.
          */
         static parameters = {
           defaults: templateParameterDefaults
         }
+
+        static seed = seed
 
         ${sourceCodeSectionHeader2('Instance Properties')}
 
@@ -386,16 +386,13 @@ ${indentBlock(4, escapeBackticks(f.content))}
          */
         public metadata = metadata
 
+        public seed = seed
+
         /**
          * Template files indexed by their path on disk. Note that the files on a template class instance can
          * have different contents than the files on template class constructor.
          */
         public files = files
-
-        /**
-         * Derived assets from the template files.
-         */
-        public artifacts = artifacts
 
         /**
          * SQL commands that taken together will put the database into a state reflecting the initial Prisma schema of this template.
@@ -458,11 +455,6 @@ ${indentBlock(4, escapeBackticks(f.content))}
         export type Files = typeof files
 
         /**
-         * Derived assets from the template files.
-         */
-        export type Artifacts = typeof artifacts
-
-        /**
          * Parameters accepted by this template.
          */
         export type Parameters = TemplateParameters
@@ -477,3 +469,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
 
   return sourceCode
 }
+
+import * as Prettier from 'prettier'
+
+export default run

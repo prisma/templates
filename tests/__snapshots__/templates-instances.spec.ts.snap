@@ -377,61 +377,6 @@ Object {
 exports[`with custom datasourceProvider Blog X mongodb 1`] = `
 Nextjs {
   "_tag": "Nextjs",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const MAX_POSTS = 10;
-const MAX_PROFILES = 2;
-const users = Array.from({
-    length: NUMBER_OF_USERS
-}).map((_, i)=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        posts: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 0,
-                        max: MAX_POSTS
-                    })
-                }).map(()=>({
-                        content: _faker.default.lorem.paragraphs(),
-                        title: _faker.default.lorem.words()
-                    }))
-            }
-        },
-        profiles: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 1,
-                        max: MAX_PROFILES
-                    })
-                }).map(()=>({
-                        bio: _faker.default.lorem.paragraph()
-                    }))
-            }
-        }
-    }));
-async function run({ prisma  }) {
-    await prisma.$transaction(users.map((user)=>prisma.user.create({
-            data: user
-        })));
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".eslintrc.json": Object {
       "content": "{
@@ -1232,67 +1177,13 @@ a {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Blog X mysql 1`] = `
 Nextjs {
   "_tag": "Nextjs",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const MAX_POSTS = 10;
-const MAX_PROFILES = 2;
-const users = Array.from({
-    length: NUMBER_OF_USERS
-}).map((_, i)=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        posts: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 0,
-                        max: MAX_POSTS
-                    })
-                }).map(()=>({
-                        content: _faker.default.lorem.paragraphs(),
-                        title: _faker.default.lorem.words()
-                    }))
-            }
-        },
-        profiles: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 1,
-                        max: MAX_PROFILES
-                    })
-                }).map(()=>({
-                        bio: _faker.default.lorem.paragraph()
-                    }))
-            }
-        }
-    }));
-async function run({ prisma  }) {
-    await prisma.$transaction(users.map((user)=>prisma.user.create({
-            data: user
-        })));
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".eslintrc.json": Object {
       "content": "{
@@ -2132,67 +2023,13 @@ ALTER TABLE Post ADD CONSTRAINT Post_author_id_fkey FOREIGN KEY (author_id) REFE
 -- AddForeignKey
 ALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE RESTRICT ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Blog X postgres 1`] = `
 Nextjs {
   "_tag": "Nextjs",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const MAX_POSTS = 10;
-const MAX_PROFILES = 2;
-const users = Array.from({
-    length: NUMBER_OF_USERS
-}).map((_, i)=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        posts: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 0,
-                        max: MAX_POSTS
-                    })
-                }).map(()=>({
-                        content: _faker.default.lorem.paragraphs(),
-                        title: _faker.default.lorem.words()
-                    }))
-            }
-        },
-        profiles: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 1,
-                        max: MAX_PROFILES
-                    })
-                }).map(()=>({
-                        bio: _faker.default.lorem.paragraph()
-                    }))
-            }
-        }
-    }));
-async function run({ prisma  }) {
-    await prisma.$transaction(users.map((user)=>prisma.user.create({
-            data: user
-        })));
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".eslintrc.json": Object {
       "content": "{
@@ -3035,67 +2872,13 @@ ALTER TABLE \\"Post\\" ADD CONSTRAINT \\"Post_author_id_fkey\\" FOREIGN KEY (\\"
 -- AddForeignKey
 ALTER TABLE \\"Profile\\" ADD CONSTRAINT \\"Profile_user_id_fkey\\" FOREIGN KEY (\\"user_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Blog X sqlite 1`] = `
 Nextjs {
   "_tag": "Nextjs",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const MAX_POSTS = 10;
-const MAX_PROFILES = 2;
-const users = Array.from({
-    length: NUMBER_OF_USERS
-}).map((_, i)=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        posts: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 0,
-                        max: MAX_POSTS
-                    })
-                }).map(()=>({
-                        content: _faker.default.lorem.paragraphs(),
-                        title: _faker.default.lorem.words()
-                    }))
-            }
-        },
-        profiles: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 1,
-                        max: MAX_PROFILES
-                    })
-                }).map(()=>({
-                        bio: _faker.default.lorem.paragraph()
-                    }))
-            }
-        }
-    }));
-async function run({ prisma  }) {
-    await prisma.$transaction(users.map((user)=>prisma.user.create({
-            data: user
-        })));
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".eslintrc.json": Object {
       "content": "{
@@ -3896,67 +3679,13 @@ a {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Blog X sqlserver 1`] = `
 Nextjs {
   "_tag": "Nextjs",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const MAX_POSTS = 10;
-const MAX_PROFILES = 2;
-const users = Array.from({
-    length: NUMBER_OF_USERS
-}).map((_, i)=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        posts: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 0,
-                        max: MAX_POSTS
-                    })
-                }).map(()=>({
-                        content: _faker.default.lorem.paragraphs(),
-                        title: _faker.default.lorem.words()
-                    }))
-            }
-        },
-        profiles: {
-            createMany: {
-                data: Array.from({
-                    length: _faker.default.datatype.number({
-                        min: 1,
-                        max: MAX_PROFILES
-                    })
-                }).map(()=>({
-                        bio: _faker.default.lorem.paragraph()
-                    }))
-            }
-        }
-    }));
-async function run({ prisma  }) {
-    await prisma.$transaction(users.map((user)=>prisma.user.create({
-            data: user
-        })));
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".eslintrc.json": Object {
       "content": "{
@@ -4795,13 +4524,13 @@ ALTER TABLE [dbo].[Post] ADD CONSTRAINT [Post_author_id_fkey] FOREIGN KEY ([auth
 -- AddForeignKey
 ALTER TABLE [dbo].[Profile] ADD CONSTRAINT [Profile_user_id_fkey] FOREIGN KEY ([user_id]) REFERENCES [dbo].[User]([user_id]) ON DELETE NO ACTION ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Empty X mongodb 1`] = `
 Empty {
   "_tag": "Empty",
-  "artifacts": Object {},
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -4991,13 +4720,13 @@ export async function seed() {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Empty X mysql 1`] = `
 Empty {
   "_tag": "Empty",
-  "artifacts": Object {},
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -5187,13 +4916,13 @@ export async function seed() {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Empty X postgres 1`] = `
 Empty {
   "_tag": "Empty",
-  "artifacts": Object {},
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -5383,13 +5112,13 @@ export async function seed() {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Empty X sqlite 1`] = `
 Empty {
   "_tag": "Empty",
-  "artifacts": Object {},
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -5579,13 +5308,13 @@ export async function seed() {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Empty X sqlserver 1`] = `
 Empty {
   "_tag": "Empty",
-  "artifacts": Object {},
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -5775,123 +5504,13 @@ export async function seed() {
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Music Streaming Service X mongodb 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
-const NUMBER_OF_ARTISTS = 5;
-const NUMBER_OF_USERS = 10;
-const userIds = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid());
-async function run({ prisma  }) {
-    // Create artists
-    await prisma.artist.createMany({
-        data: Array.from({
-            length: NUMBER_OF_ARTISTS
-        }).map(()=>({
-                name: _faker.default.name.firstName()
-            }))
-    });
-    const artists = await prisma.artist.findMany();
-    // Create songs for each artist
-    for (const artist of artists){
-        await prisma.album.create({
-            data: {
-                cover: _faker.default.image.imageUrl(),
-                name: _faker.default.random.words(2),
-                artists: {
-                    connect: {
-                        id: artist.id
-                    }
-                },
-                songs: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 2,
-                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-                        })
-                    }).map(()=>({
-                            artistId: artist.id,
-                            fileUrl: _faker.default.internet.url(),
-                            length: _faker.default.datatype.float(),
-                            name: _faker.default.name.firstName()
-                        }))
-                }
-            }
-        });
-    }
-    // Create songs
-    const songs = await prisma.song.findMany();
-    for (const userId of userIds){
-        // Create users
-        await prisma.user.create({
-            data: {
-                id: userId,
-                email: _faker.default.internet.email(),
-                name: _faker.default.name.firstName(),
-                interactions: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 3,
-                            max: songs.length
-                        })
-                    }).map(()=>({
-                            playCount: _faker.default.datatype.number({
-                                min: 1,
-                                max: 1000
-                            }),
-                            songId: songs[_faker.default.datatype.number({
-                                min: 0,
-                                max: songs.length - 1
-                            })].id,
-                            // random boolean
-                            isLiked: Math.random() < 0.5
-                        }))
-                }
-            }
-        });
-        // Create Playlists
-        await prisma.playlist.create({
-            data: {
-                name: _faker.default.random.words(2),
-                user: {
-                    connect: {
-                        id: userId
-                    }
-                },
-                // each playlist will have a random list of songs
-                songs: {
-                    connect: songs.slice(0, _faker.default.datatype.number({
-                        min: 1,
-                        max: songs.length - 1
-                    })).map(({ id  })=>({
-                            id
-                        }))
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -6985,123 +6604,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Music Streaming Service X mysql 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
-const NUMBER_OF_ARTISTS = 5;
-const NUMBER_OF_USERS = 10;
-const userIds = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid());
-async function run({ prisma  }) {
-    // Create artists
-    await prisma.artist.createMany({
-        data: Array.from({
-            length: NUMBER_OF_ARTISTS
-        }).map(()=>({
-                name: _faker.default.name.firstName()
-            }))
-    });
-    const artists = await prisma.artist.findMany();
-    // Create songs for each artist
-    for (const artist of artists){
-        await prisma.album.create({
-            data: {
-                cover: _faker.default.image.imageUrl(),
-                name: _faker.default.random.words(2),
-                artists: {
-                    connect: {
-                        id: artist.id
-                    }
-                },
-                songs: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 2,
-                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-                        })
-                    }).map(()=>({
-                            artistId: artist.id,
-                            fileUrl: _faker.default.internet.url(),
-                            length: _faker.default.datatype.float(),
-                            name: _faker.default.name.firstName()
-                        }))
-                }
-            }
-        });
-    }
-    // Create songs
-    const songs = await prisma.song.findMany();
-    for (const userId of userIds){
-        // Create users
-        await prisma.user.create({
-            data: {
-                id: userId,
-                email: _faker.default.internet.email(),
-                name: _faker.default.name.firstName(),
-                interactions: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 3,
-                            max: songs.length
-                        })
-                    }).map(()=>({
-                            playCount: _faker.default.datatype.number({
-                                min: 1,
-                                max: 1000
-                            }),
-                            songId: songs[_faker.default.datatype.number({
-                                min: 0,
-                                max: songs.length - 1
-                            })].id,
-                            // random boolean
-                            isLiked: Math.random() < 0.5
-                        }))
-                }
-            }
-        });
-        // Create Playlists
-        await prisma.playlist.create({
-            data: {
-                name: _faker.default.random.words(2),
-                user: {
-                    connect: {
-                        id: userId
-                    }
-                },
-                // each playlist will have a random list of songs
-                songs: {
-                    connect: songs.slice(0, _faker.default.datatype.number({
-                        min: 1,
-                        max: songs.length - 1
-                    })).map(({ id  })=>({
-                            id
-                        }))
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -8329,123 +7838,13 @@ ALTER TABLE _PlaylistToSong ADD CONSTRAINT _PlaylistToSong_A_fkey FOREIGN KEY (A
 -- AddForeignKey
 ALTER TABLE _PlaylistToSong ADD CONSTRAINT _PlaylistToSong_B_fkey FOREIGN KEY (B) REFERENCES Song(id) ON DELETE CASCADE ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Music Streaming Service X postgres 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
-const NUMBER_OF_ARTISTS = 5;
-const NUMBER_OF_USERS = 10;
-const userIds = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid());
-async function run({ prisma  }) {
-    // Create artists
-    await prisma.artist.createMany({
-        data: Array.from({
-            length: NUMBER_OF_ARTISTS
-        }).map(()=>({
-                name: _faker.default.name.firstName()
-            }))
-    });
-    const artists = await prisma.artist.findMany();
-    // Create songs for each artist
-    for (const artist of artists){
-        await prisma.album.create({
-            data: {
-                cover: _faker.default.image.imageUrl(),
-                name: _faker.default.random.words(2),
-                artists: {
-                    connect: {
-                        id: artist.id
-                    }
-                },
-                songs: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 2,
-                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-                        })
-                    }).map(()=>({
-                            artistId: artist.id,
-                            fileUrl: _faker.default.internet.url(),
-                            length: _faker.default.datatype.float(),
-                            name: _faker.default.name.firstName()
-                        }))
-                }
-            }
-        });
-    }
-    // Create songs
-    const songs = await prisma.song.findMany();
-    for (const userId of userIds){
-        // Create users
-        await prisma.user.create({
-            data: {
-                id: userId,
-                email: _faker.default.internet.email(),
-                name: _faker.default.name.firstName(),
-                interactions: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 3,
-                            max: songs.length
-                        })
-                    }).map(()=>({
-                            playCount: _faker.default.datatype.number({
-                                min: 1,
-                                max: 1000
-                            }),
-                            songId: songs[_faker.default.datatype.number({
-                                min: 0,
-                                max: songs.length - 1
-                            })].id,
-                            // random boolean
-                            isLiked: Math.random() < 0.5
-                        }))
-                }
-            }
-        });
-        // Create Playlists
-        await prisma.playlist.create({
-            data: {
-                name: _faker.default.random.words(2),
-                user: {
-                    connect: {
-                        id: userId
-                    }
-                },
-                // each playlist will have a random list of songs
-                songs: {
-                    connect: songs.slice(0, _faker.default.datatype.number({
-                        min: 1,
-                        max: songs.length - 1
-                    })).map(({ id  })=>({
-                            id
-                        }))
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -9686,123 +9085,13 @@ ALTER TABLE \\"_PlaylistToSong\\" ADD CONSTRAINT \\"_PlaylistToSong_A_fkey\\" FO
 -- AddForeignKey
 ALTER TABLE \\"_PlaylistToSong\\" ADD CONSTRAINT \\"_PlaylistToSong_B_fkey\\" FOREIGN KEY (\\"B\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Music Streaming Service X sqlite 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
-const NUMBER_OF_ARTISTS = 5;
-const NUMBER_OF_USERS = 10;
-const userIds = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid());
-async function run({ prisma  }) {
-    // Create artists
-    await prisma.artist.createMany({
-        data: Array.from({
-            length: NUMBER_OF_ARTISTS
-        }).map(()=>({
-                name: _faker.default.name.firstName()
-            }))
-    });
-    const artists = await prisma.artist.findMany();
-    // Create songs for each artist
-    for (const artist of artists){
-        await prisma.album.create({
-            data: {
-                cover: _faker.default.image.imageUrl(),
-                name: _faker.default.random.words(2),
-                artists: {
-                    connect: {
-                        id: artist.id
-                    }
-                },
-                songs: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 2,
-                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-                        })
-                    }).map(()=>({
-                            artistId: artist.id,
-                            fileUrl: _faker.default.internet.url(),
-                            length: _faker.default.datatype.float(),
-                            name: _faker.default.name.firstName()
-                        }))
-                }
-            }
-        });
-    }
-    // Create songs
-    const songs = await prisma.song.findMany();
-    for (const userId of userIds){
-        // Create users
-        await prisma.user.create({
-            data: {
-                id: userId,
-                email: _faker.default.internet.email(),
-                name: _faker.default.name.firstName(),
-                interactions: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 3,
-                            max: songs.length
-                        })
-                    }).map(()=>({
-                            playCount: _faker.default.datatype.number({
-                                min: 1,
-                                max: 1000
-                            }),
-                            songId: songs[_faker.default.datatype.number({
-                                min: 0,
-                                max: songs.length - 1
-                            })].id,
-                            // random boolean
-                            isLiked: Math.random() < 0.5
-                        }))
-                }
-            }
-        });
-        // Create Playlists
-        await prisma.playlist.create({
-            data: {
-                name: _faker.default.random.words(2),
-                user: {
-                    connect: {
-                        id: userId
-                    }
-                },
-                // each playlist will have a random list of songs
-                songs: {
-                    connect: songs.slice(0, _faker.default.datatype.number({
-                        min: 1,
-                        max: songs.length - 1
-                    })).map(({ id  })=>({
-                            id
-                        }))
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -10896,123 +10185,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Music Streaming Service X sqlserver 1`] = `
 MusicStreamingService {
   "_tag": "MusicStreamingService",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const MAX_NUMBER_OF_SONGS_PER_ARTIST = 5;
-const NUMBER_OF_ARTISTS = 5;
-const NUMBER_OF_USERS = 10;
-const userIds = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>_faker.default.datatype.uuid());
-async function run({ prisma  }) {
-    // Create artists
-    await prisma.artist.createMany({
-        data: Array.from({
-            length: NUMBER_OF_ARTISTS
-        }).map(()=>({
-                name: _faker.default.name.firstName()
-            }))
-    });
-    const artists = await prisma.artist.findMany();
-    // Create songs for each artist
-    for (const artist of artists){
-        await prisma.album.create({
-            data: {
-                cover: _faker.default.image.imageUrl(),
-                name: _faker.default.random.words(2),
-                artists: {
-                    connect: {
-                        id: artist.id
-                    }
-                },
-                songs: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 2,
-                            max: MAX_NUMBER_OF_SONGS_PER_ARTIST
-                        })
-                    }).map(()=>({
-                            artistId: artist.id,
-                            fileUrl: _faker.default.internet.url(),
-                            length: _faker.default.datatype.float(),
-                            name: _faker.default.name.firstName()
-                        }))
-                }
-            }
-        });
-    }
-    // Create songs
-    const songs = await prisma.song.findMany();
-    for (const userId of userIds){
-        // Create users
-        await prisma.user.create({
-            data: {
-                id: userId,
-                email: _faker.default.internet.email(),
-                name: _faker.default.name.firstName(),
-                interactions: {
-                    create: Array.from({
-                        length: _faker.default.datatype.number({
-                            min: 3,
-                            max: songs.length
-                        })
-                    }).map(()=>({
-                            playCount: _faker.default.datatype.number({
-                                min: 1,
-                                max: 1000
-                            }),
-                            songId: songs[_faker.default.datatype.number({
-                                min: 0,
-                                max: songs.length - 1
-                            })].id,
-                            // random boolean
-                            isLiked: Math.random() < 0.5
-                        }))
-                }
-            }
-        });
-        // Create Playlists
-        await prisma.playlist.create({
-            data: {
-                name: _faker.default.random.words(2),
-                user: {
-                    connect: {
-                        id: userId
-                    }
-                },
-                // each playlist will have a random list of songs
-                songs: {
-                    connect: songs.slice(0, _faker.default.datatype.number({
-                        min: 1,
-                        max: songs.length - 1
-                    })).map(({ id  })=>({
-                            id
-                        }))
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -12240,141 +11419,13 @@ ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [_PlaylistToSong_A_fkey] FORE
 -- AddForeignKey
 ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [_PlaylistToSong_B_fkey] FOREIGN KEY ([B]) REFERENCES [dbo].[Song]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Rentals Platform X mongodb 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const NUMBER_OF_ROOMS = 20;
-const roomIds = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid());
-const rooms = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map((_, i)=>({
-        id: roomIds[i],
-        price: _faker.default.datatype.number({
-            min: 50,
-            max: 600
-        }),
-        // random address - example: b-365
-        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
-            min: 300,
-            max: 1
-        })}\`,
-        totalOccupancy: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBedrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBathrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        summary: _faker.default.lorem.paragraph(),
-        media: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 5
-            })
-        }).map(()=>({
-                fileName: _faker.default.image.imageUrl()
-            }))
-    }));
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        reviews: Array.from({
-            length: _faker.default.datatype.number({
-                max: 1,
-                min: 4
-            })
-        }).map(()=>({
-                comment: _faker.default.lorem.paragraph(),
-                rating: _faker.default.datatype.number({
-                    max: 1,
-                    min: 5
-                })
-            })),
-        // create random reservations per user
-        reservations: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 4
-            })
-        }).map(()=>{
-            const startDate = _faker.default.date.past();
-            const endDate = _faker.default.date.future();
-            const price = _faker.default.datatype.number({
-                min: 50,
-                max: 600
-            });
-            return {
-                startDate,
-                endDate,
-                price,
-                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-                room: {
-                    connect: {
-                        id: roomIds[_faker.default.datatype.number({
-                            min: 0,
-                            max: NUMBER_OF_ROOMS - 1
-                        })]
-                    }
-                }
-            };
-        })
-    }));
-async function run({ prisma  }) {
-    rooms.forEach(async (room)=>await prisma.room.create({
-            data: {
-                id: room.id,
-                address: room.address,
-                price: room.price,
-                summary: room.summary,
-                media: {
-                    create: room.media
-                }
-            }
-        }));
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                email: entry.email,
-                name: entry.name,
-                reservations: {
-                    create: entry.reservations
-                },
-                reviews: {
-                    create: entry.reviews
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -13386,141 +12437,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Rentals Platform X mysql 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const NUMBER_OF_ROOMS = 20;
-const roomIds = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid());
-const rooms = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map((_, i)=>({
-        id: roomIds[i],
-        price: _faker.default.datatype.number({
-            min: 50,
-            max: 600
-        }),
-        // random address - example: b-365
-        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
-            min: 300,
-            max: 1
-        })}\`,
-        totalOccupancy: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBedrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBathrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        summary: _faker.default.lorem.paragraph(),
-        media: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 5
-            })
-        }).map(()=>({
-                fileName: _faker.default.image.imageUrl()
-            }))
-    }));
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        reviews: Array.from({
-            length: _faker.default.datatype.number({
-                max: 1,
-                min: 4
-            })
-        }).map(()=>({
-                comment: _faker.default.lorem.paragraph(),
-                rating: _faker.default.datatype.number({
-                    max: 1,
-                    min: 5
-                })
-            })),
-        // create random reservations per user
-        reservations: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 4
-            })
-        }).map(()=>{
-            const startDate = _faker.default.date.past();
-            const endDate = _faker.default.date.future();
-            const price = _faker.default.datatype.number({
-                min: 50,
-                max: 600
-            });
-            return {
-                startDate,
-                endDate,
-                price,
-                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-                room: {
-                    connect: {
-                        id: roomIds[_faker.default.datatype.number({
-                            min: 0,
-                            max: NUMBER_OF_ROOMS - 1
-                        })]
-                    }
-                }
-            };
-        })
-    }));
-async function run({ prisma  }) {
-    rooms.forEach(async (room)=>await prisma.room.create({
-            data: {
-                id: room.id,
-                address: room.address,
-                price: room.price,
-                summary: room.summary,
-                media: {
-                    create: room.media
-                }
-            }
-        }));
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                email: entry.email,
-                name: entry.name,
-                reservations: {
-                    create: entry.reservations
-                },
-                reviews: {
-                    create: entry.reviews
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -14622,141 +13545,13 @@ ALTER TABLE Review ADD CONSTRAINT Review_userId_fkey FOREIGN KEY (userId) REFERE
 -- AddForeignKey
 ALTER TABLE Media ADD CONSTRAINT Media_roomId_fkey FOREIGN KEY (roomId) REFERENCES Room(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Rentals Platform X postgres 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const NUMBER_OF_ROOMS = 20;
-const roomIds = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid());
-const rooms = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map((_, i)=>({
-        id: roomIds[i],
-        price: _faker.default.datatype.number({
-            min: 50,
-            max: 600
-        }),
-        // random address - example: b-365
-        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
-            min: 300,
-            max: 1
-        })}\`,
-        totalOccupancy: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBedrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBathrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        summary: _faker.default.lorem.paragraph(),
-        media: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 5
-            })
-        }).map(()=>({
-                fileName: _faker.default.image.imageUrl()
-            }))
-    }));
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        reviews: Array.from({
-            length: _faker.default.datatype.number({
-                max: 1,
-                min: 4
-            })
-        }).map(()=>({
-                comment: _faker.default.lorem.paragraph(),
-                rating: _faker.default.datatype.number({
-                    max: 1,
-                    min: 5
-                })
-            })),
-        // create random reservations per user
-        reservations: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 4
-            })
-        }).map(()=>{
-            const startDate = _faker.default.date.past();
-            const endDate = _faker.default.date.future();
-            const price = _faker.default.datatype.number({
-                min: 50,
-                max: 600
-            });
-            return {
-                startDate,
-                endDate,
-                price,
-                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-                room: {
-                    connect: {
-                        id: roomIds[_faker.default.datatype.number({
-                            min: 0,
-                            max: NUMBER_OF_ROOMS - 1
-                        })]
-                    }
-                }
-            };
-        })
-    }));
-async function run({ prisma  }) {
-    rooms.forEach(async (room)=>await prisma.room.create({
-            data: {
-                id: room.id,
-                address: room.address,
-                price: room.price,
-                summary: room.summary,
-                media: {
-                    create: room.media
-                }
-            }
-        }));
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                email: entry.email,
-                name: entry.name,
-                reservations: {
-                    create: entry.reservations
-                },
-                reviews: {
-                    create: entry.reviews
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -15861,141 +14656,13 @@ ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\
 -- AddForeignKey
 ALTER TABLE \\"Media\\" ADD CONSTRAINT \\"Media_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Rentals Platform X sqlite 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const NUMBER_OF_ROOMS = 20;
-const roomIds = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid());
-const rooms = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map((_, i)=>({
-        id: roomIds[i],
-        price: _faker.default.datatype.number({
-            min: 50,
-            max: 600
-        }),
-        // random address - example: b-365
-        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
-            min: 300,
-            max: 1
-        })}\`,
-        totalOccupancy: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBedrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBathrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        summary: _faker.default.lorem.paragraph(),
-        media: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 5
-            })
-        }).map(()=>({
-                fileName: _faker.default.image.imageUrl()
-            }))
-    }));
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        reviews: Array.from({
-            length: _faker.default.datatype.number({
-                max: 1,
-                min: 4
-            })
-        }).map(()=>({
-                comment: _faker.default.lorem.paragraph(),
-                rating: _faker.default.datatype.number({
-                    max: 1,
-                    min: 5
-                })
-            })),
-        // create random reservations per user
-        reservations: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 4
-            })
-        }).map(()=>{
-            const startDate = _faker.default.date.past();
-            const endDate = _faker.default.date.future();
-            const price = _faker.default.datatype.number({
-                min: 50,
-                max: 600
-            });
-            return {
-                startDate,
-                endDate,
-                price,
-                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-                room: {
-                    connect: {
-                        id: roomIds[_faker.default.datatype.number({
-                            min: 0,
-                            max: NUMBER_OF_ROOMS - 1
-                        })]
-                    }
-                }
-            };
-        })
-    }));
-async function run({ prisma  }) {
-    rooms.forEach(async (room)=>await prisma.room.create({
-            data: {
-                id: room.id,
-                address: room.address,
-                price: room.price,
-                summary: room.summary,
-                media: {
-                    create: room.media
-                }
-            }
-        }));
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                email: entry.email,
-                name: entry.name,
-                reservations: {
-                    create: entry.reservations
-                },
-                reviews: {
-                    create: entry.reviews
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -17007,141 +15674,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider Rentals Platform X sqlserver 1`] = `
 RentalsPlatform {
   "_tag": "RentalsPlatform",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 10;
-const NUMBER_OF_ROOMS = 20;
-const roomIds = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map(()=>_faker.default.datatype.uuid());
-const rooms = Array.from({
-    length: NUMBER_OF_ROOMS
-}).map((_, i)=>({
-        id: roomIds[i],
-        price: _faker.default.datatype.number({
-            min: 50,
-            max: 600
-        }),
-        // random address - example: b-365
-        address: \`\${_faker.default.address.streetPrefix()}-\${_faker.default.datatype.number({
-            min: 300,
-            max: 1
-        })}\`,
-        totalOccupancy: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBedrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        totalBathrooms: _faker.default.datatype.number({
-            min: 1,
-            max: 5
-        }),
-        summary: _faker.default.lorem.paragraph(),
-        media: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 5
-            })
-        }).map(()=>({
-                fileName: _faker.default.image.imageUrl()
-            }))
-    }));
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        reviews: Array.from({
-            length: _faker.default.datatype.number({
-                max: 1,
-                min: 4
-            })
-        }).map(()=>({
-                comment: _faker.default.lorem.paragraph(),
-                rating: _faker.default.datatype.number({
-                    max: 1,
-                    min: 5
-                })
-            })),
-        // create random reservations per user
-        reservations: Array.from({
-            length: _faker.default.datatype.number({
-                min: 1,
-                max: 4
-            })
-        }).map(()=>{
-            const startDate = _faker.default.date.past();
-            const endDate = _faker.default.date.future();
-            const price = _faker.default.datatype.number({
-                min: 50,
-                max: 600
-            });
-            return {
-                startDate,
-                endDate,
-                price,
-                total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price,
-                room: {
-                    connect: {
-                        id: roomIds[_faker.default.datatype.number({
-                            min: 0,
-                            max: NUMBER_OF_ROOMS - 1
-                        })]
-                    }
-                }
-            };
-        })
-    }));
-async function run({ prisma  }) {
-    rooms.forEach(async (room)=>await prisma.room.create({
-            data: {
-                id: room.id,
-                address: room.address,
-                price: room.price,
-                summary: room.summary,
-                media: {
-                    create: room.media
-                }
-            }
-        }));
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                email: entry.email,
-                name: entry.name,
-                reservations: {
-                    create: entry.reservations
-                },
-                reviews: {
-                    create: entry.reviews
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -18240,70 +16779,13 @@ ALTER TABLE [dbo].[Review] ADD CONSTRAINT [Review_userId_fkey] FOREIGN KEY ([use
 -- AddForeignKey
 ALTER TABLE [dbo].[Media] ADD CONSTRAINT [Media_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider SaaS X mongodb 1`] = `
 Saas {
   "_tag": "Saas",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const NUMBER_OF_INVITES = 4;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        account: {
-            stripeCustomerId: _faker.default.datatype.uuid(),
-            stripeSubscriptionId: _faker.default.datatype.uuid(),
-            isActive: true
-        },
-        invites: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: NUMBER_OF_INVITES
-            })
-        }).map(()=>({
-                email: _faker.default.internet.email(),
-                dateSent: _faker.default.date.future()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                account: {
-                    create: {
-                        stripeCustomerId: entry.account.stripeCustomerId,
-                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
-                        isActive: true,
-                        invites: {
-                            create: entry.invites
-                        }
-                    }
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -19018,70 +17500,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider SaaS X mysql 1`] = `
 Saas {
   "_tag": "Saas",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const NUMBER_OF_INVITES = 4;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        account: {
-            stripeCustomerId: _faker.default.datatype.uuid(),
-            stripeSubscriptionId: _faker.default.datatype.uuid(),
-            isActive: true
-        },
-        invites: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: NUMBER_OF_INVITES
-            })
-        }).map(()=>({
-                email: _faker.default.internet.email(),
-                dateSent: _faker.default.date.future()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                account: {
-                    create: {
-                        stripeCustomerId: entry.account.stripeCustomerId,
-                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
-                        isActive: true,
-                        invites: {
-                            create: entry.invites
-                        }
-                    }
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -19842,70 +18267,13 @@ ALTER TABLE User ADD CONSTRAINT User_accountId_fkey FOREIGN KEY (accountId) REFE
 -- AddForeignKey
 ALTER TABLE Invite ADD CONSTRAINT Invite_accountId_fkey FOREIGN KEY (accountId) REFERENCES Account(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider SaaS X postgres 1`] = `
 Saas {
   "_tag": "Saas",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const NUMBER_OF_INVITES = 4;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        account: {
-            stripeCustomerId: _faker.default.datatype.uuid(),
-            stripeSubscriptionId: _faker.default.datatype.uuid(),
-            isActive: true
-        },
-        invites: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: NUMBER_OF_INVITES
-            })
-        }).map(()=>({
-                email: _faker.default.internet.email(),
-                dateSent: _faker.default.date.future()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                account: {
-                    create: {
-                        stripeCustomerId: entry.account.stripeCustomerId,
-                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
-                        isActive: true,
-                        invites: {
-                            create: entry.invites
-                        }
-                    }
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -20666,70 +19034,13 @@ ALTER TABLE \\"User\\" ADD CONSTRAINT \\"User_accountId_fkey\\" FOREIGN KEY (\\"
 -- AddForeignKey
 ALTER TABLE \\"Invite\\" ADD CONSTRAINT \\"Invite_accountId_fkey\\" FOREIGN KEY (\\"accountId\\") REFERENCES \\"Account\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider SaaS X sqlite 1`] = `
 Saas {
   "_tag": "Saas",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const NUMBER_OF_INVITES = 4;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        account: {
-            stripeCustomerId: _faker.default.datatype.uuid(),
-            stripeSubscriptionId: _faker.default.datatype.uuid(),
-            isActive: true
-        },
-        invites: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: NUMBER_OF_INVITES
-            })
-        }).map(()=>({
-                email: _faker.default.internet.email(),
-                dateSent: _faker.default.date.future()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                account: {
-                    create: {
-                        stripeCustomerId: entry.account.stripeCustomerId,
-                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
-                        isActive: true,
-                        invites: {
-                            create: entry.invites
-                        }
-                    }
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -21444,70 +19755,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider SaaS X sqlserver 1`] = `
 Saas {
   "_tag": "Saas",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const NUMBER_OF_INVITES = 4;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        account: {
-            stripeCustomerId: _faker.default.datatype.uuid(),
-            stripeSubscriptionId: _faker.default.datatype.uuid(),
-            isActive: true
-        },
-        invites: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: NUMBER_OF_INVITES
-            })
-        }).map(()=>({
-                email: _faker.default.internet.email(),
-                dateSent: _faker.default.date.future()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                account: {
-                    create: {
-                        stripeCustomerId: entry.account.stripeCustomerId,
-                        stripeSubscriptionId: entry.account.stripeSubscriptionId,
-                        isActive: true,
-                        invites: {
-                            create: entry.invites
-                        }
-                    }
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -22267,58 +20521,13 @@ ALTER TABLE [dbo].[User] ADD CONSTRAINT [User_accountId_fkey] FOREIGN KEY ([acco
 -- AddForeignKey
 ALTER TABLE [dbo].[Invite] ADD CONSTRAINT [Invite_accountId_fkey] FOREIGN KEY ([accountId]) REFERENCES [dbo].[Account]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider URL Shortener X mongodb 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const MAX_NUMBER_OF_LINKS = 5;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        links: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: MAX_NUMBER_OF_LINKS
-            })
-        }).map(()=>({
-                url: _faker.default.internet.url(),
-                shortUrl: _faker.default.internet.domainWord()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                links: {
-                    create: entry.links
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -22916,58 +21125,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider URL Shortener X mysql 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const MAX_NUMBER_OF_LINKS = 5;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        links: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: MAX_NUMBER_OF_LINKS
-            })
-        }).map(()=>({
-                url: _faker.default.internet.url(),
-                shortUrl: _faker.default.internet.domainWord()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                links: {
-                    create: entry.links
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -23593,58 +21757,13 @@ CREATE TABLE User (
 -- AddForeignKey
 ALTER TABLE Link ADD CONSTRAINT Link_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider URL Shortener X postgres 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const MAX_NUMBER_OF_LINKS = 5;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        links: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: MAX_NUMBER_OF_LINKS
-            })
-        }).map(()=>({
-                url: _faker.default.internet.url(),
-                shortUrl: _faker.default.internet.domainWord()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                links: {
-                    create: entry.links
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -24270,58 +22389,13 @@ CREATE TABLE \\"User\\" (
 -- AddForeignKey
 ALTER TABLE \\"Link\\" ADD CONSTRAINT \\"Link_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider URL Shortener X sqlite 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const MAX_NUMBER_OF_LINKS = 5;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        links: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: MAX_NUMBER_OF_LINKS
-            })
-        }).map(()=>({
-                url: _faker.default.internet.url(),
-                shortUrl: _faker.default.internet.domainWord()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                links: {
-                    create: entry.links
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -24919,58 +22993,13 @@ main()
     },
   },
   "migrationSql": Array [],
+  "seed": [Function],
 }
 `;
 
 exports[`with custom datasourceProvider URL Shortener X sqlserver 1`] = `
 UrlShortener {
   "_tag": "UrlShortener",
-  "artifacts": Object {
-    "prisma/seed.js": Object {
-      "content": "\\"use strict\\";
-Object.defineProperty(exports, \\"__esModule\\", {
-    value: true
-});
-exports.run = run;
-var _faker = _interopRequireDefault(require(\\"faker\\"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-const NUMBER_OF_USERS = 4;
-const MAX_NUMBER_OF_LINKS = 5;
-const data = Array.from({
-    length: NUMBER_OF_USERS
-}).map(()=>({
-        email: _faker.default.internet.email(),
-        name: _faker.default.name.firstName(),
-        links: Array.from({
-            length: _faker.default.datatype.number({
-                min: 0,
-                max: MAX_NUMBER_OF_LINKS
-            })
-        }).map(()=>({
-                url: _faker.default.internet.url(),
-                shortUrl: _faker.default.internet.domainWord()
-            }))
-    }));
-async function run({ prisma  }) {
-    for (let entry of data){
-        await prisma.user.create({
-            data: {
-                name: entry.name,
-                email: entry.email,
-                links: {
-                    create: entry.links
-                }
-            }
-        });
-    }
-}",
-      "path": "prisma/seed.js",
-    },
-  },
   "files": Object {
     ".gitignore": Object {
       "content": "node_modules/
@@ -25596,6 +23625,7 @@ CREATE TABLE [dbo].[User] (
 -- AddForeignKey
 ALTER TABLE [dbo].[Link] ADD CONSTRAINT [Link_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
+  "seed": [Function],
 }
 `;
 
