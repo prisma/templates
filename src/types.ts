@@ -20,7 +20,7 @@ export abstract class AbstractTemplate<FilesIndex extends Index<File> = Index<Fi
     description: string
   }
   public abstract files: FilesIndex
-  public abstract migrationSql: MigrationSql.MigrationSql
+  public abstract migrationSql: MigrationSql.Statements
   public abstract seed: (params: { prisma: ClientBase }) => Promise<void>
 }
 

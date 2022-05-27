@@ -1,6 +1,6 @@
 import { PrismaTemplates } from '../../'
 import { MigrationsSql } from '../../generated/migrations'
-import { getName, MigrationSql } from './helpers'
+import { getName, Statements } from './helpers'
 import { Reflector } from '~/src/lib/Reflector'
 export * from './helpers'
 
@@ -8,7 +8,7 @@ export const select = (params: {
   template: PrismaTemplates.$Types.TemplateTag
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
   referentialIntegrity: Reflector.Schema.ReferentialIntegritySettingValue
-}): MigrationSql => {
+}): Statements => {
   if (
     params.datasourceProvider === 'sqlite' ||
     params.datasourceProvider === 'mongodb' ||

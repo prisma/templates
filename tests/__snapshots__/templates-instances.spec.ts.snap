@@ -1993,9 +1993,7 @@ CREATE TABLE Post (
 
     PRIMARY KEY (post_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Profile (
     bio VARCHAR(191) NULL,
     profile_id INTEGER NOT NULL AUTO_INCREMENT,
@@ -2003,9 +2001,7 @@ CREATE TABLE Profile (
 
     PRIMARY KEY (profile_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE User (
     email VARCHAR(191) NOT NULL,
     name VARCHAR(191) NULL,
@@ -2014,13 +2010,9 @@ CREATE TABLE User (
     UNIQUE INDEX User_email_key(email),
     PRIMARY KEY (user_id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Post ADD CONSTRAINT Post_author_id_fkey FOREIGN KEY (author_id) REFERENCES User(user_id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Profile ADD CONSTRAINT Profile_user_id_fkey FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE RESTRICT ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -2839,9 +2831,7 @@ CREATE TABLE \\"Post\\" (
 
     CONSTRAINT \\"Post_pkey\\" PRIMARY KEY (\\"post_id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Profile\\" (
     \\"bio\\" TEXT,
     \\"profile_id\\" SERIAL NOT NULL,
@@ -2849,9 +2839,7 @@ CREATE TABLE \\"Profile\\" (
 
     CONSTRAINT \\"Profile_pkey\\" PRIMARY KEY (\\"profile_id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"User\\" (
     \\"email\\" TEXT NOT NULL,
     \\"name\\" TEXT,
@@ -2859,17 +2847,11 @@ CREATE TABLE \\"User\\" (
 
     CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"user_id\\")
 )",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Post\\" ADD CONSTRAINT \\"Post_author_id_fkey\\" FOREIGN KEY (\\"author_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Profile\\" ADD CONSTRAINT \\"Profile_user_id_fkey\\" FOREIGN KEY (\\"user_id\\") REFERENCES \\"User\\"(\\"user_id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -4486,9 +4468,7 @@ a {
     },
   },
   "migrationSql": Array [
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Post] (
     [post_id] INT NOT NULL IDENTITY(1,1),
     [content] NVARCHAR(1000),
@@ -4496,18 +4476,14 @@ CREATE TABLE [dbo].[Post] (
     [author_id] INT,
     CONSTRAINT [Post_pkey] PRIMARY KEY CLUSTERED ([post_id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Profile] (
     [bio] NVARCHAR(1000),
     [profile_id] INT NOT NULL IDENTITY(1,1),
     [user_id] INT NOT NULL,
     CONSTRAINT [Profile_pkey] PRIMARY KEY CLUSTERED ([profile_id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[User] (
     [email] NVARCHAR(1000) NOT NULL,
     [name] NVARCHAR(1000),
@@ -4515,13 +4491,9 @@ CREATE TABLE [dbo].[User] (
     CONSTRAINT [User_pkey] PRIMARY KEY CLUSTERED ([user_id]),
     CONSTRAINT [User_email_key] UNIQUE NONCLUSTERED ([email])
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Post] ADD CONSTRAINT [Post_author_id_fkey] FOREIGN KEY ([author_id]) REFERENCES [dbo].[User]([user_id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Profile] ADD CONSTRAINT [Profile_user_id_fkey] FOREIGN KEY ([user_id]) REFERENCES [dbo].[User]([user_id]) ON DELETE NO ACTION ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -7715,9 +7687,7 @@ CREATE TABLE User (
     UNIQUE INDEX User_email_key(email),
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Interaction (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -7729,9 +7699,7 @@ CREATE TABLE Interaction (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Song (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -7746,9 +7714,7 @@ CREATE TABLE Song (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Artist (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -7757,9 +7723,7 @@ CREATE TABLE Artist (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Album (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -7769,9 +7733,7 @@ CREATE TABLE Album (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Playlist (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -7781,9 +7743,7 @@ CREATE TABLE Playlist (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE _AlbumToArtist (
     A VARCHAR(191) NOT NULL,
     B VARCHAR(191) NOT NULL,
@@ -7791,9 +7751,7 @@ CREATE TABLE _AlbumToArtist (
     UNIQUE INDEX _AlbumToArtist_AB_unique(A, B),
     INDEX _AlbumToArtist_B_index(B)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE _PlaylistToSong (
     A VARCHAR(191) NOT NULL,
     B VARCHAR(191) NOT NULL,
@@ -7801,41 +7759,23 @@ CREATE TABLE _PlaylistToSong (
     UNIQUE INDEX _PlaylistToSong_AB_unique(A, B),
     INDEX _PlaylistToSong_B_index(B)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Interaction ADD CONSTRAINT Interaction_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Interaction ADD CONSTRAINT Interaction_songId_fkey FOREIGN KEY (songId) REFERENCES Song(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Song ADD CONSTRAINT Song_artistId_fkey FOREIGN KEY (artistId) REFERENCES Artist(id) ON DELETE RESTRICT ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Song ADD CONSTRAINT Song_albumId_fkey FOREIGN KEY (albumId) REFERENCES Album(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Playlist ADD CONSTRAINT Playlist_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE _AlbumToArtist ADD CONSTRAINT _AlbumToArtist_A_fkey FOREIGN KEY (A) REFERENCES Album(id) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE _AlbumToArtist ADD CONSTRAINT _AlbumToArtist_B_fkey FOREIGN KEY (B) REFERENCES Artist(id) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE _PlaylistToSong ADD CONSTRAINT _PlaylistToSong_A_fkey FOREIGN KEY (A) REFERENCES Playlist(id) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE _PlaylistToSong ADD CONSTRAINT _PlaylistToSong_B_fkey FOREIGN KEY (B) REFERENCES Song(id) ON DELETE CASCADE ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -8948,9 +8888,7 @@ CREATE TABLE \\"User\\" (
 
     CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Interaction\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -8962,9 +8900,7 @@ CREATE TABLE \\"Interaction\\" (
 
     CONSTRAINT \\"Interaction_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Song\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -8979,9 +8915,7 @@ CREATE TABLE \\"Song\\" (
 
     CONSTRAINT \\"Song_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Artist\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -8990,9 +8924,7 @@ CREATE TABLE \\"Artist\\" (
 
     CONSTRAINT \\"Artist_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Album\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -9002,9 +8934,7 @@ CREATE TABLE \\"Album\\" (
 
     CONSTRAINT \\"Album_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Playlist\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -9014,75 +8944,43 @@ CREATE TABLE \\"Playlist\\" (
 
     CONSTRAINT \\"Playlist_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"_AlbumToArtist\\" (
     \\"A\\" TEXT NOT NULL,
     \\"B\\" TEXT NOT NULL
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"_PlaylistToSong\\" (
     \\"A\\" TEXT NOT NULL,
     \\"B\\" TEXT NOT NULL
 )",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE UNIQUE INDEX \\"_AlbumToArtist_AB_unique\\" ON \\"_AlbumToArtist\\"(\\"A\\", \\"B\\")",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE INDEX \\"_AlbumToArtist_B_index\\" ON \\"_AlbumToArtist\\"(\\"B\\")",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"A\\", \\"B\\")",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\")",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"_AlbumToArtist\\" ADD CONSTRAINT \\"_AlbumToArtist_A_fkey\\" FOREIGN KEY (\\"A\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"_AlbumToArtist\\" ADD CONSTRAINT \\"_AlbumToArtist_B_fkey\\" FOREIGN KEY (\\"B\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"_PlaylistToSong\\" ADD CONSTRAINT \\"_PlaylistToSong_A_fkey\\" FOREIGN KEY (\\"A\\") REFERENCES \\"Playlist\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"_PlaylistToSong\\" ADD CONSTRAINT \\"_PlaylistToSong_B_fkey\\" FOREIGN KEY (\\"B\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE CASCADE ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -11285,9 +11183,7 @@ main()
     },
   },
   "migrationSql": Array [
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[User] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11297,9 +11193,7 @@ CREATE TABLE [dbo].[User] (
     CONSTRAINT [User_pkey] PRIMARY KEY CLUSTERED ([id]),
     CONSTRAINT [User_email_key] UNIQUE NONCLUSTERED ([email])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Interaction] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Interaction_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11310,9 +11204,7 @@ CREATE TABLE [dbo].[Interaction] (
     [playCount] INT NOT NULL,
     CONSTRAINT [Interaction_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Song] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Song_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11326,9 +11218,7 @@ CREATE TABLE [dbo].[Song] (
     [fileUrl] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Song_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Artist] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Artist_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11336,9 +11226,7 @@ CREATE TABLE [dbo].[Artist] (
     [name] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Artist_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Album] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Album_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11347,9 +11235,7 @@ CREATE TABLE [dbo].[Album] (
     [cover] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Album_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Playlist] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Playlist_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -11358,65 +11244,39 @@ CREATE TABLE [dbo].[Playlist] (
     [name] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Playlist_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[_AlbumToArtist] (
     [A] NVARCHAR(1000) NOT NULL,
     [B] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [_AlbumToArtist_AB_unique] UNIQUE NONCLUSTERED ([A],[B])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[_PlaylistToSong] (
     [A] NVARCHAR(1000) NOT NULL,
     [B] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [_PlaylistToSong_AB_unique] UNIQUE NONCLUSTERED ([A],[B])
 )",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE NONCLUSTERED INDEX [_AlbumToArtist_B_index] ON [dbo].[_AlbumToArtist]([B])",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE NONCLUSTERED INDEX [_PlaylistToSong_B_index] ON [dbo].[_PlaylistToSong]([B])",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_songId_fkey] FOREIGN KEY ([songId]) REFERENCES [dbo].[Song]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_albumId_fkey] FOREIGN KEY ([albumId]) REFERENCES [dbo].[Album]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Playlist] ADD CONSTRAINT [Playlist_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[_AlbumToArtist] ADD CONSTRAINT [_AlbumToArtist_A_fkey] FOREIGN KEY ([A]) REFERENCES [dbo].[Album]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[_AlbumToArtist] ADD CONSTRAINT [_AlbumToArtist_B_fkey] FOREIGN KEY ([B]) REFERENCES [dbo].[Artist]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [_PlaylistToSong_A_fkey] FOREIGN KEY ([A]) REFERENCES [dbo].[Playlist]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[_PlaylistToSong] ADD CONSTRAINT [_PlaylistToSong_B_fkey] FOREIGN KEY ([B]) REFERENCES [dbo].[Song]([id]) ON DELETE CASCADE ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -13466,9 +13326,7 @@ CREATE TABLE User (
     UNIQUE INDEX User_email_key(email),
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Reservation (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -13482,9 +13340,7 @@ CREATE TABLE Reservation (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Room (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -13503,9 +13359,7 @@ CREATE TABLE Room (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Review (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -13516,9 +13370,7 @@ CREATE TABLE Review (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Media (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -13528,21 +13380,13 @@ CREATE TABLE Media (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Reservation ADD CONSTRAINT Reservation_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Reservation ADD CONSTRAINT Reservation_roomId_fkey FOREIGN KEY (roomId) REFERENCES Room(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Review ADD CONSTRAINT Review_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE RESTRICT ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Media ADD CONSTRAINT Media_roomId_fkey FOREIGN KEY (roomId) REFERENCES Room(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -14573,9 +14417,7 @@ CREATE TABLE \\"User\\" (
 
     CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Reservation\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14589,9 +14431,7 @@ CREATE TABLE \\"Reservation\\" (
 
     CONSTRAINT \\"Reservation_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Room\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14610,9 +14450,7 @@ CREATE TABLE \\"Room\\" (
 
     CONSTRAINT \\"Room_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Review\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14623,9 +14461,7 @@ CREATE TABLE \\"Review\\" (
 
     CONSTRAINT \\"Review_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Media\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14635,25 +14471,15 @@ CREATE TABLE \\"Media\\" (
 
     CONSTRAINT \\"Media_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateIndex
+    "-- CreateIndex
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\")",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Media\\" ADD CONSTRAINT \\"Media_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -16692,9 +16518,7 @@ main()
     },
   },
   "migrationSql": Array [
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[User] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -16704,9 +16528,7 @@ CREATE TABLE [dbo].[User] (
     CONSTRAINT [User_pkey] PRIMARY KEY CLUSTERED ([id]),
     CONSTRAINT [User_email_key] UNIQUE NONCLUSTERED ([email])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Reservation] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Reservation_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -16719,9 +16541,7 @@ CREATE TABLE [dbo].[Reservation] (
     [roomId] NVARCHAR(1000),
     CONSTRAINT [Reservation_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Room] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Room_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -16739,9 +16559,7 @@ CREATE TABLE [dbo].[Room] (
     [price] INT NOT NULL,
     CONSTRAINT [Room_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Review] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Review_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -16751,9 +16569,7 @@ CREATE TABLE [dbo].[Review] (
     [userId] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Review_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Media] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Media_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -16762,21 +16578,13 @@ CREATE TABLE [dbo].[Media] (
     [fileName] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [Media_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Review] ADD CONSTRAINT [Review_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE NO ACTION ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Media] ADD CONSTRAINT [Media_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -18232,9 +18040,7 @@ CREATE TABLE User (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Account (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -18246,9 +18052,7 @@ CREATE TABLE Account (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE Invite (
     id VARCHAR(191) NOT NULL,
     dateSent DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -18258,13 +18062,9 @@ CREATE TABLE Invite (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE User ADD CONSTRAINT User_accountId_fkey FOREIGN KEY (accountId) REFERENCES Account(id) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Invite ADD CONSTRAINT Invite_accountId_fkey FOREIGN KEY (accountId) REFERENCES Account(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -18999,9 +18799,7 @@ CREATE TABLE \\"User\\" (
 
     CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Account\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -19013,9 +18811,7 @@ CREATE TABLE \\"Account\\" (
 
     CONSTRAINT \\"Account_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"Invite\\" (
     \\"id\\" TEXT NOT NULL,
     \\"dateSent\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -19025,13 +18821,9 @@ CREATE TABLE \\"Invite\\" (
 
     CONSTRAINT \\"Invite_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"User\\" ADD CONSTRAINT \\"User_accountId_fkey\\" FOREIGN KEY (\\"accountId\\") REFERENCES \\"Account\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Invite\\" ADD CONSTRAINT \\"Invite_accountId_fkey\\" FOREIGN KEY (\\"accountId\\") REFERENCES \\"Account\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -20476,9 +20268,7 @@ main()
     },
   },
   "migrationSql": Array [
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[User] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -20488,9 +20278,7 @@ CREATE TABLE [dbo].[User] (
     [accountId] NVARCHAR(1000),
     CONSTRAINT [User_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Account] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Account_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -20501,9 +20289,7 @@ CREATE TABLE [dbo].[Account] (
     [isActive] BIT NOT NULL,
     CONSTRAINT [Account_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Invite] (
     [id] NVARCHAR(1000) NOT NULL,
     [dateSent] DATETIME2 NOT NULL CONSTRAINT [Invite_dateSent_df] DEFAULT CURRENT_TIMESTAMP,
@@ -20512,13 +20298,9 @@ CREATE TABLE [dbo].[Invite] (
     [isValid] BIT NOT NULL CONSTRAINT [Invite_isValid_df] DEFAULT 1,
     CONSTRAINT [Invite_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[User] ADD CONSTRAINT [User_accountId_fkey] FOREIGN KEY ([accountId]) REFERENCES [dbo].[Account]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Invite] ADD CONSTRAINT [Invite_accountId_fkey] FOREIGN KEY ([accountId]) REFERENCES [dbo].[Account]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -21740,9 +21522,7 @@ CREATE TABLE Link (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE User (
     id VARCHAR(191) NOT NULL,
     createdAt DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -21752,9 +21532,7 @@ CREATE TABLE User (
 
     PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE Link ADD CONSTRAINT Link_userId_fkey FOREIGN KEY (userId) REFERENCES User(id) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -22372,9 +22150,7 @@ CREATE TABLE \\"Link\\" (
 
     CONSTRAINT \\"Link_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE \\"User\\" (
     \\"id\\" TEXT NOT NULL,
     \\"createdAt\\" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -22384,9 +22160,7 @@ CREATE TABLE \\"User\\" (
 
     CONSTRAINT \\"User_pkey\\" PRIMARY KEY (\\"id\\")
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE \\"Link\\" ADD CONSTRAINT \\"Link_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],
@@ -23597,9 +23371,7 @@ main()
     },
   },
   "migrationSql": Array [
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[Link] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [Link_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -23609,9 +23381,7 @@ CREATE TABLE [dbo].[Link] (
     [userId] NVARCHAR(1000),
     CONSTRAINT [Link_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- CreateTable
+    "-- CreateTable
 CREATE TABLE [dbo].[User] (
     [id] NVARCHAR(1000) NOT NULL,
     [createdAt] DATETIME2 NOT NULL CONSTRAINT [User_createdAt_df] DEFAULT CURRENT_TIMESTAMP,
@@ -23620,9 +23390,7 @@ CREATE TABLE [dbo].[User] (
     [email] NVARCHAR(1000) NOT NULL,
     CONSTRAINT [User_pkey] PRIMARY KEY CLUSTERED ([id])
 )",
-    "
-
--- AddForeignKey
+    "-- AddForeignKey
 ALTER TABLE [dbo].[Link] ADD CONSTRAINT [Link_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE",
   ],
   "seed": [Function],

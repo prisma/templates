@@ -73,6 +73,7 @@ export const clean = (content?: string): string[] => {
         .trim()
         .replace(globalBackticks, '')
         .split(';')
+        .map((s) => s.trim())
         .filter((s) => s !== '')
     : []
 }

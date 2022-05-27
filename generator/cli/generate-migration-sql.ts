@@ -98,16 +98,23 @@ export default async function generateMigrationSql(params: {
       const commandIndexEnd = res.stdout.indexOf(substr)
       let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
       if (combination.datasourceProvider === 'sqlserver') {
-        const substr = 'BEGIN TRAN'
-        const commandIndexEnd = rawContent.indexOf(substr)
-        rawContent = rawContent.substr(commandIndexEnd + substr.length)
-        const substrEnd = 'COMMIT TRAN'
-        const commandIndexEndEnd = rawContent.indexOf(substrEnd)
-        rawContent = rawContent.substr(0, commandIndexEndEnd)
+        const subStringStartText = 'BEGIN TRAN'
+        const subStringEndText = 'COMMIT TRAN'
+        const subStringStartIndex = rawContent.indexOf(subStringStartText) + subStringStartText.length
+
+        const subStringEndIndex = rawContent.indexOf(subStringEndText)
+        rawContent = rawContent.slice(subStringStartIndex, subStringEndIndex)
       }
 
       const exportName = getName(combination)
-      const formattedContent = JSON.stringify(clean(rawContent), null, 2)
+      const formattedContent = JSON.stringify(
+        Reflector.Client.prepareMigrationScriptForClientExecution({
+          script: rawContent,
+          dataSource: combination.datasourceProvider,
+        }),
+        null,
+        2
+      )
       const moduleName = exportName
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`
 
