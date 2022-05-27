@@ -3,6 +3,7 @@ import { konn, providers } from 'konn'
 import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
 import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
+import { Reflector } from '@prisma-spectrum/reflector'
 
 export const testTemplate = (params: {
   templateName: PrismaTemplates.$Types.Template['_tag']
@@ -34,17 +35,17 @@ export const testTemplate = (params: {
             },
           },
         }) as ClientBase
-
-      const dropTestDatabase = async () => {
-        const PrismaClientModule = await getPrismaClientModule()
-        const prisma = new PrismaClientModule.PrismaClient({
+      const getPrismaAdmin = async () =>
+        new (await getPrismaClientModule()).PrismaClient({
           datasources: {
             db: {
-              // Make sure this connection not on same database that we want to drop.
               url: `${databaseUrlBase}/postgres`,
             },
           },
-        })
+        }) as ClientBase
+
+      const dropTestDatabase = async () => {
+        const prisma = await getPrismaAdmin()
         try {
           await prisma.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
         } catch (error) {
@@ -57,6 +58,7 @@ export const testTemplate = (params: {
 
       return {
         getPrisma,
+        getPrismaAdmin,
         template,
         dropTestDatabase,
         databaseName,
@@ -101,20 +103,35 @@ export const testTemplate = (params: {
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('The seed command has been executed.')
 
-    /**
-     * Test 2
-     * Check the seed again but this time using the derived seed function.
-     */
     const prisma = await ctx.getPrisma()
+    const prismaAdmin = await ctx.getPrismaAdmin()
+
     try {
+      /**
+       * Test 2
+       * Check that the template migration script works.
+       */
+      await ctx.dropTestDatabase()
+      await prismaAdmin.$executeRawUnsafe(`create database ${ctx.databaseName}`)
+      await Reflector.Client.runMigrationScript(
+        prisma,
+        ctx.template.migrationScript,
+        // TODO test a matrix of data sources
+        'postgres'
+      )
+
+      /**
+       * Test 3
+       * Check the seed again but this time using the derived seed function.
+       */
       // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
       await ctx.template.seed({ prisma })
     } finally {
-      await prisma.$disconnect()
+      await Promise.all([prisma.$disconnect(), prismaAdmin.$disconnect()])
     }
 
     /**
-     * Test 3
+     * Test 4
      * Check the development project script. For most templates this will run some kind of sandbox script against the database.
      *
      * The Nextjs template launches next dev for its dev script and thus is exempt from this test.

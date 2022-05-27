@@ -1,15 +1,17 @@
 import { Reflector } from '@prisma-spectrum/reflector'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaTemplates } from '~/src'
-import { DatasourceProvidersNormalizedSupportingMigration, getName } from '~/src/logic/migrationSql/helpers'
+import {
+  DatasourceProvidersNormalizedSupportingMigration,
+  getName,
+} from '~/src/logic/migrationScript/helpers'
 import { getTemplateInfos } from '~/src/templates'
-import { clean } from '~/src/utils'
 import execa from 'execa'
 import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
 import * as Remeda from 'remeda'
 
-const log = rootLog.child('generateMigrationSql')
+const log = rootLog.child('generateMigrationScripts')
 
 interface Combination {
   /**
@@ -30,11 +32,11 @@ interface Combination {
   templateName: string
 }
 
-export default async function generateMigrationSql(params: {
+export default async function generateMigrationScripts(params: {
   templatesRepoDir: string
   outputDir: string
 }): Promise<void> {
-  log.info(`generating migration sql`, { params })
+  log.info(`generating migration script modules`, { params })
 
   const templateInfos = getTemplateInfos({
     templatesRepoDir: params.templatesRepoDir,
@@ -61,7 +63,7 @@ export default async function generateMigrationSql(params: {
     )
   )
 
-  log.info(`Found migration sql combinations`, { combinations })
+  log.info(`Found migration script combinations`, { combinations })
 
   const { results, errors } = await PromisePool.withConcurrency(50)
     .for(combinations)
@@ -96,22 +98,11 @@ export default async function generateMigrationSql(params: {
 
       const substr = '--script'
       const commandIndexEnd = res.stdout.indexOf(substr)
-      let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
-      if (combination.datasourceProvider === 'sqlserver') {
-        const substr = 'BEGIN TRAN'
-        const commandIndexEnd = rawContent.indexOf(substr)
-        rawContent = rawContent.substr(commandIndexEnd + substr.length)
-        const substrEnd = 'COMMIT TRAN'
-        const commandIndexEndEnd = rawContent.indexOf(substrEnd)
-        rawContent = rawContent.substr(0, commandIndexEndEnd)
-      }
-
-      const exportName = getName(combination)
-      const formattedContent = JSON.stringify(clean(rawContent), null, 2)
-      const moduleName = exportName
+      const script = res.stdout.slice(commandIndexEnd + substr.length).replace(/`/g, '\\`')
+      const moduleName = getName(combination)
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`
 
-      await FS.writeAsync(moduleFilePath, `export const ${exportName} = ${formattedContent}`)
+      await FS.writeAsync(moduleFilePath, `export const script = \`${script}\``)
       log.info(`Wrote migration module`, { path: moduleFilePath })
 
       return {
@@ -125,15 +116,17 @@ export default async function generateMigrationSql(params: {
     })
   }
 
-  log.info(`Done writing all migration sql modules`)
+  log.info(`Done writing all migration script modules`)
 
   const indexExportsModuleFilePath = `${params.outputDir}/index_.ts`
-  const indexExportsModule = results.map((result) => `export * from './${result.moduleName}'`, '').join('\n')
+  const indexExportsModule = results
+    .map((result) => `export * as ${result.moduleName} from './${result.moduleName}'`, '')
+    .join('\n')
   await FS.writeAsync(indexExportsModuleFilePath, indexExportsModule)
   log.info(`Wrote exports index module`, { path: indexExportsModuleFilePath })
 
   const indexNamespaceModuleFilePath = `${params.outputDir}/index.ts`
-  const indexNamespaceModule = `export * as MigrationsSql from './index_'`
+  const indexNamespaceModule = `export * as MigrationScripts from './index_'`
   await FS.writeAsync(indexNamespaceModuleFilePath, indexNamespaceModule)
   log.info(`Wrote namespace index module`, { path: indexExportsModuleFilePath })
   log.info(`Done`)

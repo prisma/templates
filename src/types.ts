@@ -1,4 +1,3 @@
-import { MigrationSql } from './logic'
 import { Index } from './utils'
 import type { Reflector } from '@prisma-spectrum/reflector'
 import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
@@ -20,7 +19,7 @@ export abstract class AbstractTemplate<FilesIndex extends Index<File> = Index<Fi
     description: string
   }
   public abstract files: FilesIndex
-  public abstract migrationSql: MigrationSql.MigrationSql
+  public abstract migrationScript: string
   public abstract seed: (params: { prisma: ClientBase }) => Promise<void>
 }
 
@@ -33,7 +32,7 @@ export type BaseTemplateParameters = {
   /**
    * The datasource provider to use in the Prisma Schema.
    *
-   * @default 'postgresql'
+   * @default 'postgres'
    */
   datasourceProvider?: Reflector.Schema.DatasourceProviderNormalized
   /**

@@ -13,8 +13,6 @@ export const getName = (params: {
   // prettier-ignore
   `${params.template}With${upperFirst(params.datasourceProvider)}WithReferentialIntegrity${upperFirst(params.referentialIntegrity)}`
 
-export type MigrationSql = string[]
-
 export type DatasourceProvidersNormalizedSupportingMigration = Exclude<
   Reflector.Schema.DatasourceProviderNormalized,
   'mongodb'
