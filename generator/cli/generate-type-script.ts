@@ -408,14 +408,14 @@ ${indentBlock(4, escapeBackticks(f.content))}
          * This SQL is split by \`;\` such that it can be executed command-by-command using [Prisma Client's raw database access API](https://www.prisma.io/docs/concepts/components/prisma-client/raw-database-access).
          * Do this inside a [transaction](https://www.prisma.io/docs/concepts/components/prisma-client/transactions) to keep it atomic.
          */
-        public migrationSql: MigrationSql.MigrationSql
+        public migrationScript: string
 
         ${sourceCodeSectionHeader2('Constructor')}
 
         constructor(parameters?: TemplateParameters) {
           const parameters_ = merge({}, templateParameterDefaults, parameters)
 
-          this.migrationSql = MigrationSql.select({
+          this.migrationScript = MigrationSql.select({
             template: this._tag,
             datasourceProvider: parameters_.datasourceProvider,
             referentialIntegrity: parameters_.referentialIntegrity 

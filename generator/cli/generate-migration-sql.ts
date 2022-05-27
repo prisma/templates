@@ -3,7 +3,6 @@ import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaTemplates } from '~/src'
 import { DatasourceProvidersNormalizedSupportingMigration, getName } from '~/src/logic/migrationSql/helpers'
 import { getTemplateInfos } from '~/src/templates'
-import { clean } from '~/src/utils'
 import execa from 'execa'
 import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
@@ -96,29 +95,11 @@ export default async function generateMigrationSql(params: {
 
       const substr = '--script'
       const commandIndexEnd = res.stdout.indexOf(substr)
-      let rawContent = res.stdout.substr(commandIndexEnd + substr.length)
-      if (combination.datasourceProvider === 'sqlserver') {
-        const subStringStartText = 'BEGIN TRAN'
-        const subStringEndText = 'COMMIT TRAN'
-        const subStringStartIndex = rawContent.indexOf(subStringStartText) + subStringStartText.length
-
-        const subStringEndIndex = rawContent.indexOf(subStringEndText)
-        rawContent = rawContent.slice(subStringStartIndex, subStringEndIndex)
-      }
-
-      const exportName = getName(combination)
-      const formattedContent = JSON.stringify(
-        Reflector.Client.prepareMigrationScriptForClientExecution({
-          script: rawContent,
-          dataSource: combination.datasourceProvider,
-        }),
-        null,
-        2
-      )
-      const moduleName = exportName
+      const script = res.stdout.slice(commandIndexEnd + substr.length).replace(/`/g, '\\`')
+      const moduleName = getName(combination)
       const moduleFilePath = params.outputDir + `/${moduleName}.ts`
 
-      await FS.writeAsync(moduleFilePath, `export const ${exportName} = ${formattedContent}`)
+      await FS.writeAsync(moduleFilePath, `export const script = \`${script}\``)
       log.info(`Wrote migration module`, { path: moduleFilePath })
 
       return {
@@ -135,12 +116,14 @@ export default async function generateMigrationSql(params: {
   log.info(`Done writing all migration sql modules`)
 
   const indexExportsModuleFilePath = `${params.outputDir}/index_.ts`
-  const indexExportsModule = results.map((result) => `export * from './${result.moduleName}'`, '').join('\n')
+  const indexExportsModule = results
+    .map((result) => `export * as ${result.moduleName} from './${result.moduleName}'`, '')
+    .join('\n')
   await FS.writeAsync(indexExportsModuleFilePath, indexExportsModule)
   log.info(`Wrote exports index module`, { path: indexExportsModuleFilePath })
 
   const indexNamespaceModuleFilePath = `${params.outputDir}/index.ts`
-  const indexNamespaceModule = `export * as MigrationsSql from './index_'`
+  const indexNamespaceModule = `export * as MigrationScripts from './index_'`
   await FS.writeAsync(indexNamespaceModuleFilePath, indexNamespaceModule)
   log.info(`Wrote namespace index module`, { path: indexExportsModuleFilePath })
   log.info(`Done`)

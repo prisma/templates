@@ -62,22 +62,6 @@ export const indentBlock = (size: number, block: string): string => {
     .join('\n')
 }
 
-export const globalBackticks = /\u0060/g
-
-/**
- * @returns Array of content split at each semi colon with white space and back ticks removed.
- */
-export const clean = (content?: string): string[] => {
-  return content
-    ? content
-        .trim()
-        .replace(globalBackticks, '')
-        .split(';')
-        .map((s) => s.trim())
-        .filter((s) => s !== '')
-    : []
-}
-
 export const upperFirst = <S extends string>(s: S): Capitalize<S> => {
   // eslint-disable-next-line
   return (s.charAt(0).toUpperCase() + s.slice(1)) as any
