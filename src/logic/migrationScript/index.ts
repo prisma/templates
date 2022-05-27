@@ -1,4 +1,4 @@
-import { PrismaTemplates } from '../../'
+import { PrismaTemplates } from '../..'
 import { MigrationScripts } from '../../generated/migrations'
 import { getName } from './helpers'
 import { Reflector } from '~/src/lib/Reflector'

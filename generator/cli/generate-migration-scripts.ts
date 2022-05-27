@@ -1,14 +1,17 @@
 import { Reflector } from '@prisma-spectrum/reflector'
 import { PromisePool } from '@supercharge/promise-pool'
 import { PrismaTemplates } from '~/src'
-import { DatasourceProvidersNormalizedSupportingMigration, getName } from '~/src/logic/migrationSql/helpers'
+import {
+  DatasourceProvidersNormalizedSupportingMigration,
+  getName,
+} from '~/src/logic/migrationScript/helpers'
 import { getTemplateInfos } from '~/src/templates'
 import execa from 'execa'
 import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
 import * as Remeda from 'remeda'
 
-const log = rootLog.child('generateMigrationSql')
+const log = rootLog.child('generateMigrationScripts')
 
 interface Combination {
   /**
@@ -29,11 +32,11 @@ interface Combination {
   templateName: string
 }
 
-export default async function generateMigrationSql(params: {
+export default async function generateMigrationScripts(params: {
   templatesRepoDir: string
   outputDir: string
 }): Promise<void> {
-  log.info(`generating migration sql`, { params })
+  log.info(`generating migration script modules`, { params })
 
   const templateInfos = getTemplateInfos({
     templatesRepoDir: params.templatesRepoDir,
@@ -60,7 +63,7 @@ export default async function generateMigrationSql(params: {
     )
   )
 
-  log.info(`Found migration sql combinations`, { combinations })
+  log.info(`Found migration script combinations`, { combinations })
 
   const { results, errors } = await PromisePool.withConcurrency(50)
     .for(combinations)
@@ -113,7 +116,7 @@ export default async function generateMigrationSql(params: {
     })
   }
 
-  log.info(`Done writing all migration sql modules`)
+  log.info(`Done writing all migration script modules`)
 
   const indexExportsModuleFilePath = `${params.outputDir}/index_.ts`
   const indexExportsModule = results

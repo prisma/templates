@@ -266,7 +266,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
       import endent from 'endent'
       import { FileTransformer } from '../../fileTransformer'
       import { FileTransformers } from '../../fileTransformers'
-      import { MigrationSql } from '../../logic'
+      import { MigrationScript } from '../../logic'
       import { Reflector } from '~/src/lib/Reflector'
       import { BaseTemplateParameters, AbstractTemplate } from '../../types'
       import { merge } from 'lodash'
@@ -396,17 +396,14 @@ ${indentBlock(4, escapeBackticks(f.content))}
         public files = files
 
         /**
-         * SQL commands that taken together will put the database into a state reflecting the initial Prisma schema of this template.
+         * A SQL migration script that will put the database into a state reflecting the initial Prisma schema of this template.
          * 
          * This is useful for running migrations in environments where the Prisma Migration engine cannot be used, such as with the Prisma Data Proxy.
          * 
          * This SQL has been statically generated using the Prisma CLI [\`migrate diff\`](https://www.prisma.io/docs/reference/api-reference/command-reference#migrate-diff) sub-command. The SQL here is equivalent to the
          * SQL that shows up in _initial prisma migration file_ (e.g. \`./prisma/migrations/20210409125609_init/migration.sql\`) of this template. 
          * 
-         * Note that this sequel is influenced by the arguments given to this template such as if referential integrity is enabled or not, and what datasource provider was chosen.
-         * 
-         * This SQL is split by \`;\` such that it can be executed command-by-command using [Prisma Client's raw database access API](https://www.prisma.io/docs/concepts/components/prisma-client/raw-database-access).
-         * Do this inside a [transaction](https://www.prisma.io/docs/concepts/components/prisma-client/transactions) to keep it atomic.
+         * Note that the script is influenced by the arguments given to this template such as if referential integrity is enabled or not, and what datasource provider was chosen.
          */
         public migrationScript: string
 
@@ -415,7 +412,7 @@ ${indentBlock(4, escapeBackticks(f.content))}
         constructor(parameters?: TemplateParameters) {
           const parameters_ = merge({}, templateParameterDefaults, parameters)
 
-          this.migrationScript = MigrationSql.select({
+          this.migrationScript = MigrationScript.select({
             template: this._tag,
             datasourceProvider: parameters_.datasourceProvider,
             referentialIntegrity: parameters_.referentialIntegrity 

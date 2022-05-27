@@ -8,7 +8,7 @@ export const prismaSchemaProvider: FileTransformer = (params) => {
   if (file.path === 'prisma/schema.prisma') {
     content = tools.replaceContent({
       file,
-      pattern: /provider *= *"postgresql"/,
+      pattern: /provider *= *"postgres(?:ql)?"/,
       replacement: `provider = "${parameters.datasourceProvider}"`,
     })
   }

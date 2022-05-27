@@ -1,5 +1,5 @@
 import downloadTemplatesRepo from './download-templates-repo'
-import generateMigrationSql from './generate-migration-sql'
+import generateMigrationScripts from './generate-migration-scripts'
 import generateTypeScript from './generate-type-script'
 import arg from 'arg'
 import FS from 'fs-jetpack'
@@ -7,7 +7,7 @@ import Path from 'path'
 import { JsonObject } from 'type-fest'
 const args = arg({
   '--download-templates-repo': Boolean,
-  '--generate-migration-sql': Boolean,
+  '--generate-migration-scripts': Boolean,
   '--generate-type-script': Boolean,
   '--prettier': Boolean,
   '--no-cache': Boolean,
@@ -52,14 +52,14 @@ async function main(): Promise<void> {
     })
   }
 
-  if (args['--generate-migration-sql']) {
+  if (args['--generate-migration-scripts']) {
     if (FS.inspect(templatesRepoDir) === undefined) {
       console.log(
         `${templatesRepoDir} is empty. Please run build:gen:download-templates-repo.  Skipping migration generation.`
       )
       return
     }
-    await generateMigrationSql({
+    await generateMigrationScripts({
       templatesRepoDir,
       outputDir: Path.join(generatedDir, '/migrations'),
     })

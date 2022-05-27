@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  # postgresql://prisma:prisma@localhost:5401
+  # postgres://prisma:prisma@localhost:5401
   postgres:
     image: postgres:14
     container_name: templates-node-postgres

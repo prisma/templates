@@ -1,1 +1,1 @@
-export * as MigrationSql from './migrationSql'
+export * as MigrationScript from './migrationScript'
