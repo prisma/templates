@@ -1,17 +1,15 @@
 import { FileTransformer } from '../fileTransformer/fileTransformer'
+import { Reflector } from '../lib/Reflector'
 
 export const prismaSchemaProvider: FileTransformer = (params) => {
-  const { file, parameters, tools } = params
-
-  let content = file.content
+  const { file, parameters } = params
 
   if (file.path === 'prisma/schema.prisma') {
-    content = tools.replaceContent({
-      file,
-      pattern: /provider *= *"postgres(?:ql)?"/,
-      replacement: `provider = "${parameters.datasourceProvider}"`,
+    return Reflector.Schema.setDatasourceProvider({
+      prismaSchemaContent: file.content,
+      value: parameters.datasourceProvider,
     })
   }
 
-  return content
+  return file.content
 }

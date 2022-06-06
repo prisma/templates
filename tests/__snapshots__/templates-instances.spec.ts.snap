@@ -835,7 +835,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -1679,7 +1679,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -2486,7 +2486,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -3328,7 +3328,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -4172,7 +4172,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -4979,7 +4979,7 @@ export default Home",
 }
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -5415,7 +5415,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -5611,7 +5611,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -5807,7 +5807,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -6003,7 +6003,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -6199,7 +6199,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -6395,7 +6395,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
       "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -7016,7 +7016,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -8242,7 +8242,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -9342,7 +9342,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -10560,7 +10560,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -11786,7 +11786,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -12886,7 +12886,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -14051,7 +14051,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -15153,7 +15153,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -16171,7 +16171,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -17271,7 +17271,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -18373,7 +18373,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -19391,7 +19391,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -20373,7 +20373,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -21136,7 +21136,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -21857,7 +21857,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -22620,7 +22620,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -23383,7 +23383,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -24104,7 +24104,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -24813,7 +24813,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"cockroachdb\\"
+provider = \\"cockroachdb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -25443,7 +25443,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -26047,7 +26047,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -26677,7 +26677,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"postgres\\"
+provider = \\"postgres\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -27307,7 +27307,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlite\\"
+provider = \\"sqlite\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -27911,7 +27911,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"sqlserver\\"
+provider = \\"sqlserver\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28363,7 +28363,7 @@ Object {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28398,7 +28398,7 @@ Object {
   "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28423,7 +28423,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28510,7 +28510,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28591,7 +28591,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28641,7 +28641,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28808,7 +28808,7 @@ Object {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28843,7 +28843,7 @@ Object {
   "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28866,7 +28866,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -28952,7 +28952,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -29032,7 +29032,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -29081,7 +29081,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mysql\\"
+provider = \\"mysql\\"
   url      = env(\\"DATABASE_URL\\")
 }
 

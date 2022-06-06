@@ -8,7 +8,7 @@ Object {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -43,7 +43,7 @@ Object {
   "content": "// An empty Prisma Schema with no models, perfect as a starting point for your own schema.
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -66,7 +66,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -152,7 +152,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -232,7 +232,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
@@ -281,7 +281,7 @@ generator client {
 }
 
 datasource db {
-  provider = \\"mongodb\\"
+provider = \\"mongodb\\"
   url      = env(\\"DATABASE_URL\\")
 }
 
