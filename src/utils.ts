@@ -1,3 +1,4 @@
+import { Reflector } from './lib/Reflector'
 import endent from 'endent'
 import * as R from 'remeda'
 
@@ -66,3 +67,14 @@ export const upperFirst = <S extends string>(s: S): Capitalize<S> => {
   // eslint-disable-next-line
   return (s.charAt(0).toUpperCase() + s.slice(1)) as any
 }
+
+/**
+ * When using CockroachDB, the autoincrement() attribute function must be replaced with sequence()
+ * to get the same behavior as autoincrement() with other datasource providers (e.g. Postgres).
+ */
+export const normalizeAutoincrement = (
+  schema: string,
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
+) => (datasourceProvider === 'cockroachdb' ? schemaAutoincrementToSequence(schema) : schema)
+
+const schemaAutoincrementToSequence = (schema: string) => schema.replace(/autoincrement\(\)/g, 'sequence()')

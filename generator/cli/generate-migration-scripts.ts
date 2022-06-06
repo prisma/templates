@@ -6,6 +6,7 @@ import {
   getName,
 } from '~/src/logic/migrationScript/helpers'
 import { getTemplateInfos } from '~/src/templates'
+import { normalizeAutoincrement } from '~/src/utils'
 import execa from 'execa'
 import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
@@ -74,16 +75,23 @@ export default async function generateMigrationScripts(params: {
       const content = await FS.readAsync(SchemaPathTemplateOriginal)
       if (!content) throw new Error(`Could not read schema at path ${SchemaPathTemplateOriginal}`)
 
-      const schemaWithProvider = Reflector.Schema.setDatasourceProvider({
-        prismaSchemaContent: content,
-        value: combination.datasourceProvider,
-      })
-      const schemaWithReferentialIntegrity = Reflector.Schema.setReferentialIntegrity({
-        prismaSchemaContent: schemaWithProvider,
-        value: combination.referentialIntegrity,
-      })
+      const schema = Remeda.pipe(
+        content,
+        (content) =>
+          Reflector.Schema.setDatasourceProvider({
+            prismaSchemaContent: content,
+            value: combination.datasourceProvider,
+          }),
+        (content) =>
+          Reflector.Schema.setReferentialIntegrity({
+            prismaSchemaContent: content,
+            value: combination.referentialIntegrity,
+          }),
+        (content) => normalizeAutoincrement(content, combination.datasourceProvider)
+      )
 
-      await FS.writeAsync(SchemaPathThisCombo, schemaWithReferentialIntegrity)
+      await FS.writeAsync(SchemaPathThisCombo, schema)
+
       log.info(`Wrote template schema for combo to disk`, { path: SchemaPathThisCombo })
 
       const res = await execa.command(
