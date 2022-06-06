@@ -12,6 +12,11 @@ import { pipe } from 'remeda'
 export const datasourceProviderCockroachdb: FileTransformer = (params) => {
   const { file, parameters } = params
 
+  /**
+   * Note: Since 3.14 CockroachDB does not need a preview flag. @see https://github.com/prisma/prisma/releases/tag/3.14.0.
+   *
+   * This transformer assumes a Prisma version of 3.14 or higher and thus does not try to add a preview flag for CockroachDB.
+   */
   if (file.path === 'prisma/schema.prisma') {
     return pipe(
       file.content,
