@@ -18,4 +18,4 @@ runs:
         key: ${{ steps.get-reflect-templates-cache-key.outputs.cacheKey }}
     - run: yarn -s build:gen
       shell: bash
-      if: steps.reflect-templates-cache.outputs.cache-hit == 'true'
+      if: steps.reflect-templates-cache.outputs.cache-hit != 'true'
