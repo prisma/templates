@@ -7,7 +7,7 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -19,7 +19,7 @@ Object {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -29,7 +29,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -46,17 +46,17 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -70,14 +70,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -87,7 +87,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -101,14 +101,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -118,7 +118,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -132,14 +132,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -149,7 +149,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -163,14 +163,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -180,7 +180,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -194,7 +194,7 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -206,7 +206,7 @@ Object {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -216,7 +216,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -233,17 +233,17 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -257,14 +257,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -274,7 +274,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -288,14 +288,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -305,7 +305,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -319,14 +319,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -336,7 +336,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -350,14 +350,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -367,7 +367,7 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
   "path": "package.json",
@@ -482,7 +482,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -494,7 +494,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -504,7 +504,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -1326,7 +1326,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -1338,7 +1338,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -1348,7 +1348,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -2133,7 +2133,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -2145,7 +2145,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -2155,7 +2155,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -2975,7 +2975,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -2987,7 +2987,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -2997,7 +2997,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -3819,7 +3819,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -3831,7 +3831,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -3841,7 +3841,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -4626,7 +4626,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\",
+    \\"@prisma/client\\": \\"3.15.1\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -4638,7 +4638,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -4648,7 +4648,7 @@ module.exports = {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"next dev\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build\\",
+    \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
     \\"prisma:generate\\": \\"prisma generate\\"
@@ -5396,17 +5396,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -5592,17 +5592,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -5788,17 +5788,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -5984,17 +5984,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -6180,17 +6180,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -6376,17 +6376,17 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"17.0.21\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -6984,14 +6984,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -7001,7 +7001,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -8210,14 +8210,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -8227,7 +8227,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -9310,14 +9310,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -9327,7 +9327,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -10528,14 +10528,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -10545,7 +10545,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -11754,14 +11754,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -11771,7 +11771,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -12854,14 +12854,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -12871,7 +12871,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -14019,14 +14019,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -14036,7 +14036,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -15121,14 +15121,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -15138,7 +15138,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -16139,14 +16139,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -16156,7 +16156,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -17239,14 +17239,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -17256,7 +17256,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -18341,14 +18341,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -18358,7 +18358,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -19359,14 +19359,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -19376,7 +19376,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -20341,14 +20341,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -20358,7 +20358,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -21104,14 +21104,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -21121,7 +21121,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -21825,14 +21825,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -21842,7 +21842,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -22588,14 +22588,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -22605,7 +22605,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -23351,14 +23351,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -23368,7 +23368,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -24072,14 +24072,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -24089,7 +24089,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -24781,14 +24781,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -24798,7 +24798,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -25411,14 +25411,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -25428,7 +25428,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -26015,14 +26015,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -26032,7 +26032,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -26645,14 +26645,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -26662,7 +26662,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -27275,14 +27275,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -27292,7 +27292,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -27879,14 +27879,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"3.12.0\\"
+    \\"@prisma/client\\": \\"3.15.1\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"17.0.21\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"3.12.0\\",
+    \\"prisma\\": \\"3.15.1\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -27896,7 +27896,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate\\"
+    \\"build\\": \\"prisma generate --data-proxy\\"
   }
 }",
       "path": "package.json",
@@ -28670,7 +28670,7 @@ model User {
 exports[`with custom repository owner and repository handle Blog 1`] = `
 Object {
   "content": "# Next.js Blog
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 A simple blog example, built with Next.js & Prisma
 
@@ -28691,7 +28691,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`with custom repository owner and repository handle Empty 1`] = `
 Object {
   "content": "# Empty Prisma Project
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 An empty Prisma Schema with no models, perfect as a starting point for your own schema.",
   "path": "README.md",
@@ -28701,7 +28701,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
 exports[`with custom repository owner and repository handle Music Streaming Service 1`] = `
 Object {
   "content": "# Music Streaming Service
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Music%20Streaming%20Service/diagram.png)
 
@@ -28726,7 +28726,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`with custom repository owner and repository handle Rentals Platform 1`] = `
 Object {
   "content": "# Rentals Platform
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/Rentals%20Platform/diagram.png)
 
@@ -28751,7 +28751,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`with custom repository owner and repository handle SaaS 1`] = `
 Object {
   "content": "# SaaS
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 Generic Prisma schema example for a SaaS that has a referral system.
 
@@ -28778,7 +28778,7 @@ To learn more about Prisma, we recommend reading through our [Getting Started gu
 exports[`with custom repository owner and repository handle URL Shortener 1`] = `
 Object {
   "content": "# URL Shortener
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_CLIENT_ENGINE_TYPE&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ftemplates-node&env=DATABASE_URL,DATABASE_MIGRATE_URL&envDescription=Database%20connection%20strings%20your%20app%20depends%20on.%20You%20should%20switch%20back%20to%20the%20Prisma%20Data%20Platform%20to%20figure%20out%20what%20values%20to%20input%20here.)<br />
 
 ![Database diagram](https://raw.githubusercontent.com/prisma/prisma-schema-examples/main/URL%20Shortener/diagram.png)
 

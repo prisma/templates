@@ -20,8 +20,8 @@ export const dataproxy: FileTransformer = (params) => {
             scripts: {
               build:
                 template === 'Nextjs'
-                  ? `PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate && next build`
-                  : `PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate`,
+                  ? `prisma generate --data-proxy && next build`
+                  : `prisma generate --data-proxy`,
             },
           },
         })

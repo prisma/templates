@@ -17,11 +17,7 @@ export const Utils = {
     dataproxy: boolean
   }) {
     const repository = encodeURIComponent(params.repositoryOwner + '/' + params.repositoryHandle)
-    const envVars = [
-      'DATABASE_URL',
-      'DATABASE_MIGRATE_URL',
-      ...(params.dataproxy ? ['PRISMA_CLIENT_ENGINE_TYPE'] : []),
-    ].join(',')
+    const envVars = ['DATABASE_URL', 'DATABASE_MIGRATE_URL'].join(',')
     const envVarDescription = encodeURIComponent(
       'Database connection strings your app depends on. You should switch back to the Prisma Data Platform to figure out what values to input here.'
     )
