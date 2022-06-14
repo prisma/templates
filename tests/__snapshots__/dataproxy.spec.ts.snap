@@ -4,7 +4,6 @@ exports[`Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -49,7 +48,6 @@ provider = \\"mysql\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -62,7 +60,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -148,7 +145,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -228,7 +224,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -277,7 +272,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {

@@ -4,7 +4,7 @@ exports[`Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -49,7 +49,7 @@ provider = \\"mongodb\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -62,7 +62,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -148,7 +148,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -228,7 +228,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -277,7 +277,7 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
