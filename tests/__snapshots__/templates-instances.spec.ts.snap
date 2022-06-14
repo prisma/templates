@@ -831,7 +831,6 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -1675,7 +1674,7 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -2482,7 +2481,6 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -3324,7 +3322,6 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4168,7 +4165,6 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -4975,7 +4971,6 @@ export default Home",
     "prisma/schema.prisma": Object {
       "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -5421,7 +5416,6 @@ provider = \\"cockroachdb\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5617,7 +5611,7 @@ provider = \\"mongodb\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -5813,7 +5807,6 @@ provider = \\"mysql\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6009,7 +6002,6 @@ provider = \\"postgres\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6205,7 +6197,6 @@ provider = \\"sqlite\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -6401,7 +6392,6 @@ provider = \\"sqlserver\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
       "path": "prisma/schema.prisma",
     },
@@ -7012,7 +7002,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -8238,7 +8227,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -9338,7 +9327,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -10556,7 +10544,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -11782,7 +11769,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -12882,7 +12868,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -14047,7 +14032,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -15149,7 +15133,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -16167,7 +16151,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -17267,7 +17250,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -18369,7 +18351,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -19387,7 +19368,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -20369,7 +20349,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -21132,7 +21111,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -21853,7 +21832,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -22616,7 +22594,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -23379,7 +23356,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24100,7 +24076,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -24809,7 +24784,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -25439,7 +25413,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\", \\"mongoDb\\"]
+  previewFeatures = [\\"mongoDb\\"]
 }
 
 datasource db {
@@ -26043,7 +26017,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -26673,7 +26646,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -27303,7 +27275,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -27907,7 +27878,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28359,7 +28329,6 @@ Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28405,7 +28374,6 @@ provider = \\"mysql\\"
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -28419,7 +28387,6 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28506,7 +28473,6 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28587,7 +28553,6 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28637,7 +28602,6 @@ Object {
 generator client {
   provider = \\"prisma-client-js\\"
   engineType = \\"library\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28804,7 +28768,6 @@ exports[`with no custom engineType Blog 1`] = `
 Object {
   "content": "generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28849,7 +28812,6 @@ provider = \\"mysql\\"
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }",
   "path": "prisma/schema.prisma",
 }
@@ -28862,7 +28824,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -28948,7 +28909,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -29028,7 +28988,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
@@ -29077,7 +29036,6 @@ Object {
 
 generator client {
   provider = \\"prisma-client-js\\"
-  previewFeatures = [\\"dataProxy\\"]
 }
 
 datasource db {
