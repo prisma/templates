@@ -11,7 +11,7 @@ describe('vercel button', () => {
           dataproxy: true,
         })
         expect(template.files['README.md'].content.match(/Deploy with Vercel.*/)?.[0]).toMatch(
-          /.*env=DATABASE_URL,DATABASE_MIGRATE_URL&.*/
+          /.*env=DATABASE_URL,DATABASE_MIGRATE_URL,PRISMA_GENERATE_DATAPROXY&.*/
         )
       })
     })
