@@ -32,7 +32,8 @@ Object {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -56,7 +57,8 @@ Object {
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -87,7 +89,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -118,7 +121,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -149,7 +153,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -180,7 +185,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -219,7 +225,8 @@ Object {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -243,7 +250,8 @@ Object {
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -274,7 +282,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -305,7 +314,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -336,7 +346,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -367,7 +378,8 @@ Object {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
   "path": "package.json",
@@ -507,7 +519,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -1350,7 +1363,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -2157,7 +2171,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -2998,7 +3013,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -3841,7 +3857,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -4647,7 +4664,8 @@ module.exports = {
     \\"build\\": \\"prisma generate --data-proxy && next build\\",
     \\"start\\": \\"next start\\",
     \\"lint\\": \\"next lint\\",
-    \\"prisma:generate\\": \\"prisma generate\\"
+    \\"prisma:generate\\": \\"prisma generate\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -5401,7 +5419,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -5596,7 +5615,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -5792,7 +5812,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -5987,7 +6008,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -6182,7 +6204,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -6377,7 +6400,8 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   },
   \\"scripts\\": {
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -6991,7 +7015,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -8216,7 +8241,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -9316,7 +9342,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -10533,7 +10560,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -11758,7 +11786,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -12857,7 +12886,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -14021,7 +14051,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -15122,7 +15153,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -16140,7 +16172,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -17239,7 +17272,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -18340,7 +18374,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -19357,7 +19392,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -20338,7 +20374,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -21100,7 +21137,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -21821,7 +21859,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -22583,7 +22622,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -23345,7 +23385,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -24065,7 +24106,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -24773,7 +24815,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -25402,7 +25445,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -26006,7 +26050,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -26635,7 +26680,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -27264,7 +27310,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
@@ -27867,7 +27914,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"scripts\\": {
     \\"init\\": \\"prisma db push && prisma db seed\\",
     \\"dev\\": \\"ts-node ./sandbox.ts\\",
-    \\"build\\": \\"prisma generate --data-proxy\\"
+    \\"build\\": \\"prisma generate --data-proxy\\",
+    \\"postinstall\\": \\"bash -c 'if [ \\\\\\"$VERCEL\\\\\\" != \\\\\\"\\\\\\" ]; then prisma generate --data-proxy; fi'\\"
   }
 }",
       "path": "package.json",
