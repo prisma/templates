@@ -227,7 +227,7 @@ const handler: NextApiHandler = async (req, res) => {
     res.status(201).json(createdUsers)
   } catch (error) {
     console.error(error)
-    return res.status(500).end()
+    res.status(500).end()
   }
 }
 
