@@ -101,7 +101,7 @@ export const testTemplate = (params: {
     const initResult = ctx.run(`npm run init`, { reject: true })
     expect(initResult.stderr).toMatch('')
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
-    expect(stripAnsi(initResult.stdout)).toMatch('The seed command has been executed.')
+    expect(stripAnsi(initResult.stdout)).toMatch('Running seed command')
 
     const prisma = await ctx.getPrisma()
     const prismaAdmin = await ctx.getPrismaAdmin()
