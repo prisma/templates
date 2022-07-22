@@ -846,10 +846,10 @@
   resolved "https://registry.yarnpkg.com/@prisma-labs/prettier-config/-/prettier-config-0.1.0.tgz#ef6cb5f89487974ca997516e9b39d5ccbefeeaad"
   integrity sha512-P0h2y+gnIxFP2HdsTYSYHWmabGBlxyVjnUepsrRe8gAF36mxOonGsbsQmKt/Q9H9CMjrSkFoDe5F5HLi2iW5/Q==
 
-"@prisma-spectrum/reflector@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@prisma-spectrum/reflector/-/reflector-0.14.0.tgz#70839602ab7d37b9c16a52ab5bfe53db6b1a3b5d"
-  integrity sha512-EqMlNtRv3FzfoPzn9XRGcSR04dYqJx/AyGz1bEpbEC6qBRbeUd/GU6T/eJhQ1Xnm0Ym6N4NoBMTO2jBPkoxtMQ==
+"@prisma-spectrum/reflector@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@prisma-spectrum/reflector/-/reflector-0.15.0.tgz#f85c860ad8cad88534e043a9d1d99a619b038650"
+  integrity sha512-I+9QThaNHlufKHVfspuNgOmBN/Vb/5avIaO2Sp4+JGiLF0ndI8ilMyIw5epDJehMpAG2ovI1ZxNMMRJVahK9Dw==
   dependencies:
     "@opentelemetry/api" "^1.1.0"
     remeda "^0.0.35"
