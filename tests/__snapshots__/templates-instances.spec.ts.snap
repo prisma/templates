@@ -14,7 +14,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -49,7 +49,7 @@ Object {
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -74,7 +74,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -105,7 +105,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -136,7 +136,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -167,7 +167,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -201,7 +201,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -236,7 +236,7 @@ Object {
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -261,7 +261,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -292,7 +292,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -323,7 +323,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -354,7 +354,7 @@ Object {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -489,7 +489,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -1332,7 +1332,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -2139,7 +2139,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -2980,7 +2980,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -3823,7 +3823,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -4629,7 +4629,7 @@ module.exports = {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@types/react\\": \\"17.0.39\\",
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
@@ -5394,7 +5394,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5589,7 +5589,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5785,7 +5785,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -5980,7 +5980,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -6175,7 +6175,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -6370,7 +6370,7 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
     \\"@prisma/client\\": \\"4.0.0\\"
   },
   \\"devDependencies\\": {
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"prisma\\": \\"4.0.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
@@ -6978,7 +6978,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -8203,7 +8203,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -9303,7 +9303,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -10520,7 +10520,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -11745,7 +11745,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -12844,7 +12844,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -14008,7 +14008,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -15109,7 +15109,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -16127,7 +16127,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -17226,7 +17226,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -18327,7 +18327,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -19344,7 +19344,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -20325,7 +20325,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -21087,7 +21087,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -21808,7 +21808,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -22570,7 +22570,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -23332,7 +23332,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -24052,7 +24052,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -24760,7 +24760,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -25389,7 +25389,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -25993,7 +25993,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -26622,7 +26622,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -27251,7 +27251,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
@@ -27854,7 +27854,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
-    \\"@types/node\\": \\"17.0.21\\",
+    \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
     \\"prisma\\": \\"4.0.0\\",
