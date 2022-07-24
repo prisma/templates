@@ -7735,16 +7735,16 @@ CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"
 CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -10052,16 +10052,16 @@ CREATE TABLE \`_PlaylistToSong\` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_songId_fkey\` FOREIGN KEY (\`songId\`) REFERENCES \`Song\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_albumId_fkey\` FOREIGN KEY (\`albumId\`) REFERENCES \`Album\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Playlist\` ADD CONSTRAINT \`Playlist_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
@@ -11277,16 +11277,16 @@ CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"
 CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -13593,16 +13593,16 @@ CREATE NONCLUSTERED INDEX [_AlbumToArtist_B_index] ON [dbo].[_AlbumToArtist]([B]
 CREATE NONCLUSTERED INDEX [_PlaylistToSong_B_index] ON [dbo].[_PlaylistToSong]([B]);
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_songId_fkey] FOREIGN KEY ([songId]) REFERENCES [dbo].[Song]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_albumId_fkey] FOREIGN KEY ([albumId]) REFERENCES [dbo].[Album]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Playlist] ADD CONSTRAINT [Playlist_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
@@ -14722,10 +14722,10 @@ CREATE TABLE \\"Media\\" (
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -16839,10 +16839,10 @@ CREATE TABLE \`Media\` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Review\` ADD CONSTRAINT \`Review_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -17940,10 +17940,10 @@ CREATE TABLE \\"Media\\" (
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -20055,10 +20055,10 @@ CREATE TABLE [dbo].[Media] (
 );
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Review] ADD CONSTRAINT [Review_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
