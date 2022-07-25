@@ -4,29 +4,48 @@ import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
 import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 import { Reflector } from '@prisma-spectrum/reflector'
+import { getPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
+import { PrismaClient } from '@prisma/client'
 
-export const testTemplate = (params: {
+export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
-  /** A string or regex pattern of the expected output (stdout) when the project dev mode is run.*/
   expectedDevOutput: RegExp | string
-}) => {
-  jest.setTimeout(50_000)
+  testDBURI?: string
+  datasourceProvider?: Reflector.Schema.DatasourceProviderNormalized
+  databaseUrlBase: string
+  getPrismaAdmin: getPrismaClient
+  dbLifeCycleEvents: {
+    resetDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
+    initDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
+  }
+  prismaConfig?: {
+    referentialIntegrity?: 'prisma' | 'foreignKeys'
+  }
+}
+
+export const testTemplate = (params: DBTestParams) => {
+  jest.setTimeout(100_000)
 
   const ctx = konn()
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
     .beforeAll(async (ctx) => {
+      const datasourceProvider = params.datasourceProvider || 'postgres'
       const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
         dataproxy: false,
-        datasourceProvider: 'postgres',
+        datasourceProvider,
         repositoryOwner: 'prisma',
         repositoryHandle: `templates-node-test-${Template.metadata.handles.kebab}`,
+        referentialIntegrity: params.prismaConfig?.referentialIntegrity,
       })
-      const databaseUrlBase = 'postgres://prisma:prisma@localhost:5401'
+
+      const databaseUrlBase = params.databaseUrlBase
       const databaseName = template.metadata.handles.snake
       const databaseUrl = `${databaseUrlBase}/${databaseName}`
+
       const getPrismaClientModule = () => import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
+
       const getPrisma = async () =>
         new (await getPrismaClientModule()).PrismaClient({
           datasources: {
@@ -35,25 +54,17 @@ export const testTemplate = (params: {
             },
           },
         }) as ClientBase
-      const getPrismaAdmin = async () =>
-        new (await getPrismaClientModule()).PrismaClient({
-          datasources: {
-            db: {
-              url: `${databaseUrlBase}/postgres`,
-            },
-          },
-        }) as ClientBase
+
+      const getPrismaAdmin = async () => {
+        return params.getPrismaAdmin(databaseUrlBase, (await getPrismaClientModule()).PrismaClient)
+      }
 
       const dropTestDatabase = async () => {
-        const prisma = await getPrismaAdmin()
-        try {
-          await prisma.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
-        } catch (error) {
-          const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
-          if (!isDatabaseNotFoundErorr) throw error
-        } finally {
-          await prisma.$disconnect()
-        }
+        return params.dbLifeCycleEvents.resetDatabase(await getPrismaAdmin(), databaseName)
+      }
+
+      const initTestDatabase = async () => {
+        return params.dbLifeCycleEvents.initDatabase(await getPrismaAdmin(), databaseName)
       }
 
       return {
@@ -61,12 +72,16 @@ export const testTemplate = (params: {
         getPrismaAdmin,
         template,
         dropTestDatabase,
+        initTestDatabase,
         databaseName,
         databaseUrl,
       }
     })
     .afterAll(async (ctx) => {
       if (params.templateName !== 'Empty') {
+        if (ctx.run) {
+          await ctx.run(`prisma migrate reset --force`, { reject: true })
+        }
         await ctx.dropTestDatabase?.()
       }
     })
@@ -76,6 +91,7 @@ export const testTemplate = (params: {
     // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
+    console.log(`Starting the test ${params.templateName} for DB ${params.datasourceProvider}`)
     /**
      * Setup the project. Write files to disk, install deps, etc.
      */
@@ -84,6 +100,7 @@ export const testTemplate = (params: {
     ctx.run(`npm install`)
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
 
+    console.log('Writing to .env file and .npmrc')
     /**
      * Exit early for empty tempalte as there is nothing more to test.
      */
@@ -92,18 +109,30 @@ export const testTemplate = (params: {
     /**
      * Drop database before running the tests case it wasn't cleaned up from the previous test run.
      */
+
+    const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
+    const comm2 = await ctx.run(`prisma generate`, { reject: true })
+    console.log('two comm', { comm, comm2 })
     await ctx.dropTestDatabase()
+    await ctx.initTestDatabase()
+    console.log('database dropped from he previous run')
+
+    await ctx.run(`prisma db push`, { reject: true })
 
     /**
      * Test 1
      * Check that the initialization script works. This includes running migrate triggering generators and executing the seed.
      */
-    const initResult = ctx.run(`npm run init`, { reject: true })
+    const initResult = await ctx.runAsync(`npm run init`, { reject: true })
+    console.log('initResult.stdout', initResult.stdout)
     expect(initResult.stderr).toMatch('')
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('Running seed command')
 
+    console.log('Get getPrisma()')
     const prisma = await ctx.getPrisma()
+    console.log('Get getPrismaAdmin()')
+
     const prismaAdmin = await ctx.getPrismaAdmin()
 
     try {
@@ -111,13 +140,18 @@ export const testTemplate = (params: {
        * Test 2
        * Check that the template migration script works.
        */
+      const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
+      console.log('Second test reset finished..')
+      console.log({ comm })
       await ctx.dropTestDatabase()
-      await prismaAdmin.$executeRawUnsafe(`create database ${ctx.databaseName}`)
+      await ctx.initTestDatabase()
+      console.log('drop & init finished..')
+
       await Reflector.Client.runMigrationScript(
         prisma,
         ctx.template.migrationScript,
         // TODO test a matrix of data sources
-        'postgres'
+        params.datasourceProvider
       )
 
       /**

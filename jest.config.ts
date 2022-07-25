@@ -20,6 +20,7 @@ const config = {
     'jest-watch-select-projects',
     'jest-watch-suspend',
   ],
+  setupFiles: ['./tests/setup-tests.ts'],
 }
 
 export default config
