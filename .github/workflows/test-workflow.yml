@@ -14,4 +14,5 @@ jobs:
       - name: Test a simple echo
         run: echo "Testing workflow secret"
       - name: Test a secret echo
-        run: echo "Testing workflow secret"
+        with:
+          super_secret: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
