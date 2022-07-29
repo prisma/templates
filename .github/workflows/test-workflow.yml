@@ -14,4 +14,4 @@ jobs:
       - name: Test a secret echo
         with:
           psTestDBURI: ${{secrets.PLANET_SCALE_TEST_DB_URI}}
-        run: echo "uri:$psTestDBURI"
+        run: echo "Testing workflow secret"
