@@ -48,12 +48,6 @@ jobs:
       - uses: prisma/action-node-cache-dependencies@main
       - uses: ./.github/actions/generateTemplates
       - run: yarn type-check
-  test-unit:
-    needs: setup
-    uses: ./.github/workflows/test-unit.yml
-  test-e2e:
-    needs: setup
-    uses: ./.github/workflows/test-e2e.yml
   test-workflow:
     needs: setup
     uses: ./.github/workflows/test-workflow.yml
