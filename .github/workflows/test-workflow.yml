@@ -1,6 +1,8 @@
 name: test
 on:
   - workflow_call
+env:
+  PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
 jobs:
   test-workflow:
     strategy:
@@ -16,4 +18,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
-      - run: yarn -s show:secret SECRET
+      - run: yarn -s show:secret ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
