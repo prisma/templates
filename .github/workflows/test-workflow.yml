@@ -12,7 +12,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Test a simple echo
-        run: echo "Testing workflow secret"
+        run: echo "Testing workflow secret I"
       - name: Test a secret echo
         with:
           super_secret: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
+        run: echo "Testing workflow secret II"
