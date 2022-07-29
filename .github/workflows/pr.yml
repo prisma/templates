@@ -54,3 +54,6 @@ jobs:
   test-e2e:
     needs: setup
     uses: ./.github/workflows/test-e2e.yml
+  test-workflow:
+    needs: setup
+    uses: ./.github/workflows/test-workflow.yml
