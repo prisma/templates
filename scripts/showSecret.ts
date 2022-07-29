@@ -1,5 +1,5 @@
 const showSecret = () => {
-  const env = process.env
+  const env = process.env.PLANET_SCALE_TEST_DB_URI
   console.log("ENV")
   console.log(env)
   console.log("ARGS")
