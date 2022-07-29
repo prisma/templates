@@ -9,9 +9,10 @@ jobs:
         node-version: [16.x, 18.x]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Test a simple echo
-        run: echo "Testing workflow secret I"
-      - name: Test a secret echo
-        env:
-          PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
-        run: echo "PD_DB_URI $PLANET_SCALE_TEST_DB_URI"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+      - uses: prisma/action-node-cache-dependencies@main
+      - run: yarn -s show:secret SECRET

@@ -11,6 +11,7 @@
   "main": "./dist-cjs/index.js",
   "module": "./dist-esm/index.js",
   "scripts": {
+    "show:secret": "yarn -s ts-node scripts/showSecret",
     "format": "yarn format:prettier",
     "format:prettier": "prettier --write .",
     "format:check": "yarn -s format:check:prettier",
