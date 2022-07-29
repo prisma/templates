@@ -2,14 +2,14 @@ name: test
 on:
   - workflow_call
 jobs:
-  testing:
+  test-workflow:
     strategy:
       matrix:
         os: ['ubuntu-latest']
         node-version: [16.x, 18.x]
     runs-on: ${{ matrix.os }}
     steps:
-        run: echo "Testing workflow secret"
+      - run: echo "Testing workflow secret"
       - name: Testing workflow secret
         with:
           psTestDBURI: ${{secrets.PLANET_SCALE_TEST_DB_URI}}
