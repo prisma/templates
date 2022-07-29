@@ -17,4 +17,3 @@ jobs:
           cache: yarn
       - uses: prisma/action-node-cache-dependencies@main
       - run: yarn -s show:secret "$psTestDBURI"
-      - run: yarn -s show:secret ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
