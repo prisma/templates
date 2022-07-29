@@ -13,5 +13,5 @@ jobs:
         run: echo "Testing workflow secret"
       - name: Test a secret echo
         with:
-          psTestDBURI: ${{secrets.PLANET_SCALE_TEST_DB_URI}}
+          npmToken: ${{secrets.NPM_TOKEN}}
         run: echo "Testing workflow secret"
