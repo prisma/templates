@@ -1,6 +1,8 @@
 name: test
 on:
   - workflow_call
+env:
+  PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
 jobs:
   test-workflow:
     strategy:
