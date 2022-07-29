@@ -9,8 +9,13 @@ jobs:
         node-version: [16.x, 18.x]
     runs-on: ${{ matrix.os }}
     steps:
-      - run: echo "Testing workflow secret"
-      - name: Testing workflow secret
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          psTestDBURI: ${{secrets.PLANET_SCALE_TEST_DB_URI}}
-        run: echo "uri:$psTestDBURI"
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+      - run: yarn -s test:db:up
+      - uses: prisma/action-node-cache-dependencies@main
+      - uses: ./.github/actions/generateTemplates
+      - run: yarn -s test:e2e
