@@ -50,4 +50,6 @@ jobs:
       - run: yarn type-check
   test-workflow:
     needs: setup
+    with:
+      psTestDBURI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
     uses: ./.github/workflows/test-workflow.yml
