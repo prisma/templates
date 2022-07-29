@@ -48,3 +48,6 @@ jobs:
       - uses: prisma/action-node-cache-dependencies@main
       - uses: ./.github/actions/generateTemplates
       - run: yarn type-check
+  test-workflow:
+    needs: setup
+    uses: ./.github/workflows/test-workflow.yml
