@@ -1,8 +1,6 @@
 name: test
 on:
   - workflow_call
-env:
-  PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
 jobs:
   test-workflow:
     strategy:
@@ -15,5 +13,5 @@ jobs:
         run: echo "Testing workflow secret I"
       - name: Test a secret echo
         env:
-          super_secret: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
-        run: echo "$super_secret"
+          PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
+        run: echo "PD_DB_URI $PLANET_SCALE_TEST_DB_URI"
