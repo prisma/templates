@@ -7,5 +7,5 @@ export const mysqlSchemaTypeTransformer: FileTransformer = (params) => {
     return file.content
   }
 
-  return file.content.replace(/(String\?|String)/g, `$1 @db.Text`)
+  return file.content.replace(/ (String\??)/g, ` $1 @db.Text`)
 }
