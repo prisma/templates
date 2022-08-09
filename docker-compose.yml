@@ -19,8 +19,8 @@ services:
       - 33577:33577
     environment:
       PORT: 33574
-      FOREIGN_KEY_MODE: "disallow"
-      NUM_SHARDS: "1"
-      MYSQL_BIND_HOST: "0.0.0.0"
-      KEYSPACES: "test"
+      FOREIGN_KEY_MODE: 'disallow'
+      NUM_SHARDS: '1'
+      MYSQL_BIND_HOST: '0.0.0.0'
+      KEYSPACES: 'test'
       MYSQL_ROOT_PASSWORD: root
