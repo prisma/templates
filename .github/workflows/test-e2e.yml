@@ -7,11 +7,8 @@ jobs:
       matrix:
         os: ['ubuntu-latest']
         node-version: [16.x, 18.x]
-        db: [vitess-no-foreign-keys]
+        db: [postgres, vitess-no-foreign-keys]
     runs-on: ${{ matrix.os }}
-    env:
-      PLANET_SCALE_TEST_DB_URI: ${{ secrets.PLANET_SCALE_TEST_DB_URI }}
-      TEST_ENV: test_value_2
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}

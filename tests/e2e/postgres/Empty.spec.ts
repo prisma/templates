@@ -1,4 +1,4 @@
-import { testTemplate } from '../e2e/__testers__'
+import { testTemplate } from '../__testers__'
 import { GetPostgresAdminPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
 import { dropPostgresDatabase } from '~/tests/e2e/helpers/dropPostgresDatabase'
 
