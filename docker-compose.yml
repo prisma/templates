@@ -12,3 +12,15 @@ services:
       - 5401:5432
     volumes:
       - ./scripts/:/docker-entrypoint-initdb.d/
+  vitess-no-foreign-keys:
+    image: vitess/vttestserver:mysql80
+    restart: unless-stopped
+    ports:
+      - 33577:33577
+    environment:
+      PORT: 33574
+      FOREIGN_KEY_MODE: "disallow"
+      NUM_SHARDS: "1"
+      MYSQL_BIND_HOST: "0.0.0.0"
+      KEYSPACES: "test"
+      MYSQL_ROOT_PASSWORD: root
