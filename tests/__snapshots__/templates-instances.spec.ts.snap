@@ -7,7 +7,7 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -19,7 +19,7 @@ Object {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -46,11 +46,11 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -70,14 +70,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -101,14 +101,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -132,14 +132,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -163,14 +163,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -194,7 +194,7 @@ Object {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -206,7 +206,7 @@ Object {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -233,11 +233,11 @@ Object {
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -257,14 +257,14 @@ Object {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -288,14 +288,14 @@ Object {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -319,14 +319,14 @@ Object {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -350,14 +350,14 @@ Object {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -482,7 +482,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -494,7 +494,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -1325,7 +1325,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -1337,7 +1337,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -2132,7 +2132,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -2144,7 +2144,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -2308,7 +2308,7 @@ const seedUsers: Prisma.UserCreateInput[] = [
     posts: {
       create: [
         {
-          title: 'Requiem for String Orchestra',
+          title: 'Requiem for String @db.Text Orchestra',
           content: '',
         },
         {
@@ -2490,22 +2490,22 @@ provider = \\"mysql\\"
 
 model Post {
   post_id   Int     @id @default(autoincrement())
-  content   String?
-  title     String
+  content   String? @db.Text
+  title     String @db.Text
   author_id Int?
   author    User?   @relation(fields: [author_id], references: [user_id])
 }
 
 model Profile {
-  bio        String?
+  bio        String? @db.Text
   profile_id Int     @id @default(autoincrement())
   user_id    Int
   user       User    @relation(fields: [user_id], references: [user_id])
 }
 
 model User {
-  email    String    @unique
-  name     String?
+  email    String @db.Text    @unique
+  name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
   profiles Profile[]
@@ -2973,7 +2973,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -2985,7 +2985,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -3816,7 +3816,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -3828,7 +3828,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -4622,7 +4622,7 @@ module.exports = {
   \\"description\\": \\"Schema for a blog built with Next.js\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\",
+    \\"@prisma/client\\": \\"4.1.0\\",
     \\"next\\": \\"11.1.3\\",
     \\"react\\": \\"17.0.2\\",
     \\"react-dom\\": \\"17.0.2\\"
@@ -4634,7 +4634,7 @@ module.exports = {
     \\"eslint\\": \\"7.32.0\\",
     \\"eslint-config-next\\": \\"11.1.4\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -5391,11 +5391,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -5586,11 +5586,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -5782,11 +5782,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -5977,11 +5977,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -6172,11 +6172,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -6367,11 +6367,11 @@ An empty Prisma Schema with no models, perfect as a starting point for your own 
   \\"description\\": \\"An empty schema with no models, to build your own your own schema\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/node\\": \\"18.0.1\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -6974,14 +6974,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -7735,16 +7735,16 @@ CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"
 CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -8199,14 +8199,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -9299,14 +9299,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -9335,21 +9335,21 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  email        String        @unique
+  name         String @db.Text
+  email        String @db.Text        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  songId    String?
-  userId    String?
+  songId    String? @db.Text
+  userId    String? @db.Text
   isLiked   Boolean  @default(false)
   playCount Int
   song      Song?    @relation(fields: [songId], references: [id])
@@ -9357,16 +9357,16 @@ model Interaction {
 }
 
 model Song {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  albumId      String?
-  artistId     String
+  name         String @db.Text
+  albumId      String? @db.Text
+  artistId     String @db.Text
   length       Float
   track        Int?
-  lyrics       String?
-  fileUrl      String
+  lyrics       String? @db.Text
+  fileUrl      String @db.Text
   album        Album?        @relation(fields: [albumId], references: [id])
   artist       Artist        @relation(fields: [artistId], references: [id])
   interactions Interaction[]
@@ -9374,30 +9374,30 @@ model Song {
 }
 
 model Artist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
+  name      String @db.Text
   songs     Song[]
   albums    Album[]
 }
 
 model Album {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
-  cover     String
+  name      String @db.Text
+  cover     String @db.Text
   songs     Song[]
   artists   Artist[]
 }
 
 model Playlist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
-  name      String
+  userId    String? @db.Text
+  name      String @db.Text
   user      User?    @relation(fields: [userId], references: [id])
   songs     Song[]
 }",
@@ -10052,16 +10052,16 @@ CREATE TABLE \`_PlaylistToSong\` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_songId_fkey\` FOREIGN KEY (\`songId\`) REFERENCES \`Song\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \`Interaction\` ADD CONSTRAINT \`Interaction_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_albumId_fkey\` FOREIGN KEY (\`albumId\`) REFERENCES \`Album\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \`Song\` ADD CONSTRAINT \`Song_artistId_fkey\` FOREIGN KEY (\`artistId\`) REFERENCES \`Artist\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Playlist\` ADD CONSTRAINT \`Playlist_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
@@ -10516,14 +10516,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -11277,16 +11277,16 @@ CREATE UNIQUE INDEX \\"_PlaylistToSong_AB_unique\\" ON \\"_PlaylistToSong\\"(\\"
 CREATE INDEX \\"_PlaylistToSong_B_index\\" ON \\"_PlaylistToSong\\"(\\"B\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_songId_fkey\\" FOREIGN KEY (\\"songId\\") REFERENCES \\"Song\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE \\"Interaction\\" ADD CONSTRAINT \\"Interaction_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_albumId_fkey\\" FOREIGN KEY (\\"albumId\\") REFERENCES \\"Album\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE \\"Song\\" ADD CONSTRAINT \\"Song_artistId_fkey\\" FOREIGN KEY (\\"artistId\\") REFERENCES \\"Artist\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Playlist\\" ADD CONSTRAINT \\"Playlist_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -11741,14 +11741,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -12840,14 +12840,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional music streaming service with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -13593,16 +13593,16 @@ CREATE NONCLUSTERED INDEX [_AlbumToArtist_B_index] ON [dbo].[_AlbumToArtist]([B]
 CREATE NONCLUSTERED INDEX [_PlaylistToSong_B_index] ON [dbo].[_PlaylistToSong]([B]);
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_songId_fkey] FOREIGN KEY ([songId]) REFERENCES [dbo].[Song]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Interaction] ADD CONSTRAINT [Interaction_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_albumId_fkey] FOREIGN KEY ([albumId]) REFERENCES [dbo].[Album]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE [dbo].[Song] ADD CONSTRAINT [Song_artistId_fkey] FOREIGN KEY ([artistId]) REFERENCES [dbo].[Artist]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Playlist] ADD CONSTRAINT [Playlist_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
@@ -14004,14 +14004,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -14722,10 +14722,10 @@ CREATE TABLE \\"Media\\" (
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -15105,14 +15105,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -16123,14 +16123,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -16159,38 +16159,38 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String        @unique
-  name         String
+  email        String @db.Text        @unique
+  name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
+  userId    String? @db.Text
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  roomId    String?
+  roomId    String? @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
   user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
-  id                 String        @id @default(uuid())
+  id                 String @db.Text        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
-  summary            String?
-  address            String
+  summary            String? @db.Text
+  address            String @db.Text
   isSmoking          Boolean       @default(false)
   hasTV              Boolean       @default(true)
   hasAirConditioning Boolean       @default(true)
@@ -16202,21 +16202,21 @@ model Room {
 }
 
 model Review {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
-  comment   String
-  userId    String
+  comment   String @db.Text
+  userId    String @db.Text
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  roomId    String?
-  fileName  String
+  roomId    String? @db.Text
+  fileName  String @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
 }",
       "path": "prisma/schema.prisma",
@@ -16839,10 +16839,10 @@ CREATE TABLE \`Media\` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_roomId_fkey\` FOREIGN KEY (\`roomId\`) REFERENCES \`Room\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \`Reservation\` ADD CONSTRAINT \`Reservation_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \`Review\` ADD CONSTRAINT \`Review_userId_fkey\` FOREIGN KEY (\`userId\`) REFERENCES \`User\`(\`id\`) ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -17222,14 +17222,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -17940,10 +17940,10 @@ CREATE TABLE \\"Media\\" (
 CREATE UNIQUE INDEX \\"User_email_key\\" ON \\"User\\"(\\"email\\");
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_roomId_fkey\\" FOREIGN KEY (\\"roomId\\") REFERENCES \\"Room\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE \\"Reservation\\" ADD CONSTRAINT \\"Reservation_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE \\"Review\\" ADD CONSTRAINT \\"Review_userId_fkey\\" FOREIGN KEY (\\"userId\\") REFERENCES \\"User\\"(\\"id\\") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -18323,14 +18323,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -19340,14 +19340,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a fictional hotel with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -20055,10 +20055,10 @@ CREATE TABLE [dbo].[Media] (
 );
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_roomId_fkey] FOREIGN KEY ([roomId]) REFERENCES [dbo].[Room]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE [dbo].[Reservation] ADD CONSTRAINT [Reservation_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE [dbo].[Review] ADD CONSTRAINT [Review_userId_fkey] FOREIGN KEY ([userId]) REFERENCES [dbo].[User]([id]) ON DELETE NO ACTION ON UPDATE CASCADE;
@@ -20321,14 +20321,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -21083,14 +21083,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -21804,14 +21804,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -21840,32 +21840,32 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
-  accountId String?
+  name      String? @db.Text
+  email     String @db.Text
+  accountId String? @db.Text
   account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
-  id                   String   @id @default(uuid())
+  id                   String @db.Text   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  stripeCustomerId     String
-  stripeSubscriptionId String
-  referrer             String?
+  stripeCustomerId     String @db.Text
+  stripeSubscriptionId String @db.Text
+  referrer             String? @db.Text
   isActive             Boolean
   invites              Invite[]
   users                User[]
 }
 
 model Invite {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   dateSent  DateTime @default(now())
-  email     String
-  accountId String?
+  email     String @db.Text
+  accountId String? @db.Text
   isValid   Boolean  @default(true)
   account   Account? @relation(fields: [accountId], references: [id])
 }",
@@ -22566,14 +22566,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -23328,14 +23328,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -24048,14 +24048,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for an identity service for a SaaS with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -24756,14 +24756,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -25385,14 +25385,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -25989,14 +25989,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -26025,21 +26025,21 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  url       String
-  shortUrl  String
-  userId    String?
+  url       String @db.Text
+  shortUrl  String @db.Text
+  userId    String? @db.Text
   User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
+  name      String? @db.Text
+  email     String @db.Text
   links     Link[]
 }",
       "path": "prisma/schema.prisma",
@@ -26618,14 +26618,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -27247,14 +27247,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -27850,14 +27850,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   \\"description\\": \\"Schema for a URL shortener with a REST API\\",
   \\"license\\": \\"UNLICENSED\\",
   \\"dependencies\\": {
-    \\"@prisma/client\\": \\"4.0.0\\"
+    \\"@prisma/client\\": \\"4.1.0\\"
   },
   \\"devDependencies\\": {
     \\"@types/faker\\": \\"5.5.9\\",
     \\"@types/node\\": \\"18.0.1\\",
     \\"@vercel/node\\": \\"1.13.0\\",
     \\"faker\\": \\"5.5.3\\",
-    \\"prisma\\": \\"4.0.0\\",
+    \\"prisma\\": \\"4.1.0\\",
     \\"ts-node\\": \\"10.5.0\\",
     \\"typescript\\": \\"4.5.5\\"
   },
@@ -28338,22 +28338,22 @@ provider = \\"mysql\\"
 
 model Post {
   post_id   Int     @id @default(autoincrement())
-  content   String?
-  title     String
+  content   String? @db.Text
+  title     String @db.Text
   author_id Int?
   author    User?   @relation(fields: [author_id], references: [user_id])
 }
 
 model Profile {
-  bio        String?
+  bio        String? @db.Text
   profile_id Int     @id @default(autoincrement())
   user_id    Int
   user       User    @relation(fields: [user_id], references: [user_id])
 }
 
 model User {
-  email    String    @unique
-  name     String?
+  email    String @db.Text    @unique
+  name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
   profiles Profile[]
@@ -28395,21 +28395,21 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  email        String        @unique
+  name         String @db.Text
+  email        String @db.Text        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  songId    String?
-  userId    String?
+  songId    String? @db.Text
+  userId    String? @db.Text
   isLiked   Boolean  @default(false)
   playCount Int
   song      Song?    @relation(fields: [songId], references: [id])
@@ -28417,16 +28417,16 @@ model Interaction {
 }
 
 model Song {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  albumId      String?
-  artistId     String
+  name         String @db.Text
+  albumId      String? @db.Text
+  artistId     String @db.Text
   length       Float
   track        Int?
-  lyrics       String?
-  fileUrl      String
+  lyrics       String? @db.Text
+  fileUrl      String @db.Text
   album        Album?        @relation(fields: [albumId], references: [id])
   artist       Artist        @relation(fields: [artistId], references: [id])
   interactions Interaction[]
@@ -28434,30 +28434,30 @@ model Song {
 }
 
 model Artist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
+  name      String @db.Text
   songs     Song[]
   albums    Album[]
 }
 
 model Album {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
-  cover     String
+  name      String @db.Text
+  cover     String @db.Text
   songs     Song[]
   artists   Artist[]
 }
 
 model Playlist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
-  name      String
+  userId    String? @db.Text
+  name      String @db.Text
   user      User?    @relation(fields: [userId], references: [id])
   songs     Song[]
 }",
@@ -28481,38 +28481,38 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String        @unique
-  name         String
+  email        String @db.Text        @unique
+  name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
+  userId    String? @db.Text
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  roomId    String?
+  roomId    String? @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
   user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
-  id                 String        @id @default(uuid())
+  id                 String @db.Text        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
-  summary            String?
-  address            String
+  summary            String? @db.Text
+  address            String @db.Text
   isSmoking          Boolean       @default(false)
   hasTV              Boolean       @default(true)
   hasAirConditioning Boolean       @default(true)
@@ -28524,21 +28524,21 @@ model Room {
 }
 
 model Review {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
-  comment   String
-  userId    String
+  comment   String @db.Text
+  userId    String @db.Text
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  roomId    String?
-  fileName  String
+  roomId    String? @db.Text
+  fileName  String @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
 }",
   "path": "prisma/schema.prisma",
@@ -28561,32 +28561,32 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
-  accountId String?
+  name      String? @db.Text
+  email     String @db.Text
+  accountId String? @db.Text
   account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
-  id                   String   @id @default(uuid())
+  id                   String @db.Text   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  stripeCustomerId     String
-  stripeSubscriptionId String
-  referrer             String?
+  stripeCustomerId     String @db.Text
+  stripeSubscriptionId String @db.Text
+  referrer             String? @db.Text
   isActive             Boolean
   invites              Invite[]
   users                User[]
 }
 
 model Invite {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   dateSent  DateTime @default(now())
-  email     String
-  accountId String?
+  email     String @db.Text
+  accountId String? @db.Text
   isValid   Boolean  @default(true)
   account   Account? @relation(fields: [accountId], references: [id])
 }",
@@ -28610,21 +28610,21 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  url       String
-  shortUrl  String
-  userId    String?
+  url       String @db.Text
+  shortUrl  String @db.Text
+  userId    String? @db.Text
   User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
+  name      String? @db.Text
+  email     String @db.Text
   links     Link[]
 }",
   "path": "prisma/schema.prisma",
@@ -28777,22 +28777,22 @@ provider = \\"mysql\\"
 
 model Post {
   post_id   Int     @id @default(autoincrement())
-  content   String?
-  title     String
+  content   String? @db.Text
+  title     String @db.Text
   author_id Int?
   author    User?   @relation(fields: [author_id], references: [user_id])
 }
 
 model Profile {
-  bio        String?
+  bio        String? @db.Text
   profile_id Int     @id @default(autoincrement())
   user_id    Int
   user       User    @relation(fields: [user_id], references: [user_id])
 }
 
 model User {
-  email    String    @unique
-  name     String?
+  email    String @db.Text    @unique
+  name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
   profiles Profile[]
@@ -28832,21 +28832,21 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  email        String        @unique
+  name         String @db.Text
+  email        String @db.Text        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  songId    String?
-  userId    String?
+  songId    String? @db.Text
+  userId    String? @db.Text
   isLiked   Boolean  @default(false)
   playCount Int
   song      Song?    @relation(fields: [songId], references: [id])
@@ -28854,16 +28854,16 @@ model Interaction {
 }
 
 model Song {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  name         String
-  albumId      String?
-  artistId     String
+  name         String @db.Text
+  albumId      String? @db.Text
+  artistId     String @db.Text
   length       Float
   track        Int?
-  lyrics       String?
-  fileUrl      String
+  lyrics       String? @db.Text
+  fileUrl      String @db.Text
   album        Album?        @relation(fields: [albumId], references: [id])
   artist       Artist        @relation(fields: [artistId], references: [id])
   interactions Interaction[]
@@ -28871,30 +28871,30 @@ model Song {
 }
 
 model Artist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
+  name      String @db.Text
   songs     Song[]
   albums    Album[]
 }
 
 model Album {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
-  cover     String
+  name      String @db.Text
+  cover     String @db.Text
   songs     Song[]
   artists   Artist[]
 }
 
 model Playlist {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
-  name      String
+  userId    String? @db.Text
+  name      String @db.Text
   user      User?    @relation(fields: [userId], references: [id])
   songs     Song[]
 }",
@@ -28917,38 +28917,38 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String        @id @default(uuid())
+  id           String @db.Text        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String        @unique
-  name         String
+  email        String @db.Text        @unique
+  name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId    String?
+  userId    String? @db.Text
   startDate DateTime
   endDate   DateTime
   price     Int
   total     Int
-  roomId    String?
+  roomId    String? @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
   user      User?    @relation(fields: [userId], references: [id])
 }
 
 model Room {
-  id                 String        @id @default(uuid())
+  id                 String @db.Text        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
   totalBedrooms      Int           @default(5)
   totalBathrooms     Int           @default(5)
-  summary            String?
-  address            String
+  summary            String? @db.Text
+  address            String @db.Text
   isSmoking          Boolean       @default(false)
   hasTV              Boolean       @default(true)
   hasAirConditioning Boolean       @default(true)
@@ -28960,21 +28960,21 @@ model Room {
 }
 
 model Review {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
-  comment   String
-  userId    String
+  comment   String @db.Text
+  userId    String @db.Text
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model Media {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  roomId    String?
-  fileName  String
+  roomId    String? @db.Text
+  fileName  String @db.Text
   room      Room?    @relation(fields: [roomId], references: [id])
 }",
   "path": "prisma/schema.prisma",
@@ -28996,32 +28996,32 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
-  accountId String?
+  name      String? @db.Text
+  email     String @db.Text
+  accountId String? @db.Text
   account   Account? @relation(fields: [accountId], references: [id])
 }
 
 model Account {
-  id                   String   @id @default(uuid())
+  id                   String @db.Text   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
-  stripeCustomerId     String
-  stripeSubscriptionId String
-  referrer             String?
+  stripeCustomerId     String @db.Text
+  stripeSubscriptionId String @db.Text
+  referrer             String? @db.Text
   isActive             Boolean
   invites              Invite[]
   users                User[]
 }
 
 model Invite {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   dateSent  DateTime @default(now())
-  email     String
-  accountId String?
+  email     String @db.Text
+  accountId String? @db.Text
   isValid   Boolean  @default(true)
   account   Account? @relation(fields: [accountId], references: [id])
 }",
@@ -29044,21 +29044,21 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  url       String
-  shortUrl  String
-  userId    String?
+  url       String @db.Text
+  shortUrl  String @db.Text
+  userId    String? @db.Text
   User      User?    @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String @db.Text   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String?
-  email     String
+  name      String? @db.Text
+  email     String @db.Text
   links     Link[]
 }",
   "path": "prisma/schema.prisma",
