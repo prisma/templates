@@ -19,7 +19,7 @@ const config = {
     'jest-watch-typeahead/testname',
     'jest-watch-select-projects',
     'jest-watch-suspend',
-  ]
+  ],
 }
 
 export default config
