@@ -1,7 +1,7 @@
 import { DBTestParams } from '~/tests/e2e/__testers__'
 import { GetMysqlAdminPrismaClient } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
 
-export function getDefaultPlanetScaleTestTemplateConfig(
+export function getDefaultVitessTestConfig(
   dbURI: string
 ): Omit<DBTestParams, 'templateName' | 'testName' | 'expectedDevOutput'> {
   return {
