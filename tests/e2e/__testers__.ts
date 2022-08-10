@@ -149,7 +149,7 @@ export const testTemplate = (params: DBTestParams) => {
     await Reflector.Client.runMigrationScript(prisma, ctx.template.migrationScript, params.datasourceProvider)
   })
 
-  it.todo(`${params.templateName} - seed using the derived seed function should work`, async () => {
+  it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
     /**
      * Test 3
      * Check the seed again but this time using the derived seed function.
