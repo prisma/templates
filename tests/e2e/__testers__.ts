@@ -133,6 +133,8 @@ export const testTemplate = (params: DBTestParams) => {
   })
 
   it(`${params.templateName} - template migration script should work`, async () => {
+    if (ctx.template._tag === 'Empty') return
+
     // /**
     //  * Test 2
     //  * Check that the template migration script works.
@@ -150,6 +152,8 @@ export const testTemplate = (params: DBTestParams) => {
   })
 
   it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
+    if (ctx.template._tag === 'Empty') return
+
     /**
      * Test 3
      * Check the seed again but this time using the derived seed function.
