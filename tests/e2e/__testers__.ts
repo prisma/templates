@@ -85,7 +85,7 @@ export const testTemplate = (params: {
     await ctx.fs.writeAsync('.env', `DATABASE_URL='${ctx.databaseUrl}'`)
 
     /**
-     * Exit early for empty tempalte as there is nothing more to test.
+     * Exit early for empty template as there is nothing more to test.
      */
     if (ctx.template._tag === 'Empty') return
 

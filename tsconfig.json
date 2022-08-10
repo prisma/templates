@@ -48,7 +48,7 @@
     ]
   },
   "include": ["."],
-  "exclude": ["dist-*"],
+  "exclude": ["dist-*", "templates-raw"],
   "plugins": [
     {
       "name": "typescript-snapshots-plugin"
