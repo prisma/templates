@@ -11,8 +11,7 @@ Prisma [templates](https://github.com/prisma/prisma-schema-examples) packaged up
 
 1) Install sha1sum library
 2) `yarn run build:gen`
-3) create `.env.test` file with the `PLANET_SCALE_TEST_DB_URI` value (check `.env.test.example`)
-4) if `yarn test` fails - run `yarn test -u`
+3) if `yarn test` fails - run `yarn test -u`
 
 ## Creating a File Transformer
 
