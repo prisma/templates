@@ -78,6 +78,8 @@ export const testTemplate = (params: DBTestParams) => {
     })
     .afterAll(async (ctx) => {
       if (params.templateName !== 'Empty') {
+        // TODO switch to deleting the actual DB
+        //    await prismaAdminClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
         if (ctx.run) {
           await ctx.run(`prisma migrate reset --force`, { reject: true })
         }
@@ -135,16 +137,19 @@ export const testTemplate = (params: DBTestParams) => {
     //  * Test 2
     //  * Check that the template migration script works.
     //  */
-    // const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
-    // console.log('Second test reset finished..')
-    // console.log({ comm })
-    // await ctx.dropTestDatabase()
-    // await ctx.initTestDatabase()
-    // console.log('drop & init finished..')
-    // const initResult = await ctx.runAsync(`npm run init`, { reject: true })
+    const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
+    console.log('Second test reset finished..')
+    console.log({ comm })
+    await ctx.dropTestDatabase()
+    await ctx.initTestDatabase()
+
+    console.log('Get getPrisma()')
+    const prisma = await ctx.getPrisma()
+    console.log('migrationScript', ctx.template.migrationScript)
+    await Reflector.Client.runMigrationScript(prisma, ctx.template.migrationScript, params.datasourceProvider)
   })
 
-  it(`${params.templateName} - template migration script should work`, async () => {
+  it.todo(`${params.templateName} - seed using the derived seed function should work`, async () => {
     /**
      * Test 3
      * Check the seed again but this time using the derived seed function.
