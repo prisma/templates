@@ -14,7 +14,7 @@ export interface DBTestParams {
   datasourceProvider?: Reflector.Schema.DatasourceProviderNormalized
   databaseUrlBase: string
   getPrismaAdmin: getPrismaClient
-  dbLifeCycleEvents: {
+  databaseActions: {
     resetDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
     initDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
   }
@@ -60,11 +60,11 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       const dropTestDatabase = async () => {
-        return params.dbLifeCycleEvents.resetDatabase(await getPrismaAdmin(), databaseName)
+        return params.databaseActions.resetDatabase(await getPrismaAdmin(), databaseName)
       }
 
       const initTestDatabase = async () => {
-        return params.dbLifeCycleEvents.initDatabase(await getPrismaAdmin(), databaseName)
+        return params.databaseActions.initDatabase(await getPrismaAdmin(), databaseName)
       }
 
       return {

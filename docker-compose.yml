@@ -12,6 +12,7 @@ services:
       - 5401:5432
     volumes:
       - ./scripts/:/docker-entrypoint-initdb.d/
+  # postgres://root:root@localhost:33577
   vitess-no-foreign-keys:
     image: vitess/vttestserver:mysql80
     restart: unless-stopped

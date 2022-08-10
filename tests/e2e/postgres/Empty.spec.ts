@@ -7,7 +7,7 @@ testTemplate({
   expectedDevOutput: '',
   getPrismaAdmin: GetPostgresAdminPrismaClient,
   databaseUrlBase: 'postgres://prisma:prisma@localhost:5401',
-  dbLifeCycleEvents: {
+  databaseActions: {
     resetDatabase: dropPostgresDatabase,
     initDatabase: async () => {},
   },

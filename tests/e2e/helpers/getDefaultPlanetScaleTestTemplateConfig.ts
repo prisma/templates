@@ -8,7 +8,7 @@ export function getDefaultPlanetScaleTestTemplateConfig(
     databaseUrlBase: dbURI,
     datasourceProvider: 'mysql',
     getPrismaAdmin: GetMysqlAdminPrismaClient,
-    dbLifeCycleEvents: {
+    databaseActions: {
       resetDatabase: async () => {},
       initDatabase: async () => {},
     },
