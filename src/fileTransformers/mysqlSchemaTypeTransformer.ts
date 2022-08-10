@@ -7,5 +7,14 @@ export const mysqlSchemaTypeTransformer: FileTransformer = (params) => {
     return file.content
   }
 
-  return file.content.replace(/ (String\??)/g, ` $1 @db.Text`)
+  /**
+   * @description
+   * Regex transformation examples:
+   * - String? -> String? @db.Text
+   * - String -> String @db.Text
+   * - String @id -> String
+   * - String @unique -> String
+   */
+  const regex = / (String\??)(?!.*(?:@unique|@id))/gm
+  return file.content.replace(regex, ` $1 @db.Text`)
 }

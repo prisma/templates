@@ -10,7 +10,32 @@ describe('mysqlSchemaTypeTransformer', function () {
     repositoryOwner: 'prisma',
     repositoryHandle: `templates-node-test`,
   })
-  test('should replace String with String @db.Text on every field in schema', () => {
+  test('should not convert String to @db.Text when fields have @id or @unique', () => {
+    const file = {
+      ...template.files['prisma/schema.prisma'],
+      content: `a String @id b String? @unique c DateTime`,
+    }
+
+    const expected = `a String @id b String? @unique c DateTime`
+
+    const params: Params = {
+      file,
+      // not needed for tests
+      // @ts-ignore
+      parameters: {
+        datasourceProvider: 'mysql',
+      },
+      template: template._tag,
+      // not needed for tests
+      // @ts-ignore
+      tools: {},
+    }
+    const actual = mysqlSchemaTypeTransformer(params)
+
+    expect(actual).toEqual(expected)
+  })
+
+  test('should replace String with String @db.Text on every field in schema excluding types @unique and @id', () => {
     const file = {
       ...template.files['prisma/schema.prisma'],
       content: `generator client {
@@ -27,6 +52,7 @@ describe('mysqlSchemaTypeTransformer', function () {
         updatedAt    DateTime      @updatedAt
         email        String        @unique
         name         String?
+        long         String
         reviews      Review[]
       }`,
     }
@@ -41,10 +67,11 @@ describe('mysqlSchemaTypeTransformer', function () {
       }
       
       model User {
-        id           String @db.Text        @id @default(uuid())
+        id           String        @id @default(uuid())
         updatedAt    DateTime      @updatedAt
-        email        String @db.Text        @unique
+        email        String        @unique
         name         String? @db.Text
+        long         String @db.Text
         reviews      Review[]
       }`
 

@@ -2504,7 +2504,7 @@ model Profile {
 }
 
 model User {
-  email    String @db.Text    @unique
+  email    String    @unique
   name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
@@ -9335,17 +9335,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
-  email        String @db.Text        @unique
+  email        String        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   songId    String? @db.Text
@@ -9357,7 +9357,7 @@ model Interaction {
 }
 
 model Song {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
@@ -9374,7 +9374,7 @@ model Song {
 }
 
 model Artist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -9383,7 +9383,7 @@ model Artist {
 }
 
 model Album {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -9393,7 +9393,7 @@ model Album {
 }
 
 model Playlist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -16159,17 +16159,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String @db.Text        @unique
+  email        String        @unique
   name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -16183,7 +16183,7 @@ model Reservation {
 }
 
 model Room {
-  id                 String @db.Text        @id @default(uuid())
+  id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
@@ -16202,7 +16202,7 @@ model Room {
 }
 
 model Review {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
@@ -16212,7 +16212,7 @@ model Review {
 }
 
 model Media {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   roomId    String? @db.Text
@@ -21840,7 +21840,7 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
@@ -21850,7 +21850,7 @@ model User {
 }
 
 model Account {
-  id                   String @db.Text   @id @default(uuid())
+  id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
   stripeCustomerId     String @db.Text
@@ -21862,7 +21862,7 @@ model Account {
 }
 
 model Invite {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String @db.Text
   accountId String? @db.Text
@@ -26025,7 +26025,7 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   url       String @db.Text
@@ -26035,7 +26035,7 @@ model Link {
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
@@ -28352,7 +28352,7 @@ model Profile {
 }
 
 model User {
-  email    String @db.Text    @unique
+  email    String    @unique
   name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
@@ -28395,17 +28395,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
-  email        String @db.Text        @unique
+  email        String        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   songId    String? @db.Text
@@ -28417,7 +28417,7 @@ model Interaction {
 }
 
 model Song {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
@@ -28434,7 +28434,7 @@ model Song {
 }
 
 model Artist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -28443,7 +28443,7 @@ model Artist {
 }
 
 model Album {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -28453,7 +28453,7 @@ model Album {
 }
 
 model Playlist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -28481,17 +28481,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String @db.Text        @unique
+  email        String        @unique
   name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -28505,7 +28505,7 @@ model Reservation {
 }
 
 model Room {
-  id                 String @db.Text        @id @default(uuid())
+  id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
@@ -28524,7 +28524,7 @@ model Room {
 }
 
 model Review {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
@@ -28534,7 +28534,7 @@ model Review {
 }
 
 model Media {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   roomId    String? @db.Text
@@ -28561,7 +28561,7 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
@@ -28571,7 +28571,7 @@ model User {
 }
 
 model Account {
-  id                   String @db.Text   @id @default(uuid())
+  id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
   stripeCustomerId     String @db.Text
@@ -28583,7 +28583,7 @@ model Account {
 }
 
 model Invite {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String @db.Text
   accountId String? @db.Text
@@ -28610,7 +28610,7 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   url       String @db.Text
@@ -28620,7 +28620,7 @@ model Link {
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
@@ -28791,7 +28791,7 @@ model Profile {
 }
 
 model User {
-  email    String @db.Text    @unique
+  email    String    @unique
   name     String? @db.Text
   user_id  Int       @id @default(autoincrement())
   posts    Post[]
@@ -28832,17 +28832,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
-  email        String @db.Text        @unique
+  email        String        @unique
   interactions Interaction[]
   playlists    Playlist[]
 }
 
 model Interaction {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   songId    String? @db.Text
@@ -28854,7 +28854,7 @@ model Interaction {
 }
 
 model Song {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   name         String @db.Text
@@ -28871,7 +28871,7 @@ model Song {
 }
 
 model Artist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -28880,7 +28880,7 @@ model Artist {
 }
 
 model Album {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String @db.Text
@@ -28890,7 +28890,7 @@ model Album {
 }
 
 model Playlist {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -28917,17 +28917,17 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id           String @db.Text        @id @default(uuid())
+  id           String        @id @default(uuid())
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  email        String @db.Text        @unique
+  email        String        @unique
   name         String @db.Text
   reservations Reservation[]
   reviews      Review[]
 }
 
 model Reservation {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   userId    String? @db.Text
@@ -28941,7 +28941,7 @@ model Reservation {
 }
 
 model Room {
-  id                 String @db.Text        @id @default(uuid())
+  id                 String        @id @default(uuid())
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
   totalOccupancy     Int           @default(5)
@@ -28960,7 +28960,7 @@ model Room {
 }
 
 model Review {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   rating    Int
@@ -28970,7 +28970,7 @@ model Review {
 }
 
 model Media {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   roomId    String? @db.Text
@@ -28996,7 +28996,7 @@ provider = \\"mysql\\"
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
@@ -29006,7 +29006,7 @@ model User {
 }
 
 model Account {
-  id                   String @db.Text   @id @default(uuid())
+  id                   String   @id @default(uuid())
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
   stripeCustomerId     String @db.Text
@@ -29018,7 +29018,7 @@ model Account {
 }
 
 model Invite {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   dateSent  DateTime @default(now())
   email     String @db.Text
   accountId String? @db.Text
@@ -29044,7 +29044,7 @@ provider = \\"mysql\\"
 }
 
 model Link {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   url       String @db.Text
@@ -29054,7 +29054,7 @@ model Link {
 }
 
 model User {
-  id        String @db.Text   @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String? @db.Text
