@@ -8,3 +8,4 @@ tests
 jest.config.ts
 templates-repo
 src/generated
+templates-raw
