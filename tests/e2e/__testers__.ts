@@ -150,7 +150,6 @@ export const testTemplate = (params: DBTestParams) => {
       await Reflector.Client.runMigrationScript(
         prisma,
         ctx.template.migrationScript,
-        // TODO test a matrix of data sources
         params.datasourceProvider
       )
 
