@@ -5,7 +5,7 @@ export function getDefaultPlanetScaleTestTemplateConfig(
   dbURI: string
 ): Omit<DBTestParams, 'templateName' | 'testName' | 'expectedDevOutput'> {
   return {
-    databaseUrlBase: dbURI,
+    connectionStringBase: dbURI,
     datasourceProvider: 'mysql',
     getPrismaAdmin: GetMysqlAdminPrismaClient,
     databaseActions: {

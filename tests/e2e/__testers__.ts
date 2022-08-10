@@ -10,9 +10,8 @@ import { PrismaClient } from '@prisma/client'
 export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
   expectedDevOutput: RegExp | string
-  testDBURI?: string
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
-  databaseUrlBase: string
+  connectionStringBase: string
   getPrismaAdmin: getPrismaClient
   databaseActions: {
     resetDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
@@ -40,7 +39,7 @@ export const testTemplate = (params: DBTestParams) => {
         referentialIntegrity: params.prismaConfig?.referentialIntegrity,
       })
 
-      const databaseUrlBase = params.databaseUrlBase
+      const databaseUrlBase = params.connectionStringBase
       const databaseName = template.metadata.handles.snake
       const databaseUrl = `${databaseUrlBase}/${databaseName}`
 

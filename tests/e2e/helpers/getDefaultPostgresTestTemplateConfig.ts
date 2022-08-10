@@ -9,7 +9,7 @@ export function getDefaultPostgresTestTemplateConfig(
   return {
     getPrismaAdmin: GetPostgresAdminPrismaClient,
     datasourceProvider: 'postgres',
-    databaseUrlBase: dbURI,
+    connectionStringBase: dbURI,
     databaseActions: {
       resetDatabase: dropPostgresDatabase,
       initDatabase: initPostgresDatabase,
