@@ -11,7 +11,7 @@ export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
   expectedDevOutput: RegExp | string
   testDBURI?: string
-  datasourceProvider?: Reflector.Schema.DatasourceProviderNormalized
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
   databaseUrlBase: string
   getPrismaAdmin: getPrismaClient
   databaseActions: {
@@ -30,7 +30,7 @@ export const testTemplate = (params: DBTestParams) => {
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
     .beforeAll(async (ctx) => {
-      const datasourceProvider = params.datasourceProvider || 'postgres'
+      const datasourceProvider = params.datasourceProvider
       const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
         dataproxy: false,
