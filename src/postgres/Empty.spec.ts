@@ -1,6 +1,6 @@
-import { testTemplate } from '../__testers__'
-import { GetPostgresAdminPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
+import { testTemplate } from '~/tests/e2e/__testers__'
 import { dropPostgresDatabase } from '~/tests/e2e/helpers/dropPostgresDatabase'
+import { GetPostgresAdminPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
 
 testTemplate({
   templateName: 'Empty',
@@ -10,6 +10,8 @@ testTemplate({
   datasourceProvider: 'postgres',
   databaseActions: {
     resetDatabase: dropPostgresDatabase,
-    initDatabase: async () => {},
+    initDatabase: async () => {
+      //
+    },
   },
 })

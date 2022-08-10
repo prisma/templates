@@ -86,7 +86,7 @@ export const testTemplate = (params: DBTestParams) => {
     })
     .done()
 
-  it(`${params.templateName}`, async () => {
+  it(`${params.templateName} - init script should work`, async () => {
     // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
@@ -109,14 +109,9 @@ export const testTemplate = (params: DBTestParams) => {
      * Drop database before running the tests case it wasn't cleaned up from the previous test run.
      */
 
-    const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
-    const comm2 = await ctx.run(`prisma generate`, { reject: true })
-    console.log('two comm', { comm, comm2 })
     await ctx.dropTestDatabase()
     await ctx.initTestDatabase()
     console.log('database dropped from he previous run')
-
-    await ctx.run(`prisma db push`, { reject: true })
 
     /**
      * Test 1
@@ -128,56 +123,50 @@ export const testTemplate = (params: DBTestParams) => {
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('Running seed command')
 
-    console.log('Get getPrisma()')
-    const prisma = await ctx.getPrisma()
-    console.log('Get getPrismaAdmin()')
-
-    const prismaAdmin = await ctx.getPrismaAdmin()
-
-    try {
-      /**
-       * Test 2
-       * Check that the template migration script works.
-       */
-      const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
-      console.log('Second test reset finished..')
-      console.log({ comm })
-      await ctx.dropTestDatabase()
-      await ctx.initTestDatabase()
-      console.log('drop & init finished..')
-
-      await Reflector.Client.runMigrationScript(
-        prisma,
-        ctx.template.migrationScript,
-        params.datasourceProvider
-      )
-
-      /**
-       * Test 3
-       * Check the seed again but this time using the derived seed function.
-       */
-      // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
-      await ctx.template.seed({ prisma })
-    } finally {
-      await Promise.all([prisma.$disconnect(), prismaAdmin.$disconnect()])
-    }
-
-    /**
-     * Test 4
-     * Check the development project script. For most templates this will run some kind of sandbox script against the database.
-     *
-     * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
-     */
-    if (ctx.template._tag !== 'Nextjs') {
-      const devResult = ctx.run(`npm run dev`, { reject: true })
-      expect(devResult.stderr).toMatch('')
-      expect(devResult.stdout).toMatch(params.expectedDevOutput)
-    }
-
     // TODO Test the Vercel API (next dev for Blog template)
     // await ctx.fs.writeAsync('.vercel/project.json', {
     //   projectId: 'prj_6yrTe9CGQagAQwGjr7JEejkxhz3A',
     //   orgId: 'team_ASKXQ5Yc1an2RqJc5BCI9rGw',
     // })
+  })
+
+  it(`${params.templateName} - template migration script should work`, async () => {
+    // /**
+    //  * Test 2
+    //  * Check that the template migration script works.
+    //  */
+    // const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
+    // console.log('Second test reset finished..')
+    // console.log({ comm })
+    // await ctx.dropTestDatabase()
+    // await ctx.initTestDatabase()
+    // console.log('drop & init finished..')
+    // const initResult = await ctx.runAsync(`npm run init`, { reject: true })
+  })
+
+  it(`${params.templateName} - template migration script should work`, async () => {
+    /**
+     * Test 3
+     * Check the seed again but this time using the derived seed function.
+     */
+    console.log('Get getPrisma()')
+    const prisma = await ctx.getPrisma()
+    console.log('Get getPrismaAdmin()')
+    // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
+    await ctx.template.seed({ prisma })
+  })
+
+  it(`${params.templateName} - development project script should work`, async () => {
+    // /**
+    //  * Test 4
+    //  * Check the development project script. For most templates this will run some kind of sandbox script against the database.
+    //  *
+    //  * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
+    //  */
+    if (ctx.template._tag !== 'Nextjs') {
+      const devResult = ctx.run(`npm run dev`, { reject: true })
+      expect(devResult.stderr).toMatch('')
+      expect(devResult.stdout).toMatch(params.expectedDevOutput)
+    }
   })
 }
