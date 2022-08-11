@@ -7,6 +7,7 @@ import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaClient } from '@prisma/client'
 import { log } from 'floggy'
 import { PrismaClientConstructor } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
+import { casesHandled } from '../../src/utils'
 
 export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
@@ -19,7 +20,7 @@ export interface DBTestParams {
 
 async function dropDatabase(
   prismaClient: PrismaClient,
-  databaseName: string,
+  databaseName: Reflector.Schema.DatasourceProviderNormalized,
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
 ) {
   switch (datasourceProvider) {
@@ -39,8 +40,13 @@ async function dropDatabase(
         if (!isDatabaseNotFoundErorr) throw error
       }
       return
+    case 'cockroachdb':
+    case 'mongodb':
+    case 'sqlserver':
+    case 'sqlite':
+      throw new Error(`Not implemented yet.`)
     default:
-      throw new Error(`Case not handled for ${datasourceProvider}`)
+      casesHandled(datasourceProvider)
   }
 }
 
