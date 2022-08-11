@@ -6,6 +6,7 @@ import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 import { Reflector } from '@prisma-spectrum/reflector'
 import { getPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
 import { PrismaClient } from '@prisma/client'
+import { log } from 'floggy'
 
 export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
@@ -18,15 +19,19 @@ export interface DBTestParams {
   }
 }
 
-async function dropDatabase(prismaClient: PrismaClient, databaseName: string, datasourceProvider: Reflector.Schema.DatasourceProviderNormalized) {
-  switch (datasourceProvider){
+async function dropDatabase(
+  prismaClient: PrismaClient,
+  databaseName: string,
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
+) {
+  switch (datasourceProvider) {
     case 'postgres':
       try {
         return await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
       } catch (error) {
         const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
         if (!isDatabaseNotFoundErorr) throw error
-        return;
+        return
       }
     case 'mysql':
       try {
@@ -34,13 +39,27 @@ async function dropDatabase(prismaClient: PrismaClient, databaseName: string, da
       } catch (error) {
         const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/database not found/)
         if (!isDatabaseNotFoundErorr) throw error
-        return;
+        return
       }
   }
 }
 
-async function initDatabase(prismaClient: PrismaClient, databaseName: string) {
-  return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
+async function initDatabase(
+  prismaClient: PrismaClient,
+  databaseName: string,
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
+) {
+  switch (datasourceProvider) {
+    case 'postgres':
+      try {
+        return prismaClient.$executeRawUnsafe(`create database ${databaseName}`)
+      } catch (e) {
+        log.info(`Error initialising DB ${databaseName}`)
+        return
+      }
+    case 'mysql':
+      return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
+  }
 }
 
 export const testTemplate = (params: DBTestParams) => {
@@ -85,7 +104,7 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       const initTestDatabase = async () => {
-        return initDatabase(await getPrismaAdmin(), databaseName)
+        return initDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
       }
 
       return {
