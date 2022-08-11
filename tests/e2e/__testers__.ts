@@ -12,7 +12,6 @@ export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
   expectedDevOutput: RegExp | string
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
-  connectionStringBase: string
   getPrismaAdmin: getPrismaClient
   prismaConfig?: {
     referentialIntegrity?: 'prisma' | 'foreignKeys'
@@ -62,6 +61,19 @@ async function initDatabase(
   }
 }
 
+export function getConnectionString(
+  dataSourceProvider: Reflector.Schema.DatasourceProviderNormalized
+): string {
+  switch (dataSourceProvider) {
+    case 'postgres':
+      return 'postgres://prisma:prisma@localhost:5401'
+    case 'mysql':
+      return 'mysql://root:root@localhost:33577'
+  }
+
+  throw new Error('DB not supported. The connection string needs to be defined')
+}
+
 export const testTemplate = (params: DBTestParams) => {
   jest.setTimeout(100_000)
 
@@ -69,6 +81,7 @@ export const testTemplate = (params: DBTestParams) => {
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
     .beforeAll(async (ctx) => {
+      const connectionStringBase = getConnectionString(params.datasourceProvider)
       const datasourceProvider = params.datasourceProvider
       const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
@@ -79,7 +92,7 @@ export const testTemplate = (params: DBTestParams) => {
         referentialIntegrity: params.prismaConfig?.referentialIntegrity,
       })
 
-      const databaseUrlBase = params.connectionStringBase
+      const databaseUrlBase = connectionStringBase
       const databaseName = template.metadata.handles.snake
       const databaseUrl = `${databaseUrlBase}/${databaseName}`
 
