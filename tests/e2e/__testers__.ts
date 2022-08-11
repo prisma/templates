@@ -216,32 +216,28 @@ export const testTemplate = (params: DBTestParams) => {
    * Test 2
    * Check that the template migration script works.
    */
-  if (ctx.template._tag === 'Empty') {
-    it(`${params.templateName} - template migration script should work`, async () => {
-      await ctx.dropTestDatabase()
-      await ctx.createTestDatabase()
+  it(`${params.templateName} - template migration script should work`, async () => {
+    if (ctx.template._tag === 'Empty') return
 
-      console.log('Get getPrisma()')
-      const prisma = await ctx.getPrisma()
-      await Reflector.Client.runMigrationScript(
-        prisma,
-        ctx.template.migrationScript,
-        params.datasourceProvider
-      )
-    })
-  }
+    await ctx.dropTestDatabase()
+    await ctx.createTestDatabase()
+
+    console.log('Get getPrisma()')
+    const prisma = await ctx.getPrisma()
+    await Reflector.Client.runMigrationScript(prisma, ctx.template.migrationScript, params.datasourceProvider)
+  })
 
   /**
    * Test 3
    * Check the seed again but this time using the derived seed function.
    */
-  if (ctx.template._tag === 'Empty') {
-    it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
-      const prisma = await ctx.getPrisma()
-      // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
-      await ctx.template.seed({ prisma })
-    })
-  }
+  it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
+    if (ctx.template._tag === 'Empty') return
+
+    const prisma = await ctx.getPrisma()
+    // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
+    await ctx.template.seed({ prisma })
+  })
 
   /**
    * Test 4
@@ -249,7 +245,6 @@ export const testTemplate = (params: DBTestParams) => {
    *
    * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
    */
-
   it(`${params.templateName} - development project script should work`, async () => {
     if (ctx.template._tag !== 'Nextjs') {
       const devResult = ctx.run(`npm run dev`, { reject: true })
