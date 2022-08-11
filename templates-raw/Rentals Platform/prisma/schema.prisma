@@ -1,0 +1,73 @@
+// Schema for a fictional hotel
+// This hotel tracks rooms, user reservations & reviews
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String        @id @default(uuid())
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  email        String        @unique
+  name         String
+  reservations Reservation[]
+  reviews      Review[]
+}
+
+model Reservation {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String?
+  startDate DateTime
+  endDate   DateTime
+  price     Int
+  total     Int
+  roomId    String?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model Room {
+  id                 String        @id @default(uuid())
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  totalOccupancy     Int           @default(5)
+  totalBedrooms      Int           @default(5)
+  totalBathrooms     Int           @default(5)
+  summary            String?
+  address            String
+  isSmoking          Boolean       @default(false)
+  hasTV              Boolean       @default(true)
+  hasAirConditioning Boolean       @default(true)
+  hasHeating         Boolean       @default(true)
+  hasWIFI            Boolean       @default(true)
+  price              Int
+  media              Media[]
+  reservations       Reservation[]
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  rating    Int
+  comment   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  roomId    String?
+  fileName  String
+  room      Room?    @relation(fields: [roomId], references: [id])
+}

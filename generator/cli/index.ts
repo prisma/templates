@@ -1,4 +1,3 @@
-import downloadTemplatesRepo from './download-templates-repo'
 import generateMigrationScripts from './generate-migration-scripts'
 import generateTypeScript from './generate-type-script'
 import arg from 'arg'
@@ -6,7 +5,6 @@ import FS from 'fs-jetpack'
 import Path from 'path'
 import { JsonObject } from 'type-fest'
 const args = arg({
-  '--download-templates-repo': Boolean,
   '--generate-migration-scripts': Boolean,
   '--generate-type-script': Boolean,
   '--prettier': Boolean,
@@ -25,13 +23,9 @@ main().catch((error) => {
 
 //eslint-disable-next-line
 async function main(): Promise<void> {
-  const dirName = '.templates-repo'
-  const templatesRepoDir = Path.join(__dirname, '../../node_modules', dirName)
+  const dirName = 'templates-raw'
+  const templatesRepoDir = Path.join(__dirname, '../../', dirName)
   const generatedDir = Path.join(__dirname, `../../src/generated`)
-
-  if (args['--download-templates-repo']) {
-    downloadTemplatesRepo({ dir: templatesRepoDir })
-  }
 
   const cacheKeyFilePath = './node_modules/.cache/reflectTemplatesCacheKey.json'
   const cacheKeyStored = (JSON.parse((await FS.readAsync(cacheKeyFilePath)) || '""') ||
@@ -54,9 +48,7 @@ async function main(): Promise<void> {
 
   if (args['--generate-migration-scripts']) {
     if (FS.inspect(templatesRepoDir) === undefined) {
-      console.log(
-        `${templatesRepoDir} is empty. Please run build:gen:download-templates-repo.  Skipping migration generation.`
-      )
+      console.log(`${templatesRepoDir} is empty. Should never happen.  Skipping migration generation.`)
       return
     }
     await generateMigrationScripts({

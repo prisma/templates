@@ -188,7 +188,7 @@ export const testTemplate = (params: DBTestParams) => {
 
     console.log('Writing to .env file and .npmrc')
     /**
-     * Exit early for empty tempalte as there is nothing more to test.
+     * Exit early for empty template as there is nothing more to test.
      */
     if (ctx.template._tag === 'Empty') return
 
