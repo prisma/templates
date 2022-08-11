@@ -1,7 +1,6 @@
 import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 import { PrismaClient } from '@prisma/client'
-import { PrismaClientOptions } from '@prisma/client/runtime'
-import { PrismaClientConstructor } from '~/tests/e2e/helpers/getPrismaClientModule'
+import { PrismaClientConstructor } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
 
 export type getPrismaClient = (
   databaseUrlBase: string,

@@ -1,5 +1,7 @@
-import { PrismaClientConstructor } from '~/tests/e2e/helpers/getPrismaClientModule'
 import { PrismaClient } from '@prisma/client'
+import { PrismaClientOptions } from '@prisma/client/runtime'
+
+export type PrismaClientConstructor = new (options: PrismaClientOptions) => PrismaClient
 
 export async function GetMysqlAdminPrismaClient(
   databaseUrlBase: string,
@@ -8,7 +10,7 @@ export async function GetMysqlAdminPrismaClient(
   return new CtxPrismaClient({
     datasources: {
       db: {
-        url: `${databaseUrlBase}/test`,
+        url: `${databaseUrlBase}/mysql`,
       },
     },
   })
