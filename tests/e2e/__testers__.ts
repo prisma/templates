@@ -4,15 +4,14 @@ import { values } from 'lodash'
 import stripAnsi from 'strip-ansi'
 import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 import { Reflector } from '@prisma-spectrum/reflector'
-import { getPrismaClient } from '~/tests/e2e/helpers/getPostgresAdminPrismaClient'
 import { PrismaClient } from '@prisma/client'
 import { log } from 'floggy'
+import { PrismaClientConstructor } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
 
 export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
   expectedDevOutput: RegExp | string
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
-  getPrismaAdmin: getPrismaClient
   prismaConfig?: {
     referentialIntegrity?: 'prisma' | 'foreignKeys'
   }
@@ -78,6 +77,33 @@ export function getConnectionString(
   }
 }
 
+export async function getAdminPrismaClient(
+  databaseUrlBase: string,
+  CtxPrismaClient: PrismaClientConstructor,
+  dataSourceProvider: Reflector.Schema.DatasourceProviderNormalized
+): Promise<PrismaClient> {
+  switch (dataSourceProvider) {
+    case 'postgres':
+      return new CtxPrismaClient({
+        datasources: {
+          db: {
+            url: `${databaseUrlBase}/postgres`,
+          },
+        },
+      }) as ClientBase
+    case 'mysql':
+      return new CtxPrismaClient({
+        datasources: {
+          db: {
+            url: `${databaseUrlBase}/mysql`,
+          },
+        },
+      })
+    default:
+      throw new Error(`Case not handled for ${dataSourceProvider}`)
+  }
+}
+
 export const testTemplate = (params: DBTestParams) => {
   jest.setTimeout(100_000)
 
@@ -112,7 +138,11 @@ export const testTemplate = (params: DBTestParams) => {
         }) as ClientBase
 
       const getPrismaAdmin = async () => {
-        return params.getPrismaAdmin(databaseUrlBase, (await getPrismaClientModule()).PrismaClient)
+        return getAdminPrismaClient(
+          databaseUrlBase,
+          (await getPrismaClientModule()).PrismaClient,
+          datasourceProvider
+        )
       }
 
       const dropTestDatabase = async () => {

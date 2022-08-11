@@ -1,5 +1,4 @@
 import { DBTestParams } from '~/tests/e2e/__testers__'
-import { GetMysqlAdminPrismaClient } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
 
 export function getDefaultVitessTestConfig(): Omit<
   DBTestParams,
@@ -7,7 +6,6 @@ export function getDefaultVitessTestConfig(): Omit<
 > {
   return {
     datasourceProvider: 'mysql',
-    getPrismaAdmin: GetMysqlAdminPrismaClient,
     prismaConfig: {
       referentialIntegrity: 'prisma',
     },
