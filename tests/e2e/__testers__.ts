@@ -52,13 +52,13 @@ async function createDatabase(
   switch (datasourceProvider) {
     case 'postgres':
       try {
-        prismaClient.$executeRawUnsafe(`create database ${databaseName}`)
+        await prismaClient.$executeRawUnsafe(`create database ${databaseName}`)
       } catch (e) {
         log.info(`Error initialising DB ${databaseName}`)
       }
       return
     case 'mysql':
-      return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
+      return prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
     default:
       throw new Error(`Case not handled for ${datasourceProvider}`)
   }
