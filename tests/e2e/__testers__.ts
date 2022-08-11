@@ -108,7 +108,6 @@ export const testTemplate = (params: DBTestParams) => {
 
     await ctx.dropTestDatabase()
     await ctx.initTestDatabase()
-    console.log('database dropped from he previous run')
 
     /**
      * Test 1
@@ -140,7 +139,6 @@ export const testTemplate = (params: DBTestParams) => {
 
     console.log('Get getPrisma()')
     const prisma = await ctx.getPrisma()
-    console.log('migrationScript', ctx.template.migrationScript)
     await Reflector.Client.runMigrationScript(prisma, ctx.template.migrationScript, params.datasourceProvider)
   })
 

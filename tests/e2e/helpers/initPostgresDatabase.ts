@@ -1,5 +1,10 @@
 import { PrismaClient } from '@prisma/client'
+import { log } from 'floggy'
 
 export async function initPostgresDatabase(prismaAdminClient: PrismaClient, databaseName: string) {
-  return prismaAdminClient.$executeRawUnsafe(`create database ${databaseName}`)
+  try {
+    return prismaAdminClient.$executeRawUnsafe(`create database ${databaseName}`)
+  } catch (e) {
+    log.info(`Error initialising DB ${databaseName}`)
+  }
 }

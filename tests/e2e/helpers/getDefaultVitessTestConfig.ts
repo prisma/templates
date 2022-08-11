@@ -10,16 +10,15 @@ export function getDefaultVitessTestConfig(
     getPrismaAdmin: GetMysqlAdminPrismaClient,
     databaseActions: {
       resetDatabase: async (prismaClient, databaseName) => {
-        console.log(`Dropping database ${databaseName}`)
         try {
-          await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName};`)
+          return await prismaClient.$executeRawUnsafe(`DROP DATABASE IF EXISTS ${databaseName};`)
         } catch (error) {
-          const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/No database found/)
+          const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/database not found/)
           if (!isDatabaseNotFoundErorr) throw error
         }
       },
-      initDatabase: async () => {
-        //
+      initDatabase: async (prismaClient, databaseName) => {
+        return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
       },
     },
     prismaConfig: {

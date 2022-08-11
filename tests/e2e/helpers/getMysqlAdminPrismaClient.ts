@@ -8,7 +8,7 @@ export async function GetMysqlAdminPrismaClient(
   return new CtxPrismaClient({
     datasources: {
       db: {
-        url: `${databaseUrlBase}`,
+        url: `${databaseUrlBase}/test`,
       },
     },
   })
