@@ -5,6 +5,5 @@ testTemplate({
   templateName: 'Empty',
   expectedDevOutput: '',
   getPrismaAdmin: GetPostgresAdminPrismaClient,
-  connectionStringBase: 'postgres://prisma:prisma@localhost:5401',
   datasourceProvider: 'postgres',
 })

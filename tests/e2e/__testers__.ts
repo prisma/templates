@@ -26,24 +26,24 @@ async function dropDatabase(
   switch (datasourceProvider) {
     case 'postgres':
       try {
-        return await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
+        await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
       } catch (error) {
         const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
         if (!isDatabaseNotFoundErorr) throw error
-        return
       }
+      return
     case 'mysql':
       try {
-        return await prismaClient.$executeRawUnsafe(`DROP DATABASE IF EXISTS ${databaseName};`)
+        await prismaClient.$executeRawUnsafe(`DROP DATABASE IF EXISTS ${databaseName};`)
       } catch (error) {
         const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/database not found/)
         if (!isDatabaseNotFoundErorr) throw error
-        return
       }
+      return
   }
 }
 
-async function initDatabase(
+async function createDatabase(
   prismaClient: PrismaClient,
   databaseName: string,
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
@@ -51,11 +51,11 @@ async function initDatabase(
   switch (datasourceProvider) {
     case 'postgres':
       try {
-        return prismaClient.$executeRawUnsafe(`create database ${databaseName}`)
+        prismaClient.$executeRawUnsafe(`create database ${databaseName}`)
       } catch (e) {
         log.info(`Error initialising DB ${databaseName}`)
-        return
       }
+      return
     case 'mysql':
       return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
   }
@@ -112,12 +112,11 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       const dropTestDatabase = async () => {
-        await ctx.run(`prisma migrate reset --force`, { reject: true })
         return dropDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
       }
 
-      const initTestDatabase = async () => {
-        return initDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
+      const createTestDatabase = async () => {
+        return createDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
       }
 
       return {
@@ -125,7 +124,7 @@ export const testTemplate = (params: DBTestParams) => {
         getPrismaAdmin,
         template,
         dropTestDatabase,
-        initTestDatabase,
+        createTestDatabase,
         databaseName,
         databaseUrl,
       }
@@ -164,7 +163,7 @@ export const testTemplate = (params: DBTestParams) => {
      */
 
     await ctx.dropTestDatabase()
-    await ctx.initTestDatabase()
+    await ctx.createTestDatabase()
 
     const initResult = await ctx.runAsync(`npm run init`, { reject: true })
 
@@ -183,28 +182,32 @@ export const testTemplate = (params: DBTestParams) => {
    * Test 2
    * Check that the template migration script works.
    */
-  it(`${params.templateName} - template migration script should work`, async () => {
-    if (ctx.template._tag === 'Empty') return
+  if (ctx.template._tag === 'Empty') {
+    it(`${params.templateName} - template migration script should work`, async () => {
+      await ctx.dropTestDatabase()
+      await ctx.createTestDatabase()
 
-    await ctx.dropTestDatabase()
-    await ctx.initTestDatabase()
-
-    console.log('Get getPrisma()')
-    const prisma = await ctx.getPrisma()
-    await Reflector.Client.runMigrationScript(prisma, ctx.template.migrationScript, params.datasourceProvider)
-  })
+      console.log('Get getPrisma()')
+      const prisma = await ctx.getPrisma()
+      await Reflector.Client.runMigrationScript(
+        prisma,
+        ctx.template.migrationScript,
+        params.datasourceProvider
+      )
+    })
+  }
 
   /**
    * Test 3
    * Check the seed again but this time using the derived seed function.
    */
-  it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
-    if (ctx.template._tag === 'Empty') return
-
-    const prisma = await ctx.getPrisma()
-    // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
-    await ctx.template.seed({ prisma })
-  })
+  if (ctx.template._tag === 'Empty') {
+    it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
+      const prisma = await ctx.getPrisma()
+      // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
+      await ctx.template.seed({ prisma })
+    })
+  }
 
   /**
    * Test 4
@@ -212,11 +215,11 @@ export const testTemplate = (params: DBTestParams) => {
    *
    * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
    */
-  it(`${params.templateName} - development project script should work`, async () => {
-    if (ctx.template._tag !== 'Nextjs') {
+  if (ctx.template._tag !== 'Nextjs') {
+    it(`${params.templateName} - development project script should work`, async () => {
       const devResult = ctx.run(`npm run dev`, { reject: true })
       expect(devResult.stderr).toMatch('')
       expect(devResult.stdout).toMatch(params.expectedDevOutput)
-    }
-  })
+    })
+  }
 }
