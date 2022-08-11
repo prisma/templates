@@ -59,6 +59,7 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       const dropTestDatabase = async () => {
+        await ctx.run(`prisma migrate reset --force`, { reject: true })
         return params.databaseActions.resetDatabase(await getPrismaAdmin(), databaseName)
       }
 
@@ -78,18 +79,12 @@ export const testTemplate = (params: DBTestParams) => {
     })
     .afterAll(async (ctx) => {
       if (params.templateName !== 'Empty') {
-        // TODO switch to deleting the actual DB
-        //    await prismaAdminClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
-        if (ctx.run) {
-          await ctx.run(`prisma migrate reset --force`, { reject: true })
-        }
         await ctx.dropTestDatabase?.()
       }
     })
     .done()
 
   it(`${params.templateName} - init script should work`, async () => {
-    // Useful log during development to manually explore/debug the test project.
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
     console.log(`Starting the test ${params.templateName} for DB ${params.datasourceProvider}`)
@@ -135,13 +130,11 @@ export const testTemplate = (params: DBTestParams) => {
   it(`${params.templateName} - template migration script should work`, async () => {
     if (ctx.template._tag === 'Empty') return
 
-    // /**
-    //  * Test 2
-    //  * Check that the template migration script works.
-    //  */
-    const comm = await ctx.run(`prisma migrate reset --force`, { reject: true })
+    /**
+     * Test 2
+     * Check that the template migration script works.
+     */
     console.log('Second test reset finished..')
-    console.log({ comm })
     await ctx.dropTestDatabase()
     await ctx.initTestDatabase()
 
@@ -166,12 +159,12 @@ export const testTemplate = (params: DBTestParams) => {
   })
 
   it(`${params.templateName} - development project script should work`, async () => {
-    // /**
-    //  * Test 4
-    //  * Check the development project script. For most templates this will run some kind of sandbox script against the database.
-    //  *
-    //  * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
-    //  */
+    /**
+     * Test 4
+     * Check the development project script. For most templates this will run some kind of sandbox script against the database.
+     *
+     * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
+     */
     if (ctx.template._tag !== 'Nextjs') {
       const devResult = ctx.run(`npm run dev`, { reject: true })
       expect(devResult.stderr).toMatch('')
