@@ -40,6 +40,8 @@ async function dropDatabase(
         if (!isDatabaseNotFoundErorr) throw error
       }
       return
+    default:
+      throw new Error(`Case not handled for ${datasourceProvider}`)
   }
 }
 
@@ -58,6 +60,8 @@ async function createDatabase(
       return
     case 'mysql':
       return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
+    default:
+      throw new Error(`Case not handled for ${datasourceProvider}`)
   }
 }
 
@@ -69,9 +73,9 @@ export function getConnectionString(
       return 'postgres://prisma:prisma@localhost:5401'
     case 'mysql':
       return 'mysql://root:root@localhost:33577'
+    default:
+      throw new Error(`Case not handled for ${dataSourceProvider}`)
   }
-
-  throw new Error('DB not supported. The connection string needs to be defined')
 }
 
 export const testTemplate = (params: DBTestParams) => {
@@ -215,11 +219,12 @@ export const testTemplate = (params: DBTestParams) => {
    *
    * The Nextjs template launches next dev for its dev script and thus is exempt from this test.
    */
-  if (ctx.template._tag !== 'Nextjs') {
-    it(`${params.templateName} - development project script should work`, async () => {
+
+  it(`${params.templateName} - development project script should work`, async () => {
+    if (ctx.template._tag !== 'Nextjs') {
       const devResult = ctx.run(`npm run dev`, { reject: true })
       expect(devResult.stderr).toMatch('')
       expect(devResult.stdout).toMatch(params.expectedDevOutput)
-    })
-  }
+    }
+  })
 }
