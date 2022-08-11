@@ -13,13 +13,34 @@ export interface DBTestParams {
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
   connectionStringBase: string
   getPrismaAdmin: getPrismaClient
-  databaseActions: {
-    resetDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
-    initDatabase: (prismaClient: PrismaClient, databaseName: string) => Promise<void>
-  }
   prismaConfig?: {
     referentialIntegrity?: 'prisma' | 'foreignKeys'
   }
+}
+
+async function dropDatabase(prismaClient: PrismaClient, databaseName: string, datasourceProvider: Reflector.Schema.DatasourceProviderNormalized) {
+  switch (datasourceProvider){
+    case 'postgres':
+      try {
+        return await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
+      } catch (error) {
+        const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
+        if (!isDatabaseNotFoundErorr) throw error
+        return;
+      }
+    case 'mysql':
+      try {
+        return await prismaClient.$executeRawUnsafe(`DROP DATABASE IF EXISTS ${databaseName};`)
+      } catch (error) {
+        const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/database not found/)
+        if (!isDatabaseNotFoundErorr) throw error
+        return;
+      }
+  }
+}
+
+async function initDatabase(prismaClient: PrismaClient, databaseName: string) {
+  return await prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
 }
 
 export const testTemplate = (params: DBTestParams) => {
@@ -60,11 +81,11 @@ export const testTemplate = (params: DBTestParams) => {
 
       const dropTestDatabase = async () => {
         await ctx.run(`prisma migrate reset --force`, { reject: true })
-        return params.databaseActions.resetDatabase(await getPrismaAdmin(), databaseName)
+        return dropDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
       }
 
       const initTestDatabase = async () => {
-        return params.databaseActions.initDatabase(await getPrismaAdmin(), databaseName)
+        return initDatabase(await getPrismaAdmin(), databaseName)
       }
 
       return {
