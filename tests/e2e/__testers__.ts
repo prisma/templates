@@ -84,6 +84,10 @@ export const testTemplate = (params: DBTestParams) => {
     })
     .done()
 
+  /**
+   * Test 1
+   * Check that the initialization script works. This includes running migrate triggering generators and executing the seed.
+   */
   it(`${params.templateName} - init script should work`, async () => {
     if (!process.env.CI) console.log(ctx.fs.cwd())
 
@@ -109,10 +113,6 @@ export const testTemplate = (params: DBTestParams) => {
     await ctx.dropTestDatabase()
     await ctx.initTestDatabase()
 
-    /**
-     * Test 1
-     * Check that the initialization script works. This includes running migrate triggering generators and executing the seed.
-     */
     const initResult = await ctx.runAsync(`npm run init`, { reject: true })
 
     expect(initResult.stderr).toMatch('')
