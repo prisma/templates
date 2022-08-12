@@ -3,11 +3,11 @@
   "description": "An empty schema with no models, to build your own your own schema",
   "license": "UNLICENSED",
   "dependencies": {
-    "@prisma/client": "4.1.0"
+    "@prisma/client": "4.2.1"
   },
   "devDependencies": {
     "@types/node": "18.0.1",
-    "prisma": "4.1.0",
+    "prisma": "4.2.1",
     "ts-node": "10.5.0",
     "typescript": "4.5.5"
   },
