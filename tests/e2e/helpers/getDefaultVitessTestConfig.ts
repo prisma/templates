@@ -6,7 +6,7 @@ export function getDefaultVitessTestConfig(): Omit<
 > {
   return {
     datasourceProvider: 'mysql',
-    prismaConfig: {
+    templateConfig: {
       referentialIntegrity: 'prisma',
     },
   }

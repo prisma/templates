@@ -13,9 +13,7 @@ export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
   expectedDevOutput: RegExp | string
   datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
-  prismaConfig?: {
-    referentialIntegrity?: 'prisma' | 'foreignKeys'
-  }
+  templateConfig?: Pick<PrismaTemplates.$Types.BaseTemplateParameters, 'referentialIntegrity'>
 }
 
 async function dropDatabase(
@@ -125,7 +123,7 @@ export const testTemplate = (params: DBTestParams) => {
         datasourceProvider,
         repositoryOwner: 'prisma',
         repositoryHandle: `templates-node-test-${Template.metadata.handles.kebab}`,
-        referentialIntegrity: params.prismaConfig?.referentialIntegrity,
+        referentialIntegrity: params.templateConfig?.referentialIntegrity,
       })
 
       const databaseUrlBase = connectionStringBase
