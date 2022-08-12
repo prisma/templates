@@ -208,12 +208,6 @@ export const testTemplate = (params: DBTestParams) => {
     expect(initResult.stderr).toMatch('')
     expect(stripAnsi(initResult.stdout)).toMatch('Generated Prisma Client')
     expect(stripAnsi(initResult.stdout)).toMatch('Running seed command')
-
-    // TODO Test the Vercel API (next dev for Blog template)
-    // await ctx.fs.writeAsync('.vercel/project.json', {
-    //   projectId: 'prj_6yrTe9CGQagAQwGjr7JEejkxhz3A',
-    //   orgId: 'team_ASKXQ5Yc1an2RqJc5BCI9rGw',
-    // })
   })
 
   /**
@@ -257,5 +251,11 @@ export const testTemplate = (params: DBTestParams) => {
       expect(devResult.stderr).toMatch('')
       expect(devResult.stdout).toMatch(params.expectedDevOutput)
     }
+
+    // TODO Test the Vercel API (next dev for Blog template)
+    // await ctx.fs.writeAsync('.vercel/project.json', {
+    //   projectId: 'prj_6yrTe9CGQagAQwGjr7JEejkxhz3A',
+    //   orgId: 'team_ASKXQ5Yc1an2RqJc5BCI9rGw',
+    // })
   })
 }
