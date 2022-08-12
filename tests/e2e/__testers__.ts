@@ -6,8 +6,8 @@ import { ClientBase } from '@prisma-spectrum/reflector/dist-cjs/Client'
 import { Reflector } from '@prisma-spectrum/reflector'
 import { PrismaClient } from '@prisma/client'
 import { log } from 'floggy'
-import { PrismaClientConstructor } from '~/tests/e2e/helpers/getMysqlAdminPrismaClient'
 import { casesHandled } from '~/src/utils'
+import { PrismaClientOptions } from '@prisma/client/runtime'
 
 export interface DBTestParams {
   templateName: PrismaTemplates.$Types.Template['_tag']
@@ -42,7 +42,7 @@ async function dropDatabase(
     case 'mongodb':
     case 'sqlserver':
     case 'sqlite':
-      throw new Error(`Not implemented yet.`)
+      throw new Error(`Testing with ${datasourceProvider} not supported yet.`)
     default:
       casesHandled(datasourceProvider)
   }
@@ -68,7 +68,7 @@ async function createDatabase(
   }
 }
 
-export function getConnectionString(
+export function getConnectionStringBase(
   dataSourceProvider: Reflector.Schema.DatasourceProviderNormalized
 ): string {
   switch (dataSourceProvider) {
@@ -83,7 +83,7 @@ export function getConnectionString(
 
 export async function getAdminPrismaClient(
   databaseUrlBase: string,
-  CtxPrismaClient: PrismaClientConstructor,
+  CtxPrismaClient: new (options: PrismaClientOptions) => PrismaClient,
   dataSourceProvider: Reflector.Schema.DatasourceProviderNormalized
 ): Promise<PrismaClient> {
   switch (dataSourceProvider) {
@@ -115,7 +115,7 @@ export const testTemplate = (params: DBTestParams) => {
     .useBeforeAll(providers.dir())
     .useBeforeAll(providers.run())
     .beforeAll(async (ctx) => {
-      const connectionStringBase = getConnectionString(params.datasourceProvider)
+      const connectionStringBase = getConnectionStringBase(params.datasourceProvider)
       const datasourceProvider = params.datasourceProvider
       const Template = PrismaTemplates.Templates[params.templateName]
       const template = new Template({
@@ -141,7 +141,7 @@ export const testTemplate = (params: DBTestParams) => {
           },
         }) as ClientBase
 
-      const getPrismaAdmin = async () => {
+      const getAdminPrisma = async () => {
         return getAdminPrismaClient(
           databaseUrlBase,
           (await getPrismaClientModule()).PrismaClient,
@@ -150,16 +150,16 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       const dropTestDatabase = async () => {
-        return dropDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
+        return dropDatabase(await getAdminPrisma(), databaseName, datasourceProvider)
       }
 
       const createTestDatabase = async () => {
-        return createDatabase(await getPrismaAdmin(), databaseName, datasourceProvider)
+        return createDatabase(await getAdminPrisma(), databaseName, datasourceProvider)
       }
 
       return {
         getApplicationPrisma,
-        getPrismaAdmin,
+        getAdminPrisma,
         template,
         dropTestDatabase,
         createTestDatabase,
@@ -225,7 +225,6 @@ export const testTemplate = (params: DBTestParams) => {
       await ctx.dropTestDatabase()
       await ctx.createTestDatabase()
 
-      console.log('Get getPrisma()')
       const prisma = await ctx.getApplicationPrisma()
       await Reflector.Client.runMigrationScript(
         prisma,
