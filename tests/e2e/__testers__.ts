@@ -134,7 +134,7 @@ export const testTemplate = (params: DBTestParams) => {
 
       const getPrismaClientModule = () => import(`${ctx.fs.cwd()}/node_modules/@prisma/client`)
 
-      const getPrisma = async () =>
+      const getApplicationPrisma = async () =>
         new (await getPrismaClientModule()).PrismaClient({
           datasources: {
             db: {
@@ -160,7 +160,7 @@ export const testTemplate = (params: DBTestParams) => {
       }
 
       return {
-        getPrisma,
+        getApplicationPrisma,
         getPrismaAdmin,
         template,
         dropTestDatabase,
@@ -228,7 +228,7 @@ export const testTemplate = (params: DBTestParams) => {
       await ctx.createTestDatabase()
 
       console.log('Get getPrisma()')
-      const prisma = await ctx.getPrisma()
+      const prisma = await ctx.getApplicationPrisma()
       await Reflector.Client.runMigrationScript(
         prisma,
         ctx.template.migrationScript,
@@ -242,7 +242,7 @@ export const testTemplate = (params: DBTestParams) => {
    */
   if (params.templateName !== 'Empty') {
     it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
-      const prisma = await ctx.getPrisma()
+      const prisma = await ctx.getApplicationPrisma()
       // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
       await ctx.template.seed({ prisma })
     })
