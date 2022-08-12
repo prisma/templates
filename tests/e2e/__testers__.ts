@@ -77,7 +77,7 @@ export function getConnectionString(
     case 'postgres':
       return 'postgres://prisma:prisma@localhost:5401'
     case 'mysql':
-      return 'mysql://root:root@localhost:33577'
+      return 'mysql://prisma:prisma@localhost:33577'
     default:
       throw new Error(`Case not handled for ${dataSourceProvider}`)
   }

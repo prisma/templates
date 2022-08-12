@@ -24,4 +24,5 @@ services:
       NUM_SHARDS: '1'
       MYSQL_BIND_HOST: '0.0.0.0'
       KEYSPACES: 'test'
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: prisma
+      MYSQL_ROOT_USER: prisma
