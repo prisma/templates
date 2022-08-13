@@ -63,6 +63,11 @@ async function createDatabase(
       return
     case 'mysql':
       return prismaClient.$executeRawUnsafe(`CREATE DATABASE IF NOT EXISTS ${databaseName}`)
+    case 'cockroachdb':
+    case 'mongodb':
+    case 'sqlserver':
+    case 'sqlite':
+      throw new Error(`Testing with ${datasourceProvider} not supported yet.`)
     default:
       throw new Error(`Case not handled for ${datasourceProvider}`)
   }
@@ -76,6 +81,11 @@ export function getConnectionStringBase(
       return 'postgres://prisma:prisma@localhost:5401'
     case 'mysql':
       return 'mysql://prisma:prisma@localhost:33577'
+    case 'cockroachdb':
+    case 'mongodb':
+    case 'sqlserver':
+    case 'sqlite':
+      throw new Error(`Testing with ${dataSourceProvider} not supported yet.`)
     default:
       throw new Error(`Case not handled for ${dataSourceProvider}`)
   }
