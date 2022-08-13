@@ -78,3 +78,22 @@ export const normalizeAutoincrement = (
 ) => (datasourceProvider === 'cockroachdb' ? schemaAutoincrementToSequence(schema) : schema)
 
 const schemaAutoincrementToSequence = (schema: string) => schema.replace(/autoincrement\(\)/g, 'sequence()')
+
+export function mysqlSchemaTypeTransformUtil(
+  schemaContent: string,
+  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
+): string {
+  if (datasourceProvider !== 'mysql') {
+    return schemaContent
+  }
+  /**
+   * @description
+   * Regex transformation examples:
+   * - String? -> String? @db.Text
+   * - String -> String @db.Text
+   * - String @id -> String
+   * - String @unique -> String
+   */
+  const regex = / (String\??)(?!.*(?:@unique|@id))/gm
+  return schemaContent.replace(regex, ` $1 @db.Text`)
+}
