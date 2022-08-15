@@ -2,6 +2,10 @@ import { Reflector } from './lib/Reflector'
 import endent from 'endent'
 import * as R from 'remeda'
 
+export const casesHandled = (x: never) => {
+  throw new Error(`Case not handled for ${String(x)}`)
+}
+
 export type Index<T> = Record<string, T>
 
 export const datasourceUrlEnvironmentVariableName = `PRISMA_CLOUD_PROJECT_DATASOURCE_URL`

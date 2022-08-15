@@ -3,7 +3,7 @@ import { FileTransformer } from '~/src/fileTransformer/fileTransformer'
 export const mysqlSchemaTypeTransformer: FileTransformer = (params) => {
   const { file, parameters } = params
 
-  if (parameters.datasourceProvider !== 'mysql') {
+  if (parameters.datasourceProvider !== 'mysql' || file.path !== 'prisma/schema.prisma') {
     return file.content
   }
 
