@@ -26,16 +26,16 @@ async function dropDatabase(
       try {
         await prismaClient.$executeRawUnsafe(`DROP DATABASE ${databaseName} WITH (FORCE);`)
       } catch (error) {
-        const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/does not exist/)
-        if (!isDatabaseNotFoundErorr) throw error
+        const isDatabaseNotFoundError = error instanceof Error && error.message.match(/does not exist/)
+        if (!isDatabaseNotFoundError) throw error
       }
       return
     case 'mysql':
       try {
         await prismaClient.$executeRawUnsafe(`DROP DATABASE IF EXISTS ${databaseName};`)
       } catch (error) {
-        const isDatabaseNotFoundErorr = error instanceof Error && error.message.match(/database not found/)
-        if (!isDatabaseNotFoundErorr) throw error
+        const isDatabaseNotFoundError = error instanceof Error && error.message.match(/database not found/)
+        if (!isDatabaseNotFoundError) throw error
       }
       return
     case 'cockroachdb':
@@ -242,7 +242,7 @@ export const testTemplate = (params: DBTestParams) => {
    * Check the seed again but this time using the derived seed function.
    */
   if (params.templateName !== 'Empty') {
-    it.skip(`${params.templateName} - seed using the derived seed function should work`, async () => {
+    it(`${params.templateName} - seed using the derived seed function should work`, async () => {
       const prisma = await ctx.getApplicationPrisma()
       // TODO improve seed scripts to return reports that we can use to capture feedback here not to mention for users generally.
       await ctx.template.seed({ prisma })

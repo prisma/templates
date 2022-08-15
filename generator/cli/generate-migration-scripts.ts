@@ -6,7 +6,7 @@ import {
   getName,
 } from '~/src/logic/migrationScript/helpers'
 import { getTemplateInfos } from '~/src/templates'
-import { normalizeAutoincrement } from '~/src/utils'
+import { mysqlSchemaTypeTransformUtil, normalizeAutoIncrement } from '~/src/utils'
 import execa from 'execa'
 import { log as rootLog } from 'floggy'
 import * as FS from 'fs-jetpack'
@@ -77,6 +77,7 @@ export default async function generateMigrationScripts(params: {
 
       const schema = Remeda.pipe(
         content,
+        mysqlSchemaTypeTransformUtil(combination.datasourceProvider),
         (content) =>
           Reflector.Schema.setDatasourceProvider({
             prismaSchemaContent: content,
@@ -87,7 +88,7 @@ export default async function generateMigrationScripts(params: {
             prismaSchemaContent: content,
             value: combination.referentialIntegrity,
           }),
-        (content) => normalizeAutoincrement(content, combination.datasourceProvider)
+        normalizeAutoIncrement(combination.datasourceProvider)
       )
 
       await FS.writeAsync(SchemaPathThisCombo, schema)

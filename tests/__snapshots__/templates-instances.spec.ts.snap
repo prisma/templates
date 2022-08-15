@@ -2829,8 +2829,8 @@ a {
 -- CreateTable
 CREATE TABLE \`Post\` (
     \`post_id\` INTEGER NOT NULL AUTO_INCREMENT,
-    \`content\` VARCHAR(191) NULL,
-    \`title\` VARCHAR(191) NOT NULL,
+    \`content\` TEXT NULL,
+    \`title\` TEXT NOT NULL,
     \`author_id\` INTEGER NULL,
 
     PRIMARY KEY (\`post_id\`)
@@ -2838,7 +2838,7 @@ CREATE TABLE \`Post\` (
 
 -- CreateTable
 CREATE TABLE \`Profile\` (
-    \`bio\` VARCHAR(191) NULL,
+    \`bio\` TEXT NULL,
     \`profile_id\` INTEGER NOT NULL AUTO_INCREMENT,
     \`user_id\` INTEGER NOT NULL,
 
@@ -2848,7 +2848,7 @@ CREATE TABLE \`Profile\` (
 -- CreateTable
 CREATE TABLE \`User\` (
     \`email\` VARCHAR(191) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
+    \`name\` TEXT NULL,
     \`user_id\` INTEGER NOT NULL AUTO_INCREMENT,
 
     UNIQUE INDEX \`User_email_key\`(\`email\`),
@@ -9965,7 +9965,7 @@ CREATE TABLE \`User\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NOT NULL,
     \`email\` VARCHAR(191) NOT NULL,
 
     UNIQUE INDEX \`User_email_key\`(\`email\`),
@@ -9977,8 +9977,8 @@ CREATE TABLE \`Interaction\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`songId\` VARCHAR(191) NULL,
-    \`userId\` VARCHAR(191) NULL,
+    \`songId\` TEXT NULL,
+    \`userId\` TEXT NULL,
     \`isLiked\` BOOLEAN NOT NULL DEFAULT false,
     \`playCount\` INTEGER NOT NULL,
 
@@ -9990,13 +9990,13 @@ CREATE TABLE \`Song\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
-    \`albumId\` VARCHAR(191) NULL,
-    \`artistId\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NOT NULL,
+    \`albumId\` TEXT NULL,
+    \`artistId\` TEXT NOT NULL,
     \`length\` DOUBLE NOT NULL,
     \`track\` INTEGER NULL,
-    \`lyrics\` VARCHAR(191) NULL,
-    \`fileUrl\` VARCHAR(191) NOT NULL,
+    \`lyrics\` TEXT NULL,
+    \`fileUrl\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -10006,7 +10006,7 @@ CREATE TABLE \`Artist\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -10016,8 +10016,8 @@ CREATE TABLE \`Album\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
-    \`cover\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NOT NULL,
+    \`cover\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -10027,8 +10027,8 @@ CREATE TABLE \`Playlist\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+    \`userId\` TEXT NULL,
+    \`name\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -14189,9 +14189,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -14202,10 +14202,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -14217,7 +14217,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -15291,9 +15291,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -15304,10 +15304,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -15319,7 +15319,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -16308,9 +16308,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -16321,10 +16321,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -16336,7 +16336,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -16774,7 +16774,7 @@ CREATE TABLE \`User\` (
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
     \`email\` VARCHAR(191) NOT NULL,
-    \`name\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NOT NULL,
 
     UNIQUE INDEX \`User_email_key\`(\`email\`),
     PRIMARY KEY (\`id\`)
@@ -16785,12 +16785,12 @@ CREATE TABLE \`Reservation\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
+    \`userId\` TEXT NULL,
     \`startDate\` DATETIME(3) NOT NULL,
     \`endDate\` DATETIME(3) NOT NULL,
     \`price\` INTEGER NOT NULL,
     \`total\` INTEGER NOT NULL,
-    \`roomId\` VARCHAR(191) NULL,
+    \`roomId\` TEXT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -16803,8 +16803,8 @@ CREATE TABLE \`Room\` (
     \`totalOccupancy\` INTEGER NOT NULL DEFAULT 5,
     \`totalBedrooms\` INTEGER NOT NULL DEFAULT 5,
     \`totalBathrooms\` INTEGER NOT NULL DEFAULT 5,
-    \`summary\` VARCHAR(191) NULL,
-    \`address\` VARCHAR(191) NOT NULL,
+    \`summary\` TEXT NULL,
+    \`address\` TEXT NOT NULL,
     \`isSmoking\` BOOLEAN NOT NULL DEFAULT false,
     \`hasTV\` BOOLEAN NOT NULL DEFAULT true,
     \`hasAirConditioning\` BOOLEAN NOT NULL DEFAULT true,
@@ -16821,8 +16821,8 @@ CREATE TABLE \`Review\` (
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
     \`rating\` INTEGER NOT NULL,
-    \`comment\` VARCHAR(191) NOT NULL,
-    \`userId\` VARCHAR(191) NOT NULL,
+    \`comment\` TEXT NOT NULL,
+    \`userId\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -16832,8 +16832,8 @@ CREATE TABLE \`Media\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`roomId\` VARCHAR(191) NULL,
-    \`fileName\` VARCHAR(191) NOT NULL,
+    \`roomId\` TEXT NULL,
+    \`fileName\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -17407,9 +17407,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -17420,10 +17420,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -17435,7 +17435,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -18508,9 +18508,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -18521,10 +18521,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -18536,7 +18536,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -19525,9 +19525,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -19538,10 +19538,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -19553,7 +19553,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
@@ -22287,9 +22287,9 @@ CREATE TABLE \`User\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
-    \`email\` VARCHAR(191) NOT NULL,
-    \`accountId\` VARCHAR(191) NULL,
+    \`name\` TEXT NULL,
+    \`email\` TEXT NOT NULL,
+    \`accountId\` TEXT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -22299,9 +22299,9 @@ CREATE TABLE \`Account\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`stripeCustomerId\` VARCHAR(191) NOT NULL,
-    \`stripeSubscriptionId\` VARCHAR(191) NOT NULL,
-    \`referrer\` VARCHAR(191) NULL,
+    \`stripeCustomerId\` TEXT NOT NULL,
+    \`stripeSubscriptionId\` TEXT NOT NULL,
+    \`referrer\` TEXT NULL,
     \`isActive\` BOOLEAN NOT NULL,
 
     PRIMARY KEY (\`id\`)
@@ -22311,8 +22311,8 @@ CREATE TABLE \`Account\` (
 CREATE TABLE \`Invite\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`dateSent\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    \`email\` VARCHAR(191) NOT NULL,
-    \`accountId\` VARCHAR(191) NULL,
+    \`email\` TEXT NOT NULL,
+    \`accountId\` TEXT NULL,
     \`isValid\` BOOLEAN NOT NULL DEFAULT true,
 
     PRIMARY KEY (\`id\`)
@@ -26423,9 +26423,9 @@ CREATE TABLE \`Link\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`url\` VARCHAR(191) NOT NULL,
-    \`shortUrl\` VARCHAR(191) NOT NULL,
-    \`userId\` VARCHAR(191) NULL,
+    \`url\` TEXT NOT NULL,
+    \`shortUrl\` TEXT NOT NULL,
+    \`userId\` TEXT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -26435,8 +26435,8 @@ CREATE TABLE \`User\` (
     \`id\` VARCHAR(191) NOT NULL,
     \`createdAt\` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     \`updatedAt\` DATETIME(3) NOT NULL,
-    \`name\` VARCHAR(191) NULL,
-    \`email\` VARCHAR(191) NOT NULL,
+    \`name\` TEXT NULL,
+    \`email\` TEXT NOT NULL,
 
     PRIMARY KEY (\`id\`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
