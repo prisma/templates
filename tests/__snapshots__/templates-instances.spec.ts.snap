@@ -2308,7 +2308,7 @@ const seedUsers: Prisma.UserCreateInput[] = [
     posts: {
       create: [
         {
-          title: 'Requiem for String @db.Text Orchestra',
+          title: 'Requiem for String Orchestra',
           content: '',
         },
         {
