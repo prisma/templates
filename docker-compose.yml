@@ -3,8 +3,8 @@ services:
   # postgres://prisma:prisma@localhost:5401
   postgres:
     image: postgres:14
-    container_name: templates-node-postgres
-    restart: always
+    container_name: templates-postgres
+    restart: unless-stopped
     environment:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
@@ -12,3 +12,18 @@ services:
       - 5401:5432
     volumes:
       - ./scripts/:/docker-entrypoint-initdb.d/
+  # postgres://root:root@localhost:33577
+  vitess-no-foreign-keys:
+    image: vitess/vttestserver:mysql80
+    container_name: templates-vitess
+    restart: unless-stopped
+    ports:
+      - 33577:33577
+    environment:
+      PORT: 33574
+      FOREIGN_KEY_MODE: 'disallow'
+      NUM_SHARDS: '1'
+      MYSQL_BIND_HOST: '0.0.0.0'
+      KEYSPACES: 'test'
+      MYSQL_ROOT_PASSWORD: prisma
+      MYSQL_ROOT_USER: prisma

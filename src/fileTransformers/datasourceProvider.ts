@@ -1,6 +1,6 @@
 import { FileTransformer } from '../fileTransformer/fileTransformer'
 import { Reflector } from '../lib/Reflector'
-import { normalizeAutoincrement } from '../utils'
+import { normalizeAutoIncrement } from '../utils'
 import { pipe } from 'remeda'
 
 /**
@@ -39,7 +39,7 @@ export const datasourceProviderCockroachdb: FileTransformer = (params) => {
             })
           : prismaSchemaContent,
 
-      (prismaSchemaContent) => normalizeAutoincrement(prismaSchemaContent, parameters.datasourceProvider)
+      normalizeAutoIncrement(parameters.datasourceProvider)
     )
   }
 

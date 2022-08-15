@@ -26,9 +26,7 @@ const handler: NextApiHandler = async (req, res) => {
     } catch (e) {
       if (e instanceof Prisma.PrismaClientKnownRequestError) {
         if (e.code === 'P2002') {
-          res
-            .status(409)
-            .json({ error: 'A user with this email already exists' })
+          res.status(409).json({ error: 'A user with this email already exists' })
           return
         }
       }

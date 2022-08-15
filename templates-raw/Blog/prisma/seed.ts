@@ -38,8 +38,8 @@ async function main() {
     users.map((user) =>
       prisma.user.create({
         data: user,
-      }),
-    ),
+      })
+    )
   )
 }
 

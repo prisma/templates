@@ -61,36 +61,18 @@ const Home: NextPage = () => {
           <button onClick={onGetPosts} className={styles.apiButton}>
             Load posts
           </button>
-          <div
-            className={`${styles.loader} ${isLoadingPost ? '' : styles.hidden}`}
-          ></div>
+          <div className={`${styles.loader} ${isLoadingPost ? '' : styles.hidden}`}></div>
         </div>
-        <pre
-          className={`responseContainer ${styles.code} ${
-            apiResponse ? '' : styles.hidden
-          }`}
-        >
+        <pre className={`responseContainer ${styles.code} ${apiResponse ? '' : styles.hidden}`}>
           {apiResponse && JSON.stringify(apiResponse, null, 2)}
         </pre>
       </main>
 
       <footer className={styles.footer}>
         Powered by
-        <img
-          src="/vercel.svg"
-          alt="Vercel Logo"
-          className={styles.logo}
-          width={71}
-          height={16}
-        />
+        <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} width={71} height={16} />
         &
-        <Image
-          src="/prisma.svg"
-          alt="Prisma Logo"
-          className={styles.logo}
-          width={32}
-          height={16}
-        />
+        <Image src="/prisma.svg" alt="Prisma Logo" className={styles.logo} width={32} height={16} />
       </footer>
     </div>
   )

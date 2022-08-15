@@ -2,6 +2,10 @@ import { Reflector } from './lib/Reflector'
 import endent from 'endent'
 import * as R from 'remeda'
 
+export const casesHandled = (x: never) => {
+  throw new Error(`Case not handled for ${String(x)}`)
+}
+
 export type Index<T> = Record<string, T>
 
 export const datasourceUrlEnvironmentVariableName = `PRISMA_CLOUD_PROJECT_DATASOURCE_URL`
@@ -72,9 +76,26 @@ export const upperFirst = <S extends string>(s: S): Capitalize<S> => {
  * When using CockroachDB, the autoincrement() attribute function must be replaced with sequence()
  * to get the same behavior as autoincrement() with other datasource providers (e.g. Postgres).
  */
-export const normalizeAutoincrement = (
-  schema: string,
-  datasourceProvider: Reflector.Schema.DatasourceProviderNormalized
-) => (datasourceProvider === 'cockroachdb' ? schemaAutoincrementToSequence(schema) : schema)
+export const normalizeAutoIncrement =
+  (datasourceProvider: Reflector.Schema.DatasourceProviderNormalized) => (schema: string) =>
+    datasourceProvider === 'cockroachdb' ? schemaAutoIncrementToSequence(schema) : schema
 
-const schemaAutoincrementToSequence = (schema: string) => schema.replace(/autoincrement\(\)/g, 'sequence()')
+const schemaAutoIncrementToSequence = (schema: string) => schema.replace(/autoincrement\(\)/g, 'sequence()')
+
+export const mysqlSchemaTypeTransformUtil =
+  (datasourceProvider: Reflector.Schema.DatasourceProviderNormalized) =>
+  (schemaContent: string): string => {
+    if (datasourceProvider !== 'mysql') {
+      return schemaContent
+    }
+    /**
+     * @description
+     * Regex transformation examples:
+     * - String? -> String? @db.Text
+     * - String -> String @db.Text
+     * - String @id -> String
+     * - String @unique -> String
+     */
+    const regex = / (String\??)(?!.*(?:@unique|@id))/gm
+    return schemaContent.replace(regex, ` $1 @db.Text`)
+  }
