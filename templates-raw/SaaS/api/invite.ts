@@ -19,8 +19,8 @@ export default async function (req: VercelRequest, res: VercelResponse) {
           body: req.body,
         },
         null,
-        2,
-      ),
+        2
+      )
     )
 
     switch (req.method) {
@@ -28,13 +28,13 @@ export default async function (req: VercelRequest, res: VercelResponse) {
         return res.json(
           await prisma.invite.findMany({
             where: { id },
-          }),
+          })
         )
       case 'POST':
         return res.json(
           await prisma.invite.create({
             data: req.body as Prisma.InviteCreateInput,
-          }),
+          })
         )
       case 'PUT':
         return res.json(
@@ -43,19 +43,17 @@ export default async function (req: VercelRequest, res: VercelResponse) {
               id,
             },
             data: req.body as Prisma.InviteUpdateInput,
-          }),
+          })
         )
       case 'DELETE':
         return res.json(
           await prisma.invite.delete({
             where: { id },
-          }),
+          })
         )
     }
 
-    return res
-      .status(400)
-      .send({ message: `Unexpected request method: ${req.method}` })
+    return res.status(400).send({ message: `Unexpected request method: ${req.method}` })
   } catch (e: any) {
     console.error('[invite] Error responding:', e)
     return res.status(500).json({ message: e?.message || e })

@@ -66,9 +66,7 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
       startDate,
       endDate,
       price,
-      total:
-        Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) *
-        price, // difference between dates * price
+      total: Math.ceil(Math.abs(+endDate - +startDate) / (1000 * 60 * 60 * 24)) * price, // difference between dates * price
       room: {
         connect: {
           id: roomIds[
@@ -84,8 +82,8 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  await prisma.$transaction(rooms.map(
-    (room) =>
+  await prisma.$transaction(
+    rooms.map((room) =>
       prisma.room.create({
         data: {
           id: room.id,
@@ -96,23 +94,26 @@ async function main() {
             create: room.media,
           },
         },
-      }),
-  ))
+      })
+    )
+  )
 
-  await prisma.$transaction(data.map(entry =>
-    prisma.user.create({
-      data: {
-        email: entry.email,
-        name: entry.name,
-        reservations: {
-          create: entry.reservations,
+  await prisma.$transaction(
+    data.map((entry) =>
+      prisma.user.create({
+        data: {
+          email: entry.email,
+          name: entry.name,
+          reservations: {
+            create: entry.reservations,
+          },
+          reviews: {
+            create: entry.reviews,
+          },
         },
-        reviews: {
-          create: entry.reviews,
-        },
-      },
-    })
-  ))
+      })
+    )
+  )
 }
 
 main().finally(async () => {

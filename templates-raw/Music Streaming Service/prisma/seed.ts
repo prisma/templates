@@ -67,9 +67,7 @@ async function main() {
             }),
           }).map(() => ({
             playCount: faker.datatype.number({ min: 1, max: 1000 }),
-            songId:
-              songs[faker.datatype.number({ min: 0, max: songs.length - 1 })]
-                .id,
+            songId: songs[faker.datatype.number({ min: 0, max: songs.length - 1 })].id,
             // random boolean
             isLiked: Math.random() < 0.5,
           })),
