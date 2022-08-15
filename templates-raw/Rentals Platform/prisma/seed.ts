@@ -84,9 +84,9 @@ const data = Array.from({ length: NUMBER_OF_USERS }).map(() => ({
 }))
 
 async function main() {
-  rooms.forEach(
-    async (room) =>
-      await prisma.room.create({
+  await prisma.$transaction(rooms.map(
+    (room) =>
+      prisma.room.create({
         data: {
           id: room.id,
           address: room.address,
@@ -97,10 +97,10 @@ async function main() {
           },
         },
       }),
-  )
+  ))
 
-  for (let entry of data) {
-    await prisma.user.create({
+  await prisma.$transaction(data.map(entry =>
+    prisma.user.create({
       data: {
         email: entry.email,
         name: entry.name,
@@ -112,7 +112,7 @@ async function main() {
         },
       },
     })
-  }
+  ))
 }
 
 main().finally(async () => {
