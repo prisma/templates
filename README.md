@@ -9,7 +9,7 @@ Prisma [templates](https://github.com/prisma/prisma-schema-examples) packaged up
 ## Development:
 
 
-1. Install `sha1sum` library
+1. Install `sha1sum` library (for macOS via `brew install md5sha1sum`).
 2. `yarn run build:gen`
 3. `yarn dev`
 
