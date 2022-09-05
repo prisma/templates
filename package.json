@@ -39,7 +39,7 @@
     "prepare": "ts-patch install -s"
   },
   "dependencies": {
-    "@prisma-spectrum/reflector": "0.15.2",
+    "@prisma-spectrum/reflector": "0.15.3",
     "faker": "5.5.3",
     "lodash": "^4.17.21",
     "remeda": "^0.0.35",
@@ -48,8 +48,8 @@
   },
   "devDependencies": {
     "@prisma-labs/prettier-config": "0.1.0",
-    "@prisma/client": "4.2.1",
-    "@prisma/internals": "4.2.1",
+    "@prisma/client": "4.3.1",
+    "@prisma/internals": "4.3.1",
     "@supercharge/promise-pool": "2.3.0",
     "@swc/core": "1.2.203",
     "@swc/helpers": "0.4.1",
