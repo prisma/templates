@@ -3,14 +3,14 @@
   "description": "Schema for a URL shortener with a REST API",
   "license": "UNLICENSED",
   "dependencies": {
-    "@prisma/client": "4.3.1"
+    "@prisma/client": "4.4.0"
   },
   "devDependencies": {
     "@types/faker": "5.5.9",
     "@types/node": "18.0.1",
     "@vercel/node": "1.13.0",
     "faker": "5.5.3",
-    "prisma": "4.3.1",
+    "prisma": "4.4.0",
     "ts-node": "10.5.0",
     "typescript": "4.5.5"
   },
