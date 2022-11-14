@@ -2,7 +2,7 @@ version: '3.8'
 services:
   # postgres://prisma:prisma@localhost:5401
   postgres:
-    image: postgres:14
+    image: postgres:15
     container_name: templates-postgres
     restart: unless-stopped
     environment:
