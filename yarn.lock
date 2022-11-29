@@ -4853,6 +4853,11 @@ remeda@^0.0.35:
   resolved "https://registry.yarnpkg.com/remeda/-/remeda-0.0.35.tgz#4a0192fa4605cc4b88ee50a8d1e8821c223e23d2"
   integrity sha512-3/HunoFQVnPNkh8tX1kmKx8thZWpnENgRVRbaze0IYiWkLDbMxrQWai5bZt+yOedf5fkrnj9+iJ+bCU27+Zuzw==
 
+remeda@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/remeda/-/remeda-0.2.1.tgz#ad9f024971b328f20a1da78866efbd7b775dee67"
+  integrity sha512-y0nehKFF5w88h5gHVctFtVdaQLj1juzdowewSS3vzXhuA3yuAmkwjDAYDiE5GJjgdmWcgz207iVPhWIhAJtLFA==
+
 replace-string@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/replace-string/-/replace-string-3.1.0.tgz#77a087d88580fbac59851237891aa4b0e283db72"

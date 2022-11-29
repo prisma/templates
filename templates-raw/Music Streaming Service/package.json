@@ -3,7 +3,7 @@
   "description": "Schema for a fictional music streaming service with a REST API",
   "license": "UNLICENSED",
   "dependencies": {
-    "@prisma/client": "4.4.0"
+    "@prisma/client": "4.7.0"
   },
   "devDependencies": {
     "@types/faker": "5.5.9",
