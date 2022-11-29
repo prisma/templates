@@ -3,7 +3,7 @@
   "description": "An empty schema with no models, to build your own your own schema",
   "license": "UNLICENSED",
   "dependencies": {
-    "@prisma/client": "4.4.0"
+    "@prisma/client": "4.7.0"
   },
   "devDependencies": {
     "@types/node": "18.0.1",
